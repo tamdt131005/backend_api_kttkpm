@@ -4,7 +4,6 @@ class AppHeader extends HTMLElement {
         const username = localStorage.getItem("username") || "user_test";
         const fullname = localStorage.getItem("fullname") || "Người dùng";
         const avatar = localStorage.getItem("avatar") || "./assets/images/user.webp";
-
         let userHtml = "";
         if (isLogged) {
             userHtml = `

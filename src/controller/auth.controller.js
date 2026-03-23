@@ -4,7 +4,7 @@ import authDao from "../dao/auth.dao.js";
 export const signup = async (req, res) => {
     try {
         const { username, password, fullname, email } = req.body;
-        const actualFullname = fullname || username; // Nếu fullname rỗng thì lấy username
+        const actualFullname = fullname || username;
 
         // Kiểm tra xem user đã tồn tại chưa
         const existingUser = await authDao.getUserByUsername(username);

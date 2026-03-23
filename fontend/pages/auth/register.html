@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,16 @@
     <link rel="stylesheet" href="register.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="container">
-        <nav>
+        <header>
             <div class="nav-logo">
                 <a href="../../index.html"><img src="../../assets/images/logo.svg" alt="bTap Logo"></a>
             </div>
             <div class="nav-title">Đăng Ký</div>
-        </nav>
-        
+        </header>
+
         <div class="register-form">
             <main>
                 <div class="register-icon">
@@ -33,21 +35,24 @@
                 </div>
 
                 <div id="register-success" class="success-message" style="display: none;">
-                    <i class="fas fa-check-circle"></i> <span id="register-success-text">Đăng ký thành công! Đang chuyển hướng...</span>
+                    <i class="fas fa-check-circle"></i> <span id="register-success-text">Đăng ký thành công! Đang chuyển
+                        hướng...</span>
                 </div>
 
                 <form id="registerForm">
                     <div class="form-group">
-                        <label for="username"><i class="fas fa-at"></i> Tên đăng nhập <span class="required">*</span></label>
+                        <label for="username"><i class="fas fa-at"></i> Tên đăng nhập <span
+                                class="required">*</span></label>
                         <input type="text" id="username" name="username" required placeholder="Nhập tên đăng nhập">
                     </div>
                     <div class="form-group">
                         <label for="email"><i class="fas fa-envelope"></i> Email <span class="required">*</span></label>
                         <input type="email" id="email" name="email" required placeholder="example@email.com">
                     </div>
-                    
+
                     <div class="form-group">
-                        <label for="password"><i class="fas fa-lock"></i> Mật khẩu <span class="required">*</span></label>
+                        <label for="password"><i class="fas fa-lock"></i> Mật khẩu <span
+                                class="required">*</span></label>
                         <div class="password-wrapper">
                             <input type="password" id="password" name="password" required placeholder="Ít nhất 6 ký tự">
                             <button type="button" class="toggle-password" onclick="togglePassword('password')">
@@ -56,9 +61,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="confirm_password"><i class="fas fa-lock"></i> Xác nhận mật khẩu <span class="required">*</span></label>
+                        <label for="confirm_password"><i class="fas fa-lock"></i> Xác nhận mật khẩu <span
+                                class="required">*</span></label>
                         <div class="password-wrapper">
-                            <input type="password" id="confirm_password" name="confirm_password" required placeholder="Nhập lại mật khẩu">
+                            <input type="password" id="confirm_password" name="confirm_password" required
+                                placeholder="Nhập lại mật khẩu">
                             <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')">
                                 <i class="fas fa-eye"></i>
                             </button>
@@ -80,14 +87,15 @@
                 </div>
             </main>
         </div>
-        
+
         <footer class="register-footer">
             <div class="footer-content">
                 <p class="footer-info">
                     <i class="fas fa-code"></i> Phát triển bởi: <strong>Nhóm 74DCTT21</strong>
                 </p>
                 <p class="footer-members">
-                    <span>Đặng Thành Tâm</span> • <span>Triệu Quang Ninh</span> • <span>Bùi Đức Huy</span> • <span>Lê Mạnh Hùng</span> • <span>Nguyễn Hồng Sơn</span>
+                    <span>Đặng Thành Tâm</span> • <span>Triệu Quang Ninh</span> • <span>Bùi Đức Huy</span> • <span>Lê
+                        Mạnh Hùng</span> • <span>Nguyễn Hồng Sơn</span>
                 </p>
             </div>
         </footer>
@@ -111,4 +119,5 @@
         }
     </script>
 </body>
+
 </html>

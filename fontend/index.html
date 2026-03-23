@@ -15,17 +15,21 @@
     <main>
         <section class="product-list">
             <h2>Danh sách sản phẩm</h2>
+            <div class="product-not-found" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Không có sản phẩm nào</p>
+            </div>
             <div id="products-container">
-                <p>Đang tải dữ liệu từ API Backend...</p>
+
             </div>
         </section>
     </main>
 
     <app-footer></app-footer>
-    <!-- Khai báo JS (đặt dưới thẻ body để tải trang nhanh hơn) -->
-    <script src="./components/components.js"></script>
     <script src="./assets/js/api.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./components/components.js"></script>
+
 </body>
 
 </html>

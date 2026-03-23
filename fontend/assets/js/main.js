@@ -1,45 +1,51 @@
-/**
- * file: main.js
- * Quản lý logic trên giao diện, bắt sự kiện, thao tác với thư viện Document Object Model (DOM)
- * và gọi dữ liệu từ api.js để in lên màn hình (Hiển thị HTML).
- */
-
-document.addEventListener("DOMContentLoaded", async () => {
-    // 1. Lấy phần tử container sẽ chứa sản phẩm trên HTML
-    const container = document.getElementById("products-container");
-    
-    // 2. Gọi API để lấy mảng data sản phẩm (Hàm này được định nghĩa ở api.js)
-    const products = await fetchProducts();
-
-    // 3. Nếu không có dữ liệu trả về
-    if (!products || products.length === 0) {
-        container.innerHTML = "<p>Không có sản phẩm nào để hiển thị hoặc Backend đang tắt!</p>";
-        return;
-    }
-
-    // 4. Reset nội dung hiện tại (xóa dòng "Đang tải dữ liệu...")
-    container.innerHTML = "";
-
-    // 5. Duyệt vòng lặp danh sách sản phẩm để nối chuỗi vào HTML DOM
-    products.forEach(product => {
-        
-        // Lưu ý: Đổi tên biến thuộc tính (product.ten_sp, product.gia_sp, ...) 
-        // cho khớp chính xác với Cột trong Database / Data gốc của bạn.
-        
-        const cardHTML = `
-            <div class="product-item">
-                <h3>${product.name || product.ten_sanpham || "Tên sản phẩm"}</h3>
-                <p><strong>Giá:</strong> ${product.price || product.gia_sanpham || 0} đ</p>
-                <p><em>${product.description || product.mota_sp || "Không có mô tả cho sản phẩm này."}</em></p>
-                <button onclick="addToCart(${product.id || 1})">Thêm vào giỏ hàng</button>
-            </div>
-        `;
-        
-        container.innerHTML += cardHTML;
-    });
-});
-
-// Hàm demo khi click giỏ hàng
-function addToCart(productId) {
-    alert(`Bạn đã click mua sản phẩm số ID: ${productId}`);
+const container = document.getElementById('products-container');
+function renderProductCard(product) {
+    // product là 1 object từ DB, ví dụ: { id, ten_sp, gia, hinh_anh, ... }
+    return `
+        <div class="product-item">
+            <img src="${product.hinh_anh || 'assets/images/no-image.png'}" alt="${product.ten_sp}" onerror="this.src='assets/images/no-image.png'">
+            <h3>${product.ten_sp}</h3>
+            <p class="price">${Number(product.gia).toLocaleString('vi-VN')}đ</p>
+            <button onclick="alert('Thêm sản phẩm ID: ${product.id}')">Thêm vào giỏ</button>
+        </div>
+    `;
 }
+
+// =============================================
+// BƯỚC 3: Hàm chính - Gọi API và hiển thị sản phẩm
+// =============================================
+async function loadProducts() {
+    // 3.1 Hiện thông báo "Đang tải..."
+    container.innerHTML = '<p style="text-align:center; padding:20px;">Đang tải sản phẩm...</p>';
+
+    try {
+        // 3.2 Gọi API GET /products (dùng hàm api.get từ api.js đã có sẵn)
+        const response = await api.get('/products');
+
+        // 3.3 Lấy mảng sản phẩm từ response
+        // API trả về dạng: { success: true, data: [...mảng sản phẩm...] }
+        const products = response.data;
+
+        // 3.4 Kiểm tra nếu không có sản phẩm nào
+        if (!products || products.length === 0) {
+            container.innerHTML = '<p style="text-align:center;">Không có sản phẩm nào.</p>';
+            return;
+        }
+
+        // 3.5 Tạo HTML cho từng sản phẩm và ghép lại thành 1 chuỗi lớn
+        const allProductsHTML = products.map(renderProductCard).join('');
+
+        // 3.6 Đổ HTML vào trong thẻ #products-container
+        container.innerHTML = allProductsHTML;
+
+    } catch (error) {
+        // 3.7 Nếu có lỗi (mất mạng, server sập...) → hiện thông báo lỗi
+        container.innerHTML = `<p style="text-align:center; color:red;">Lỗi tải sản phẩm: ${error.message}</p>`;
+        console.error('Chi tiết lỗi:', error);
+    }
+}
+
+// =============================================
+// BƯỚC 4: Chạy hàm loadProducts() khi trang đã tải xong
+// =============================================
+document.addEventListener('DOMContentLoaded', loadProducts);

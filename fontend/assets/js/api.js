@@ -1,34 +1,44 @@
-
-// Chỉnh lại port Backend nếu bạn đổi sang port khác
 const BASE_URL = 'http://localhost:3000/api';
 
-/**
- * Gọi API GET /api/products để lấy danh sách sản phẩm
- * @returns {Array} Mảng các object sản phẩm
- */
-async function fetchProducts() {
+// Lấy header mặc định cho mọi request
+function getHeaders() {
+    const headers = { 'Content-Type': 'application/json' };
+    const token = localStorage.getItem('token');
+    if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
+    }
+    return headers;
+}
+
+async function apiCall(endpoint, method = 'GET', body = null) {
+    const options = {
+        method: method,
+        headers: getHeaders(),
+    };
+    if (body) {
+        options.body = JSON.stringify(body);
+    }
+
     try {
-        const response = await fetch(`${BASE_URL}/products`);
-
-        // Kiểm tra xem backend có phản hồi ok (status 200) không
+        const response = await fetch(`${BASE_URL}${endpoint}`, options);
+        const data = await response.json().catch(() => ({}));
         if (!response.ok) {
-            throw new Error(`Lỗi HTTP status: ${response.status}`);
+            if (response.status >= 500) {
+                throw new Error(data.message || `Lỗi Server: ${response.status}`);
+            }
+            return data;
         }
 
-        const data = await response.json();
-
-        // Theo chuẩn phản hồi ở Controller của bạn, data thực tế nằm trong trường "data"
-        if (data && data.success) {
-            return data.data;
-        } else {
-            console.error("API trả về thất bại:", data.message);
-            return [];
-        }
+        return data;
     } catch (error) {
-        console.error("Lỗi khi fetch sản phẩm:", error);
-        return [];
+        console.error(`[Lỗi gọi API] ${method} ${endpoint}:`, error.message);
+        throw error;
     }
 }
 
-// ----------------------------------------------------
-// (Bạn có thể thêm các hàm fetchLogin, fetchRegister... vào đây về sau)
+const api = {
+    get: (endpoint) => apiCall(endpoint, 'GET'),
+    post: (endpoint, body) => apiCall(endpoint, 'POST', body),
+    put: (endpoint, body) => apiCall(endpoint, 'PUT', body),
+    delete: (endpoint) => apiCall(endpoint, 'DELETE')
+};

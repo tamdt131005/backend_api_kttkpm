@@ -24,9 +24,8 @@ body {
     font-family: 'Inter', Arial, sans-serif;
     background: #f5f5f5;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -40,12 +39,13 @@ body {
 }
 
 /* Navigation */
-nav {
+.container>header {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 15px 40px;
+    /* Thêm một chút padding để nó không bị sát rìa màn hình */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
@@ -96,19 +96,19 @@ nav {
     color: white;
 }
 
-header {
+main header {
     text-align: center;
     margin-bottom: 32px;
 }
 
-header h1 {
+main header h1 {
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 8px;
 }
 
-header span {
+main header span {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
@@ -354,7 +354,7 @@ header span {
         margin: 0 16px;
     }
 
-    header h1 {
+    main header h1 {
         font-size: 1.5rem;
     }
 
