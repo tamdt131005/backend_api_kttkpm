@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - bTap</title>
+    <!-- CSS dùng chung -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <!-- CSS riêng cho Đăng nhập -->
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-logo">
+                <a href="../../index.html"><img src="../../assets/images/logo.svg" alt="bTap Logo"></a>
+            </div>
+            <div class="nav-title">Đăng Nhập</div>
+        </nav>
+        
+        <div class="login-form">
+            <main>
+                <div class="login-icon">
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+                <header>
+                    <h1>Chào Mừng Trở Lại</h1>
+                    <span>Đăng nhập để tiếp tục sử dụng dịch vụ</span>
+                </header>
+
+                <div id="login-error" class="error-message" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i> <span id="login-error-text">Lỗi đăng nhập</span>
+                </div>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username"><i class="fas fa-user"></i> Tên đăng nhập</label>
+                        <input type="text" id="username" name="username" required placeholder="Nhập tên đăng nhập">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Mật khẩu</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" required placeholder="Nhập mật khẩu">
+                            <button type="button" class="toggle-password" onclick="togglePassword()">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <span>Ghi nhớ đăng nhập</span>
+                        </label>
+                        <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                    </div>
+                    <div class="form-group form-submit">
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-sign-in-alt"></i> Đăng Nhập
+                        </button>
+                    </div>
+                </form>
+                <div class="additional-options">
+                    <div class="gach-ngang">
+                        <hr>
+                        <p>HOẶC</p>
+                        <hr>
+                    </div>
+                    <p>Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
+                </div>
+            </main>
+        </div>
+        
+        <footer class="login-footer">
+            <div class="footer-content">
+                <p class="footer-info">
+                    <i class="fas fa-code"></i> Phát triển bởi: <strong>Nhóm 74DCTT21</strong>
+                </p>
+                <p class="footer-members">
+                    <span>Đặng Thành Tâm</span> • <span>Triệu Quang Ninh</span> • <span>Bùi Đức Huy</span> • <span>Lê Mạnh Hùng</span> • <span>Nguyễn Hồng Sơn</span>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Tái sử dụng api.js và logic auth -->
+    <script src="../../assets/js/api.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        function togglePassword() {
+            const input = document.getElementById('password');
+            const icon = document.querySelector('.toggle-password i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body> 
+</html>

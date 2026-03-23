@@ -1,16 +1,13 @@
 import pool from '../config/db.js';
 
 class UserDAO {
-    // Vi du lay tat ca user (Example: Get all users)
     async getAllUsers() {
-        // Su dung prepared statement (dau ?) de chong SQL Injection
-        const [rows] = await pool.query('SELECT * FROM user');
+
+        const [rows] = await pool.query('SELECT * FROM users');
         return rows;
     }
-
-    // Vi du lay user theo username (Example: Get user by username)
     async getUserByUsername(username) {
-        const [rows] = await pool.execute('SELECT * FROM user WHERE username = ?', [username]);
+        const [rows] = await pool.execute('SELECT * FROM users  WHERE username = ?', [username]);
         return rows.length > 0 ? rows[0] : null;
     }
 }

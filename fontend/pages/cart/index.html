@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Website Bán Hàng</title>
+    <!-- Trỏ ra ngoài 2 class ../../ để lấy file CSS chung -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <!-- File CSS riêng của giỏ hàng -->
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <app-header></app-header>
+
+    <main>
+        <section class="cart-section">
+            <h2>Giỏ hàng của bạn</h2>
+            <div id="cart-container">
+                <p>Đang tải giỏ hàng...</p>
+            </div>
+            <!-- Chỗ lưu trữ logic xử lý nút bấm thanh toán v.v -->
+        </section>
+    </main>
+
+    <app-footer></app-footer>
+
+    <!-- Trỏ ra ngoài để lấy component chung -->
+    <script src="../../components/components.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <!-- File Javascript dành riêng cho giỏ hàng -->
+    <script src="cart.js"></script>
+</body>
+</html>
