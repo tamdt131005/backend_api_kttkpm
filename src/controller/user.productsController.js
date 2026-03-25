@@ -1,9 +1,9 @@
-import userProductsDAO from "../dao/user.productsDao.js";
+import productService from "../services/product.service.js";
 
 class UserProductsController {
     async index(req, res) {
         try {
-            const products = await userProductsDAO.getAllProducts();
+            const products = await productService.getAllProducts();
             res.status(200).json({
                 success: true,
                 message: "Lấy danh sách sản phẩm thành công",
@@ -18,34 +18,31 @@ class UserProductsController {
             });
         }
     }
-    async detail(req, res) {
+
+    async productDetail(req, res) {
         try {
             const id = req.params.id;
-            const product = await userProductsDAO.getProductById(id);
-            if (!product) {
-                return res.status(404).json({
-                    success: false,
-                    message: "Không tìm thấy sản phẩm"
-                });
-            }
+            const product = await productService.getProductById(id);
             res.status(200).json({
                 success: true,
                 message: "Lấy thông tin sản phẩm thành công",
                 data: product
             });
         } catch (error) {
+            const status = error.status || 500;
+            const message = error.message || "Lỗi Server";
             console.error("Lấy thông tin sản phẩm có lỗi: ", error);
-            res.status(500).json({
+            res.status(status).json({
                 success: false,
-                message: "Lỗi Server",
-                error: error.message
+                message
             });
         }
     }
+
     async getProductsByCategoryId(req, res) {
         try {
             const categoryId = req.params.category_id;
-            const products = await userProductsDAO.getProductsByCategoryId(categoryId);
+            const products = await productService.getProductsByCategoryId(categoryId);
             res.status(200).json({
                 success: true,
                 message: "Lấy danh sách sản phẩm theo danh mục thành công",

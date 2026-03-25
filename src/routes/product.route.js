@@ -5,7 +5,7 @@ import { validateProductId, validateCategoryId } from '../validation/product.val
 const router = express.Router();
 
 router.get('/', userProductsController.index);
-router.get('/:id', validateProductId, userProductsController.detail);
+router.get('/:id', validateProductId, userProductsController.productDetail);
 router.get('/category/:category_id', validateCategoryId, userProductsController.getProductsByCategoryId);
 
 export default router;

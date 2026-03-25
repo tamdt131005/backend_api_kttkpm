@@ -1,11 +1,8 @@
 const img = document.querySelector(".product-image");
 const info = document.querySelector(".product-info");
 
-// Lấy id sản phẩm từ URL (vd: ?id=5)
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
-
-// Hiển thị ảnh sản phẩm
 function imgProduct(data) {
     img.innerHTML = `<img src="${data.hinhanh}" alt="${data.tensanpham}">`;
 }

@@ -57,8 +57,8 @@ function loadproduct(product) {
             </div>
         </article>
     `;
-
-    if (container) container.insertAdjacentHTML('beforeend', producthtml);
+    console.log(producthtml);
+    // if (container) container.insertAdjacentHTML('beforeend', producthtml);
 }
 async function fill() {
     const res = await api.get('/products');

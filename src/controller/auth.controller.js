@@ -1,30 +1,9 @@
-import bcrypt from "bcrypt";
-import authDao from "../dao/auth.dao.js";
+import authService from "../services/auth.service.js";
 
 export const signup = async (req, res) => {
     try {
         const { username, password, fullname, email } = req.body;
-        const actualFullname = fullname || username;
-
-        // Kiểm tra xem user đã tồn tại chưa
-        const existingUser = await authDao.getUserByUsername(username);
-        if (existingUser) {
-            return res.status(409).json({
-                success: false,
-                message: "Tên đăng nhập đã tồn tại!"
-            });
-        }
-
-        const existingEmail = await authDao.getUserByEmail(email);
-        if (existingEmail) {
-            return res.status(409).json({
-                success: false,
-                message: "Email này đã được sử dụng!"
-            });
-        }
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
-        await authDao.createUser(username, hashedPassword, actualFullname, email);
+        await authService.signup(username, password, fullname, email);
 
         return res.status(201).json({
             success: true,
@@ -32,10 +11,12 @@ export const signup = async (req, res) => {
         });
 
     } catch (error) {
+        const status = error.status || 500;
+        const message = error.message || "Lỗi Server, vui lòng thử lại sau";
         console.error("Lỗi khi đăng ký:", error);
-        return res.status(500).json({
+        return res.status(status).json({
             success: false,
-            message: "Lỗi Server, vui lòng thử lại sau"
+            message
         });
     }
 };
@@ -43,40 +24,21 @@ export const signup = async (req, res) => {
 export const signin = async (req, res) => {
     try {
         const { username, password } = req.body;
-
-        const user = await authDao.getUserByUsername(username);
-        if (!user) {
-            return res.status(404).json({
-                success: false,
-                message: "Tài khoản không tồn tại!"
-            });
-        }
-
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            return res.status(400).json({
-                success: false,
-                message: "Sai mật khẩu!"
-            });
-        }
+        const user = await authService.signin(username, password);
 
         return res.status(200).json({
             success: true,
             message: "Đăng nhập thành công!",
-            user: {
-                id: user.id || user.user_id,
-                username: user.username,
-                fullname: user.fullname,
-                role: user.role,
-                avatar: user.avatar
-            }
+            user
         });
 
     } catch (error) {
+        const status = error.status || 500;
+        const message = error.message || "Lỗi Server, vui lòng thử lại sau";
         console.error("Lỗi khi đăng nhập:", error);
-        return res.status(500).json({
+        return res.status(status).json({
             success: false,
-            message: "Lỗi Server, vui lòng thử lại sau"
+            message
         });
     }
 };
