@@ -1,8 +1,3 @@
-/* ================================================
-   Product Card - Trang chủ (index.html)
-   Dựa theo design system từ dự án PHP cũ
-   ================================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
@@ -260,6 +255,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -268,19 +264,46 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
-    .products-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
 }
 
 @media (max-width: 768px) {
-    .container { padding: 16px 16px 32px; }
-    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .product-image { height: 180px; }
-    .product-info { padding: 16px; }
-    .product-name { font-size: 0.9rem; }
-    .price-sale { font-size: 1.1rem; }
+    .container {
+        padding: 16px 16px 32px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-info {
+        padding: 16px;
+    }
+
+    .product-name {
+        font-size: 0.9rem;
+    }
+
+    .price-sale {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .products-grid { grid-template-columns: 1fr; gap: 16px; }
-    .product-image { height: 220px; }
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
 }

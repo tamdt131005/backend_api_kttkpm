@@ -1,134 +1,72 @@
 const container = document.getElementById('products-container');
 
-// --- Hàm tạo HTML sao đánh giá (1→5 sao) ---
-function renderStars(rating) {
-    let stars = '';
-    for (let i = 1; i <= 5; i++) {
-        if (i <= Math.floor(rating)) {
-            stars += '<i class="fas fa-star"></i>';
-        } else if (i - 0.5 <= rating) {
-            stars += '<i class="fas fa-star-half-alt"></i>';
-        } else {
-            stars += '<i class="fas fa-star empty"></i>';
-        }
-    }
-    return stars;
-}
-function formatPrice(price) {
-    return Number(price).toLocaleString('vi-VN') + '₫';
+function formatCurrency(value) {
+    if (typeof value !== 'number') return value;
+    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
 }
 
-// --- Hàm tạo HTML card cho 1 sản phẩm ---
-function renderProductCard(product) {
-
+function loadproduct(product) {
     const id = product.id;
-    const ten = product.tensanpham || 'Sản phẩm';
-    const giaBan = Number(product.giaban || 0);
-    const giaKM = Number(product.giakhuyenmai || 0);
-    const hinhAnh = product.hinhanh || '';
-    const soLuong = Number(product.soluong || product.so_luong || 0);
-    const danhGia = Number(product.diem_danh_gia || 0);
-    const soDanhGia = Number(product.so_danh_gia || 0);
+    const name = product.tensanpham;
+    const giaban = Number(product.giaban) || 0;
+    const giakhuyenmai = Number(product.giakhuyenmai) || 0;
+    const hinhanh = product.hinhanh;
+    const tong_soluong = Number(product.tong_soluong) || 0;
+    const diem_danhgia = Number(product.diem_danhgia) || 0;
+    const luot_danhgia = Number(product.luot_danhgia) || 0;
+    const coGiamGia = giakhuyenmai > 0 && giakhuyenmai < giaban;
+    const phanTramGiamGia = coGiamGia ? Math.round((1 - giakhuyenmai / giaban) * 100) : 0;
+    const diemLamTron = Math.round(diem_danhgia);
+    const duongDanAnh = "http://localhost:8000/assets/images/product/" + hinhanh;
 
-    const imgSrc = hinhAnh
-        ? hinhAnh                                          // nếu là URL đầy đủ
-        : 'assets/images/no-image.png';
+    let priceHtml = '';
+    if (coGiamGia) {
+        priceHtml = `<span class="price-sale">${formatCurrency(giakhuyenmai)}</span><span class="price-original">${formatCurrency(giaban)}</span>`;
+    } else {
+        priceHtml = `<span class="price">${formatCurrency(giaban)}</span>`;
+    }
 
-    const coGiamGia = giaKM > 0 && giaKM < giaBan;
-    const phanTramGiam = coGiamGia ? Math.round((1 - giaKM / giaBan) * 100) : 0;
-    const giaHienThi = coGiamGia ? giaKM : giaBan;
+    let stockHtml = '';
+    if (tong_soluong > 10) {
+        stockHtml = `<span style="color: #10b981; font-weight: 600;"><i class="fas fa-check-circle" style="margin-right: 4px;"></i>Còn ${tong_soluong} sản phẩm</span>`;
+    } else if (tong_soluong > 0 && tong_soluong <= 10) {
+        stockHtml = `<span style="color: #c4ef44ff; font-weight: 600;"><i class="fas fa-exclamation-circle" style="margin-right: 4px;"></i>Sắp hết hàng</span>`;
+    } else {
+        stockHtml = `<span style="color: #ef4444; font-weight: 600;"><i class="fas fa-times-circle" style="margin-right: 4px;"></i>Hết hàng</span>`;
+    }
 
-    return `
+    const producthtml = `
         <article class="product-card" data-id="${id}">
-            <!-- Link toàn bộ card -->
-            <a class="product-link" href="pages/product/detail.html?id=${id}" aria-label="Xem chi tiết ${ten}"></a>
-
-            <!-- Badge giảm giá -->
-            ${coGiamGia ? `<span class="product-badge">-${phanTramGiam}%</span>` : ''}
-
-            <!-- Ảnh sản phẩm -->
+            <a class="product-link" href="./product/productdetail.html?id=${id}" aria-label="Xem chi tiết ${name}"></a>
+            ${coGiamGia ? `<span class="product-badge">-${phanTramGiamGia}%</span>` : ''}
             <div class="product-image">
-                <img src="${imgSrc}" alt="${ten}" loading="lazy"
-                     onerror="this.src='assets/images/no-image.png'">
+                <img src="${duongDanAnh}" alt="${name}" loading="lazy">
             </div>
 
-            <!-- Thông tin sản phẩm -->
             <div class="product-info">
                 <span class="product-category">Thời trang</span>
-                <h3 class="product-name">${ten}</h3>
-
-                <!-- Sao đánh giá -->
-                <div class="product-rating">
-                    <div class="rating-stars">${renderStars(danhGia)}</div>
-                    <span class="rating-count">(${soDanhGia})</span>
-                </div>
-
-                <!-- Giá -->
+                <h3 class="product-name">${name}</h3>
                 <div class="product-price">
-                    <span class="price-sale">${formatPrice(giaHienThi)}</span>
-                    ${coGiamGia ? `<span class="price-original">${formatPrice(giaBan)}</span>` : ''}
+                    ${priceHtml}
                 </div>
-
-                <!-- Tồn kho -->
-                <div class="product-footer" style="margin-top:12px;">
-                    ${soLuong > 0
-            ? `<span style="color:#10b981;font-weight:600;font-size:0.85rem;">
-                                <i class="fas fa-check-circle" style="margin-right:4px;"></i>Còn ${soLuong} sản phẩm
-                           </span>`
-            : `<span style="color:#ef4444;font-weight:600;font-size:0.85rem;">
-                                <i class="fas fa-times-circle" style="margin-right:4px;"></i>Hết hàng
-                           </span>`
-        }
+                <div class="product-footer" style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between;">
+                    <div class="product-stock" style="font-size: 0.85rem;">
+                        ${stockHtml}
+                    </div>
                 </div>
-            </div>
-
-            <!-- Nút thêm vào giỏ (nằm ngoài product-info để không bị link che) -->
-            <div class="product-actions">
-                <button class="btn-add-to-cart" ${soLuong === 0 ? 'disabled' : ''}
-                        onclick="event.preventDefault(); addToCart(${id}, '${ten}')">
-                    <i class="fas fa-cart-plus"></i>
-                    ${soLuong === 0 ? 'Hết hàng' : 'Thêm vào giỏ'}
-                </button>
             </div>
         </article>
     `;
+
+    if (container) container.insertAdjacentHTML('beforeend', producthtml);
 }
-
-function addToCart(productId, productName) {
-    alert(`Đã thêm "${productName}" vào giỏ hàng! (ID: ${productId})`);
-}
-
-async function loadProducts() {
-    container.innerHTML = `
-        <div style="grid-column:1/-1; text-align:center; padding:60px 20px; color:#64748b;">
-            <i class="fas fa-spinner fa-spin" style="font-size:2rem; margin-bottom:12px; display:block;"></i>
-            Đang tải sản phẩm...
-        </div>`;
-
-    try {
-        const response = await api.get('/products');
-        const products = response.data;
-
-        if (!products || products.length === 0) {
-            container.innerHTML = `
-                <div class="empty-state" style="grid-column:1/-1;">
-                    <i class="fas fa-box-open"></i>
-                    <h3>Không có sản phẩm nào</h3>
-                    <p>Hệ thống chưa có sản phẩm nào để hiển thị.</p>
-                </div>`;
-            return;
-        }
-
-        container.innerHTML = products.map(renderProductCard).join('');
-
-    } catch (error) {
-        container.innerHTML = `
-            <div class="empty-state" style="grid-column:1/-1;">
-                <i class="fas fa-wifi" style="color:#ef4444;"></i>
-                <h3>Không thể tải sản phẩm</h3>
-                <p>${error.message}</p>
-            </div>`;
+async function fill() {
+    const res = await api.get('/products');
+    if (res.success) {
+        const products = res.data;
+        products.forEach(product => {
+            loadproduct(product);
+        });
     }
 }
-
-document.addEventListener('DOMContentLoaded', loadProducts);
+document.addEventListener("DOMContentLoaded", fill);

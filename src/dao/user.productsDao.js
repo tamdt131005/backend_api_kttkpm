@@ -2,7 +2,7 @@ import pool from "../config/db.js";
 
 class UserProductsDAO {
     async getAllProducts() {
-        const [rows] = await pool.query("SELECT 
+        const [rows] = await pool.query(`SELECT 
                 sp.id,
             sp.tensanpham,
             sp.giaban,
@@ -17,7 +17,7 @@ class UserProductsDAO {
                 WHERE sp.an_hien = 1 AND sp.deleted_at IS NULL
                 GROUP BY sp.id
                 ORDER BY sp.createdAt DESC 
-                LIMIT 8");
+                LIMIT 8`);
         return rows;
     }
     async getProductById(id) {
