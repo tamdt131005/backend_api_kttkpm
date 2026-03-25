@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-detail {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.product-image {
+    flex: 0 0 45%;
+}
+
+.product-info {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+    }
+
+    .product-image {
+        flex: none;
+        width: 100%;
+    }
+}

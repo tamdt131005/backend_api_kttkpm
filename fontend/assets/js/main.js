@@ -1,51 +1,134 @@
 const container = document.getElementById('products-container');
+
+// --- Hàm tạo HTML sao đánh giá (1→5 sao) ---
+function renderStars(rating) {
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= Math.floor(rating)) {
+            stars += '<i class="fas fa-star"></i>';
+        } else if (i - 0.5 <= rating) {
+            stars += '<i class="fas fa-star-half-alt"></i>';
+        } else {
+            stars += '<i class="fas fa-star empty"></i>';
+        }
+    }
+    return stars;
+}
+function formatPrice(price) {
+    return Number(price).toLocaleString('vi-VN') + '₫';
+}
+
+// --- Hàm tạo HTML card cho 1 sản phẩm ---
 function renderProductCard(product) {
-    // product là 1 object từ DB, ví dụ: { id, ten_sp, gia, hinh_anh, ... }
+
+    const id = product.id;
+    const ten = product.tensanpham || 'Sản phẩm';
+    const giaBan = Number(product.giaban || 0);
+    const giaKM = Number(product.giakhuyenmai || 0);
+    const hinhAnh = product.hinhanh || '';
+    const soLuong = Number(product.soluong || product.so_luong || 0);
+    const danhGia = Number(product.diem_danh_gia || 0);
+    const soDanhGia = Number(product.so_danh_gia || 0);
+
+    const imgSrc = hinhAnh
+        ? hinhAnh                                          // nếu là URL đầy đủ
+        : 'assets/images/no-image.png';
+
+    const coGiamGia = giaKM > 0 && giaKM < giaBan;
+    const phanTramGiam = coGiamGia ? Math.round((1 - giaKM / giaBan) * 100) : 0;
+    const giaHienThi = coGiamGia ? giaKM : giaBan;
+
     return `
-        <div class="product-item">
-            <img src="${product.hinh_anh || 'assets/images/no-image.png'}" alt="${product.ten_sp}" onerror="this.src='assets/images/no-image.png'">
-            <h3>${product.ten_sp}</h3>
-            <p class="price">${Number(product.gia).toLocaleString('vi-VN')}đ</p>
-            <button onclick="alert('Thêm sản phẩm ID: ${product.id}')">Thêm vào giỏ</button>
-        </div>
+        <article class="product-card" data-id="${id}">
+            <!-- Link toàn bộ card -->
+            <a class="product-link" href="pages/product/detail.html?id=${id}" aria-label="Xem chi tiết ${ten}"></a>
+
+            <!-- Badge giảm giá -->
+            ${coGiamGia ? `<span class="product-badge">-${phanTramGiam}%</span>` : ''}
+
+            <!-- Ảnh sản phẩm -->
+            <div class="product-image">
+                <img src="${imgSrc}" alt="${ten}" loading="lazy"
+                     onerror="this.src='assets/images/no-image.png'">
+            </div>
+
+            <!-- Thông tin sản phẩm -->
+            <div class="product-info">
+                <span class="product-category">Thời trang</span>
+                <h3 class="product-name">${ten}</h3>
+
+                <!-- Sao đánh giá -->
+                <div class="product-rating">
+                    <div class="rating-stars">${renderStars(danhGia)}</div>
+                    <span class="rating-count">(${soDanhGia})</span>
+                </div>
+
+                <!-- Giá -->
+                <div class="product-price">
+                    <span class="price-sale">${formatPrice(giaHienThi)}</span>
+                    ${coGiamGia ? `<span class="price-original">${formatPrice(giaBan)}</span>` : ''}
+                </div>
+
+                <!-- Tồn kho -->
+                <div class="product-footer" style="margin-top:12px;">
+                    ${soLuong > 0
+            ? `<span style="color:#10b981;font-weight:600;font-size:0.85rem;">
+                                <i class="fas fa-check-circle" style="margin-right:4px;"></i>Còn ${soLuong} sản phẩm
+                           </span>`
+            : `<span style="color:#ef4444;font-weight:600;font-size:0.85rem;">
+                                <i class="fas fa-times-circle" style="margin-right:4px;"></i>Hết hàng
+                           </span>`
+        }
+                </div>
+            </div>
+
+            <!-- Nút thêm vào giỏ (nằm ngoài product-info để không bị link che) -->
+            <div class="product-actions">
+                <button class="btn-add-to-cart" ${soLuong === 0 ? 'disabled' : ''}
+                        onclick="event.preventDefault(); addToCart(${id}, '${ten}')">
+                    <i class="fas fa-cart-plus"></i>
+                    ${soLuong === 0 ? 'Hết hàng' : 'Thêm vào giỏ'}
+                </button>
+            </div>
+        </article>
     `;
 }
 
-// =============================================
-// BƯỚC 3: Hàm chính - Gọi API và hiển thị sản phẩm
-// =============================================
+function addToCart(productId, productName) {
+    alert(`Đã thêm "${productName}" vào giỏ hàng! (ID: ${productId})`);
+}
+
 async function loadProducts() {
-    // 3.1 Hiện thông báo "Đang tải..."
-    container.innerHTML = '<p style="text-align:center; padding:20px;">Đang tải sản phẩm...</p>';
+    container.innerHTML = `
+        <div style="grid-column:1/-1; text-align:center; padding:60px 20px; color:#64748b;">
+            <i class="fas fa-spinner fa-spin" style="font-size:2rem; margin-bottom:12px; display:block;"></i>
+            Đang tải sản phẩm...
+        </div>`;
 
     try {
-        // 3.2 Gọi API GET /products (dùng hàm api.get từ api.js đã có sẵn)
         const response = await api.get('/products');
-
-        // 3.3 Lấy mảng sản phẩm từ response
-        // API trả về dạng: { success: true, data: [...mảng sản phẩm...] }
         const products = response.data;
 
-        // 3.4 Kiểm tra nếu không có sản phẩm nào
         if (!products || products.length === 0) {
-            container.innerHTML = '<p style="text-align:center;">Không có sản phẩm nào.</p>';
+            container.innerHTML = `
+                <div class="empty-state" style="grid-column:1/-1;">
+                    <i class="fas fa-box-open"></i>
+                    <h3>Không có sản phẩm nào</h3>
+                    <p>Hệ thống chưa có sản phẩm nào để hiển thị.</p>
+                </div>`;
             return;
         }
 
-        // 3.5 Tạo HTML cho từng sản phẩm và ghép lại thành 1 chuỗi lớn
-        const allProductsHTML = products.map(renderProductCard).join('');
-
-        // 3.6 Đổ HTML vào trong thẻ #products-container
-        container.innerHTML = allProductsHTML;
+        container.innerHTML = products.map(renderProductCard).join('');
 
     } catch (error) {
-        // 3.7 Nếu có lỗi (mất mạng, server sập...) → hiện thông báo lỗi
-        container.innerHTML = `<p style="text-align:center; color:red;">Lỗi tải sản phẩm: ${error.message}</p>`;
-        console.error('Chi tiết lỗi:', error);
+        container.innerHTML = `
+            <div class="empty-state" style="grid-column:1/-1;">
+                <i class="fas fa-wifi" style="color:#ef4444;"></i>
+                <h3>Không thể tải sản phẩm</h3>
+                <p>${error.message}</p>
+            </div>`;
     }
 }
 
-// =============================================
-// BƯỚC 4: Chạy hàm loadProducts() khi trang đã tải xong
-// =============================================
 document.addEventListener('DOMContentLoaded', loadProducts);
