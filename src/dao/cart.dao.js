@@ -1,7 +1,6 @@
 import pool from "../config/db.js";
 
 class CartDAO {
-    // Lấy toàn bộ giỏ hàng của user (JOIN sản phẩm + biến thể)
     async getCartByUserId(userId) {
         const [rows] = await pool.execute(`
             SELECT 
