@@ -10,14 +10,12 @@ function loadproduct(product) {
     const name = product.tensanpham;
     const giaban = Number(product.giaban) || 0;
     const giakhuyenmai = Number(product.giakhuyenmai) || 0;
-    const hinhanh = product.hinhanh;
     const tong_soluong = Number(product.tong_soluong) || 0;
     const diem_danhgia = Number(product.diem_danhgia) || 0;
-    const luot_danhgia = Number(product.luot_danhgia) || 0;
     const coGiamGia = giakhuyenmai > 0 && giakhuyenmai < giaban;
     const phanTramGiamGia = coGiamGia ? Math.round((1 - giakhuyenmai / giaban) * 100) : 0;
     const diemLamTron = Math.round(diem_danhgia);
-    const duongDanAnh = "http://localhost:8000/assets/images/product/" + hinhanh;
+    const duongDanAnh = imageUtil.product(product.hinhanh);
 
     let priceHtml = '';
     if (coGiamGia) {
@@ -30,14 +28,14 @@ function loadproduct(product) {
     if (tong_soluong > 10) {
         stockHtml = `<span style="color: #10b981; font-weight: 600;"><i class="fas fa-check-circle" style="margin-right: 4px;"></i>Còn ${tong_soluong} sản phẩm</span>`;
     } else if (tong_soluong > 0 && tong_soluong <= 10) {
-        stockHtml = `<span style="color: #c4ef44ff; font-weight: 600;"><i class="fas fa-exclamation-circle" style="margin-right: 4px;"></i>Sắp hết hàng</span>`;
+        stockHtml = `<span style="color: #f59e0b; font-weight: 600;"><i class="fas fa-exclamation-circle" style="margin-right: 4px;"></i>Sắp hết hàng</span>`;
     } else {
         stockHtml = `<span style="color: #ef4444; font-weight: 600;"><i class="fas fa-times-circle" style="margin-right: 4px;"></i>Hết hàng</span>`;
     }
 
     const producthtml = `
         <article class="product-card" data-id="${id}">
-            <a class="product-link" href="./product/productdetail.html?id=${id}" aria-label="Xem chi tiết ${name}"></a>
+            <a class="product-link" href="./pages/product/productdetail.html?id=${id}" aria-label="Xem chi tiết ${name}"></a>
             ${coGiamGia ? `<span class="product-badge">-${phanTramGiamGia}%</span>` : ''}
             <div class="product-image">
                 <img src="${duongDanAnh}" alt="${name}" loading="lazy">
@@ -57,9 +55,9 @@ function loadproduct(product) {
             </div>
         </article>
     `;
-    console.log(producthtml);
-    // if (container) container.insertAdjacentHTML('beforeend', producthtml);
+    if (container) container.insertAdjacentHTML('beforeend', producthtml);
 }
+
 async function fill() {
     const res = await api.get('/products');
     if (res.success) {
@@ -70,3 +68,4 @@ async function fill() {
     }
 }
 document.addEventListener("DOMContentLoaded", fill);
+

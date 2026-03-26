@@ -4,32 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ hàng - Website Bán Hàng</title>
-    <!-- Trỏ ra ngoài 2 class ../../ để lấy file CSS chung -->
+    <title>Giỏ Hàng - bTap Shop</title>
+    <meta name="description" content="Giỏ hàng của bạn tại bTap Shop">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <!-- File CSS riêng của giỏ hàng -->
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="./cart.css">
 </head>
 
 <body>
     <app-header></app-header>
 
     <main>
-        <section class="cart-section">
-            <h2>Giỏ hàng của bạn</h2>
-            <div id="cart-container">
+        <div class="cart-container">
+            <h1 class="cart-title">
+                <i class="fas fa-shopping-cart"></i> Giỏ Hàng Của Bạn
+            </h1>
+
+            <!-- Loading -->
+            <div class="cart-loading" id="cart-loading">
+                <div class="spinner"></div>
                 <p>Đang tải giỏ hàng...</p>
             </div>
-            <!-- Chỗ lưu trữ logic xử lý nút bấm thanh toán v.v -->
-        </section>
+
+            <!-- Chưa đăng nhập -->
+            <div class="empty-cart" id="cart-not-logged" style="display: none;">
+                <i class="fas fa-user-lock"></i>
+                <h3>Bạn chưa đăng nhập</h3>
+                <p>Vui lòng đăng nhập để xem giỏ hàng.</p>
+                <a href="/pages/auth/login.html" class="btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                </a>
+            </div>
+
+            <!-- Giỏ hàng trống -->
+            <div class="empty-cart" id="cart-empty" style="display: none;">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Giỏ hàng của bạn đang trống</h3>
+                <p>Hãy thêm sản phẩm vào giỏ hàng để tiếp tục mua sắm.</p>
+                <a href="/index.html" class="btn-primary">
+                    <i class="fas fa-shopping-bag"></i> Mua sắm ngay
+                </a>
+            </div>
+
+            <!-- Nội dung giỏ hàng -->
+            <div class="cart-content" id="cart-content" style="display: none;">
+                <div class="cart-items-section" id="cart-items">
+                    <!-- Render bằng JS -->
+                </div>
+
+                <div class="cart-summary">
+                    <h3>Tóm Tắt Đơn Hàng</h3>
+                    <div class="summary-row">
+                        <span>Tạm tính (<span id="item-count">0</span> sản phẩm):</span>
+                        <span class="value" id="subtotal">0₫</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Phí vận chuyển:</span>
+                        <span class="value">30.000₫</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Tổng cộng:</span>
+                        <span class="value" id="total">0₫</span>
+                    </div>
+                    <a href="/pages/checkout/checkout.html" class="checkout-btn" id="checkout-btn">
+                        <i class="fas fa-credit-card"></i> Tiến Hành Thanh Toán
+                    </a>
+                    <a href="/index.html" class="continue-shopping">
+                        <i class="fas fa-arrow-left"></i> Tiếp tục mua sắm
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <app-footer></app-footer>
 
-    <!-- Trỏ ra ngoài để lấy component chung -->
-    <script src="../../components/components.js"></script>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="../../assets/js/image.js"></script>
     <script src="../../assets/js/api.js"></script>
-    <script src="cart.js"></script>
+    <script src="../../components/components.js"></script>
+    <script src="./cart.js"></script>
 </body>
 
 </html>

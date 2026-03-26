@@ -3,7 +3,9 @@ class AppHeader extends HTMLElement {
         const isLogged = localStorage.getItem("isLoggedIn") === "true";
         const username = localStorage.getItem("username") || "user_test";
         const fullname = localStorage.getItem("fullname") || "Người dùng";
-        const avatar = localStorage.getItem("avatar") || "./assets/images/user.webp";
+        const avatarFile = localStorage.getItem("avatar") || "";
+        const avatar = imageUtil.avatar(avatarFile);
+
         let userHtml = "";
         if (isLogged) {
             userHtml = `
@@ -31,7 +33,7 @@ class AppHeader extends HTMLElement {
                                 </a>
                             </li>
                             <li class="border-top">
-                                <a href="#" onclick="localStorage.removeItem('isLoggedIn'); location.reload();" class="dang-xuat">
+                                <a href="#" onclick="localStorage.clear(); location.reload();" class="dang-xuat">
                                     <span class="icon-ke"><i class="fas fa-sign-out-alt"></i></span>
                                     Đăng xuất
                                 </a>

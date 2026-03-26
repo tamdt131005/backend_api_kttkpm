@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - bTap Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="./checkout.css">
+</head>
+
+<body>
+    <app-header></app-header>
+
+    <main>
+        <div class="checkout-container">
+            <h1 class="checkout-title">
+                <i class="fas fa-credit-card"></i> Thanh Toán
+            </h1>
+
+            <!-- Loading -->
+            <div class="checkout-loading" id="checkout-loading">
+                <div class="spinner"></div>
+                <p>Đang tải thông tin...</p>
+            </div>
+
+            <!-- Chưa đăng nhập -->
+            <div class="empty-checkout" id="checkout-not-logged" style="display: none;">
+                <i class="fas fa-user-lock"></i>
+                <h3>Bạn chưa đăng nhập</h3>
+                <p>Vui lòng đăng nhập để tiến hành thanh toán.</p>
+                <a href="/pages/auth/login.html" class="btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                </a>
+            </div>
+
+            <!-- Giỏ hàng trống -->
+            <div class="empty-checkout" id="checkout-empty" style="display: none;">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Giỏ hàng của bạn đang trống</h3>
+                <p>Vui lòng thêm sản phẩm vào giỏ hàng trước khi thanh toán.</p>
+                <a href="/index.html" class="btn-primary">
+                    <i class="fas fa-shopping-bag"></i> Mua sắm ngay
+                </a>
+            </div>
+
+            <!-- Đặt hàng thành công -->
+            <div class="empty-checkout success-state" id="checkout-success" style="display: none;">
+                <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                <h3>Đặt hàng thành công!</h3>
+                <p>Mã đơn hàng: <strong id="order-code"></strong></p>
+                <p>Tổng thanh toán: <strong id="order-total-display"></strong></p>
+                <a href="/index.html" class="btn-primary">
+                    <i class="fas fa-home"></i> Về trang chủ
+                </a>
+            </div>
+
+            <!-- Nội dung checkout -->
+            <div class="checkout-content" id="checkout-content" style="display: none;">
+                <!-- Cột trái -->
+                <div class="checkout-main">
+                    <!-- Địa chỉ nhận hàng -->
+                    <div class="checkout-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-map-marker-alt"></i> Địa Chỉ Nhận Hàng
+                        </h3>
+                        <div class="address-content" id="address-display">
+                            <div class="no-address" id="no-address">
+                                <p>Bạn chưa có địa chỉ. <a href="#" onclick="openAddAddressForm()">Thêm địa chỉ mới</a></p>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-change" id="btn-change-address" style="display: none;" onclick="openAddressModal()">
+                            <i class="fas fa-edit"></i> Thay Đổi
+                        </button>
+                    </div>
+
+                    <!-- Danh sách sản phẩm -->
+                    <div class="checkout-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-box"></i> Sản Phẩm Đặt Mua (<span id="checkout-item-count">0</span>)
+                        </h3>
+                        <div class="order-items" id="checkout-items">
+                            <!-- Render bằng JS -->
+                        </div>
+                    </div>
+
+                    <!-- Ghi chú -->
+                    <div class="checkout-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-sticky-note"></i> Ghi Chú
+                        </h3>
+                        <textarea id="order-note" class="note-input" placeholder="Nhập ghi chú cho đơn hàng (không bắt buộc)..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Cột phải: Tóm tắt -->
+                <div class="checkout-summary">
+                    <h3>Tóm Tắt Đơn Hàng</h3>
+
+                    <div class="summary-row">
+                        <span>Tạm tính (<span id="summary-count">0</span> sản phẩm):</span>
+                        <span class="value" id="summary-subtotal">0₫</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Phí vận chuyển:</span>
+                        <span class="value">30.000₫</span>
+                    </div>
+
+                    <!-- Phương thức thanh toán -->
+                    <div class="payment-method">
+                        <span>Phương thức:</span>
+                        <div class="payment-option">
+                            <input type="radio" name="phuongthucthanhtoan" value="tienmat" id="cod" checked>
+                            <label for="cod">
+                                <i class="fas fa-money-bill-wave"></i> Thanh toán khi nhận hàng
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="summary-row total">
+                        <span>Tổng cộng:</span>
+                        <span class="value" id="summary-total">0₫</span>
+                    </div>
+
+                    <button type="button" class="btn-place-order" id="btn-place-order" onclick="placeOrder()">
+                        <i class="fas fa-check"></i> Đặt Hàng
+                    </button>
+
+                    <a href="/pages/cart/index.html" class="back-to-cart">
+                        <i class="fas fa-arrow-left"></i> Quay lại giỏ hàng
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal chọn địa chỉ -->
+    <div class="address-modal" id="addressModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Chọn Địa Chỉ Nhận Hàng</h3>
+                <button type="button" class="close-modal" onclick="closeAddressModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="address-list">
+                <!-- Render bằng JS -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" onclick="closeAddressModal()">Hủy</button>
+                <button type="button" class="btn-confirm" onclick="confirmAddress()">Xác Nhận</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal thêm địa chỉ mới -->
+    <div class="address-modal" id="addAddressModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm Địa Chỉ Mới</h3>
+                <button type="button" class="close-modal" onclick="closeAddAddressForm()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="add-address-form" class="address-form">
+                    <div class="form-group">
+                        <label>Tên người nhận *</label>
+                        <input type="text" id="new-tennguoinhan" required placeholder="Nguyễn Văn A">
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại *</label>
+                        <input type="text" id="new-sodienthoai" required placeholder="0123456789">
+                    </div>
+                    <div class="form-group">
+                        <label>Địa chỉ chi tiết *</label>
+                        <input type="text" id="new-diachichitiet" required placeholder="123 Đường ABC">
+                    </div>
+                    <div class="form-group">
+                        <label>Phường / Xã *</label>
+                        <input type="text" id="new-phuong" required placeholder="Phường 1">
+                    </div>
+                    <div class="form-group">
+                        <label>Quận / Huyện *</label>
+                        <input type="text" id="new-quan" required placeholder="Quận 1">
+                    </div>
+                    <div class="form-group">
+                        <label>Tỉnh / Thành phố *</label>
+                        <input type="text" id="new-tinh" required placeholder="TP. Hồ Chí Minh">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" onclick="closeAddAddressForm()">Hủy</button>
+                <button type="button" class="btn-confirm" onclick="saveNewAddress()">Lưu Địa Chỉ</button>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="../../assets/js/image.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../components/components.js"></script>
+    <script src="./checkout.js"></script>
+</body>
+
+</html>

@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem("isLoggedIn", "true");
                     // API signin trả về: { success, user: { id, username, fullname, ... } }
                     const user = data.user || {};
+                    localStorage.setItem("user_id", user.id);
                     localStorage.setItem("username", user.username || username);
                     localStorage.setItem("fullname", user.fullname || username);
                     localStorage.setItem("avatar", user.avatar || "../../assets/images/user.webp");

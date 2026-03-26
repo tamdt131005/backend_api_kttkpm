@@ -21,8 +21,52 @@ class UserProductsDAO {
         return rows;
     }
     async getProductById(id) {
-        const [rows] = await pool.execute('SELECT * FROM sanpham WHERE id = ?', [id]);
-        return rows.length > 0 ? rows[0] : null;
+        const [rows] = await pool.execute(`
+            SELECT
+                sp.id,
+                sp.tensanpham,
+                sp.slug,
+                sp.thuonghieu,
+                sp.mota,
+                sp.giaban,
+                sp.giakhuyenmai,
+                sp.hinhanh,
+                sp.an_hien,
+                sp.createdAt,
+                dm.tendanhmuc,
+                dm.slug AS danhmuc_slug,
+                COALESCE(AVG(dg.sao), 0)  AS diem_danhgia,
+                COUNT(DISTINCT dg.id)      AS luot_danhgia,
+                COALESCE(SUM(bt.soluong), 0) AS tong_soluong
+            FROM sanpham sp
+            LEFT JOIN danhmuc dm ON sp.danhmuc_id = dm.id
+            LEFT JOIN bienthesp bt ON sp.id = bt.sanpham_id
+            LEFT JOIN danhgia dg  ON sp.id = dg.sanpham_id AND dg.trang_thai = 'duyety'
+            WHERE sp.id = ? AND sp.an_hien = 1 AND sp.deleted_at IS NULL
+            GROUP BY sp.id, dm.tendanhmuc, dm.slug
+        `, [id]);
+
+        if (rows.length === 0) return null;
+        const product = rows[0];
+
+        const [bienthe] = await pool.execute(`
+            SELECT id, ma_sku, kichthuoc, mausac, soluong, hinhanh
+            FROM bienthesp
+            WHERE sanpham_id = ?
+            ORDER BY mausac, kichthuoc
+        `, [id]);
+
+        const [hinhanhPhu] = await pool.execute(`
+            SELECT ten_file, thu_tu
+            FROM hinhanh_sanpham
+            WHERE sanpham_id = ?
+            ORDER BY thu_tu ASC
+        `, [id]);
+
+        product.bienthe = bienthe;
+        product.hinhanh_phu = hinhanhPhu.map(h => h.ten_file);
+
+        return product;
     }
     async getProductsByCategoryId(categoryId) {
         const [rows] = await pool.execute('SELECT * FROM sanpham WHERE danhmuc_id = ?', [categoryId]);
