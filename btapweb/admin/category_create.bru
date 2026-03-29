@@ -1,0 +1,18 @@
+meta {
+  name: admin_category_create
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:3000/api/admin/danhmuc
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "tendanhmuc": "Danh muc test",
+    "mota": "Mo ta danh muc test"
+  }
+}

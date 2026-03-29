@@ -1,0 +1,20 @@
+meta {
+  name: order_create
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/api/orders
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "user_id": 1,
+    "diachi_id": 1,
+    "ghichu": "Giao gio hanh chinh",
+    "phuongthuc_thanhtoan": "tienmat"
+  }
+}

@@ -1,0 +1,25 @@
+meta {
+  name: admin_product_update
+  type: http
+  seq: 14
+}
+
+put {
+  url: http://localhost:3000/api/admin/sanpham/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "tensanpham": "San pham test update",
+    "danhmuc_id": 1,
+    "thuonghieu": "Brand Test",
+    "mota": "Mo ta cap nhat",
+    "giaban": 260000,
+    "giakhuyenmai": 210000,
+    "hinhanh": "placeholder.jpg",
+    "soluong": 12,
+    "an_hien": 1
+  }
+}

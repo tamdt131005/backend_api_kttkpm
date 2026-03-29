@@ -1,6 +1,3 @@
-const FRONTEND_BASE_PATH = window.location.pathname.includes('/fontend/') ? '/fontend' : '';
-const withFrontendBase = (path) => `${FRONTEND_BASE_PATH}${path}`;
-
 let addresses = [];
 let editingAddressId = null;
 
@@ -16,7 +13,7 @@ function formatAvatar(avatar) {
 async function loadSidebarUser() {
     const userId = getUserId();
     if (!userId) {
-        window.location.href = withFrontendBase('/pages/auth/login.html');
+        window.location.href = '/pages/auth/login.html';
         return false;
     }
 

@@ -1,0 +1,18 @@
+meta {
+  name: address_set_default
+  type: http
+  seq: 3
+}
+
+patch {
+  url: http://localhost:3000/api/address
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 1,
+    "user_id": 1
+  }
+}

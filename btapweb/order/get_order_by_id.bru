@@ -1,0 +1,15 @@
+meta {
+  name: order_get_by_id
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:3000/api/orders/1?user_id=1
+  body: none
+  auth: none
+}
+
+params:query {
+  user_id: 1
+}

@@ -1,10 +1,29 @@
 class AppHeader extends HTMLElement {
     connectedCallback() {
         const isLogged = localStorage.getItem("isLoggedIn") === "true";
+        const role = (localStorage.getItem("role") || "user").toLowerCase();
+        const isAdmin = role === "admin";
         const username = localStorage.getItem("username") || "user_test";
         const fullname = localStorage.getItem("fullname") || "Người dùng";
         const avatarFile = localStorage.getItem("avatar") || "";
         const avatar = imageUtil.avatar(avatarFile);
+
+        const currentPath = window.location.pathname.toLowerCase();
+        if (isLogged && isAdmin && !currentPath.includes('/pages/admin/')) {
+            window.location.href = '/pages/admin/index.html';
+            return;
+        }
+
+        const logoHref = '/index.html';
+        const profileHref = isAdmin
+            ? '/pages/admin/index.html'
+            : '/pages/profile/profile.html';
+        const addressHref = '/pages/profile/address.html';
+        const ordersHref = '/pages/profile/orders.html';
+        const cartHref = '/pages/cart/index.html';
+        const adminHref = '/pages/admin/index.html';
+        const loginHref = '/pages/auth/login.html';
+        const registerHref = '/pages/auth/register.html';
 
         let userHtml = "";
         if (isLogged) {
@@ -12,7 +31,7 @@ class AppHeader extends HTMLElement {
                 <div class="tai-khoan-wrap" id="tai-khoan-dropdown-trigger">
                     <img src="${avatar}" alt="Avatar" class="avatar-nho">
                     <div class="dropdown-menu-user" id="dropdown-menu-user">
-                        <a href="/pages/profile/profile.html" class="user-info-header">
+                        <a href="${profileHref}" class="user-info-header">
                             <img src="${avatar}" alt="Avatar" class="avatar-lon">
                             <div class="user-text">
                                 <span class="ten-user">${username}</span>
@@ -20,20 +39,28 @@ class AppHeader extends HTMLElement {
                             </div>
                         </a>
                         <ul class="danh-sach-menu">
+                            ${isAdmin ? `
                             <li>
-                                <a href="/pages/profile/address.html">
+                                <a href="${adminHref}">
+                                    <span class="icon-ke"><i class="fas fa-user-shield"></i></span>
+                                    Quản trị
+                                </a>
+                            </li>
+                            ` : ''}
+                            <li>
+                                <a href="${addressHref}">
                                     <span class="icon-ke"><i class="fas fa-location-dot"></i></span>
                                     Địa chỉ
                                 </a>
                             </li>
                             <li>
-                                <a href="/pages/profile/orders.html">
+                                <a href="${ordersHref}">
                                     <span class="icon-ke"><i class="fas fa-receipt"></i></span>
                                     Đơn hàng
                                 </a>
                             </li>
                             <li>
-                                <a href="/pages/cart/index.html">
+                                <a href="${cartHref}">
                                     <span class="icon-ke"><i class="fas fa-shopping-cart"></i></span>
                                     Giỏ hàng
                                 </a>
@@ -51,8 +78,8 @@ class AppHeader extends HTMLElement {
         } else {
             userHtml = `
                 <div class="auth-links">
-                    <a href="/pages/auth/login.html" class="btn-login">Đăng nhập</a>
-                    <a href="/pages/auth/register.html" class="btn-register">Đăng ký</a>
+                    <a href="${loginHref}" class="btn-login">Đăng nhập</a>
+                    <a href="${registerHref}" class="btn-register">Đăng ký</a>
                 </div>
             `;
         }
@@ -61,7 +88,7 @@ class AppHeader extends HTMLElement {
             <header class="header-chinh">
                 <div class="header-container">
                     <div class="logo-area">
-                        <a href="/index.html">
+                        <a href="${logoHref}">
                             <img src="/assets/images/logo.svg" alt="Logo">
                         </a>
                     </div>

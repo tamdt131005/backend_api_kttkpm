@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết đơn hàng</title>
+    <link rel="stylesheet" href="../css/donhang_detail.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <header class="page-header">
+            <div>
+                <h1>Chi tiết đơn hàng</h1>
+                <p id="order-subtitle">Thông tin đơn hàng</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn" href="./donhang_list.html">Danh sách đơn hàng</a>
+            </div>
+        </header>
+
+        <section class="card" id="order-info-card">
+            <div id="order-info-grid" class="info-grid"></div>
+            <div class="status-line">
+                <span id="status-text"></span>
+                <span id="payment-status-text"></span>
+            </div>
+            <div id="progress-steps" class="progress-steps"></div>
+            <button id="btn-next-status" class="btn btn-primary" type="button"></button>
+        </section>
+
+        <section class="card">
+            <h2>Sản phẩm trong don</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Phân loại</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-product-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../../assets/js/api.js"></script>
+    <script src="../js/admin.common.js"></script>
+    <script src="../js/donhang_detail.js"></script>
+</body>
+</html>

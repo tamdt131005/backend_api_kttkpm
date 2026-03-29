@@ -1,0 +1,18 @@
+meta {
+  name: admin_category_update
+  type: http
+  seq: 9
+}
+
+put {
+  url: http://localhost:3000/api/admin/danhmuc/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "tendanhmuc": "Danh muc test update",
+    "mota": "Mo ta da cap nhat"
+  }
+}

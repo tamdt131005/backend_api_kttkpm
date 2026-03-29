@@ -2,8 +2,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
 
 const $ = (id) => document.getElementById(id);
-const FRONTEND_BASE_PATH = window.location.pathname.includes('/fontend/') ? '/fontend' : '';
-const withFrontendBase = (path) => `${FRONTEND_BASE_PATH}${path}`;
 
 let bienthe = [];
 let selectedColor = null;
@@ -241,7 +239,7 @@ async function themVaoGio(chuyenCheckout = false) {
     const userId = localStorage.getItem('user_id');
     if (!userId) {
         alert('Vui lòng đăng nhập để tiếp tục.');
-        window.location.href = withFrontendBase('/pages/auth/login.html');
+        window.location.href = '/pages/auth/login.html';
         return;
     }
 
@@ -273,7 +271,7 @@ async function themVaoGio(chuyenCheckout = false) {
         }
 
         if (chuyenCheckout) {
-            window.location.href = withFrontendBase('/pages/checkout/checkout.html');
+            window.location.href = '/pages/checkout/checkout.html';
         } else {
             alert('Đã thêm vào giỏ hàng thành công.');
         }
@@ -306,7 +304,7 @@ function hienthiThongTinSanPham(product) {
     const categoryLink = $("product-link-danhmuc");
     categoryLink.textContent = product.tendanhmuc || "Danh mục";
     categoryLink.href = product.danhmuc_slug
-        ? `${withFrontendBase('/pages/category/index.html')}?slug=${product.danhmuc_slug}`
+        ? `/pages/category/index.html?slug=${product.danhmuc_slug}`
         : '#';
 
     const productNameLink = $("product-link-name");

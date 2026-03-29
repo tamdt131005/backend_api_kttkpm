@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý tồn kho</title>
+    <link rel="stylesheet" href="./css/tonkho_list.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <header class="page-header">
+            <div>
+                <h1>Quản lý tồn kho</h1>
+                <p>Theo dõi tồn kho theo sản phẩm</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn" href="./index.html">Trang chủ</a>
+            </div>
+        </header>
+
+        <section class="card">
+            <form id="filter-form" class="toolbar">
+                <input id="keyword" name="keyword" type="text" placeholder="Tìm sản phẩm">
+                <select id="order" name="order">
+                    <option value="asc">Tồn kho thấp đến cao</option>
+                    <option value="desc">Tồn kho cao đến thấp</option>
+                </select>
+                <select id="status" name="status">
+                    <option value="">Tất cả trạng thái</option>
+                    <option value="hethang">Hết hàng</option>
+                    <option value="saphet">Sắp hết</option>
+                    <option value="conhang">Còn hàng</option>
+                </select>
+                <button class="btn btn-primary" type="submit">Lọc</button>
+            </form>
+
+            <div class="stats-row">
+                <div class="stats-item"><span>Tổng sản phẩm</span><strong id="stats-total">0</strong></div>
+                <div class="stats-item"><span>Hết hàng</span><strong id="stats-hethang">0</strong></div>
+                <div class="stats-item"><span>Sắp hết</span><strong id="stats-saphet">0</strong></div>
+                <div class="stats-item"><span>Còn hàng</span><strong id="stats-conhang">0</strong></div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Danh mục</th>
+                            <th>Tồn kho</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tonkho-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../assets/js/api.js"></script>
+    <script src="./js/admin.common.js"></script>
+    <script src="./js/tonkho_list.js"></script>
+</body>
+</html>

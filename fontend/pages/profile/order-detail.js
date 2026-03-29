@@ -1,6 +1,3 @@
-const FRONTEND_BASE_PATH = window.location.pathname.includes('/fontend/') ? '/fontend' : '';
-const withFrontendBase = (path) => `${FRONTEND_BASE_PATH}${path}`;
-
 function getUserId() {
     const id = Number(localStorage.getItem('user_id'));
     return Number.isInteger(id) && id > 0 ? id : null;
@@ -71,7 +68,7 @@ function parseSnapshotAddress(snapshot) {
 async function loadSidebarUser() {
     const userId = getUserId();
     if (!userId) {
-        window.location.href = withFrontendBase('/pages/auth/login.html');
+        window.location.href = '/pages/auth/login.html';
         return false;
     }
 
@@ -269,7 +266,7 @@ function bindCancelButton(orderId, currentStatus) {
     btn.onclick = async () => {
         const userId = getUserId();
         if (!userId) {
-            window.location.href = withFrontendBase('/pages/auth/login.html');
+            window.location.href = '/pages/auth/login.html';
             return;
         }
 
@@ -314,7 +311,7 @@ async function loadOrderDetail() {
     const orderId = getOrderIdFromUrl();
 
     if (!userId) {
-        window.location.href = withFrontendBase('/pages/auth/login.html');
+        window.location.href = '/pages/auth/login.html';
         return;
     }
 

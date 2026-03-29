@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sửa danh mục</title>
+    <link rel="stylesheet" href="../css/danhmuc_edit.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <header class="page-header">
+            <div>
+                <h1>Sửa danh mục</h1>
+                <p>Cập nhật thông tin danh mục</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn" href="./danhmuc_list.html">Quay lại</a>
+            </div>
+        </header>
+
+        <section class="card">
+            <form id="danhmuc-form" class="form-grid">
+                <div class="field">
+                    <label for="tendanhmuc">Tên danh mục</label>
+                    <input id="tendanhmuc" name="tendanhmuc" type="text" required>
+                </div>
+                <div class="field">
+                    <label for="mota">Mô tả</label>
+                    <textarea id="mota" name="mota" rows="4"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="../../../assets/js/api.js"></script>
+    <script src="../js/admin.common.js"></script>
+    <script src="../js/danhmuc_edit.js"></script>
+</body>
+</html>

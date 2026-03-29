@@ -1,6 +1,3 @@
-const FRONTEND_BASE_PATH = window.location.pathname.includes('/fontend/') ? '/fontend' : '';
-const withFrontendBase = (path) => `${FRONTEND_BASE_PATH}${path}`;
-
 let profile = {};
 
 function getUserId() {
@@ -126,7 +123,7 @@ function buildUpdatePayload(userId) {
 async function getUser() {
     const userId = getUserId();
     if (!userId) {
-        window.location.href = withFrontendBase('/pages/auth/login.html');
+        window.location.href = '/pages/auth/login.html';
         return;
     }
 
@@ -149,7 +146,7 @@ async function updateProfile(event) {
 
     const userId = getUserId();
     if (!userId) {
-        window.location.href = withFrontendBase('/pages/auth/login.html');
+        window.location.href = '/pages/auth/login.html';
         return;
     }
 

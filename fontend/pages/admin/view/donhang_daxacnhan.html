@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn hàng đã xác nhận</title>
+    <link rel="stylesheet" href="../css/donhang_daxacnhan.css">
+</head>
+<body data-status="daxacnhan">
+    <main class="page-wrap">
+        <header class="page-header">
+            <div>
+                <h1>Quản lý đơn hàng</h1>
+                <p>Danh sách đơn hàng đã xác nhận</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn" href="../index.html">Trang chủ</a>
+            </div>
+        </header>
+
+        <section class="card">
+            <nav class="status-tabs" id="status-tabs">
+                <a href="./donhang_all.html" data-status-link="all">Tất cả</a>
+                <a href="./donhang_choxacnhan.html" data-status-link="choxacnhan">Chờ xác nhận</a>
+                <a href="./donhang_daxacnhan.html" data-status-link="daxacnhan">Đã xác nhận</a>
+                <a href="./donhang_dangxuly.html" data-status-link="dangxuly">Đang xử lý</a>
+                <a href="./donhang_danggiao.html" data-status-link="danggiao">Đang giao</a>
+                <a href="./donhang_dagiao.html" data-status-link="dagiao">Đã giao</a>
+            </nav>
+
+            <form id="search-form" class="toolbar">
+                <input id="keyword" type="text" placeholder="Tìm theo mã đơn, tên, email, SĐT">
+                <button type="submit" class="btn btn-primary">Tìm</button>
+            </form>
+
+            <div id="page-message" class="message"></div>
+
+            <div class="stats-row">
+                <div class="stats-item"><span>Tất cả</span><strong id="stats-tatca">0</strong></div>
+                <div class="stats-item"><span>Chờ xác nhận</span><strong id="stats-choxacnhan">0</strong></div>
+                <div class="stats-item"><span>Đã xác nhận</span><strong id="stats-daxacnhan">0</strong></div>
+                <div class="stats-item"><span>Đang xử lý</span><strong id="stats-dangxuly">0</strong></div>
+                <div class="stats-item"><span>Đang giao</span><strong id="stats-danggiao">0</strong></div>
+                <div class="stats-item"><span>Đã giao</span><strong id="stats-dagiao">0</strong></div>
+                <div class="stats-item"><span>Đã hủy</span><strong id="stats-dahuy">0</strong></div>
+                <div class="stats-item"><span>Tổng doanh thu</span><strong id="stats-doanhthu">0</strong></div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Khách hàng</th>
+                            <th>Trạng thái</th>
+                            <th>Thanh toán</th>
+                            <th>Tổng tiền</th>
+                            <th>Ngày tạo</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="donhang-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../../assets/js/api.js"></script>
+    <script src="../js/admin.common.js"></script>
+    <script src="../js/donhang_list.js"></script>
+</body>
+</html>

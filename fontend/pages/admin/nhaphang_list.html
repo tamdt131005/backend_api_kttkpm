@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý nhập hàng</title>
+    <link rel="stylesheet" href="./css/nhaphang_list.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <header class="page-header">
+            <div>
+                <h1>Quản lý nhập hàng</h1>
+                <p>Lịch sử phiếu nhập kho</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn" href="./index.html">Trang chủ</a>
+                <a class="btn btn-primary" href="./nhaphang_add.html">Thêm phiếu nhập</a>
+            </div>
+        </header>
+
+        <section class="card">
+            <form id="search-form" class="toolbar">
+                <input id="keyword" type="text" placeholder="Tìm theo tên sản phẩm">
+                <button class="btn btn-primary" type="submit">Tìm</button>
+            </form>
+            <div id="page-message" class="message"></div>
+            <div class="stats-row">
+                <div class="stats-item">
+                    <span>Tổng dòng</span>
+                    <strong id="stats-count">0</strong>
+                </div>
+                <div class="stats-item">
+                    <span>Tổng số lượng</span>
+                    <strong id="stats-soluong">0</strong>
+                </div>
+                <div class="stats-item">
+                    <span>Tổng tiền</span>
+                    <strong id="stats-tongtien">0</strong>
+                </div>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phiếu</th>
+                            <th>Ngày</th>
+                            <th>Sản phẩm</th>
+                            <th>Phân loại</th>
+                            <th>Số lượng</th>
+                            <th>Đơn giá</th>
+                            <th>Thành tiền</th>
+                            <th>Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody id="nhaphang-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../assets/js/api.js"></script>
+    <script src="./js/admin.common.js"></script>
+    <script src="./js/nhaphang_list.js"></script>
+</body>
+</html>

@@ -16,16 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem("isLoggedIn", "true");
                     // API signin trả về: { success, user: { id, username, fullname, ... } }
                     const user = data.user || {};
+                    const role = String(user.role || "user").toLowerCase();
                     localStorage.setItem("user_id", user.id);
                     localStorage.setItem("username", user.username || username);
                     localStorage.setItem("fullname", user.fullname || username);
                     localStorage.setItem("avatar", user.avatar || "../../assets/images/user.webp");
+                    localStorage.setItem("role", role);
 
                     // không dùng jwt
                     // if (data.token || data.data?.token) {
                     //     localStorage.setItem("token", data.token || data.data.token);
                     // }
-                    window.location.href = "../../index.html";
+                    if (role === "admin") {
+                        window.location.href = "../../pages/admin/index.html";
+                    } else {
+                        window.location.href = "../../index.html";
+                    }
                 } else {
                     errorDiv.style.display = "flex";
                     errorText.innerText = data.message || "Tên đăng nhập hoặc mật khẩu không đúng.";

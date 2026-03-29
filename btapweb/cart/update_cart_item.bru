@@ -1,0 +1,18 @@
+meta {
+  name: cart_update_item
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:3000/api/cart/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "user_id": 1,
+    "soluong": 2
+  }
+}

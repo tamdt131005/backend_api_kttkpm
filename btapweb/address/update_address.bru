@@ -4,8 +4,21 @@ meta {
   seq: 1
 }
 
-get {
+put {
   url: http://localhost:3000/api/address/1
-  body: none
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "user_id": 1,
+    "tennguoinhan": "Nguyen Van A",
+    "sodienthoai": "0912345678",
+    "diachichitiet": "123 Duong ABC",
+    "phuong": "Phuong 1",
+    "quan": "Quan 1",
+    "tinh": "TP HCM",
+    "macdinh": 1
+  }
 }

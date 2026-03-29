@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách danh mục</title>
+    <link rel="stylesheet" href="../css/danhmuc_list.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <header class="page-header">
+            <div>
+                <h1>Quản lý danh mục</h1>
+                <p>Danh sách danh mục hien tai</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn" href="../index.html">Trang chủ</a>
+                <a class="btn btn-primary" href="./danhmuc_add.html">Thêm danh mục</a>
+            </div>
+        </header>
+
+        <section class="card">
+            <form id="search-form" class="toolbar">
+                <input id="keyword" type="text" placeholder="Tìm tên danh mục">
+                <button class="btn btn-primary" type="submit">Tìm</button>
+            </form>
+
+            <div class="stats-row">
+                <div class="stats-item"><span>Tổng danh mục</span><strong id="stats-total">0</strong></div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên danh mục</th>
+                            <th>Slug</th>
+                            <th>Số sản phẩm</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="danhmuc-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../../assets/js/api.js"></script>
+    <script src="../js/admin.common.js"></script>
+    <script src="../js/danhmuc_list.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+meta {
+  name: admin_product_create
+  type: http
+  seq: 13
+}
+
+post {
+  url: http://localhost:3000/api/admin/sanpham
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "tensanpham": "San pham test",
+    "danhmuc_id": 1,
+    "thuonghieu": "Brand Test",
+    "mota": "Mo ta san pham test",
+    "giaban": 250000,
+    "giakhuyenmai": 200000,
+    "hinhanh": "placeholder.jpg",
+    "soluong": 10,
+    "an_hien": 1
+  }
+}

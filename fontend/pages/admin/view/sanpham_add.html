@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sản phẩm</title>
+    <link rel="stylesheet" href="../css/sanpham_add.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <header class="page-header">
+            <div>
+                <h1>Thêm sản phẩm</h1>
+                <p>Tạo sản phẩm mới</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn" href="./sanpham_list.html">Quay lại</a>
+            </div>
+        </header>
+
+        <section class="card">
+            <form id="sanpham-form" class="form-grid">
+                <div class="field">
+                    <label for="tensanpham">Tên sản phẩm</label>
+                    <input id="tensanpham" name="tensanpham" type="text" required>
+                </div>
+                <div class="field">
+                    <label for="danhmuc_id">Danh mục</label>
+                    <select id="danhmuc_id" name="danhmuc_id" required></select>
+                </div>
+                <div class="field">
+                    <label for="thuonghieu">Thương hiệu</label>
+                    <input id="thuonghieu" name="thuonghieu" type="text">
+                </div>
+                <div class="field">
+                    <label for="giaban">Giá bán</label>
+                    <input id="giaban" name="giaban" type="number" min="1000" step="1000" required>
+                </div>
+                <div class="field">
+                    <label for="giakhuyenmai">Giá khuyến mãi</label>
+                    <input id="giakhuyenmai" name="giakhuyenmai" type="number" min="0" step="1000">
+                </div>
+                <div class="field">
+                    <label for="soluong">Số lượng mặc định</label>
+                    <input id="soluong" name="soluong" type="number" min="0" step="1" value="0">
+                </div>
+                <div class="field">
+                    <label for="hinhanh">Hình ảnh</label>
+                    <input id="hinhanh" name="hinhanh" type="text" placeholder="ten-file.jpg hoặc url">
+                </div>
+                <div class="field checkbox-field">
+                    <label><input id="an_hien" type="checkbox" checked> Hiển thị</label>
+                </div>
+                <div class="field field-full">
+                    <label for="mota">Mô tả</label>
+                    <textarea id="mota" name="mota" rows="4"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit">Lưu sản phẩm</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="../../../assets/js/api.js"></script>
+    <script src="../js/admin.common.js"></script>
+    <script src="../js/sanpham_add.js"></script>
+</body>
+</html>

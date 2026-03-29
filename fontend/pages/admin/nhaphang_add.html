@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm phiếu nhập</title>
+    <link rel="stylesheet" href="./css/nhaphang_add.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <header class="page-header">
+            <div>
+                <h1>Thêm phiếu nhập</h1>
+                <p>Nhập chi tiết phiếu nhập kho</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn" href="./nhaphang_list.html">Quay lại</a>
+            </div>
+        </header>
+
+        <section class="card">
+            <form id="formNhaphang">
+                <div class="field">
+                    <label for="ghichu_phieu">Ghi chú phieu</label>
+                    <textarea id="ghichu_phieu" name="ghichu_phieu" rows="3" placeholder="Nhập ghi chú phiếu"></textarea>
+                </div>
+
+                <div class="table-wrap">
+                    <table id="bangNhap">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Biến thể sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá</th>
+                                <th>Ghi chú</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr id="dongMau" class="hidden-row">
+                                <td><span class="row-number">1</span></td>
+                                <td>
+                                    <input list="ds_bienthe" name="tenbienthe[]" placeholder="Gõ tên biến thể">
+                                    <input type="hidden" name="bienthe_id[]">
+                                </td>
+                                <td><input type="number" name="soluong[]" min="1" placeholder="0"></td>
+                                <td><input type="number" name="dongia[]" min="1000" step="1000" placeholder="0"></td>
+                                <td><input type="text" name="ghichu[]" placeholder="Ghi chú"></td>
+                                <td><button type="button" class="btn btn-danger" onclick="xoaDong(this)">Xóa</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn" id="btnThemDong">Thêm dòng</button>
+                    <button type="submit" class="btn btn-primary" id="btnLuu">Lưu phiếu nhập</button>
+                </div>
+            </form>
+        </section>
+
+        <datalist id="ds_bienthe"></datalist>
+    </main>
+
+    <script src="../../assets/js/api.js"></script>
+    <script src="./js/admin.common.js"></script>
+    <script src="./js/nhaphang_add.js"></script>
+</body>
+</html>

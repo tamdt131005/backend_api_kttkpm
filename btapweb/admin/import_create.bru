@@ -1,0 +1,25 @@
+meta {
+  name: admin_import_create
+  type: http
+  seq: 18
+}
+
+post {
+  url: http://localhost:3000/api/admin/nhaphang
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ghichu_phieu": "Nhap hang test",
+    "rows": [
+      {
+        "bienthe_id": 1,
+        "soluong": 10,
+        "dongia": 120000,
+        "ghichu": "Dong test 1"
+      }
+    ]
+  }
+}

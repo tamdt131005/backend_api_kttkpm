@@ -1,9 +1,20 @@
 meta {
-  name: signup
+  name: auth_signup
   type: http
   seq: 1
 }
 
-get {
-  url: 
+post {
+  url: http://localhost:3000/api/auth/signup
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "new_user_test",
+    "password": "password123",
+    "fullname": "New User Test",
+    "email": "new_user_test@example.com"
+  }
 }

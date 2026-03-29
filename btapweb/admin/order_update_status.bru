@@ -1,0 +1,18 @@
+meta {
+  name: admin_order_update_status
+  type: http
+  seq: 4
+}
+
+patch {
+  url: http://localhost:3000/api/admin/donhang/1/trangthai
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "trangthai": "daxacnhan",
+    "nguoidung_id": 1
+  }
+}

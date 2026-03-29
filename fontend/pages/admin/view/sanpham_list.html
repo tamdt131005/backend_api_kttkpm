@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <link rel="stylesheet" href="../css/sanpham_list.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <header class="page-header">
+            <div>
+                <h1>Quản lý sản phẩm</h1>
+                <p>Danh sách sản phẩm hien tai</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn" href="../index.html">Trang chủ</a>
+                <a class="btn btn-primary" href="./sanpham_add.html">Thêm sản phẩm</a>
+            </div>
+        </header>
+
+        <section class="card">
+            <form id="search-form" class="toolbar">
+                <input id="keyword" type="text" placeholder="Tìm tên sản phẩm">
+                <button class="btn btn-primary" type="submit">Tìm</button>
+            </form>
+
+            <div class="stats-row">
+                <div class="stats-item"><span>Tổng sản phẩm</span><strong id="stats-total">0</strong></div>
+                <div class="stats-item"><span>Còn hàng</span><strong id="stats-conhang">0</strong></div>
+                <div class="stats-item"><span>Hết hàng</span><strong id="stats-hethang">0</strong></div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Danh mục</th>
+                            <th>Giá bán</th>
+                            <th>Gia KM</th>
+                            <th>Tồn kho</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sanpham-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../../assets/js/api.js"></script>
+    <script src="../js/admin.common.js"></script>
+    <script src="../js/sanpham_list.js"></script>
+</body>
+</html>

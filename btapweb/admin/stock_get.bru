@@ -1,0 +1,17 @@
+meta {
+  name: admin_stock_get
+  type: http
+  seq: 16
+}
+
+get {
+  url: http://localhost:3000/api/admin/tonkho?keyword=&order=asc&status=
+  body: none
+  auth: none
+}
+
+params:query {
+  keyword: 
+  order: asc
+  status: 
+}

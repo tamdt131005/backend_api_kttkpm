@@ -1,0 +1,23 @@
+meta {
+  name: profile_update
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:3000/api/profile
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 1,
+    "email": "user1@example.com",
+    "fullname": "User One",
+    "phone": "0912345678",
+    "sex": "Nam",
+    "ngaysinh": "2000-01-01",
+    "avatar": "avatar_default.jpg"
+  }
+}

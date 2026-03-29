@@ -1,0 +1,17 @@
+meta {
+  name: admin_order_update_payment_status
+  type: http
+  seq: 5
+}
+
+patch {
+  url: http://localhost:3000/api/admin/donhang/1/trangthai-thanhtoan
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "trangthai": "dathanhtoan"
+  }
+}
