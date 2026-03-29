@@ -1,0 +1,50 @@
+{
+  "success": true,
+  "message": "Lấy thông tin sản phẩm thành công",
+  "data": {
+    "id": 1,
+    "tensanpham": "Áo thun basic đen",
+    "slug": "ao-thun-den",
+    "thuonghieu": "Nike",
+    "mota": "Cotton 100%",
+    "giaban": "200000.00",
+    "giakhuyenmai": "150000.00",
+    "hinhanh": "anh1.jpg",
+    "an_hien": 1,
+    "createdAt": "2026-03-25T09:46:42.000Z",
+    "tendanhmuc": "Áo thun",
+    "danhmuc_slug": "ao-thun-nam",
+    "diem_danhgia": "5.0000",
+    "luot_danhgia": 1,
+    "tong_soluong": "105",
+    "bienthe": [
+      {
+        "id": 2,
+        "ma_sku": "SP1-M-DEN",
+        "kichthuoc": "M",
+        "mausac": "Đen",
+        "soluong": 40,
+        "hinhanh": null
+      },
+      {
+        "id": 1,
+        "ma_sku": "SP1-S-DEN",
+        "kichthuoc": "S",
+        "mausac": "Đen",
+        "soluong": 50,
+        "hinhanh": null
+      },
+      {
+        "id": 10,
+        "ma_sku": "SP1-L-Xanh",
+        "kichthuoc": "L",
+        "mausac": "Xanh",
+        "soluong": 15,
+        "hinhanh": null
+      }
+    ],
+    "hinhanh_phu": [
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c"
+    ]
+  }
+}

@@ -76,7 +76,7 @@ class OrderService {
                 }
             }
 
-            await orderDAO.addOrderHistory(connection, donhangId, user_id, 'cho_xac_nhan', 'Đặt hàng mới');
+            await orderDAO.addOrderHistory(connection, donhangId, user_id, 'choxacnhan', 'Đặt hàng mới');
 
             // Xóa giỏ hàng
             await connection.execute(`DELETE FROM giohang WHERE user_id = ?`, [user_id]);
@@ -102,6 +102,49 @@ class OrderService {
             throw { status: 404, message: "Không tìm thấy đơn hàng" };
         }
         return order;
+    }
+
+    async cancelOrder(orderId, userId, lydoHuy) {
+        const connection = await pool.getConnection();
+        try {
+            await connection.beginTransaction();
+
+            const order = await orderDAO.getOrderRowForUser(connection, orderId, userId);
+            if (!order) {
+                throw { status: 404, message: "Không tìm thấy đơn hàng" };
+            }
+
+            if (order.trangthai !== 'choxacnhan') {
+                throw { status: 400, message: "Chỉ được hủy đơn hàng ở trạng thái chờ xác nhận" };
+            }
+
+            const details = await orderDAO.getOrderItems(connection, orderId);
+            for (const item of details) {
+                if (item.bienthe_id) {
+                    await orderDAO.restoreVariantStock(connection, item.bienthe_id, item.soluong);
+                }
+            }
+
+            const affectedRows = await orderDAO.cancelOrder(connection, orderId, lydoHuy);
+            if (affectedRows <= 0) {
+                throw { status: 400, message: "Không thể hủy đơn hàng" };
+            }
+
+            await orderDAO.addOrderHistory(
+                connection,
+                Number(orderId),
+                Number(userId),
+                'dahuy',
+                lydoHuy || 'Người dùng hủy đơn'
+            );
+
+            await connection.commit();
+        } catch (error) {
+            await connection.rollback();
+            throw error;
+        } finally {
+            connection.release();
+        }
     }
 }
 

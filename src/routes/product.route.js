@@ -5,6 +5,7 @@ import { validateProductId, validateCategoryId } from '../validation/product.val
 const router = express.Router();
 
 router.get('/', userProductsController.index);
+router.get('/search', userProductsController.search);
 router.get('/:id', validateProductId, userProductsController.productDetail);
 router.get('/category/:category_id', validateCategoryId, userProductsController.getProductsByCategoryId);
 

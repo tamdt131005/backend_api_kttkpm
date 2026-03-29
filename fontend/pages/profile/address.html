@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Địa chỉ của tôi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="./address.css">
+</head>
+
+<body>
+    <app-header></app-header>
+
+    <div class="address-container">
+        <div class="cardleft">
+            <div class="cardleft-info">
+                <div class="avatar">
+                    <img id="avatar-img" src="" alt="Avatar">
+                </div>
+                <div class="cardleft-name">
+                    <h2 id="username">Người dùng</h2>
+                    <a href="./profile.html" class="edit-profile-button"><span>Chỉnh sửa hồ sơ</span></a>
+                </div>
+            </div>
+
+            <div class="cardleft-menu-container">
+                <ul class="cardleft-menu">
+                    <li><a href="./address.html" class="cardleft-menu-chose"><i class="fa-solid fa-location-crosshairs"></i>Địa chỉ</a></li>
+                    <li><a href="./orders.html"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="input-info">
+            <div class="address-form-container">
+                <h2>Địa chỉ của tôi</h2>
+                <button class="btn-primary" id="openModal"><i class="fa-solid fa-plus"></i> Thêm địa chỉ mới</button>
+            </div>
+
+            <div class="address-list-container">
+                <span class="address-title">Địa chỉ</span>
+                <div id="address-list"></div>
+                <p id="address-empty" class="address-empty" style="display:none;">Bạn chưa có địa chỉ nào</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="addressModal" class="modal">
+        <div class="modal-content">
+            <h2>Địa chỉ mới</h2>
+            <form id="add-address-form">
+                <div class="form-group">
+                    <input type="text" id="add-tennguoinhan" name="fullname" placeholder="Tên người nhận" required>
+                    <input type="text" id="add-sodienthoai" name="phone" placeholder="Số điện thoại" required>
+                    <input type="text" id="add-tinh" name="city" placeholder="Tỉnh/Thành phố" required>
+                    <input type="text" id="add-quan" name="quan" placeholder="Quận/Huyện" required>
+                    <input type="text" id="add-phuong" name="district" placeholder="Phường/Xã" required>
+                    <textarea id="add-diachichitiet" name="address_detail" placeholder="Địa chỉ chi tiết" required></textarea>
+                </div>
+                <div class="form-group-checkbox">
+                    <input type="checkbox" id="add-macdinh" name="default_address" value="1">
+                    <label for="add-macdinh">Đặt làm địa chỉ mặc định</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="closeModal">Trở lại</button>
+                    <button type="submit">Hoàn thành</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="addressModalEdit" class="modal">
+        <div class="modal-content">
+            <h2>Sửa địa chỉ</h2>
+            <form id="edit-address-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <input type="text" id="edit-tennguoinhan" name="fullname" placeholder="Tên người nhận" required>
+                    <input type="text" id="edit-sodienthoai" name="phone" placeholder="Số điện thoại" required>
+                    <input type="text" id="edit-tinh" name="city" placeholder="Tỉnh/Thành phố" required>
+                    <input type="text" id="edit-quan" name="quan" placeholder="Quận/Huyện" required>
+                    <input type="text" id="edit-phuong" name="district" placeholder="Phường/Xã" required>
+                    <textarea id="edit-diachichitiet" name="address_detail" placeholder="Địa chỉ chi tiết" required></textarea>
+                </div>
+                <div class="form-group-checkbox">
+                    <input type="checkbox" id="edit-macdinh" name="default_address" value="1">
+                    <label for="edit-macdinh">Đặt làm địa chỉ mặc định</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="closeModalEdit">Trở lại</button>
+                    <button type="submit">Hoàn thành</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../assets/js/image.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../components/components.js"></script>
+    <script src="./address.js"></script>
+</body>
+
+</html>

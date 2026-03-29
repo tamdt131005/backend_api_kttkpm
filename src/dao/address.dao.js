@@ -1,55 +1,42 @@
 import pool from "../config/db.js";
 
-class AddressDAO {
-    // Lấy danh sách địa chỉ của user (chưa bị xóa mềm)
-    async getAddressesByUserId(userId) {
-        const [rows] = await pool.execute(`
-            SELECT * FROM diachigiaohang 
-            WHERE user_id = ? AND deleted_at IS NULL
-            ORDER BY macdinh DESC, id DESC
-        `, [userId]);
+class AddressDao{
+    async postAddress(user_id, addressData){
+        const { tennguoinhan, sodienthoai, diachichitiet, phuong, quan, tinh } = addressData;
+        const [row] = await pool.execute('INSERT INTO diachigiaohang (user_id, tennguoinhan, sodienthoai, diachichitiet, phuong, quan, tinh) VALUES (?,?,?,?,?,?,?)',[user_id, tennguoinhan, sodienthoai, diachichitiet, phuong, quan, tinh])
+        return row.insertId;
+    }
+
+    async conditionMacDinh(id,user_id){
+        await pool.execute('UPDATE diachigiaohang SET macdinh = 0 WHERE user_id = ?',[user_id]);
+        const [row] = await pool.execute('UPDATE diachigiaohang SET macdinh = 1 WHERE user_id = ? AND id = ?',[user_id, id]);
+        return row.affectedRows;
+    }
+
+    async getAllAddress(user_id){
+        const [rows] = await pool.execute('SELECT * FROM diachigiaohang WHERE user_id = ?',[user_id]);
         return rows;
     }
 
-    // Lấy 1 địa chỉ cụ thể
-    async getAddressById(id, userId) {
-        const [rows] = await pool.execute(`
-            SELECT * FROM diachigiaohang 
-            WHERE id = ? AND user_id = ? AND deleted_at IS NULL
-        `, [id, userId]);
+    async getAddressById(id, user_id){
+        const [rows] = await pool.execute('SELECT * FROM diachigiaohang WHERE id = ? AND user_id = ?',[id, user_id]);
         return rows[0] || null;
     }
 
-    // Tạo địa chỉ mới
-    async createAddress(userId, data) {
-        const { tennguoinhan, sodienthoai, diachichitiet, phuong, quan, tinh, macdinh } = data;
-
-        if (macdinh) {
-            await pool.execute(`
-                UPDATE diachigiaohang SET macdinh = 0 
-                WHERE user_id = ? AND deleted_at IS NULL
-            `, [userId]);
-        }
-
-        const [result] = await pool.execute(`
-            INSERT INTO diachigiaohang (user_id, tennguoinhan, sodienthoai, diachichitiet, phuong, quan, tinh, macdinh)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        `, [userId, tennguoinhan, sodienthoai, diachichitiet, phuong, quan, tinh, macdinh ? 1 : 0]);
-        return result.insertId;
+    async getIdAddress(id){
+        const [row] = await pool.execute('SELECT * FROM diachigiaohang WHERE id = ?',[id]);
+        return row;
     }
 
-    // Đặt địa chỉ mặc định
-    async setDefault(id, userId) {
-        await pool.execute(`
-            UPDATE diachigiaohang SET macdinh = 0 
-            WHERE user_id = ? AND deleted_at IS NULL
-        `, [userId]);
-        const [result] = await pool.execute(`
-            UPDATE diachigiaohang SET macdinh = 1 
-            WHERE id = ? AND user_id = ?
-        `, [id, userId]);
-        return result.affectedRows;
+    async putAddress(id, addressData) {
+        const { tennguoinhan, sodienthoai, diachichitiet, phuong, quan, tinh} = addressData;
+        const [row] = await pool.execute('UPDATE diachigiaohang SET tennguoinhan = ?, sodienthoai = ?, diachichitiet = ?, phuong = ?, quan = ?, tinh = ? WHERE id = ?', [tennguoinhan, sodienthoai, diachichitiet, phuong, quan, tinh, id]);
+        return row.affectedRows;
+    }
+
+    async deleteAddress(id){
+        const [row] = await pool.execute('DELETE FROM diachigiaohang WHERE id = ? and macdinh = 0',[id]);
+        return row.affectedRows;
     }
 }
-
-export default new AddressDAO();
+export default new AddressDao();

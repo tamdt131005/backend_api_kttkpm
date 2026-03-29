@@ -51,6 +51,24 @@ class OrderController {
             res.status(status).json({ success: false, message: error.message || "Lỗi Server" });
         }
     }
+
+    async cancelOrder(req, res) {
+        try {
+            const orderId = req.params.id;
+            const { user_id, lydo_huy } = req.body;
+
+            if (!user_id) {
+                return res.status(400).json({ success: false, message: "Thiếu user_id" });
+            }
+
+            await orderService.cancelOrder(orderId, user_id, lydo_huy);
+            res.status(200).json({ success: true, message: "Hủy đơn hàng thành công" });
+        } catch (error) {
+            const status = error.status || 500;
+            console.error("Lỗi hủy đơn hàng:", error);
+            res.status(status).json({ success: false, message: error.message || "Lỗi Server" });
+        }
+    }
 }
 
 export default new OrderController();

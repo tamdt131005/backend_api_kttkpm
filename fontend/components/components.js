@@ -12,7 +12,7 @@ class AppHeader extends HTMLElement {
                 <div class="tai-khoan-wrap" id="tai-khoan-dropdown-trigger">
                     <img src="${avatar}" alt="Avatar" class="avatar-nho">
                     <div class="dropdown-menu-user" id="dropdown-menu-user">
-                        <a href="#" class="user-info-header">
+                        <a href="/pages/profile/profile.html" class="user-info-header">
                             <img src="${avatar}" alt="Avatar" class="avatar-lon">
                             <div class="user-text">
                                 <span class="ten-user">${username}</span>
@@ -21,9 +21,15 @@ class AppHeader extends HTMLElement {
                         </a>
                         <ul class="danh-sach-menu">
                             <li>
-                                <a href="#">
+                                <a href="/pages/profile/address.html">
                                     <span class="icon-ke"><i class="fas fa-location-dot"></i></span>
                                     Địa chỉ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/profile/orders.html">
+                                    <span class="icon-ke"><i class="fas fa-receipt"></i></span>
+                                    Đơn hàng
                                 </a>
                             </li>
                             <li>
@@ -54,14 +60,12 @@ class AppHeader extends HTMLElement {
         this.innerHTML = `
             <header class="header-chinh">
                 <div class="header-container">
-                    <!-- Logo -->
                     <div class="logo-area">
                         <a href="/index.html">
                             <img src="/assets/images/logo.svg" alt="Logo">
                         </a>
                     </div>
 
-                    <!-- Search Bar -->
                     <div class="search-area">
                         <form class="form-tim-kiem nav-search" action="/pages/category/index.html" method="get">
                             <input type="text" name="q" id="search-input" placeholder="Tìm kiếm sản phẩm..." autocomplete="off">
@@ -80,7 +84,6 @@ class AppHeader extends HTMLElement {
                         </form>
                     </div>
 
-                    <!-- User Actions -->
                     <div class="user-area">
                         ${userHtml}
                     </div>
@@ -101,7 +104,136 @@ class AppHeader extends HTMLElement {
                     dropdown.classList.remove('hien-thi');
                 }
             });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    dropdown.classList.remove('hien-thi');
+                }
+            });
         }
+
+        const searchInput = this.querySelector('#search-input');
+        const searchResults = this.querySelector('#search-results');
+        const searchItems = this.querySelector('#search-items');
+        const searchLoading = this.querySelector('#search-loading');
+        const searchEmpty = this.querySelector('#search-empty');
+        const navSearch = this.querySelector('.nav-search');
+
+        if (!searchInput || !searchResults || !searchItems || !searchLoading || !searchEmpty || !navSearch) return;
+
+        let searchTimeout = null;
+        let currentSearchQuery = '';
+
+        function dinhDangGia(price) {
+            return Math.round(Number(price) || 0).toLocaleString('vi-VN');
+        }
+
+        function khongcokq() {
+            searchItems.innerHTML = '';
+            searchEmpty.style.display = 'block';
+        }
+
+        function anketqua() {
+            searchResults.style.display = 'none';
+            searchItems.innerHTML = '';
+            searchLoading.style.display = 'none';
+            searchEmpty.style.display = 'none';
+        }
+
+        function fillkq(products) {
+            searchItems.innerHTML = '';
+            searchEmpty.style.display = 'none';
+
+            products.forEach((product) => {
+                const item = document.createElement('a');
+                item.className = 'search-item';
+                item.href = `/pages/product/productdetail.html?id=${product.sanpham_id}`;
+
+                const imageSrc = imageUtil.product(product.hinhanh || '');
+                const giaban = Number(product.giaban) || 0;
+                const giakhuyenmai = Number(product.giakhuyenmai) || 0;
+                const hasDiscount = giakhuyenmai > 0 && giakhuyenmai < giaban;
+                const displayPrice = hasDiscount ? giakhuyenmai : giaban;
+                const highlightedName = product.tensanpham || '';
+
+                item.innerHTML = `
+                    <img src="${imageSrc}" alt="${highlightedName}" class="search-item-image">
+                    <div class="search-item-info">
+                        <div class="search-item-name">${highlightedName}</div>
+                        <div class="search-item-price">
+                            <span class="search-item-price-sale">${dinhDangGia(displayPrice)}₫</span>
+                            ${hasDiscount ? `<span class="search-item-price-original">${dinhDangGia(giaban)}₫</span>` : ''}
+                        </div>
+                    </div>
+                `;
+
+                searchItems.appendChild(item);
+            });
+        }
+
+        function timkiem(query) {
+            if (searchTimeout) {
+                clearTimeout(searchTimeout);
+            }
+
+            if (!query || query.length < 2) {
+                anketqua();
+                return;
+            }
+
+            searchResults.style.display = 'block';
+            searchLoading.style.display = 'block';
+            searchItems.innerHTML = '';
+            searchEmpty.style.display = 'none';
+
+            searchTimeout = setTimeout(async () => {
+                try {
+                    const data = await api.get(`/products/search?q=${encodeURIComponent(query)}&limit=6`);
+
+                    if (query !== currentSearchQuery) return;
+
+                    searchLoading.style.display = 'none';
+
+                    if (data.success && Array.isArray(data.data) && data.data.length > 0) {
+                        fillkq(data.data);
+                    } else {
+                        khongcokq();
+                    }
+                } catch (error) {
+                    if (query !== currentSearchQuery) return;
+                    searchLoading.style.display = 'none';
+                    khongcokq();
+                }
+            }, 300);
+        }
+
+        searchInput.addEventListener('input', function (e) {
+            currentSearchQuery = e.target.value.trim();
+            timkiem(currentSearchQuery);
+        });
+
+        searchInput.addEventListener('focus', function () {
+            if (currentSearchQuery && currentSearchQuery.length >= 2) {
+                timkiem(currentSearchQuery);
+            }
+        });
+
+        searchInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                anketqua();
+                searchInput.blur();
+            }
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.nav-search')) {
+                anketqua();
+            }
+        });
+
+        searchResults.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
     }
 }
 customElements.define('app-header', AppHeader);

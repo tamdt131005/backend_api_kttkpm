@@ -20,6 +20,36 @@ class UserProductsDAO {
                 LIMIT 8`);
         return rows;
     }
+
+    async searchProducts(keyword, limit) {
+        const q = `%${keyword}%`;
+        const qStart = `${keyword}%`;
+        const limitNumber = Number.isInteger(limit) && limit > 0 ? limit : 6;
+        const [rows] = await pool.execute(`
+            SELECT
+                sp.id AS sanpham_id,
+                sp.tensanpham,
+                sp.giaban,
+                COALESCE(sp.giakhuyenmai, 0) AS giakhuyenmai,
+                sp.hinhanh
+            FROM sanpham sp
+            WHERE sp.an_hien = 1
+              AND sp.deleted_at IS NULL
+              AND (
+                sp.tensanpham LIKE ?
+                OR sp.slug LIKE ?
+                OR COALESCE(sp.thuonghieu, '') LIKE ?
+              )
+            ORDER BY
+                CASE WHEN sp.tensanpham LIKE ? THEN 0 ELSE 1 END,
+                sp.updatedAt DESC,
+                sp.id DESC
+            LIMIT ${limitNumber}
+        `, [q, q, q, qStart]);
+
+        return rows;
+    }
+
     async getProductById(id) {
         const [rows] = await pool.execute(`
             SELECT

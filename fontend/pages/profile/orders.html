@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn hàng của tôi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="./orders.css">
+</head>
+
+<body>
+    <app-header></app-header>
+
+    <div class="profile-container">
+        <div class="cardleft">
+            <div class="cardleft-info">
+                <div class="avatar">
+                    <img id="avatar-img" src="" alt="Avatar">
+                </div>
+                <div class="cardleft-name">
+                    <h2 id="username">Người dùng</h2>
+                    <a href="./profile.html" class="edit-profile-button"><span>Chỉnh sửa hồ sơ</span></a>
+                </div>
+            </div>
+
+            <div class="cardleft-menu-container">
+                <ul class="cardleft-menu">
+                    <li><a href="./address.html"><i class="fa-solid fa-location-crosshairs"></i>Địa chỉ</a></li>
+                    <li><a href="./orders.html" class="cardleft-menu-chose"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="input-info">
+            <div class="order-list" id="order-tabs">
+                <a href="#" data-status="all" class="order-list-active">Tất cả</a>
+                <a href="#" data-status="choxacnhan">Chờ xác nhận</a>
+                <a href="#" data-status="dangxuly">Đang xử lý</a>
+                <a href="#" data-status="danggiao">Đang giao hàng</a>
+                <a href="#" data-status="dagiao">Hoàn thành</a>
+                <a href="#" data-status="dahuy">Đã hủy</a>
+            </div>
+
+            <div id="orders-loading" class="orders-loading">Đang tải đơn hàng...</div>
+            <div id="orders-empty" class="orders-empty" style="display:none;">Bạn chưa có đơn hàng nào</div>
+            <div id="orders-content"></div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/image.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../components/components.js"></script>
+    <script src="./orders.js"></script>
+</body>
+
+</html>

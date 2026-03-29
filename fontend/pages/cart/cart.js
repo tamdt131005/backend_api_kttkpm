@@ -4,6 +4,9 @@
  * Gọi API backend để CRUD giỏ hàng
  */
 
+const FRONTEND_BASE_PATH = window.location.pathname.includes('/fontend/') ? '/fontend' : '';
+const withFrontendBase = (path) => `${FRONTEND_BASE_PATH}${path}`;
+
 // Hàm định dạng tiền VND
 function formatCurrency(value) {
     return new Intl.NumberFormat('vi-VN').format(Number(value) || 0) + '₫';
@@ -84,7 +87,6 @@ function renderCartItem(item) {
     `;
 }
 
-// Render toàn bộ giỏ hàng
 function renderCart(data) {
     const { items, tongtien } = data;
     const loadingEl = document.getElementById('cart-loading');
@@ -181,6 +183,4 @@ async function removeItem(cartId) {
     }
     hideLoading();
 }
-
-// Khởi chạy khi DOM sẵn sàng
 document.addEventListener('DOMContentLoaded', loadCart);

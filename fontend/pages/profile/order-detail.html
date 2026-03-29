@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết đơn hàng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="./orders.css">
+</head>
+
+<body>
+    <app-header></app-header>
+
+    <div class="profile-container">
+        <div class="cardleft">
+            <div class="cardleft-info">
+                <div class="avatar">
+                    <img id="avatar-img" src="" alt="Avatar">
+                </div>
+                <div class="cardleft-name">
+                    <h2 id="username">Người dùng</h2>
+                    <a href="./profile.html" class="edit-profile-button"><span>Chỉnh sửa hồ sơ</span></a>
+                </div>
+            </div>
+
+            <div class="cardleft-menu-container">
+                <ul class="cardleft-menu">
+                    <li><a href="./address.html"><i class="fa-solid fa-location-crosshairs"></i>Địa chỉ</a></li>
+                    <li><a href="./orders.html" class="cardleft-menu-chose"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="input-info">
+            <div class="order-detail-container">
+                <div class="order-detail-header">
+                    <a href="./orders.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Quay lại đơn hàng</a>
+                    <div class="order-title">
+                        <h1 id="order-title">Chi tiết đơn hàng</h1>
+                        <p class="order-date" id="order-date"></p>
+                    </div>
+                    <span class="order-status-badge" id="order-status-badge"></span>
+                </div>
+
+                <div id="detail-loading" class="orders-loading">Đang tải chi tiết đơn hàng...</div>
+                <div id="detail-error" class="orders-empty" style="display:none;"></div>
+
+                <div id="detail-main" style="display:none;">
+                    <div id="order-cancelled" class="order-cancelled" style="display:none;"></div>
+
+                    <div class="order-detail-content">
+                        <div>
+                            <div class="order-section">
+                                <h2><i class="fa-solid fa-box-open"></i> Sản phẩm đã đặt</h2>
+                                <div class="order-products" id="order-products"></div>
+                            </div>
+
+                            <div class="order-section">
+                                <h2><i class="fa-solid fa-location-dot"></i> Địa chỉ giao hàng</h2>
+                                <div class="address-info" id="address-info"></div>
+                            </div>
+
+                            <div class="order-section" id="order-note-wrap" style="display:none;">
+                                <h2><i class="fa-solid fa-note-sticky"></i> Ghi chú</h2>
+                                <div class="order-note" id="order-note"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="order-section">
+                                <h2><i class="fa-solid fa-credit-card"></i> Thanh toán</h2>
+                                <div class="payment-info" id="payment-info"></div>
+                                <div class="order-totals" id="order-totals"></div>
+                                <button type="button" class="btn-cancel-order-full" id="cancel-order-btn" style="display:none;">
+                                    <i class="fa-solid fa-ban"></i> Hủy đơn hàng
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/image.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../components/components.js"></script>
+    <script src="./order-detail.js"></script>
+</body>
+
+</html>

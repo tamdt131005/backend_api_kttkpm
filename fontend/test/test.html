@@ -5,18 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./productdetail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-
-
-
-
-
-
-
-
-
+    <app-header></app-header>
+    <div class="productdetail">
+        <div class="link">
+            <div class="ol">
+                <li><a href="/index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><span class="separator"><i class="fas fa-chevron-right"></i></li>
+                <li><a href="" id="product-link-danhmuc">Danh mục</a></li>
+                <li><span class="separator"><i class="fas fa-chevron-right"></i></li>
+                <li><span id="product-link-name">Sản phẩm</span></li>
+            </div>
+        </div>
+        <div class="product" id="product-detail">
+            <div class="product-img">
+                <img src="" alt="ảnh sản phẩm" id="main-image">
+            </div>
+            <div class="product-info">
+                <h1 id="product-name"></h1>
+                <div class="ratting">
+                    <span id="product-ratting"></span>
+                    <div class="star" id="product-star"></div>
+                    <span id="product-count-rating"></span>
+                </div>
+                <div class="gia">
+                    <span id="giaban"></span>
+                    <span id="giagoc"></span>
+                    <span id="giamgia"></span>
+                </div>
+                <div class="mausac" id="product-color">
+                    <label for="chonmau">Màu sắc:</label>
+                    <div class="chon-mau" id="chonmau"></div>
+                </div>
+                <div class="kichthuoc" id="product-size">
+                    <label for="chonsize">Kích thước:</label>
+                    <div class="chon-size" id="chonsize"></div>
+                </div>
+                <div class="soluong">
+                    <label for="quantity">Số lượng:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                </div>
+                <div class="product-hanhdong">
+                    <button class="btn-primary" id="add-to-cart"><i class="fas fa-shopping-cart"></i> Thêm vào giỏ</button>
+                    <button class="btn-secondary" id="buy-now"><i class="fas fa-bolt"></i> Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="mota" id="product-mota" style="display:none;">
+            <h2><i class="fas fa-align-left"></i> Mô tả sản phẩm</h2>
+            <div class="mota-content" id="mota-content"></div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+    <script src="../assets/js/image.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../components/components.js"></script>
+    <script src="./productdetail.js"></script>
 </body>
 
 </html>

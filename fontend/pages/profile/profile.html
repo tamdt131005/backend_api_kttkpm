@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ của tôi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="./profile.css">
+</head>
+
+<body>
+    <app-header></app-header>
+
+    <div class="profile-container">
+        <div class="cardleft">
+            <div class="cardleft-info">
+                <div class="avatar">
+                    <img id="avatar-img" src="" alt="Avatar">
+                </div>
+                <div class="cardleft-name">
+                    <h2 id="username">Người dùng</h2>
+                    <a href="./profile.html" class="edit-profile-button"><span>Chỉnh sửa hồ sơ</span></a>
+                </div>
+            </div>
+
+            <div class="cardleft-menu-container">
+                <ul class="cardleft-menu">
+                    <li><a href="./address.html"><i class="fa-solid fa-location-crosshairs"></i>Địa chỉ</a></li>
+                    <li><a href="./orders.html"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="input-info">
+            <div class="input-info-header">
+                <h2>Hồ sơ của tôi</h2>
+                <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+            </div>
+
+            <div id="profile-alert" style="display: none;"></div>
+
+            <div class="input-info-content">
+                <form id="profile-form" class="info-form">
+                    <div class="input-info-body">
+                        <div class="info-row">
+                            <label>Tên đăng nhập </label>
+                            <span id="username-value"></span>
+                        </div>
+
+                        <div class="info-row">
+                            <label for="name">Tên</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+
+                        <div class="info-row">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+
+                        <div class="info-row">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="text" id="phone" name="phone">
+                        </div>
+
+                        <div class="info-row">
+                            <label for="sex-nam">Giới tính</label>
+                            <div class="gender-group">
+                                <label class="gender-option"><input type="radio" name="sex" value="Nam" id="sex-nam"> Nam</label>
+                                <label class="gender-option"><input type="radio" name="sex" value="Nữ" id="sex-nu"> Nữ</label>
+                            </div>
+                        </div>
+
+                        <div class="info-row">
+                            <label for="ngaysinh">Ngày sinh</label>
+                            <input type="date" id="ngaysinh" name="ngaysinh">
+                        </div>
+
+                        <input id="btn-save-profile" type="submit" value="Lưu thay đổi">
+                    </div>
+
+                    <div class="input-info-sidebar">
+                        <div class="sidebar-item">
+                            <div class="avatar">
+                                <img id="avatarPreview" src="" alt="Avatar">
+                            </div>
+                            <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                            <button type="button" class="get_avatar" id="avatarButton">
+                                <i class="fa-solid fa-camera"></i> Chọn ảnh
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/image.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../components/components.js"></script>
+    <script src="./profile.js"></script>
+</body>
+
+</html>

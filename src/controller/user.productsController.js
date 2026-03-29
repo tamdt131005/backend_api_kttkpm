@@ -19,6 +19,26 @@ class UserProductsController {
         }
     }
 
+    async search(req, res) {
+        try {
+            const q = String(req.query.q || '').trim();
+            const limit = Number.parseInt(req.query.limit, 10);
+            const products = await productService.searchProducts(q, limit);
+            res.status(200).json({
+                success: true,
+                message: "Tìm kiếm sản phẩm thành công",
+                data: products
+            });
+        } catch (error) {
+            console.error("Tìm kiếm sản phẩm có lỗi: ", error);
+            res.status(500).json({
+                success: false,
+                message: "Lỗi Server",
+                error: error.message
+            });
+        }
+    }
+
     async productDetail(req, res) {
         try {
             const id = req.params.id;

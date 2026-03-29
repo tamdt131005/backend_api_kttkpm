@@ -12,4 +12,7 @@ router.get('/', orderController.getOrders);
 // GET  /api/orders/:id?user_id=... → Chi tiết 1 đơn
 router.get('/:id', orderController.getOrderById);
 
+// PATCH /api/orders/:id/cancel { user_id, lydo_huy }
+router.patch('/:id/cancel', orderController.cancelOrder);
+
 export default router;

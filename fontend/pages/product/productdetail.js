@@ -3,11 +3,16 @@ const productId = urlParams.get('id');
 
 const $ = (id) => document.getElementById(id);
 
-function formatCurrency(value) {
+let selectedColor = null;
+let selectedSize = null;
+let currentBienthe = [];
+let currentTotalStock = 0;
+
+function formatTien(value) {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(Number(value) || 0);
 }
 
-function renderStars(score) {
+function hienThiSaoDanhGia(score) {
     const rounded = Math.round(score);
     let html = '';
     for (let i = 1; i <= 5; i++) {
@@ -16,18 +21,147 @@ function renderStars(score) {
     return html;
 }
 
-function renderStock(tong_soluong) {
-    const n = Number(tong_soluong) || 0;
-    if (n > 10) return `<span class="stock-available"><i class="fas fa-check-circle"></i>Còn ${n} sản phẩm</span>`;
-    if (n > 0)  return `<span class="stock-low"><i class="fas fa-exclamation-circle"></i>Sắp hết hàng (còn ${n})</span>`;
-    return `<span class="stock-out"><i class="fas fa-times-circle"></i>Hết hàng</span>`;
+function formatSoluong(n) {
+    if (n === 0) return { text: 'Hết hàng', class: 'stock-out', icon: 'fa-times-circle' };
+    if (n <= 10) return { text: `Sắp hết (còn ${n})`, class: 'stock-low', icon: 'fa-exclamation-circle' };
+    return { text: `Còn ${n} sản phẩm`, class: 'stock-available', icon: 'fa-check-circle' };
 }
+
+function getSizesForColor(color) {
+    return currentBienthe.filter(v => v.mausac === color);
+}
+
+function getVariant(color, size) {
+    if (!color && !size) return null;
+    return currentBienthe.find(v => 
+        (!color || v.mausac === color) && 
+        (!size || String(v.kichthuoc) === String(size))
+    ) || null;
+}
+
+function renderColors() {
+    const uniqueColors = [...new Set(currentBienthe.map(v => v.mausac).filter(Boolean))];
+    if (uniqueColors.length === 0) return;
+
+    $('group-mausac').style.display = '';
+    const container = $('options-mausac');
+    container.className = 'variant-buttons';
+    
+    container.innerHTML = uniqueColors.map(color => `
+        <button class="variant-btn color-btn ${selectedColor === color ? 'active' : ''}" 
+                onclick="window.selectColor('${color}')" data-color="${color}">
+            ${color}
+        </button>
+    `).join('');
+}
+
+function renderSizes(color) {
+    const allSizes = [...new Set(currentBienthe.map(v => v.kichthuoc).filter(Boolean))];
+    if (allSizes.length === 0) return;
+
+    $('group-kichthuoc').style.display = '';
+    const container = $('options-kichthuoc');
+    container.className = 'variant-buttons';
+
+    const available = color ? getSizesForColor(color) : currentBienthe;
+    const availableKeys = new Set(available.map(v => v.kichthuoc));
+
+    container.innerHTML = allSizes.map(size => {
+        const variantInColor = available.find(v => v.kichthuoc === size);
+        const outOfStock = variantInColor && variantInColor.soluong === 0;
+        const unavailable = color && !availableKeys.has(size);
+        const isDisabled = unavailable || outOfStock;
+        
+        return `
+            <button class="variant-btn size-btn ${selectedSize === size ? 'active' : ''}" 
+                    ${isDisabled ? 'disabled' : `onclick="window.selectSize('${size}')"`}
+                    data-size="${size}"
+                    title="${unavailable ? 'Không có màu này' : (outOfStock ? 'Hết hàng' : '')}">
+                ${size}
+            </button>
+        `;
+    }).join('');
+}
+
+function renderStock(variant) {
+    const stockContainer = $('stock-status');
+
+    if (!variant) {
+        if (currentBienthe.length > 0 && (!selectedColor || !selectedSize)) {
+             stockContainer.innerHTML = `<span style="color:var(--muted)">Vui lòng chọn phân loại hàng</span>`;
+             return 0;
+        }
+        
+        const info = formatSoluong(currentTotalStock);
+        stockContainer.innerHTML = `<span class="${info.class}"><i class="fas ${info.icon}"></i>${info.text}</span>`;
+        return currentTotalStock;
+    }
+
+    const info = formatSoluong(variant.soluong);
+    stockContainer.innerHTML = `<span class="${info.class}"><i class="fas ${info.icon}"></i>${info.text}</span>`;
+    return variant.soluong;
+}
+
+function updateActionButtons(availableQty) {
+    const btnAddCart = $('btn-add-cart');
+    const btnBuyNow = $('btn-buy-now');
+    const qtyInput = $('qty-input');
+    
+    qtyInput.max = availableQty || 1;
+    if (parseInt(qtyInput.value) > availableQty) qtyInput.value = availableQty || 1;
+
+    const needsColor = currentBienthe.some(b => b.mausac) && !selectedColor;
+    const needsSize = currentBienthe.some(b => b.kichthuoc) && !selectedSize;
+
+    if (needsColor || needsSize) {
+        btnAddCart.disabled = true;
+        btnBuyNow.disabled = true;
+        btnAddCart.innerHTML = '<i class="fas fa-shopping-cart"></i> Chọn phân loại';
+    } else if (availableQty === 0) {
+        btnAddCart.disabled = true;
+        btnBuyNow.disabled = true;
+        qtyInput.disabled = true;
+        btnAddCart.innerHTML = '<i class="fas fa-shopping-cart"></i> Hết hàng';
+    } else {
+        btnAddCart.disabled = false;
+        btnBuyNow.disabled = false;
+        qtyInput.disabled = false;
+        btnAddCart.innerHTML = '<i class="fas fa-shopping-cart"></i> Thêm vào giỏ';
+    }
+}
+
+window.selectColor = function(color) {
+    selectedColor = color;
+    selectedSize = null;
+    
+    renderColors();
+    renderSizes(color);
+    
+    const variant = getVariant(selectedColor, selectedSize);
+    const availableQty = renderStock(variant);
+    updateActionButtons(availableQty);
+};
+
+window.selectSize = function(size) {
+    selectedSize = size;
+    
+    renderSizes(selectedColor);
+    
+    const variant = getVariant(selectedColor, selectedSize);
+    const availableQty = renderStock(variant);
+    updateActionButtons(availableQty);
+};
 
 function renderProduct(product) {
     const giaban = Number(product.giaban) || 0;
-    const giakm  = Number(product.giakhuyenmai) || 0;
+    const giakm = Number(product.giakhuyenmai) || 0;
     const coGiam = giakm > 0 && giakm < giaban;
     const phanTram = coGiam ? Math.round((1 - giakm / giaban) * 100) : 0;
+
+    currentBienthe = product.bienthe || [];
+    currentTotalStock = Number(product.soluong) || 0;
+    selectedColor = null;
+    selectedSize = null;
 
     $('product-name').textContent = product.tensanpham;
 
@@ -37,86 +171,75 @@ function renderProduct(product) {
     catLink.href = product.danhmuc_slug ? `/pages/category/index.html?slug=${product.danhmuc_slug}` : '#';
 
     $('rating-score').textContent = Number(product.diem_danhgia).toFixed(1);
-    $('star-icons').innerHTML = renderStars(product.diem_danhgia);
+    $('star-icons').innerHTML = hienThiSaoDanhGia(product.diem_danhgia);
     $('rating-count').textContent = `(${product.luot_danhgia} đánh giá)`;
 
     if (coGiam) {
-        $('price-sale').textContent = formatCurrency(giakm);
-        $('price-original').textContent = formatCurrency(giaban);
+        $('price-sale').textContent = formatTien(giakm);
+        $('price-original').textContent = formatTien(giaban);
         $('price-original').style.display = '';
         $('price-discount').textContent = `-${phanTram}%`;
         $('price-discount').style.display = '';
         $('discount-badge').textContent = `-${phanTram}%`;
         $('discount-badge').style.display = '';
     } else {
-        $('price-sale').textContent = formatCurrency(giaban);
+        $('price-sale').textContent = formatTien(giaban);
     }
 
     const mainImg = $('main-image');
-    mainImg.src = imageUtil.product(product.hinhanh);
-    mainImg.alt = product.tensanpham;
-
-    const thumbnails = $('thumbnails');
-    const allImages = [product.hinhanh, ...(product.hinhanh_phu || [])];
-    allImages.forEach((img, idx) => {
-        const src = img.startsWith('http') ? img : imageUtil.product(img);
-        const div = document.createElement('div');
-        div.className = 'thumbnail-item' + (idx === 0 ? ' active' : '');
-        div.innerHTML = `<img src="${src}" alt="Ảnh ${idx + 1}">`;
-        div.addEventListener('click', () => {
-            mainImg.src = src;
-            thumbnails.querySelectorAll('.thumbnail-item').forEach(t => t.classList.remove('active'));
-            div.classList.add('active');
-        });
-        thumbnails.appendChild(div);
-    });
-
-    const bienthe = product.bienthe || [];
-    const mauSet = [...new Set(bienthe.map(b => b.mausac).filter(Boolean))];
-    const sizeSet = [...new Set(bienthe.map(b => b.kichthuoc).filter(Boolean))];
-
-    if (mauSet.length > 0) {
-        $('group-mausac').style.display = '';
-        mauSet.forEach(mau => {
-            const opt = document.createElement('option');
-            opt.value = mau;
-            opt.textContent = mau;
-            $('select-mausac').appendChild(opt);
-        });
+    if (mainImg) {
+        mainImg.src = imageUtil.product(product.hinhanh);
+        mainImg.alt = product.tensanpham;
     }
 
-    if (sizeSet.length > 0) {
-        $('group-kichthuoc').style.display = '';
-        sizeSet.forEach(size => {
-            const opt = document.createElement('option');
-            opt.value = size;
-            opt.textContent = size;
-            $('select-kichthuoc').appendChild(opt);
-        });
+    const uniqueColors = [...new Set(currentBienthe.map(v => v.mausac).filter(Boolean))];
+    const allSizes = [...new Set(currentBienthe.map(v => v.kichthuoc).filter(Boolean))];
+    
+    if (uniqueColors.length > 0) {
+        selectedColor = uniqueColors[0];
+    }
+    
+    if (selectedColor && allSizes.length > 0) {
+         const availableSizesForColor = getSizesForColor(selectedColor).filter(v => v.soluong > 0);
+         if (availableSizesForColor.length > 0) {
+             selectedSize = availableSizesForColor[0].kichthuoc;
+         } else if (allSizes.length > 0) {
+              selectedSize = getSizesForColor(selectedColor)[0]?.kichthuoc;
+         }
     }
 
-    $('stock-status').innerHTML = renderStock(product.tong_soluong);
+    renderColors();
+    renderSizes(selectedColor);
 
-    const totalStock = Number(product.tong_soluong) || 0;
+    const variant = getVariant(selectedColor, selectedSize);
+    const availableQty = renderStock(variant);
+    updateActionButtons(availableQty);
+
     const qtyInput = $('qty-input');
-    qtyInput.max = totalStock;
-    if (totalStock === 0) {
-        qtyInput.disabled = true;
-        $('btn-add-cart').disabled = true;
-        $('btn-buy-now').disabled = true;
-    }
+    
+    const btnMinus = $('btn-minus');
+    const newBtnMinus = btnMinus.cloneNode(true);
+    btnMinus.parentNode.replaceChild(newBtnMinus, btnMinus);
+    
+    const btnPlus = $('btn-plus');
+    const newBtnPlus = btnPlus.cloneNode(true);
+    btnPlus.parentNode.replaceChild(newBtnPlus, btnPlus);
 
-    $('btn-minus').addEventListener('click', () => {
+    newBtnMinus.addEventListener('click', () => {
         const val = parseInt(qtyInput.value) || 1;
         if (val > 1) qtyInput.value = val - 1;
     });
-    $('btn-plus').addEventListener('click', () => {
+    newBtnPlus.addEventListener('click', () => {
         const val = parseInt(qtyInput.value) || 1;
-        if (val < totalStock) qtyInput.value = val + 1;
+        const maxQty = parseInt(qtyInput.max) || 1;
+        if (val < maxQty) qtyInput.value = val + 1;
     });
 
-    // === Thêm vào giỏ hàng (gọi API thực) ===
-    $('btn-add-cart').addEventListener('click', async () => {
+    const btnAddCart = $('btn-add-cart');
+    const newBtnAddCart = btnAddCart.cloneNode(true);
+    btnAddCart.parentNode.replaceChild(newBtnAddCart, btnAddCart);
+
+    newBtnAddCart.addEventListener('click', async () => {
         const userId = localStorage.getItem('user_id');
         if (!userId) {
             alert('Vui lòng đăng nhập để thêm vào giỏ hàng');
@@ -125,11 +248,7 @@ function renderProduct(product) {
         }
 
         const qty = parseInt(qtyInput.value) || 1;
-        const mau = $('select-mausac')?.value || null;
-        const size = $('select-kichthuoc')?.value || null;
-        const variant = bienthe.find(b =>
-            (!mau || b.mausac === mau) && (!size || String(b.kichthuoc) === String(size))
-        );
+        const variant = getVariant(selectedColor, selectedSize);
 
         try {
             const res = await api.post('/cart', {
@@ -149,8 +268,11 @@ function renderProduct(product) {
         }
     });
 
-    // === Mua ngay: thêm giỏ → chuyển checkout ===
-    $('btn-buy-now').addEventListener('click', async () => {
+    const btnBuyNow = $('btn-buy-now');
+    const newBtnBuyNow = btnBuyNow.cloneNode(true);
+    btnBuyNow.parentNode.replaceChild(newBtnBuyNow, btnBuyNow);
+
+    newBtnBuyNow.addEventListener('click', async () => {
         const userId = localStorage.getItem('user_id');
         if (!userId) {
             alert('Vui lòng đăng nhập để mua hàng');
@@ -159,11 +281,7 @@ function renderProduct(product) {
         }
 
         const qty = parseInt(qtyInput.value) || 1;
-        const mau = $('select-mausac')?.value || null;
-        const size = $('select-kichthuoc')?.value || null;
-        const variant = bienthe.find(b =>
-            (!mau || b.mausac === mau) && (!size || String(b.kichthuoc) === String(size))
-        );
+        const variant = getVariant(selectedColor, selectedSize);
 
         try {
             const res = await api.post('/cart', {
