@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `bienthesp` (
   `id` int NOT NULL AUTO_INCREMENT,
   `sanpham_id` int NOT NULL,
   `ma_sku` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Mã SKU riêng của biến thể',
-  `kichthuoc` double DEFAULT NULL COMMENT 'S / M / L / XL / 29 / 30…',
+  `kichthuoc` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mausac` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `soluong` int NOT NULL DEFAULT '0' COMMENT 'Tồn kho',
   `gia_nhap` int DEFAULT NULL COMMENT 'Giá vốn nhập gần nhất',
@@ -33,19 +33,20 @@ CREATE TABLE IF NOT EXISTS `bienthesp` (
   UNIQUE KEY `uq_bienthe_sku` (`ma_sku`),
   KEY `idx_bienthe_sanpham` (`sanpham_id`),
   CONSTRAINT `fk_bienthe_sanpham` FOREIGN KEY (`sanpham_id`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Biến thể sản phẩm';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Biến thể sản phẩm';
 
--- Dumping data for table btapweb_v2.bienthesp: ~9 rows (approximately)
+-- Dumping data for table btapweb_v2.bienthesp: ~10 rows (approximately)
 INSERT INTO `bienthesp` (`id`, `sanpham_id`, `ma_sku`, `kichthuoc`, `mausac`, `soluong`, `gia_nhap`, `hinhanh`) VALUES
-	(1, 1, 'SP1-S-DEN', S, 'Đen', 50, 100000, NULL),
-	(2, 1, 'SP1-M-DEN', M, 'Đen', 40, 100000, NULL),
-	(3, 2, 'SP2-M-TRANG', M, 'Trắng', 30, 120000, NULL),
-	(4, 3, 'SP3-30-XANH', 30, 'Xanh', 20, 300000, NULL),
-	(5, 4, 'SP4-32-DEN', 32, 'Đen', 15, 320000, NULL),
-	(6, 5, 'SP5-M-HOA', M, 'Hoa', 25, 200000, NULL),
-	(7, 6, 'SP6-S-DEN', S, 'Đen', 20, 220000, NULL),
-	(8, 7, 'SP7-L-XAM', L, 'Xám', 10, 400000, NULL),
-	(9, 8, 'SP8-L-DEN', L, 'Đen', 12, 420000, NULL);
+	(1, 1, 'SP1-S-DEN', 'S', 'Đen', 50, 100000, NULL),
+	(2, 1, 'SP1-M-DEN', 'M', 'Đen', 38, 100000, NULL),
+	(3, 2, 'SP2-M-TRANG', 'M', 'Trắng', 30, 120000, NULL),
+	(4, 3, 'SP3-30-XANH', '30', 'Xanh', 20, 300000, NULL),
+	(5, 4, 'SP4-32-DEN', '32', 'Đen', 15, 320000, NULL),
+	(6, 5, 'SP5-M-HOA', 'M', 'Hoa', 25, 200000, NULL),
+	(7, 6, 'SP6-S-DEN', 'S', 'Đen', 20, 220000, NULL),
+	(8, 7, 'SP7-L-XAM', 'L', 'Xám', 10, 400000, NULL),
+	(9, 8, 'SP8-L-DEN', 'L', 'Đen', 12, 420000, NULL),
+	(10, 1, 'SP1-L-Xanh', 'L', 'Xanh', 15, 120000, NULL);
 
 -- Dumping structure for table btapweb_v2.chitietdonhang
 CREATE TABLE IF NOT EXISTS `chitietdonhang` (
@@ -67,12 +68,15 @@ CREATE TABLE IF NOT EXISTS `chitietdonhang` (
   CONSTRAINT `fk_ctdh_bienthe` FOREIGN KEY (`bienthe_id`) REFERENCES `bienthesp` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_ctdh_donhang` FOREIGN KEY (`donhang_id`) REFERENCES `donhang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_ctdh_sanpham` FOREIGN KEY (`sanpham_id`) REFERENCES `sanpham` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Chi tiết đơn hàng';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Chi tiết đơn hàng';
 
--- Dumping data for table btapweb_v2.chitietdonhang: ~0 rows (approximately)
+-- Dumping data for table btapweb_v2.chitietdonhang: ~4 rows (approximately)
 INSERT INTO `chitietdonhang` (`id`, `donhang_id`, `sanpham_id`, `bienthe_id`, `tensanpham`, `kichthuoc`, `mausac`, `ma_sku`, `dongia`, `soluong`, `thanhtien`) VALUES
 	(1, 1, 1, 1, 'Áo thun basic đen', 'S', 'Đen', 'SP1-S-DEN', 150000.00, 2, 300000.00),
-	(2, 1, 3, 4, 'Quần jean xanh', '30', 'Xanh', 'SP3-30-XANH', 500000.00, 1, 500000.00);
+	(2, 1, 3, 4, 'Quần jean xanh', '30', 'Xanh', 'SP3-30-XANH', 500000.00, 1, 500000.00),
+	(3, 2, 8, 9, 'Áo hoodie', 'L', 'Đen', NULL, 650000.00, 2, 1300000.00),
+	(4, 2, 1, 2, 'Áo thun basic đen', 'M', 'Đen', NULL, 150000.00, 1, 150000.00),
+	(5, 3, 1, 2, 'Áo thun basic đen', 'M', 'Đen', NULL, 150000.00, 2, 300000.00);
 
 -- Dumping structure for table btapweb_v2.chitietphieunhap
 CREATE TABLE IF NOT EXISTS `chitietphieunhap` (
@@ -111,9 +115,9 @@ CREATE TABLE IF NOT EXISTS `danhgia` (
   CONSTRAINT `fk_danhgia_sanpham` FOREIGN KEY (`sanpham_id`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_danhgia_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `chk_sao` CHECK ((`sao` between 1 and 5))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Đánh giá sản phẩm';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Đánh giá sản phẩm';
 
--- Dumping data for table btapweb_v2.danhgia: ~2 rows (approximately)
+-- Dumping data for table btapweb_v2.danhgia: ~0 rows (approximately)
 INSERT INTO `danhgia` (`id`, `sanpham_id`, `user_id`, `donhang_id`, `sao`, `tieude`, `noidung`, `trang_thai`, `createdAt`) VALUES
 	(1, 1, 2, NULL, 5, 'Rất tốt', 'Mặc cực thoải mái', 'duyety', '2026-03-25 09:48:19'),
 	(2, 3, 2, NULL, 4, 'Ổn', 'Quần đẹp', 'duyety', '2026-03-25 09:48:19');
@@ -132,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `danhmuc` (
   UNIQUE KEY `uq_danhmuc_slug` (`slug`),
   KEY `idx_danhmuc_parent` (`parent_id`),
   CONSTRAINT `fk_danhmuc_parent` FOREIGN KEY (`parent_id`) REFERENCES `danhmuc` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Danh mục sản phẩm (cây cha/con)';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Danh mục sản phẩm (cây cha/con)';
 
 -- Dumping data for table btapweb_v2.danhmuc: ~6 rows (approximately)
 INSERT INTO `danhmuc` (`id`, `parent_id`, `tendanhmuc`, `slug`, `mota`, `thu_tu`, `an_hien`, `createdAt`) VALUES
@@ -158,11 +162,13 @@ CREATE TABLE IF NOT EXISTS `diachigiaohang` (
   PRIMARY KEY (`id`),
   KEY `idx_diachi_user` (`user_id`),
   CONSTRAINT `fk_diachi_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Địa chỉ giao hàng';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Địa chỉ giao hàng';
 
--- Dumping data for table btapweb_v2.diachigiaohang: ~1 rows (approximately)
+-- Dumping data for table btapweb_v2.diachigiaohang: ~3 rows (approximately)
 INSERT INTO `diachigiaohang` (`id`, `user_id`, `tennguoinhan`, `sodienthoai`, `diachichitiet`, `phuong`, `quan`, `tinh`, `macdinh`, `deleted_at`) VALUES
-	(1, 2, 'Nguyễn Văn A', '0123456789', '123 Cầu Giấy', 'Dịch Vọng', 'Cầu Giấy', 'Hà Nội', 1, NULL);
+	(1, 2, 'Thành', '0123456688', '8910 JQK', 'hạ đình', 'quận 1', 'Ho Chi Minh', 1, NULL),
+	(2, 3, 'ssac', '0987654321', 'ácx', 'sdzx sd', 'sdc', 'szc', 1, NULL),
+	(3, 1, 'Nguyen Van A', '0912345678', '123 Duong ABC', 'Phuong 1', 'Quan 1', 'TP HCM', 1, NULL);
 
 -- Dumping structure for table btapweb_v2.donhang
 CREATE TABLE IF NOT EXISTS `donhang` (
@@ -192,11 +198,13 @@ CREATE TABLE IF NOT EXISTS `donhang` (
   CONSTRAINT `fk_donhang_diachi` FOREIGN KEY (`diachi_id`) REFERENCES `diachigiaohang` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_donhang_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_donhang_voucher` FOREIGN KEY (`voucher_id`) REFERENCES `voucher` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Đơn hàng';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Đơn hàng';
 
--- Dumping data for table btapweb_v2.donhang: ~1 rows (approximately)
+-- Dumping data for table btapweb_v2.donhang: ~3 rows (approximately)
 INSERT INTO `donhang` (`id`, `ma_donhang`, `user_id`, `diachi_id`, `voucher_id`, `snapshot_diachi`, `ghichu`, `lydo_huy`, `trangthai`, `phuongthuc_thanhtoan`, `trangthai_thanhtoan`, `tongtienhang`, `giam_gia`, `phivanchuyen`, `tongthanhtoan`, `createdAt`, `updatedAt`) VALUES
-	(1, 'DH001', 2, 1, NULL, NULL, NULL, NULL, 'choxacnhan', 'tienmat', 'chuathanhtoan', 700000.00, 0.00, 30000.00, 730000.00, '2026-03-25 09:48:19', '2026-03-25 09:48:19');
+	(1, 'DH001', 2, 1, NULL, NULL, NULL, NULL, 'choxacnhan', 'tienmat', 'chuathanhtoan', 700000.00, 0.00, 30000.00, 730000.00, '2026-03-25 09:48:19', '2026-03-25 09:48:19'),
+	(2, 'DH1774810617357', 3, 2, NULL, '{"tennguoinhan":"ssac","sodienthoai":"0987654321","diachichitiet":"ácx","phuong":"sdzx sd","quan":"sdc","tinh":"szc"}', NULL, 'Thay đổi ý định mua hàng', 'dahuy', 'tienmat', 'chuathanhtoan', 1450000.00, 0.00, 0.00, 1450000.00, '2026-03-29 18:56:57', '2026-03-29 18:57:17'),
+	(3, 'DH1774814845571', 3, 2, NULL, '{"tennguoinhan":"ssac","sodienthoai":"0987654321","diachichitiet":"ácx","phuong":"sdzx sd","quan":"sdc","tinh":"szc"}', NULL, NULL, 'choxacnhan', 'tienmat', 'chuathanhtoan', 300000.00, 0.00, 0.00, 300000.00, '2026-03-29 20:07:25', '2026-03-29 20:07:25');
 
 -- Dumping structure for table btapweb_v2.giohang
 CREATE TABLE IF NOT EXISTS `giohang` (
@@ -213,9 +221,9 @@ CREATE TABLE IF NOT EXISTS `giohang` (
   CONSTRAINT `fk_giohang_bienthe` FOREIGN KEY (`bienthe_id`) REFERENCES `bienthesp` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_giohang_sanpham` FOREIGN KEY (`sanpham_id`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_giohang_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Giỏ hàng';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Giỏ hàng';
 
--- Dumping data for table btapweb_v2.giohang: ~2 rows (approximately)
+-- Dumping data for table btapweb_v2.giohang: ~3 rows (approximately)
 INSERT INTO `giohang` (`id`, `user_id`, `sanpham_id`, `bienthe_id`, `soluong`) VALUES
 	(1, 2, 1, 1, 2),
 	(2, 2, 3, 4, 1);
@@ -230,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `hinhanh_sanpham` (
   PRIMARY KEY (`id`),
   KEY `idx_hinhanh_sanpham` (`sanpham_id`),
   CONSTRAINT `fk_hinhanh_sanpham` FOREIGN KEY (`sanpham_id`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Ảnh phụ của sản phẩm';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Ảnh phụ của sản phẩm';
 
 -- Dumping data for table btapweb_v2.hinhanh_sanpham: ~8 rows (approximately)
 INSERT INTO `hinhanh_sanpham` (`id`, `sanpham_id`, `ten_file`, `thu_tu`, `createdAt`) VALUES
@@ -257,9 +265,13 @@ CREATE TABLE IF NOT EXISTS `lichsu_donhang` (
   KEY `fk_lsdh_nguoidung` (`nguoidung_id`),
   CONSTRAINT `fk_lsdh_donhang` FOREIGN KEY (`donhang_id`) REFERENCES `donhang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_lsdh_nguoidung` FOREIGN KEY (`nguoidung_id`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Lịch sử trạng thái đơn hàng';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Lịch sử trạng thái đơn hàng';
 
--- Dumping data for table btapweb_v2.lichsu_donhang: ~0 rows (approximately)
+-- Dumping data for table btapweb_v2.lichsu_donhang: ~2 rows (approximately)
+INSERT INTO `lichsu_donhang` (`id`, `donhang_id`, `nguoidung_id`, `trangthai_cu`, `trangthai_moi`, `ghichu`, `createdAt`) VALUES
+	(1, 2, 3, NULL, 'choxacnhan', 'Đặt hàng mới', '2026-03-29 18:56:57'),
+	(2, 2, 3, NULL, 'dahuy', 'Thay đổi ý định mua hàng', '2026-03-29 18:57:17'),
+	(3, 3, 3, NULL, 'choxacnhan', 'Đặt hàng mới', '2026-03-29 20:07:25');
 
 -- Dumping structure for table btapweb_v2.phieunhap
 CREATE TABLE IF NOT EXISTS `phieunhap` (
@@ -296,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `sanpham` (
   KEY `idx_sanpham_danhmuc` (`danhmuc_id`),
   KEY `idx_sanpham_deleted` (`deleted_at`),
   CONSTRAINT `fk_sanpham_danhmuc` FOREIGN KEY (`danhmuc_id`) REFERENCES `danhmuc` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Sản phẩm';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Sản phẩm';
 
 -- Dumping data for table btapweb_v2.sanpham: ~8 rows (approximately)
 INSERT INTO `sanpham` (`id`, `danhmuc_id`, `tensanpham`, `slug`, `thuonghieu`, `mota`, `giaban`, `giakhuyenmai`, `hinhanh`, `an_hien`, `deleted_at`, `createdAt`, `updatedAt`) VALUES
@@ -327,12 +339,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_username` (`username`),
   UNIQUE KEY `uq_email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tài khoản người dùng';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tài khoản người dùng';
 
--- Dumping data for table btapweb_v2.users: ~0 rows (approximately)
+-- Dumping data for table btapweb_v2.users: ~4 rows (approximately)
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `fullname`, `phone`, `sex`, `ngaysinh`, `avatar`, `role`, `status`, `createdAt`, `updatedAt`) VALUES
-	(1, 'admin', '$2b$10$abc', 'admin@gmail.com', 'Admin', NULL, NULL, NULL, NULL, 'admin', 'active', '2026-03-25 09:46:42', '2026-03-25 09:46:42'),
-	(2, 'user1', '$2b$10$abc', 'user1@gmail.com', 'Nguyễn Văn A', NULL, NULL, NULL, NULL, 'user', 'active', '2026-03-25 09:46:42', '2026-03-25 09:46:42');
+	(1, 'admin', '$2b$10$8fXtn1MtFC9vedkel8gZ9OMGL3fQegRWvubEsEoWHKNnmNjNVPIR6', 'admin@gmail.com', 'Admin', NULL, NULL, NULL, NULL, 'admin', 'active', '2026-03-25 09:46:42', '2026-03-29 19:56:39'),
+	(2, 'user1', '$2b$10$abc', 'user1@gmail.com', 'Nguyễn Văn A', NULL, NULL, NULL, NULL, 'user', 'active', '2026-03-25 09:46:42', '2026-03-25 09:46:42'),
+	(3, 'tamdt131005', '$2b$10$8fXtn1MtFC9vedkel8gZ9OMGL3fQegRWvubEsEoWHKNnmNjNVPIR6', 'tamdt131005@gmail.com', 'tamdt131005', NULL, NULL, NULL, NULL, 'user', 'active', '2026-03-26 05:55:35', '2026-03-26 05:55:35'),
+	(4, 'new_user_test', '$2b$10$1oSirITyjGFJMdINKSbRu.N/6OO2C6TICt21PoNhbULIysKzksfQy', 'new_user_test@example.com', 'New User Test', NULL, NULL, NULL, NULL, 'user', 'active', '2026-03-29 20:24:04', '2026-03-29 20:24:04');
 
 -- Dumping structure for table btapweb_v2.voucher
 CREATE TABLE IF NOT EXISTS `voucher` (
@@ -352,7 +366,7 @@ CREATE TABLE IF NOT EXISTS `voucher` (
   UNIQUE KEY `uq_voucher_ma` (`ma_voucher`),
   CONSTRAINT `chk_voucher_dates` CHECK ((`ket_thuc` > `bat_dau`)),
   CONSTRAINT `chk_voucher_soluong` CHECK ((`so_luong` > 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Mã giảm giá / voucher';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Mã giảm giá / voucher';
 
 -- Dumping data for table btapweb_v2.voucher: ~0 rows (approximately)
 INSERT INTO `voucher` (`id`, `ma_voucher`, `loai_giam`, `gia_tri`, `giam_toi_da`, `don_hang_toi_thieu`, `so_luong`, `da_dung`, `bat_dau`, `ket_thuc`, `an_hien`, `createdAt`) VALUES
