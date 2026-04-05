@@ -282,19 +282,23 @@ function renderProduct(product) {
 
         const qty = parseInt(qtyInput.value) || 1;
         const variant = getVariant(selectedColor, selectedSize);
+        const buyNowItem = {
+            user_id: Number(userId),
+            sanpham_id: Number(product.id),
+            bienthe_id: variant?.id || null,
+            soluong: qty,
+            tensanpham: product.tensanpham,
+            giaban: Number(product.giaban) || 0,
+            giakhuyenmai: Number(product.giakhuyenmai) || 0,
+            hinhanh: product.hinhanh || '',
+            hinhanh_bienthe: variant?.hinhanh || '',
+            kichthuoc: variant?.kichthuoc || null,
+            mausac: variant?.mausac || null
+        };
 
         try {
-            const res = await api.post('/cart', {
-                user_id: Number(userId),
-                sanpham_id: product.id,
-                bienthe_id: variant?.id || null,
-                soluong: qty
-            });
-            if (res.success) {
-                window.location.href = '/pages/checkout/checkout.html';
-            } else {
-                alert(res.message || 'Lỗi thêm giỏ hàng');
-            }
+            localStorage.setItem('buy_now_item', JSON.stringify(buyNowItem));
+            window.location.href = '/pages/checkout/checkout.html?mode=buynow';
         } catch (error) {
             console.error('Lỗi mua ngay:', error);
             alert('Đã xảy ra lỗi. Vui lòng thử lại.');

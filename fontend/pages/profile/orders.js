@@ -1,6 +1,46 @@
 let allOrders = [];
 let activeStatus = 'all';
 
+function getMomoReturnNotice() {
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('momo_status');
+    if (status !== 'success' && status !== 'failed') {
+        return null;
+    }
+
+    return {
+        status,
+        orderCode: params.get('momo_order_id') || '',
+        resultCode: params.get('momo_result_code') || '',
+        message: params.get('momo_message') || '',
+        donhangId: params.get('donhang_id') || ''
+    };
+}
+
+function clearMomoReturnNoticeParams() {
+    const url = new URL(window.location.href);
+    ['momo_status', 'momo_order_id', 'momo_result_code', 'momo_message', 'donhang_id'].forEach((key) => {
+        url.searchParams.delete(key);
+    });
+    const nextUrl = `${url.pathname}${url.search}${url.hash}`;
+    window.history.replaceState({}, document.title, nextUrl);
+}
+
+function showMomoReturnNotice() {
+    const notice = getMomoReturnNotice();
+    if (!notice) return;
+
+    const baseText = notice.status === 'success'
+        ? 'Thanh toán MoMo thành công.'
+        : 'Thanh toán MoMo chưa thành công.';
+
+    const orderText = notice.orderCode ? ` Mã đơn: ${notice.orderCode}.` : '';
+    const messageText = notice.message ? ` ${notice.message}` : '';
+
+    alert(`${baseText}${orderText}${messageText}`.trim());
+    clearMomoReturnNoticeParams();
+}
+
 function getUserId() {
     const id = Number(localStorage.getItem('user_id'));
     return Number.isInteger(id) && id > 0 ? id : null;
@@ -344,6 +384,7 @@ async function init() {
     const loaded = await loadSidebarUser();
     if (!loaded) return;
     bindEvents();
+    showMomoReturnNotice();
     await loadOrders();
 }
 

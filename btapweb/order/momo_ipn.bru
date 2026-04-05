@@ -1,0 +1,29 @@
+meta {
+  name: order_momo_ipn
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:3000/api/orders/momo/ipn
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "partnerCode": "MOMO",
+    "orderId": "DH000001",
+    "requestId": "DH000001_1712040000000",
+    "amount": "50000",
+    "orderInfo": "Thanh toan don hang DH000001",
+    "orderType": "momo_wallet",
+    "transId": 0,
+    "resultCode": 0,
+    "message": "Successful.",
+    "payType": "qr",
+    "responseTime": 1712040000000,
+    "extraData": "",
+    "signature": "REPLACE_WITH_VALID_MOMO_SIGNATURE"
+  }
+}

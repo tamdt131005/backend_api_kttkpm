@@ -1,0 +1,17 @@
+meta {
+  name: order_create_momo_payment
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:3000/api/orders/1/momo
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "user_id": 1
+  }
+}

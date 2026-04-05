@@ -10,21 +10,15 @@ class CartService {
 
     // Thêm sản phẩm vào giỏ (nếu đã có thì cộng dồn)
     async addToCart(userId, sanphamId, bientheId, soluong = 1) {
-        // Kiểm tra đã có trong giỏ chưa
-        const existing = await cartDAO.findCartItem(userId, sanphamId, bientheId);
+        const tontai = await cartDAO.findCartItem(userId, sanphamId);
 
-        if (existing) {
-            // Cộng dồn số lượng
-            const newQty = existing.soluong + soluong;
-            await cartDAO.updateQuantity(existing.id, userId, newQty);
-            return existing.id;
+        if (tontai) {
+            throw { status: 400, message: "Sản phẩm đã có trong giỏ hàng" };
         }
 
         // Thêm mới
         return await cartDAO.addToCart(userId, sanphamId, bientheId, soluong);
     }
-
-    // Cập nhật số lượng
     async updateCartItem(cartId, userId, soluong) {
         if (soluong <= 0) {
             throw { status: 400, message: "Số lượng phải lớn hơn 0" };

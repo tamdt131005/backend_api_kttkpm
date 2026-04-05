@@ -44,17 +44,40 @@ class OrderDAO {
         }
     }
 
+    async getProductSnapshotForOrderItem(sanphamId, bientheId = null) {
+        const [rows] = await pool.execute(
+            `
+                SELECT
+                    sp.id AS sanpham_id,
+                    sp.tensanpham,
+                    sp.giaban,
+                    sp.giakhuyenmai,
+                    bt.id AS bienthe_id,
+                    bt.kichthuoc,
+                    bt.mausac,
+                    bt.ma_sku,
+                    bt.soluong AS soluong_kho
+                FROM sanpham sp
+                LEFT JOIN bienthesp bt ON bt.id = ?
+                WHERE sp.id = ?
+                  AND (? IS NULL OR bt.sanpham_id = sp.id)
+                LIMIT 1
+            `,
+            [bientheId, sanphamId, bientheId]
+        );
+
+        return rows[0] || null;
+    }
+
     // Trừ tồn kho biến thể
-    async updateStock(connection, bientheId, quantity) {
+    async updateTonkho(connection, bientheId, quantity) {
         if (!bientheId) return;
         await connection.execute(`
             UPDATE bienthesp SET soluong = soluong - ? 
             WHERE id = ? AND soluong >= ?
         `, [quantity, bientheId, quantity]);
     }
-
-    // Ghi lịch sử trạng thái đơn hàng
-    async addOrderHistory(connection, donhangId, userId, trangthaiMoi, ghichu) {
+    async addLichSuDonHang(connection, donhangId, userId, trangthaiMoi, ghichu) {
         await connection.execute(`
             INSERT INTO lichsu_donhang (donhang_id, nguoidung_id, trangthai_cu, trangthai_moi, ghichu)
             VALUES (?, ?, NULL, ?, ?)
@@ -104,6 +127,49 @@ class OrderDAO {
         return order;
     }
 
+    async getOrderSummaryForPayment(orderId, userId) {
+        const [rows] = await pool.execute(
+            `
+                SELECT id, ma_donhang, user_id, tongthanhtoan, trangthai, trangthai_thanhtoan, phuongthuc_thanhtoan
+                FROM donhang
+                WHERE id = ? AND user_id = ?
+                LIMIT 1
+            `,
+            [orderId, userId]
+        );
+        return rows[0] || null;
+    }
+
+    async getOrderByCode(maDonhang) {
+        const [rows] = await pool.execute(
+            `
+                SELECT id, ma_donhang, trangthai_thanhtoan
+                FROM donhang
+                WHERE ma_donhang = ?
+                LIMIT 1
+            `,
+            [maDonhang]
+        );
+        return rows[0] || null;
+    }
+
+    async markOrderPaidByCode(maDonhang) {
+        const [result] = await pool.execute(
+            `
+                UPDATE donhang
+                SET trangthai_thanhtoan = 'dathanhtoan',
+                    phuongthuc_thanhtoan = CASE
+                        WHEN phuongthuc_thanhtoan = 'tienmat' THEN 'chuyenkhoan'
+                        ELSE phuongthuc_thanhtoan
+                    END
+                WHERE ma_donhang = ? AND trangthai_thanhtoan <> 'dathanhtoan'
+            `,
+            [maDonhang]
+        );
+
+        return result.affectedRows;
+    }
+
     async getOrderRowForUser(connection, orderId, userId) {
         const [rows] = await connection.execute(
             `SELECT id, user_id, trangthai FROM donhang WHERE id = ? AND user_id = ? LIMIT 1`,
@@ -120,7 +186,7 @@ class OrderDAO {
         return rows;
     }
 
-    async restoreVariantStock(connection, bientheId, quantity) {
+    async restoreTonkho(connection, bientheId, quantity) {
         if (!bientheId) return;
         await connection.execute(
             `UPDATE bienthesp SET soluong = soluong + ? WHERE id = ?`,
