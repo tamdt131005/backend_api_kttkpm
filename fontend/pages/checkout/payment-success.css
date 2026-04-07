@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+:root {
+    --result-success: #0f9d58;
+    --result-failed: #d93025;
+    --ink-900: #10213a;
+    --ink-700: #45566e;
+    --surface: #ffffff;
+    --line-soft: rgba(16, 33, 58, 0.12);
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: radial-gradient(circle at 12% 16%, rgba(18, 130, 95, 0.12), transparent 35%), radial-gradient(circle at 88% 20%, rgba(32, 113, 210, 0.12), transparent 38%), linear-gradient(180deg, #f4f8ff 0%, #f7fffa 100%);
+    min-height: 100vh;
+}
+
+.payment-result-main {
+    min-height: calc(100vh - 150px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 20px 40px;
+}
+
+.result-card {
+    width: min(760px, 100%);
+    background: var(--surface);
+    border-radius: 24px;
+    border: 1px solid var(--line-soft);
+    box-shadow: 0 18px 50px rgba(17, 44, 74, 0.14);
+    padding: 36px 34px;
+    text-align: center;
+    animation: cardEnter 380ms ease-out;
+}
+
+.result-status-icon {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 40px;
+    background: rgba(15, 157, 88, 0.16);
+    color: var(--result-success);
+}
+
+.result-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    background: rgba(15, 157, 88, 0.12);
+    color: var(--result-success);
+}
+
+.result-card h1 {
+    font-size: clamp(1.6rem, 3.2vw, 2rem);
+    color: var(--ink-900);
+    margin: 0;
+}
+
+.result-description {
+    margin: 12px auto 24px;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--ink-700);
+    max-width: 560px;
+}
+
+.result-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.meta-item {
+    border: 1px solid var(--line-soft);
+    border-radius: 14px;
+    padding: 16px;
+    background: #fbfdff;
+}
+
+.meta-item span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--ink-700);
+    margin-bottom: 8px;
+}
+
+.meta-item strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--ink-900);
+    word-break: break-all;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.result-btn {
+    border-radius: 12px;
+    min-height: 44px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-btn:hover {
+    transform: translateY(-1px);
+}
+
+.result-btn.primary {
+    color: #fff;
+    background: linear-gradient(120deg, #0f9d58, #1282a2);
+    box-shadow: 0 8px 18px rgba(18, 130, 162, 0.3);
+}
+
+.result-btn.secondary {
+    color: var(--ink-900);
+    border: 1px solid var(--line-soft);
+    background: #ffffff;
+}
+
+.result-card.failed .result-status-icon {
+    background: rgba(217, 48, 37, 0.16);
+    color: var(--result-failed);
+}
+
+.result-card.failed .result-pill {
+    background: rgba(217, 48, 37, 0.12);
+    color: var(--result-failed);
+}
+
+.result-card.failed .result-btn.primary {
+    background: linear-gradient(120deg, #d93025, #f97316);
+    box-shadow: 0 8px 18px rgba(249, 115, 22, 0.28);
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-result-main {
+        padding-top: 96px;
+    }
+    .result-card {
+        border-radius: 18px;
+        padding: 26px 20px;
+    }
+    .result-meta {
+        grid-template-columns: 1fr;
+    }
+    .result-actions {
+        flex-direction: column;
+    }
+    .result-btn {
+        width: 100%;
+    }
+}

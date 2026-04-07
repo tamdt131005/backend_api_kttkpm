@@ -9,6 +9,7 @@ function getUserId() {
 function showLoading() {
     document.getElementById('loadingOverlay')?.classList.add('active');
 }
+
 function hideLoading() {
     document.getElementById('loadingOverlay')?.classList.remove('active');
 }
@@ -201,8 +202,8 @@ async function placeOrder() {
         return;
     }
 
-    const phuongthuc = document.querySelector('input[name="phuongthucthanhtoan"]:checked')?.value || 'tienmat';
-    const ghichu = document.getElementById('order-note')?.value.trim() || '';
+    const selectedPaymentMethod = document.querySelector('input[name="phuongthucthanhtoan"]:checked')?.value || 'tienmat';
+    const orderNote = document.getElementById('order-note')?.value.trim() || '';
 
     // Disable nút đặt hàng
     const btnOrder = document.getElementById('btn-place-order');
@@ -214,8 +215,8 @@ async function placeOrder() {
         const payload = {
             user_id: Number(userId),
             diachi_id: selectedAddress.id,
-            ghichu,
-            phuongthuc_thanhtoan: phuongthuc
+            ghichu: orderNote,
+            phuongthuc_thanhtoan: selectedPaymentMethod
         };
 
         if (buyNowItem) {
@@ -238,21 +239,20 @@ async function placeOrder() {
             localStorage.removeItem('buy_now_item');
         }
 
-        const isTransferPayment = phuongthuc === 'chuyenkhoan';
+        const isMomoPayment = selectedPaymentMethod === 'momo' || selectedPaymentMethod === 'chuyenkhoan';
 
-        if (isTransferPayment) {
-            const donhangId = Number(res?.data?.donhang_id);
-            if (Number.isInteger(donhangId) && donhangId > 0) {
-                const paymentRes = await api.post(`/orders/${donhangId}/momo`, { user_id: Number(userId) });
-                if (paymentRes.success && paymentRes.data?.payUrl) {
-                    window.location.href = paymentRes.data.payUrl;
-                    return;
-                }
+        if (isMomoPayment) {
+            const payUrl = res?.data?.payUrl;
 
-                alert(paymentRes.message || 'Đặt hàng thành công nhưng chưa tạo được link chuyển khoản. Vui lòng thanh toán lại trong trang đơn hàng.');
-            } else {
-                alert('Đặt hàng thành công nhưng thiếu mã đơn để tạo link chuyển khoản. Vui lòng vào trang đơn hàng để thanh toán lại.');
+            if (payUrl) {
+                window.location.href = payUrl;
+                return;
             }
+
+            hideLoading();
+            resetPlaceOrderButton();
+            alert(res?.message || 'Không tạo được link thanh toán. Vui lòng thử lại.');
+            return;
         }
 
         // Hiển thị thành công
@@ -337,7 +337,7 @@ async function init() {
 
         if (!buyNowItem) {
             const cartRes = await api.get(`/cart?user_id=${userId}`);
-            if (!cartRes.success || !cartRes.data.items || cartRes.data.items.length === 0) {
+            if (!cartRes.success || !Array.isArray(cartRes?.data?.items) || cartRes.data.items.length === 0) {
                 document.getElementById('checkout-loading').style.display = 'none';
                 document.getElementById('checkout-empty').style.display = '';
                 return;

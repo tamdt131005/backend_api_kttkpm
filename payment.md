@@ -1,4 +1,4 @@
-var accessKey = 'F8BBA842ECF85';
+<!-- var accessKey = 'F8BBA842ECF85';
 var secretKey = 'K951B6PE1waDMi640xX08PD3vg6EkVlz';
 var orderInfo = 'pay with MoMo';
 var partnerCode = 'MOMO';
@@ -80,4 +80,4 @@ req.on('error', (e) => {
 // write data to request body
 console.log("Sending....")
 req.write(requestBody);
-req.end();
+req.end(); -->

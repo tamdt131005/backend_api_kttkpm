@@ -1,7 +1,7 @@
 import AddressService from "../services/address.service.js"
 
 class AddressController {
-    async postAddress (req, res){
+    async postAddress(req, res) {
         try {
             const { user_id, ...addressData } = req.body;
             const address = await AddressService.postAddress(user_id, addressData);
@@ -19,10 +19,10 @@ class AddressController {
         }
     }
 
-    async conditionMacDinh (req,res){
+    async conditionMacDinh(req, res) {
         try {
-            const {id,user_id} = req.body;
-            const address = await AddressService.conditionMacDinh(id,user_id);
+            const { id, user_id } = req.body;
+            const address = await AddressService.conditionMacDinh(id, user_id);
             res.status(200).json({
                 success: true,
                 message: "Đặt địa làm chỉ mặc định thành công",
@@ -37,7 +37,7 @@ class AddressController {
         }
     }
 
-    async getAllAddress (req,res){
+    async getAllAddress(req, res) {
         try {
             const user_id = req.query.user_id || req.body.user_id;
             if (!user_id) {
@@ -62,7 +62,7 @@ class AddressController {
         }
     }
 
-    async getIdAddress (req,res){
+    async getIdAddress(req, res) {
         try {
             const id = req.params.id;
             const address = await AddressService.getIdAddress(id);
@@ -81,7 +81,7 @@ class AddressController {
         }
     }
 
-    async putAddress (req,res){
+    async putAddress(req, res) {
         try {
             const id = req.params.id;
             const { user_id, ...addressData } = req.body;
@@ -100,7 +100,7 @@ class AddressController {
         }
     }
 
-    async deleteAddress (req,res){
+    async deleteAddress(req, res) {
         try {
             const id = req.params.id;
             const address = await AddressService.deleteAddress(id);

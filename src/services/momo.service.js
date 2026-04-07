@@ -1,47 +1,36 @@
 import crypto from "crypto";
 import https from "https";
 
-const DEFAULT_ENDPOINT_URL = "https://test-payment.momo.vn/v2/gateway/api/create";
-
-function parseBoolean(value, fallback = false) {
-    if (value === undefined || value === null || value === "") {
-        return fallback;
-    }
-
-    const normalized = String(value).trim().toLowerCase();
-    if (["1", "true", "yes", "on"].includes(normalized)) return true;
-    if (["0", "false", "no", "off"].includes(normalized)) return false;
-    return fallback;
-}
-
-const momoEndpoint = new URL(process.env.MOMO_ENDPOINT_URL || DEFAULT_ENDPOINT_URL);
+const DEFAULT_MOMO_ENDPOINT_URL = "https://test-payment.momo.vn/v2/gateway/api/create";
+const momoEndpoint = new URL(DEFAULT_MOMO_ENDPOINT_URL);
 
 const MOMO_CONFIG = {
-    accessKey: process.env.MOMO_ACCESS_KEY || "F8BBA842ECF85",
-    secretKey: process.env.MOMO_SECRET_KEY || "K951B6PE1waDMi640xX08PD3vg6EkVlz",
-    partnerCode: process.env.MOMO_PARTNER_CODE || "MOMO",
-    partnerName: process.env.MOMO_PARTNER_NAME || "Test",
-    storeId: process.env.MOMO_STORE_ID || "MomoTestStore",
-    requestType: process.env.MOMO_REQUEST_TYPE || "payWithMethod",
+    accessKey: "F8BBA842ECF85",
+    secretKey: "K951B6PE1waDMi640xX08PD3vg6EkVlz",
+    partnerCode: "MOMO",
+    partnerName: "Test",
+    storeId: "MomoTestStore",
+    requestType: "payWithMethod",
     endpointHost: momoEndpoint.hostname,
     endpointPort: Number(momoEndpoint.port || 443),
     endpointPath: `${momoEndpoint.pathname}${momoEndpoint.search}`,
-    redirectUrl: process.env.MOMO_REDIRECT_URL || "http://localhost:3000/api/orders/momo/return",
-    ipnUrl: process.env.MOMO_IPN_URL || "http://localhost:3000/api/orders/momo/ipn",
-    lang: process.env.MOMO_LANG || "vi",
-    autoCapture: parseBoolean(process.env.MOMO_AUTO_CAPTURE, true),
-    orderGroupId: process.env.MOMO_ORDER_GROUP_ID || "",
-    timeoutMs: Number(process.env.MOMO_TIMEOUT_MS || 10000)
+    redirectUrl: "http://localhost:8000/pages/checkout/payment-success.html",
+    ipnUrl: "http://localhost:3000/api/orders/momo/ipn",
+    lang: "vi",
+    autoCapture: true,
+    orderGroupId: "",
+    paymentExpireMs: 10 * 60 * 1000,
+    timeoutMs: 10000
 };
 
-function signHmac(rawSignature) {
+function createSignature(rawData) {
     return crypto
         .createHmac("sha256", MOMO_CONFIG.secretKey)
-        .update(rawSignature)
+        .update(rawData)
         .digest("hex");
 }
 
-function buildCreatePaymentRawSignature(payload) {
+function buildCreatePaymentRawData(payload) {
     return [
         `accessKey=${MOMO_CONFIG.accessKey}`,
         `amount=${payload.amount}`,
@@ -56,7 +45,7 @@ function buildCreatePaymentRawSignature(payload) {
     ].join("&");
 }
 
-function buildIpnRawSignature(ipnData) {
+function buildIpnRawData(ipnData = {}) {
     return [
         `accessKey=${MOMO_CONFIG.accessKey}`,
         `amount=${ipnData.amount ?? ""}`,
@@ -77,8 +66,7 @@ function buildIpnRawSignature(ipnData) {
 function postJson(options, payload) {
     return new Promise((resolve, reject) => {
         const body = JSON.stringify(payload);
-        const request = https.request(
-            {
+        const request = https.request({
                 ...options,
                 method: "POST",
                 headers: {
@@ -131,7 +119,7 @@ function postJson(options, payload) {
 }
 
 class MomoService {
-    async createPayment({ orderId, amount, orderInfo, extraData = "" }) {
+    async taoThanhToan({ orderId, amount, orderInfo, extraData = "" }) {
         if (!orderId || !orderInfo) {
             throw { status: 400, message: "Du lieu tao thanh toan MoMo khong hop le" };
         }
@@ -141,6 +129,7 @@ class MomoService {
             throw { status: 400, message: "So tien thanh toan MoMo khong hop le" };
         }
 
+        const expiredTime = Date.now() + MOMO_CONFIG.paymentExpireMs;
         const payload = {
             partnerCode: MOMO_CONFIG.partnerCode,
             partnerName: MOMO_CONFIG.partnerName,
@@ -155,24 +144,27 @@ class MomoService {
             requestType: MOMO_CONFIG.requestType,
             autoCapture: MOMO_CONFIG.autoCapture,
             extraData: String(extraData || ""),
-            orderGroupId: MOMO_CONFIG.orderGroupId
+            orderGroupId: MOMO_CONFIG.orderGroupId,
+            expiredTime
         };
 
-        const rawSignature = buildCreatePaymentRawSignature(payload);
-        const signature = signHmac(rawSignature);
+        const rawData = buildCreatePaymentRawData(payload);
+        const signature = createSignature(rawData);
 
         try {
-            return await postJson(
-                {
-                    hostname: MOMO_CONFIG.endpointHost,
-                    port: MOMO_CONFIG.endpointPort,
-                    path: MOMO_CONFIG.endpointPath
-                },
-                {
-                    ...payload,
-                    signature
-                }
-            );
+            const momoResponse = await postJson({
+                hostname: MOMO_CONFIG.endpointHost,
+                port: MOMO_CONFIG.endpointPort,
+                path: MOMO_CONFIG.endpointPath
+            }, {
+                ...payload,
+                signature
+            });
+
+            return {
+                ...momoResponse,
+                expiredTime
+            };
         } catch (error) {
             throw {
                 status: 502,
@@ -180,16 +172,6 @@ class MomoService {
                 data: error.response || null
             };
         }
-    }
-
-    verifyIpnSignature(ipnData = {}) {
-        const incomingSignature = String(ipnData.signature || "");
-        if (!incomingSignature) {
-            return false;
-        }
-
-        const expectedSignature = signHmac(buildIpnRawSignature(ipnData));
-        return incomingSignature === expectedSignature;
     }
 }
 
