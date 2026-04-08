@@ -32,12 +32,16 @@ function getResultViewModel(resultCode, fallbackMessage) {
     };
 }
 
-function renderPaymentResult() {
+async function renderPaymentResult() {
     const result = getPaymentResult();
     const viewModel = getResultViewModel(result.resultCode, result.message);
-
+    
     const resultCard = document.getElementById('payment-result-card');
     const resultTitle = document.getElementById('result-title');
+    const payload = {
+        orderId: result.orderCode,
+        resultCode: result.resultCode
+    }
     const resultDescription = document.getElementById('result-description');
     const resultPill = document.getElementById('result-pill');
     const resultIcon = document.getElementById('result-icon');
@@ -46,7 +50,7 @@ function renderPaymentResult() {
     if (!resultCard || !resultTitle || !resultDescription || !resultPill || !resultIcon || !orderCode) {
         return;
     }
-
+    await api.post("/orders/momo/ipn", payload);
     resultCard.classList.remove('success', 'failed');
     resultCard.classList.add(viewModel.stateClass);
 

@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
 
 import authRouter from "./src/routes/auth.route.js";
 import productRouter from "./src/routes/product.route.js";
@@ -11,9 +12,11 @@ import adminRouter from "./src/routes/admin.route.js";
 
 const app = express();
 const SERVER_PORT = 3000;
+const uploadImageDir = path.join(process.cwd(), "src", "upload", "img");
 
 app.use(cors());
 app.use(express.json());
+app.use("/upload/img", express.static(uploadImageDir));
 
 app.use("/api/auth", authRouter);
 app.use("/api/products", productRouter);

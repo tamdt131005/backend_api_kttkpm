@@ -69,30 +69,20 @@ class OrderController {
     // POST /api/orders/momo/ipn
     async momoIpn(req, res) {
         try {
-            const { orderId, resultCode: rawResultCode } = req.body;
-            const resultCode = Number(rawResultCode);
+            const { orderId, resultCode } = req.body
             await orderService.updateTrangThaiMOMO(orderId, resultCode);
-
-            if (resultCode === 0) {
-                return res.status(200).json({
-                    success: true,
-                    message: "Thanh Toán Thành Công",
-                    resultCode: 0
-                });
-            } else {
-                return res.status(401).json({
-                    success: false,
-                    message: "Thanh Toán Thất Bại",
-                    resultCode: resultCode
-                });
-            }
         } catch (error) {
-            const maTrangThai = error.status || 500;
-            return res.status(maTrangThai).json({
+            res.status(error.status).json({
                 success: false,
-                message: error.message || "Lỗi xử lý IPN"
-            });
+                message: error.message
+            })
         }
+
+        res.status(200).json({
+            success: true,
+            message: "Thanh Toán Thành Công",
+            rusltcode: 0
+        });
     }
     async cancelOrder(req, res) {
         try {

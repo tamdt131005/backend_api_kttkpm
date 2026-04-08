@@ -14,7 +14,7 @@ class profileController {
                 success: true,
                 message: "Upload avatar thành công",
                 data: {
-                    avatar: req.file.filename
+                    avatar: `avatar/${req.file.filename}`
                 }
             });
         } catch (error) {

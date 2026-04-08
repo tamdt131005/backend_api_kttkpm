@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" id="final-logo" width="400" height="133" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    text { font-family: 'Poppins', sans-serif; font-weight: 700; }
+                </style>
+                <!-- Typography -->
+                <text x="20" y="75" font-size="70" fill="#312E81">b</text>
+                
+                <!-- Stylized T -->
+                <path d="M85 30 H125" stroke="#4F46E5" stroke-width="12" stroke-linecap="round"/>
+                <path d="M105 30 V75" stroke="#4F46E5" stroke-width="12" stroke-linecap="round"/>
+                <!-- Arrow Accent -->
+                <path d="M125 30 L135 20" stroke="#EC4899" stroke-width="6" stroke-linecap="round"/>
+
+                <text x="135" y="75" font-size="70" fill="#312E81">ap</text>
+                
+                <!-- Underline Accent -->
+                <path d="M25 90 H220" stroke="#EC4899" stroke-width="4" stroke-linecap="round"/>
+            </svg>

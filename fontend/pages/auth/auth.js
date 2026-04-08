@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem("user_id", user.id);
                     localStorage.setItem("username", user.username || username);
                     localStorage.setItem("fullname", user.fullname || username);
-                    localStorage.setItem("avatar", user.avatar || "../../assets/images/user.webp");
+                    localStorage.setItem("avatar", user.avatar || "user.webp");
                     localStorage.setItem("role", role);
 
                     // không dùng jwt

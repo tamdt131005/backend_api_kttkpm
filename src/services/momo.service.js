@@ -15,7 +15,7 @@ const MOMO_CONFIG = {
     endpointPort: Number(momoEndpoint.port || 443),
     endpointPath: `${momoEndpoint.pathname}${momoEndpoint.search}`,
     redirectUrl: "http://localhost:8000/pages/checkout/payment-success.html",
-    ipnUrl: "http://localhost:3000/api/orders/momo/ipn",
+    ipnUrl: "https://charge-recipes-thee-spending.trycloudflare.com/api/orders/momo/ipn",
     lang: "vi",
     autoCapture: true,
     orderGroupId: "",
