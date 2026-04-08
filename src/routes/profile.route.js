@@ -7,7 +7,7 @@ import ProfileController from '../controller/profile.controller.js'
 
 const router = express.Router();
 
-const uploadDir = path.join(process.cwd(), 'fontend', 'assets', 'images');
+const uploadDir = path.join(process.cwd(), 'src', 'upload', 'img', 'avatar');
 if (!fs.existsSync(uploadDir)) {
 	fs.mkdirSync(uploadDir, { recursive: true });
 }

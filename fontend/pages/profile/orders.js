@@ -136,12 +136,13 @@ function renderOrderCard(order) {
     const donhangId = Number(order.donhang_id || order.id);
     const showCancel = order.trangthai === 'choxacnhan';
     const phuongThuc = order.phuongthucthanhtoan || order.phuongthuc_thanhtoan;
+    const maDonhang = String(order.ma_donhang || `DH${donhangId}`);
 
     return `
-        <div class="order-item" id-donhang="${donhangId}">
+        <div class="order-item" id-donhang="${donhangId}" data-ma-donhang="${escapeHtml(maDonhang)}">
             ${renderCancelModal(order, donhangId)}
             <div class="tren">
-                <p class="madh">Mã đơn hàng: ${escapeHtml(order.ma_donhang || `DH${donhangId}`)}</p>
+                <p class="madh">Mã đơn hàng: ${escapeHtml(maDonhang)}</p>
                 <p class="pttt">${getPaymentText(phuongThuc)} &nbsp; | &nbsp; ${getStatusText(order.trangthai)}</p>
             </div>
             <div class="giua">

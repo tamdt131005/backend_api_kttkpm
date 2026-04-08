@@ -89,7 +89,7 @@ class AppHeader extends HTMLElement {
                 <div class="header-container">
                     <div class="logo-area">
                         <a href="${logoHref}">
-                            <img src="/assets/images/logo.svg" alt="Logo">
+                            <img src="${imageUtil.logo()}" alt="Logo">
                         </a>
                     </div>
 

@@ -1,150 +1,267 @@
 import orderDAO from "../dao/order.dao.js";
 import cartDAO from "../dao/cart.dao.js";
 import addressDAO from "../dao/address.dao.js";
-import pool from "../config/db.js";
+import momoService from "./momo.service.js";
+
+function maHoaDuLieuBoSung(payload) {
+    return Buffer.from(JSON.stringify(payload), "utf8").toString("base64");
+}
 
 class OrderService {
-    async createOrder(user_id, diachi_id, ghichu, phuongthuc_thanhtoan) {
-        // Lấy giỏ hàng
-        const items = await cartDAO.getCartByUserId(user_id);
-        if (!items || items.length === 0) {
-            throw { status: 400, message: "Giỏ hàng trống" };
+    chuanHoaPhuongThucThanhToan(phuongThucDauVao) {
+        const phuongThucGoc = String(phuongThucDauVao || "tienmat").toLowerCase();
+        if (phuongThucGoc === "momo" || phuongThucGoc === "chuyenkhoan") {
+            return "momo";
         }
 
-        // Lấy địa chỉ giao hàng
-        const address = await addressDAO.getAddressById(diachi_id, user_id);
-        if (!address) {
-            throw { status: 404, message: "Không tìm thấy địa chỉ giao hàng" };
+        if (phuongThucGoc === "tienmat") {
+            return "tienmat";
         }
 
-        const snapshot_diachi = JSON.stringify({
-            tennguoinhan: address.tennguoinhan,
-            sodienthoai: address.sodienthoai,
-            diachichitiet: address.diachichitiet,
-            phuong: address.phuong,
-            quan: address.quan,
-            tinh: address.tinh
+        throw { status: 400, message: "Phuong thuc thanh toan khong hop le" };
+    }
+
+    async taoPhienThanhToanMomo({ maDonHang, tongThanhToan, donHangId, nguoiDungId }) {
+        const maDonHangChuan = String(maDonHang || "");
+        const soTienChuan = Math.round(Number(tongThanhToan || 0));
+
+        if (!maDonHangChuan) {
+            throw { status: 400, message: "Thieu ma don hang" };
+        }
+
+        if (!Number.isFinite(soTienChuan) || soTienChuan <= 0) {
+            throw { status: 400, message: "Gia tri don hang khong hop le" };
+        }
+
+        const ketQuaMomo = await momoService.taoThanhToan({
+            orderId: maDonHangChuan,
+            amount: soTienChuan,
+            orderInfo: `Thanh toan don hang ${maDonHangChuan}`,
+            extraData: maHoaDuLieuBoSung({ order_id: donHangId, user_id: nguoiDungId })
         });
 
-        // Tính tiền
-        const tongtienhang = await cartDAO.getCartTotal(user_id);
-        const phivanchuyen = 0; // Tạm thời miễn phí vận chuyển
-        const tongthanhtoan = tongtienhang + phivanchuyen;
-        const ma_donhang = "DH" + Date.now();
-
-        const connection = await pool.getConnection();
-        try {
-            await connection.beginTransaction();
-
-            const orderData = {
-                ma_donhang,
-                user_id,
-                diachi_id,
-                snapshot_diachi,
-                ghichu,
-                phuongthuc_thanhtoan,
-                tongtienhang,
-                phivanchuyen,
-                tongthanhtoan
+        if (Number(ketQuaMomo?.resultCode) !== 0) {
+            throw {
+                status: 400,
+                message: ketQuaMomo?.message || "Tao thanh toan MoMo that bai"
             };
+        }
 
-            const donhangId = await orderDAO.createOrder(connection, orderData);
+        if (!ketQuaMomo?.payUrl) {
+            throw { status: 400, message: "MoMo khong tra ve link thanh toan" };
+        }
 
-            // Chuẩn bị details
-            const details = items.map(item => {
-                const dongia = (item.giakhuyenmai !== null && item.giakhuyenmai > 0 && item.giakhuyenmai < item.giaban) 
-                               ? Number(item.giakhuyenmai) : Number(item.giaban);
-                return {
-                    sanpham_id: item.sanpham_id,
-                    bienthe_id: item.bienthe_id,
-                    tensanpham: item.tensanpham,
-                    kichthuoc: item.kichthuoc,
-                    mausac: item.mausac,
-                    ma_sku: null,
-                    dongia: dongia,
-                    soluong: item.soluong,
-                    thanhtien: dongia * item.soluong
-                };
-            });
+        return {
+            payUrl: ketQuaMomo.payUrl,
+            deeplink: ketQuaMomo.deeplink || null,
+            qrCodeUrl: ketQuaMomo.qrCodeUrl || null,
+            expired_time: ketQuaMomo.expiredTime || null
+        };
+    }
 
-            await orderDAO.createOrderDetails(connection, donhangId, details);
+    async createOrder(userId, addressId, note, paymentMethodInput, checkoutItems = null) {
+        const phuongThucThanhToan = this.chuanHoaPhuongThucThanhToan(paymentMethodInput);
+        const phuongThucThanhToanLuuDB = phuongThucThanhToan === "momo" ? "chuyenkhoan" : "tienmat";
 
-            // Cập nhật tồn kho
-            for (const item of items) {
-                if (item.bienthe_id) {
-                    await orderDAO.updateStock(connection, item.bienthe_id, item.soluong);
+        let danhSachSanPhamDatHang = [];
+        let tamTinh = 0;
+        const donMuaNgay = Array.isArray(checkoutItems) && checkoutItems.length > 0;
+
+        if (donMuaNgay) {
+            for (const sanPhamMuaNgay of checkoutItems) {
+                const sanPhamId = Number(sanPhamMuaNgay?.sanpham_id);
+                const bienTheId = sanPhamMuaNgay?.bienthe_id !== undefined && sanPhamMuaNgay?.bienthe_id !== null ?
+                    Number(sanPhamMuaNgay.bienthe_id) : null;
+                const soLuong = Number(sanPhamMuaNgay?.soluong || 0);
+
+                if (!Number.isInteger(sanPhamId) || sanPhamId <= 0 || !Number.isInteger(soLuong) || soLuong <= 0) {
+                    throw { status: 400, message: "Du lieu mua ngay khong hop le" };
                 }
+
+                const thongTinSanPham = await orderDAO.getProductSnapshotForOrderItem(sanPhamId, bienTheId);
+                if (!thongTinSanPham) {
+                    throw { status: 404, message: "Khong tim thay san pham dat hang" };
+                }
+
+                if (bienTheId && Number(thongTinSanPham.soluong_kho || 0) < soLuong) {
+                    throw { status: 400, message: `San pham ${thongTinSanPham.tensanpham} khong du ton kho` };
+                }
+
+                const donGia =
+                    thongTinSanPham.giakhuyenmai !== null &&
+                    Number(thongTinSanPham.giakhuyenmai) > 0 &&
+                    Number(thongTinSanPham.giakhuyenmai) < Number(thongTinSanPham.giaban) ?
+                    Number(thongTinSanPham.giakhuyenmai) :
+                    Number(thongTinSanPham.giaban);
+
+                const chiTietDonHang = {
+                    sanpham_id: thongTinSanPham.sanpham_id,
+                    bienthe_id: thongTinSanPham.bienthe_id,
+                    tensanpham: thongTinSanPham.tensanpham,
+                    kichthuoc: thongTinSanPham.kichthuoc,
+                    mausac: thongTinSanPham.mausac,
+                    ma_sku: thongTinSanPham.ma_sku,
+                    dongia: donGia,
+                    soluong: soLuong,
+                    thanhtien: donGia * soLuong
+                };
+
+                danhSachSanPhamDatHang.push(chiTietDonHang);
+                tamTinh += chiTietDonHang.thanhtien;
+            }
+        } else {
+            const danhSachGioHang = await cartDAO.getCartByUserId(userId);
+            if (!Array.isArray(danhSachGioHang) || danhSachGioHang.length === 0) {
+                throw { status: 400, message: "Gio hang trong" };
             }
 
-            await orderDAO.addOrderHistory(connection, donhangId, user_id, 'choxacnhan', 'Đặt hàng mới');
+            danhSachSanPhamDatHang = danhSachGioHang.map((mucGioHang) => {
+                const donGia =
+                    mucGioHang.giakhuyenmai !== null && mucGioHang.giakhuyenmai > 0 && mucGioHang.giakhuyenmai < mucGioHang.giaban ?
+                    Number(mucGioHang.giakhuyenmai) :
+                    Number(mucGioHang.giaban);
 
-            // Xóa giỏ hàng
-            await connection.execute(`DELETE FROM giohang WHERE user_id = ?`, [user_id]);
+                const chiTietDonHang = {
+                    sanpham_id: mucGioHang.sanpham_id,
+                    bienthe_id: mucGioHang.bienthe_id,
+                    tensanpham: mucGioHang.tensanpham,
+                    kichthuoc: mucGioHang.kichthuoc,
+                    mausac: mucGioHang.mausac,
+                    ma_sku: null,
+                    dongia: donGia,
+                    soluong: mucGioHang.soluong,
+                    thanhtien: donGia * mucGioHang.soluong
+                };
 
-            await connection.commit();
-
-            return { ma_donhang, tongthanhtoan };
-        } catch (error) {
-            await connection.rollback();
-            throw error;
-        } finally {
-            connection.release();
+                tamTinh += chiTietDonHang.thanhtien;
+                return chiTietDonHang;
+            });
         }
+
+        if (danhSachSanPhamDatHang.length === 0) {
+            throw { status: 400, message: "Khong co san pham de dat hang" };
+        }
+
+        const diaChi = await addressDAO.getAddressById(addressId, userId);
+        if (!diaChi) {
+            throw { status: 404, message: "Khong tim thay dia chi giao hang" };
+        }
+
+        const snapshotDiaChi = JSON.stringify({
+            tennguoinhan: diaChi.tennguoinhan,
+            sodienthoai: diaChi.sodienthoai,
+            diachichitiet: diaChi.diachichitiet,
+            phuong: diaChi.phuong,
+            quan: diaChi.quan,
+            tinh: diaChi.tinh
+        });
+
+        const phiVanChuyen = 0;
+        const tongThanhToan = tamTinh + phiVanChuyen;
+        const maDonHang = `DH${Date.now()}`;
+
+        const duLieuDonHang = {
+            ma_donhang: maDonHang,
+            user_id: userId,
+            diachi_id: addressId,
+            snapshot_diachi: snapshotDiaChi,
+            ghichu: note,
+            phuongthuc_thanhtoan: phuongThucThanhToanLuuDB,
+            tongtienhang: tamTinh,
+            phivanchuyen: phiVanChuyen,
+            tongthanhtoan: tongThanhToan
+        };
+
+        const donHangIdMoi = await orderDAO.taoDonHang(duLieuDonHang);
+        await orderDAO.taoChiTietDonHang(donHangIdMoi, danhSachSanPhamDatHang);
+
+        for (const chiTietDonHang of danhSachSanPhamDatHang) {
+            if (chiTietDonHang.bienthe_id) {
+                await orderDAO.updateTonkho(chiTietDonHang.bienthe_id, chiTietDonHang.soluong);
+            }
+        }
+
+        await orderDAO.addLichSuDonHang(donHangIdMoi, userId, "choxacnhan", "Dat hang moi");
+        if (!donMuaNgay) {
+            await cartDAO.clearCart(userId);
+        }
+
+        let duLieuThanhToanMomo = null;
+        if (phuongThucThanhToan === "momo") {
+            duLieuThanhToanMomo = await this.taoPhienThanhToanMomo({
+                maDonHang,
+                tongThanhToan,
+                donHangId: donHangIdMoi,
+                nguoiDungId: userId
+            });
+        }
+
+        return {
+            donhang_id: donHangIdMoi,
+            ma_donhang: maDonHang,
+            tongthanhtoan: tongThanhToan,
+            ...(duLieuThanhToanMomo || {})
+        };
     }
 
     async getOrders(userId) {
-        return await orderDAO.getOrdersByUserId(userId);
+        return await orderDAO.getDonHangCuaUser(userId);
+    }
+
+    async updateTrangThaiMOMO(maDonHang, resultCode) {
+        const maDon = String(maDonHang ?? '').trim();
+        if (!maDon) {
+            throw {
+                status: 401,
+                message: "Thanh Toán Không Thành Công"
+            };
+        }
+
+        if (Number(resultCode) === 0) {
+            // Thanh toán thành công
+            await orderDAO.updateTrangThaiThanhToan(maDon, 'dathanhtoan', 'chuyenkhoan');
+        } else {
+            // Thanh toán thất bại (resultCode !== 0, ví dụ 1002) → giữ trạng thái chưa thanh toán
+            await orderDAO.updateTrangThaiThanhToan(maDon, 'chuathanhtoan', 'chuyenkhoan');
+        }
     }
 
     async getOrderById(orderId, userId) {
-        const order = await orderDAO.getOrderById(orderId, userId);
-        if (!order) {
+        const donHang = await orderDAO.getOrderById(orderId, userId);
+        if (!donHang) {
             throw { status: 404, message: "Không tìm thấy đơn hàng" };
         }
-        return order;
+        return donHang;
     }
 
     async cancelOrder(orderId, userId, lydoHuy) {
-        const connection = await pool.getConnection();
-        try {
-            await connection.beginTransaction();
-
-            const order = await orderDAO.getOrderRowForUser(connection, orderId, userId);
-            if (!order) {
-                throw { status: 404, message: "Không tìm thấy đơn hàng" };
-            }
-
-            if (order.trangthai !== 'choxacnhan') {
-                throw { status: 400, message: "Chỉ được hủy đơn hàng ở trạng thái chờ xác nhận" };
-            }
-
-            const details = await orderDAO.getOrderItems(connection, orderId);
-            for (const item of details) {
-                if (item.bienthe_id) {
-                    await orderDAO.restoreVariantStock(connection, item.bienthe_id, item.soluong);
-                }
-            }
-
-            const affectedRows = await orderDAO.cancelOrder(connection, orderId, lydoHuy);
-            if (affectedRows <= 0) {
-                throw { status: 400, message: "Không thể hủy đơn hàng" };
-            }
-
-            await orderDAO.addOrderHistory(
-                connection,
-                Number(orderId),
-                Number(userId),
-                'dahuy',
-                lydoHuy || 'Người dùng hủy đơn'
-            );
-
-            await connection.commit();
-        } catch (error) {
-            await connection.rollback();
-            throw error;
-        } finally {
-            connection.release();
+        const donHang = await orderDAO.getOrderRowForUser(orderId, userId);
+        if (!donHang) {
+            throw { status: 404, message: "Không tìm thấy đơn hàng" };
         }
+
+        if (donHang.trangthai !== 'choxacnhan') {
+            throw { status: 400, message: "Chỉ được hủy đơn hàng ở trạng thái chờ xác nhận" };
+        }
+
+        const danhSachChiTiet = await orderDAO.getOrderItems(orderId);
+        for (const chiTiet of danhSachChiTiet) {
+            if (chiTiet.bienthe_id) {
+                await orderDAO.restoreTonkho(chiTiet.bienthe_id, chiTiet.soluong);
+            }
+        }
+
+        const soDongCapNhat = await orderDAO.cancelOrder(orderId, lydoHuy);
+        if (soDongCapNhat <= 0) {
+            throw { status: 400, message: "Không thể hủy đơn hàng" };
+        }
+
+        await orderDAO.addLichSuDonHang(
+            Number(orderId),
+            Number(userId),
+            'dahuy',
+            lydoHuy || 'Người dùng hủy đơn'
+        );
     }
 }
 

@@ -1,20 +1,11 @@
-/**
- * Cart Page - Quản lý giỏ hàng
- * Kiểm tra đăng nhập bằng localStorage (user_id)
- * Gọi API backend để CRUD giỏ hàng
- */
 
-// Hàm định dạng tiền VND
 function formatCurrency(value) {
     return new Intl.NumberFormat('vi-VN').format(Number(value) || 0) + '₫';
 }
-
-// Lấy user_id từ localStorage
 function getUserId() {
     return localStorage.getItem('user_id');
 }
 
-// Hiển thị loading overlay
 function showLoading() {
     document.getElementById('loadingOverlay')?.classList.add('active');
 }
@@ -100,8 +91,6 @@ function renderCart(data) {
 
     emptyEl.style.display = 'none';
     contentEl.style.display = '';
-
-    // Render items
     const itemsHtml = items.map(renderCartItem).join('');
     document.getElementById('cart-items').innerHTML = itemsHtml;
 

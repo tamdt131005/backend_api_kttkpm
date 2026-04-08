@@ -155,6 +155,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    text-decoration: none;
     transition: all 0.2s;
 }
 
@@ -168,7 +169,10 @@ body {
     text-align: center;
 }
 
-.no-address a { color: var(--primary); font-weight: 500; }
+.no-address .btn-change,
+.no-address .btn-confirm {
+    margin-top: 12px;
+}
 
 /* Danh sách sản phẩm */
 .order-items { display: flex; flex-direction: column; gap: 12px; }
@@ -282,14 +286,20 @@ body {
     margin-bottom: 8px;
 }
 
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .payment-option {
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 12px;
-    background: var(--primary-light);
+    background: var(--bg-white);
     border-radius: 8px;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--border-color);
 }
 
 .payment-option label {
@@ -298,8 +308,16 @@ body {
     gap: 8px;
     cursor: pointer;
     font-size: 0.9rem;
-    color: var(--primary);
+    color: var(--text-dark);
     font-weight: 500;
+    width: 100%;
+}
+
+.payment-option label i { color: var(--primary); }
+
+.payment-option input:checked + label {
+    color: var(--primary);
+    font-weight: 600;
 }
 
 .payment-option input { accent-color: var(--primary); }
@@ -493,38 +511,14 @@ body {
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
     transition: all 0.2s;
 }
 
 .btn-confirm:hover { background: var(--primary-dark); }
-
-/* Form thêm địa chỉ */
-.address-form .form-group {
-    margin-bottom: 16px;
-}
-
-.address-form label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 6px;
-    color: var(--text-dark);
-}
-
-.address-form input {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-family: inherit;
-    transition: border-color 0.2s;
-}
-
-.address-form input:focus {
-    outline: none;
-    border-color: var(--primary);
-}
 
 /* Loading Overlay */
 .loading-overlay {

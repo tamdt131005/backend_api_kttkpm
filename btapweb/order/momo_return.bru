@@ -1,0 +1,17 @@
+meta {
+  name: order_momo_return
+  type: http
+  seq: 8
+}
+
+get {
+  url: http://localhost:3000/api/orders/momo/return?orderId=DH000001&resultCode=0&message=Successful
+  body: none
+  auth: none
+}
+
+params:query {
+  orderId: DH000001
+  resultCode: 0
+  message: Successful
+}

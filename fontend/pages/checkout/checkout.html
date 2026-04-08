@@ -70,7 +70,10 @@
                         </h3>
                         <div class="address-content" id="address-display">
                             <div class="no-address" id="no-address">
-                                <p>Bạn chưa có địa chỉ. <a href="/pages/profile/address.html">Thêm địa chỉ mới</a></p>
+                                <p>Bạn chưa có địa chỉ nhận hàng.</p>
+                                <a href="/pages/profile/address.html" class="btn-change">
+                                    <i class="fas fa-plus"></i> Thêm địa chỉ
+                                </a>
                             </div>
                         </div>
                         <button type="button" class="btn-change" id="btn-change-address" style="display: none;" onclick="openAddressModal()">
@@ -114,11 +117,19 @@
                     <!-- Phương thức thanh toán -->
                     <div class="payment-method">
                         <span>Phương thức:</span>
-                        <div class="payment-option">
-                            <input type="radio" name="phuongthucthanhtoan" value="tienmat" id="cod" checked>
-                            <label for="cod">
-                                <i class="fas fa-money-bill-wave"></i> Thanh toán khi nhận hàng
-                            </label>
+                        <div class="payment-options">
+                            <div class="payment-option">
+                                <input type="radio" name="phuongthucthanhtoan" value="tienmat" id="cod" checked>
+                                <label for="cod">
+                                    <i class="fas fa-money-bill-wave"></i> Thanh toán khi nhận hàng
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" name="phuongthucthanhtoan" value="momo" id="bank-transfer">
+                                <label for="bank-transfer">
+                                    <i class="fas fa-building-columns"></i> Thanh toán MoMo
+                                </label>
+                            </div>
                         </div>
                     </div>
 
@@ -152,48 +163,6 @@
             <div class="modal-footer">
                 <button type="button" class="btn-cancel" onclick="closeAddressModal()">Hủy</button>
                 <button type="button" class="btn-confirm" onclick="confirmAddress()">Xác Nhận</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal thêm địa chỉ mới -->
-    <div class="address-modal" id="addAddressModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Thêm Địa Chỉ Mới</h3>
-                <button type="button" class="close-modal" onclick="closeAddAddressForm()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="add-address-form" class="address-form">
-                    <div class="form-group">
-                        <label>Tên người nhận *</label>
-                        <input type="text" id="new-tennguoinhan" required placeholder="Nguyễn Văn A">
-                    </div>
-                    <div class="form-group">
-                        <label>Số điện thoại *</label>
-                        <input type="text" id="new-sodienthoai" required placeholder="0123456789">
-                    </div>
-                    <div class="form-group">
-                        <label>Địa chỉ chi tiết *</label>
-                        <input type="text" id="new-diachichitiet" required placeholder="123 Đường ABC">
-                    </div>
-                    <div class="form-group">
-                        <label>Phường / Xã *</label>
-                        <input type="text" id="new-phuong" required placeholder="Phường 1">
-                    </div>
-                    <div class="form-group">
-                        <label>Quận / Huyện *</label>
-                        <input type="text" id="new-quan" required placeholder="Quận 1">
-                    </div>
-                    <div class="form-group">
-                        <label>Tỉnh / Thành phố *</label>
-                        <input type="text" id="new-tinh" required placeholder="TP. Hồ Chí Minh">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn-cancel" onclick="closeAddAddressForm()">Hủy</button>
-                <button type="button" class="btn-confirm" onclick="saveNewAddress()">Lưu Địa Chỉ</button>
             </div>
         </div>
     </div>

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -620,36 +619,29 @@ body {
         flex-direction: column;
         padding: 70px 16px 24px;
     }
-
     .cardleft {
         max-width: 100%;
         position: static;
     }
-
     .order-list {
         justify-content: flex-start;
         gap: 8px;
     }
-
     .order-list a {
         padding: 14px 12px;
         font-size: 14px;
     }
-
     .tren,
     .duoi {
         flex-direction: column;
         align-items: flex-start;
     }
-
     .duoi-right {
         margin: 0;
     }
-
     .order-detail-content {
         grid-template-columns: 1fr;
     }
-
     .order-detail-container {
         padding: 14px;
     }

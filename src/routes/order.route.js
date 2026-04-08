@@ -6,6 +6,9 @@ const router = express.Router();
 // POST /api/orders         → Tạo đơn hàng (đặt hàng)
 router.post('/', orderController.createOrder);
 
+// POST /api/orders/momo/ipn → MoMo server-to-server callback (cập nhật trạng thái thanh toán)
+router.post('/momo/ipn', orderController.momoIpn);
+
 // GET  /api/orders?user_id=... → Lấy danh sách đơn hàng
 router.get('/', orderController.getOrders);
 

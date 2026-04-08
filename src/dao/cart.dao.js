@@ -25,12 +25,12 @@ class CartDAO {
         return rows;
     }
 
-    // Kiểm tra sản phẩm đã có trong giỏ chưa (cùng biến thể)
-    async findCartItem(userId, sanphamId, bientheId) {
+    // Kiểm tra sản phẩm đã có trong giỏ chưa 
+    async findCartItem(userId, sanphamId) {
         const [rows] = await pool.execute(`
             SELECT * FROM giohang 
-            WHERE user_id = ? AND sanpham_id = ? AND bienthe_id <=> ?
-        `, [userId, sanphamId, bientheId || null]);
+            WHERE user_id = ? AND sanpham_id = ? 
+        `, [userId, sanphamId]);
         return rows[0] || null;
     }
 

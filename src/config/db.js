@@ -4,8 +4,7 @@ import path from 'path';
 
 const configPath = path.join(process.cwd(), 'src', 'config', 'config.json');
 const rawConfig = JSON.parse(readFileSync(configPath, 'utf-8'));
-const env = process.env.NODE_ENV || 'development';
-const cfg = rawConfig[env] || rawConfig.development || rawConfig;
+const cfg = rawConfig.development || rawConfig;
 
 const pool = mysql.createPool({
     host: cfg.host || cfg.hostname,

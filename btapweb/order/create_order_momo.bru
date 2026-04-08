@@ -1,0 +1,20 @@
+meta {
+  name: order_create_with_momo_link
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:3000/api/orders
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "user_id": 1,
+    "diachi_id": 1,
+    "ghichu": "Thanh toan qua MoMo",
+    "phuongthuc_thanhtoan": "momo"
+  }
+}
