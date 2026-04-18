@@ -28,7 +28,7 @@ function renderInfo(order) {
 }
 
 function renderProgress(order) {
-    const steps = ['choxacnhan', 'daxacnhan', 'dangxuly', 'danggiao', 'dagiao'];
+    const steps = ['choxacnhan', 'dangxuly', 'danggiao', 'dagiao'];
     const current = order.trangthai;
     const currentIndex = steps.indexOf(current);
     const wrap = document.getElementById('progress-steps');

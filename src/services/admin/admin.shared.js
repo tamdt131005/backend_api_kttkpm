@@ -1,12 +1,33 @@
-export const thuTuTrangThai = {
-    choxacnhan: 0,
-    daxacnhan: 1,
-    dangxuly: 2,
-    danggiao: 3,
-    dagiao: 4
-};
+const danhSachTrangThaiTuanTu = ["choxacnhan", "dangxuly", "danggiao", "dagiao"];
+
+export const thuTuTrangThai = danhSachTrangThaiTuanTu.reduce((acc, trangthai, index) => {
+    acc[trangthai] = index;
+    return acc;
+}, {});
 
 export const trangThaiThanhToanHopLe = ["chuathanhtoan", "dathanhtoan", "hoantien"];
+
+const bangChuanHoaTrangThaiDonHang = {
+    all: "all",
+    tatca: "all",
+    choxacnhan: "choxacnhan",
+    daxacnhan: "dangxuly",
+    dangxuly: "dangxuly",
+    dangchuanbi: "dangxuly",
+    danggiao: "danggiao",
+    danggiaohang: "danggiao",
+    dagiao: "dagiao",
+    dagiaohang: "dagiao",
+    hoanthanh: "dagiao",
+    dahuy: "dahuy"
+};
+
+const bangChuanHoaTrangThaiThanhToan = {
+    chuathanhtoan: "chuathanhtoan",
+    dathanhtoan: "dathanhtoan",
+    hoantien: "hoantien",
+    dahoantien: "hoantien"
+};
 
 export function taoSlug(value) {
     return String(value || "")
@@ -18,16 +39,43 @@ export function taoSlug(value) {
         .replace(/^-+|-+$/g, "");
 }
 
+function taoKhoaChuanHoa(value) {
+    return taoSlug(value).replace(/-/g, "");
+}
+
+export function chuanHoaTrangThaiDonHang(value, { allowAll = false } = {}) {
+    const khoa = taoKhoaChuanHoa(value);
+
+    if (!khoa) {
+        return allowAll ? "all" : null;
+    }
+
+    if (allowAll && (khoa === "all" || khoa === "tatca")) {
+        return "all";
+    }
+
+    return bangChuanHoaTrangThaiDonHang[khoa] || null;
+}
+
+export function chuanHoaTrangThaiThanhToan(value) {
+    const khoa = taoKhoaChuanHoa(value);
+    if (!khoa) {
+        return null;
+    }
+
+    return bangChuanHoaTrangThaiThanhToan[khoa] || null;
+}
+
 export function layTrangThaiTiepTheo(trangthaiHienTai) {
-    const danhSach = Object.keys(thuTuTrangThai);
-    const indexHienTai = thuTuTrangThai[trangthaiHienTai];
+    const trangThaiDaChuanHoa = chuanHoaTrangThaiDonHang(trangthaiHienTai);
+    const indexHienTai = thuTuTrangThai[trangThaiDaChuanHoa];
     if (typeof indexHienTai !== "number") {
         return null;
     }
 
-    if (indexHienTai >= danhSach.length - 1) {
+    if (indexHienTai >= danhSachTrangThaiTuanTu.length - 1) {
         return null;
     }
 
-    return danhSach[indexHienTai + 1];
+    return danhSachTrangThaiTuanTu[indexHienTai + 1];
 }
