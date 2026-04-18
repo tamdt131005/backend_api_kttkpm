@@ -8,6 +8,14 @@ Tài liệu này giải thích chi tiết logic hệ thống hiện tại cho c�
 - Backend theo luồng route -> middleware/validation -> controller -> service -> dao.
 - Frontend theo file HTML/JS, cách render, API nào được gọi, dữ liệu truyền vào.
 
+## Tài liệu tách theo chức năng
+- [Đăng ký và đăng nhập](chuc-nang/dang-ky-dang-nhap.md)
+- [Trang chủ user](chuc-nang/trang-chu-user.md)
+- [Chi tiết sản phẩm](chuc-nang/chi-tiet-san-pham.md)
+- [Giỏ hàng](chuc-nang/gio-hang.md)
+- [Header user](chuc-nang/header-user.md)
+- [Thanh toán user (mua ngay, từ giỏ, COD, MoMo)](chuc-nang/thanh-toan-user.md)
+
 Phạm vi phân tích dựa trên mã nguồn hiện tại trong repo, không suy diễn thêm ngoài code.
 
 ---
