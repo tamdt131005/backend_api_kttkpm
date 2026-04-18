@@ -6,8 +6,14 @@ function getUserId() {
 }
 
 function toDateInput(value) {
-    if (!value) return '';
-    const date = new Date(value);
+    const raw = String(value || '').trim();
+    if (!raw) return '';
+
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+        return raw;
+    }
+
+    const date = new Date(raw);
     if (Number.isNaN(date.getTime())) return '';
     const y = date.getFullYear();
     const m = String(date.getMonth() + 1).padStart(2, '0');
@@ -115,7 +121,7 @@ function buildUpdatePayload(userId) {
         fullname,
         phone,
         sex: getSexValue(),
-        ngaysinh: ngaysinhRaw ? new Date(ngaysinhRaw).toISOString() : null,
+        ngaysinh: ngaysinhRaw || null,
         avatar: profile.avatar || null
     };
 }

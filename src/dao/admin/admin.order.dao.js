@@ -154,7 +154,6 @@ class AdminOrderDAO {
         const thongke = {
             tatca: 0,
             choxacnhan: 0,
-            daxacnhan: 0,
             dangxuly: 0,
             danggiao: 0,
             dagiao: 0,
@@ -162,10 +161,10 @@ class AdminOrderDAO {
         };
 
         for (const row of rows) {
-            const trangthai = row.trangthai;
+            const trangthai = row.trangthai === "daxacnhan" ? "dangxuly" : row.trangthai;
             const soluong = Number(row.soluong) || 0;
             if (Object.prototype.hasOwnProperty.call(thongke, trangthai)) {
-                thongke[trangthai] = soluong;
+                thongke[trangthai] += soluong;
             }
             thongke.tatca += soluong;
         }

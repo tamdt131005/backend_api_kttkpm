@@ -1,5 +1,33 @@
 let currentId = 0;
 
+function taoUrlXemTruocAnh(hinhanh) {
+    const value = String(hinhanh || '').trim();
+    if (!value) return '';
+
+    if (typeof imageUtil !== 'undefined' && imageUtil.product) {
+        return imageUtil.product(value);
+    }
+
+    if (/^https?:\/\//i.test(value)) return value;
+    if (value.startsWith('product/')) return `http://localhost:3000/upload/img/${value}`;
+    return `http://localhost:3000/upload/img/product/${value}`;
+}
+
+function renderPreview(hinhanh) {
+    const preview = document.getElementById('hinhanh-preview');
+    if (!preview) return;
+
+    const previewUrl = taoUrlXemTruocAnh(hinhanh);
+    if (!previewUrl) {
+        preview.style.display = 'none';
+        preview.removeAttribute('src');
+        return;
+    }
+
+    preview.style.display = 'block';
+    preview.src = previewUrl;
+}
+
 async function loadDanhMuc(selectedId) {
     const select = document.getElementById('danhmuc_id');
     if (!select) return;
@@ -43,9 +71,55 @@ async function loadSanPham() {
         document.getElementById('soluong').value = Number(sp.soluong) || 0;
         document.getElementById('mota').value = sp.mota || '';
         document.getElementById('an_hien').checked = Number(sp.an_hien) === 1;
+        renderPreview(sp.hinhanh || '');
     } catch (error) {
         alert('Lỗi kết nối máy chủ');
         window.location.href = './sanpham_list.html';
+    }
+}
+
+async function uploadHinhAnh() {
+    const fileInput = document.getElementById('hinhanh_file');
+    const file = fileInput?.files?.[0];
+    if (!file) {
+        alert('Vui lòng chọn ảnh cần tải lên');
+        return;
+    }
+
+    if (!String(file.type || '').startsWith('image/')) {
+        alert('File tải lên phải là ảnh');
+        return;
+    }
+
+    if (Number(file.size || 0) > 2 * 1024 * 1024) {
+        alert('Ảnh vượt quá 2MB');
+        return;
+    }
+
+    const btnUpload = document.getElementById('btn-upload-hinhanh');
+    if (btnUpload) btnUpload.disabled = true;
+
+    try {
+        const formData = new FormData();
+        formData.append('hinhanh', file);
+
+        const res = await adminApi.upload('/sanpham/upload-anh', formData);
+        if (!res.success) {
+            alert(res.message || 'Upload ảnh thất bại');
+            return;
+        }
+
+        const hinhanh = String(res.data?.hinhanh || '').trim();
+        const inputHinhAnh = document.getElementById('hinhanh');
+        if (inputHinhAnh) {
+            inputHinhAnh.value = hinhanh;
+        }
+        renderPreview(hinhanh);
+        alert('Upload ảnh thành công');
+    } catch (error) {
+        alert('Lỗi kết nối máy chủ khi upload ảnh');
+    } finally {
+        if (btnUpload) btnUpload.disabled = false;
     }
 }
 
@@ -78,6 +152,10 @@ async function submitSanPham(event) {
 
 function bindEvents() {
     document.getElementById('sanpham-form')?.addEventListener('submit', submitSanPham);
+    document.getElementById('btn-upload-hinhanh')?.addEventListener('click', uploadHinhAnh);
+    document.getElementById('hinhanh')?.addEventListener('input', (event) => {
+        renderPreview(event.target.value || '');
+    });
 }
 
 async function init() {

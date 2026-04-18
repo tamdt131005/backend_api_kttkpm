@@ -28,14 +28,18 @@ function highlightStatusTab() {
 }
 
 function renderStats(thongke, tongdoanhthu) {
-    document.getElementById('stats-tatca').textContent = String(Number(thongke.tatca) || 0);
-    document.getElementById('stats-choxacnhan').textContent = String(Number(thongke.choxacnhan) || 0);
-    document.getElementById('stats-daxacnhan').textContent = String(Number(thongke.daxacnhan) || 0);
-    document.getElementById('stats-dangxuly').textContent = String(Number(thongke.dangxuly) || 0);
-    document.getElementById('stats-danggiao').textContent = String(Number(thongke.danggiao) || 0);
-    document.getElementById('stats-dagiao').textContent = String(Number(thongke.dagiao) || 0);
-    document.getElementById('stats-dahuy').textContent = String(Number(thongke.dahuy) || 0);
-    document.getElementById('stats-doanhthu').textContent = formatCurrency(tongdoanhthu);
+    const setStatText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+    };
+
+    setStatText('stats-tatca', String(Number(thongke.tatca) || 0));
+    setStatText('stats-choxacnhan', String(Number(thongke.choxacnhan) || 0));
+    setStatText('stats-dangxuly', String(Number(thongke.dangxuly) || 0));
+    setStatText('stats-danggiao', String(Number(thongke.danggiao) || 0));
+    setStatText('stats-dagiao', String(Number(thongke.dagiao) || 0));
+    setStatText('stats-dahuy', String(Number(thongke.dahuy) || 0));
+    setStatText('stats-doanhthu', formatCurrency(tongdoanhthu));
 }
 
 function renderActions(row) {

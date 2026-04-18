@@ -48,6 +48,18 @@
                     <label for="hinhanh">Hình ảnh</label>
                     <input id="hinhanh" name="hinhanh" type="text" placeholder="ten-file.jpg hoặc url">
                 </div>
+                <div class="field field-full">
+                    <label for="hinhanh_file">Upload ảnh sản phẩm</label>
+                    <div class="image-upload-row">
+                        <input id="hinhanh_file" name="hinhanh_file" type="file" accept="image/*">
+                        <button id="btn-upload-hinhanh" class="btn" type="button">Tải ảnh</button>
+                    </div>
+                    <small>Chấp nhận JPG, PNG, WEBP (tối đa 2MB).</small>
+                </div>
+                <div class="field field-full">
+                    <label>Xem trước ảnh</label>
+                    <img id="hinhanh-preview" class="image-preview" alt="Xem trước ảnh sản phẩm">
+                </div>
                 <div class="field checkbox-field">
                     <label><input id="an_hien" type="checkbox" checked> Hiển thị</label>
                 </div>
@@ -63,6 +75,7 @@
     </main>
 
     <script src="../../../assets/js/api.js"></script>
+    <script src="../../../assets/js/image.js"></script>
     <script src="../js/admin.common.js"></script>
     <script src="../js/sanpham_add.js"></script>
 </body>

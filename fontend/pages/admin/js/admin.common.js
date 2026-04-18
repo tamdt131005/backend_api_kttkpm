@@ -38,7 +38,7 @@ function setQuery(query) {
 
 function getStatusText(status) {
     if (status === 'choxacnhan') return 'Chờ xác nhận';
-    if (status === 'daxacnhan') return 'Đã xác nhận';
+    if (status === 'daxacnhan') return 'Đang xử lý';
     if (status === 'dangxuly') return 'Đang xử lý';
     if (status === 'danggiao') return 'Đang giao';
     if (status === 'dagiao') return 'Đã giao';
@@ -134,8 +134,8 @@ function renderAdminTopbar() {
 }
 
 function layTrangThaiTiepTheo(trangthai) {
-    if (trangthai === 'choxacnhan') return 'daxacnhan';
-    if (trangthai === 'daxacnhan') return 'dangxuly';
+    if (trangthai === 'choxacnhan') return 'dangxuly';
+    if (trangthai === 'daxacnhan') return 'danggiao';
     if (trangthai === 'dangxuly') return 'danggiao';
     if (trangthai === 'danggiao') return 'dagiao';
     return '';
@@ -146,7 +146,8 @@ const adminApi = {
     post: (endpoint, body) => api.post(`/admin${endpoint}`, body),
     put: (endpoint, body) => api.put(`/admin${endpoint}`, body),
     patch: (endpoint, body) => api.patch(`/admin${endpoint}`, body),
-    delete: (endpoint) => api.delete(`/admin${endpoint}`)
+    delete: (endpoint) => api.delete(`/admin${endpoint}`),
+    upload: (endpoint, formData) => api.upload(`/admin${endpoint}`, formData)
 };
 
 document.addEventListener('DOMContentLoaded', () => {
