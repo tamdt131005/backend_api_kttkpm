@@ -7,6 +7,9 @@
    - Thêm vào giỏ hàng.
    - Mua ngay (đi thẳng checkout mode buynow).
 
+## Bản mở rộng line-by-line
+- Xem phụ lục chi tiết: [Phụ lục line-by-line toàn bộ chức năng](phu-luc-line-by-line-toan-bo-chuc-nang.md)
+
 ## 2) File liên quan
 
 ## Backend
@@ -297,3 +300,8 @@ User action:
 1. Logic lựa chọn biến thể phụ thuộc trực tiếp cấu trúc `bienthe[]` từ backend.
 2. Nếu thay đổi tên field biến thể trong DB/API, cần sửa đồng thời `renderSizes`, `getVariant`, handler add-cart, handler buy-now.
 3. Hiện UI sử dụng `alert()` cho thông báo; nếu chuyển sang toast component thì sửa tại handlers trong `renderProduct`.
+
+## 10) Ghi chú thực tế theo code hiện tại
+1. `productdetail.js` đang gán `currentTotalStock = Number(product.soluong) || 0`, trong khi backend detail trả `tong_soluong`; cần lưu ý khi debug tồn kho tổng.
+2. Hàm `renderProduct` clone lại các nút trước khi bind event để tránh trùng listener khi re-render.
+3. Khi thêm vào giỏ, backend cart hiện check trùng theo `user_id + sanpham_id` (chưa tách theo biến thể), nên sản phẩm khác biến thể vẫn có thể bị coi là trùng item.

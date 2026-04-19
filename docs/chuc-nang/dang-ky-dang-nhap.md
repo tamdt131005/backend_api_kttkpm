@@ -5,6 +5,9 @@
 - Cho phép user đăng nhập bằng `username/password`.
 - Sau đăng nhập, frontend lưu trạng thái user vào localStorage để dùng cho điều hướng và header.
 
+## Bản mở rộng line-by-line
+- Xem phụ lục chi tiết: [Phụ lục line-by-line toàn bộ chức năng](phu-luc-line-by-line-toan-bo-chuc-nang.md)
+
 ## 2) File liên quan
 
 ## Backend
@@ -288,3 +291,8 @@ Submit form login/register
 1. Hệ thống hiện chưa dùng JWT cho frontend user flow, đang dựa vào localStorage.
 2. Nếu chuyển sang auth token/session chuẩn, cần cập nhật đồng bộ `auth.js`, `api.js`, và header component.
 3. Khi đổi message lỗi ở service, nên giữ format response `{ success, message }` để frontend không phải đổi nhiều.
+
+## 9) Ghi chú thực tế theo code hiện tại
+1. Form đăng ký frontend hiện gửi `username/password/email`, không gửi `fullname`; backend tự fallback `fullname = username`.
+2. API helper đang xử lý lỗi 4xx bằng cách trả JSON thay vì throw, nên các handler auth phải luôn kiểm tra `data.success`.
+3. Luồng đăng nhập user chưa set JWT token, trạng thái auth chủ yếu phụ thuộc localStorage (`isLoggedIn`, `role`, `user_id`).

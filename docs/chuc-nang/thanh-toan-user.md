@@ -10,6 +10,9 @@
   - MoMo (`momo`).
 - Tạo đơn hàng, trừ tồn kho, và xử lý điều hướng sau thanh toán.
 
+## Bản mở rộng line-by-line
+- Xem phụ lục chi tiết: [Phụ lục line-by-line toàn bộ chức năng](phu-luc-line-by-line-toan-bo-chuc-nang.md)
+
 ## 2) File liên quan
 
 ## Backend
@@ -341,3 +344,8 @@ MoMo quay về payment-success
 2. Endpoint callback đang dùng thực tế là `POST /api/orders/momo/ipn`.
 3. Nên đưa cấu hình MoMo (access key, secret key, partner code, URL callback) về biến môi trường trước khi triển khai production.
 4. Nên đồng bộ `phí ship` giữa frontend và backend để tránh chênh lệch tổng tiền.
+
+## 11) Ghi chú thực tế theo code hiện tại
+1. Frontend checkout/cart đang cộng phí vận chuyển `30000`, trong khi backend `order.service.createOrder` đặt `phiVanChuyen = 0`.
+2. `payment-success.js` luôn gọi `POST /orders/momo/ipn` để cập nhật trạng thái theo `orderId/resultCode` đọc từ URL trả về.
+3. Trong `order.controller.momoIpn`, nhánh catch chưa `return` sớm và response success có typo field `rusltcode`.

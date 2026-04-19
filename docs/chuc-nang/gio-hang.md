@@ -6,6 +6,9 @@
 - Cho phép xóa item khỏi giỏ.
 - Tính tạm tính/tổng cộng để chuyển sang checkout.
 
+## Bản mở rộng line-by-line
+- Xem phụ lục chi tiết: [Phụ lục line-by-line toàn bộ chức năng](phu-luc-line-by-line-toan-bo-chuc-nang.md)
+
 ## 2) File liên quan
 
 ## Backend
@@ -282,3 +285,8 @@ User bấm Xóa
 1. Service đang kiểm tra trùng theo `user_id + sanpham_id`, chưa tách theo biến thể.
 2. Phí ship ở frontend cart là `30.000`, trong khi backend order hiện có logic khác; cần đồng bộ để không lệch tổng tiền hiển thị.
 3. Nên thêm debounce hoặc lock nút khi user bấm tăng/giảm liên tục để tránh spam request.
+
+## 10) Ghi chú thực tế theo code hiện tại
+1. DAO `findCartItem` hiện chỉ lọc theo `user_id` và `sanpham_id`, không dùng `bienthe_id` trong điều kiện trùng.
+2. `updateQuantity` và `removeItem` đều reload lại toàn bộ giỏ sau mỗi thao tác, nên số request tăng nhanh khi thao tác liên tục.
+3. Frontend tính phí vận chuyển cố định `30000`, còn backend tạo đơn đang để `phivanchuyen = 0`.

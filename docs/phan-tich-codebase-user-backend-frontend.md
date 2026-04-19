@@ -3,7 +3,7 @@
 ## 1) Mục tiêu tài liệu
 Tài liệu này giải thích chi tiết logic hệ thống hiện tại cho các chức năng bạn yêu cầu:
 - Đăng ký, đăng nhập.
-- Khu vực user: trang chủ, chi tiết sản phẩm, giỏ hàng, header user.
+- Khu vực user: trang chủ, chi tiết sản phẩm, giỏ hàng, header user, profile, địa chỉ, trạng thái đơn hàng.
 - Thanh toán user: mua ngay và mua từ giỏ hàng; thanh toán tiền mặt và MoMo.
 - Backend theo luồng route -> middleware/validation -> controller -> service -> dao.
 - Frontend theo file HTML/JS, cách render, API nào được gọi, dữ liệu truyền vào.
@@ -14,7 +14,13 @@ Tài liệu này giải thích chi tiết logic hệ thống hiện tại cho c�
 - [Chi tiết sản phẩm](chuc-nang/chi-tiet-san-pham.md)
 - [Giỏ hàng](chuc-nang/gio-hang.md)
 - [Header user](chuc-nang/header-user.md)
+- [Profile user](chuc-nang/profile-user.md)
+- [Địa chỉ user](chuc-nang/dia-chi-user.md)
+- [Trạng thái đơn hàng user](chuc-nang/trang-thai-don-hang-user.md)
 - [Thanh toán user (mua ngay, từ giỏ, COD, MoMo)](chuc-nang/thanh-toan-user.md)
+- [Phụ lục line-by-line toàn bộ chức năng](chuc-nang/phu-luc-line-by-line-toan-bo-chuc-nang.md)
+
+Ghi chú: phụ lục line-by-line đã được mở rộng theo hướng function-level, có thêm ma trận nhánh lỗi và các điểm cần lưu ý theo code hiện tại.
 
 Phạm vi phân tích dựa trên mã nguồn hiện tại trong repo, không suy diễn thêm ngoài code.
 

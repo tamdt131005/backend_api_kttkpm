@@ -6,6 +6,9 @@
 - Cung cấp menu tài khoản (profile, địa chỉ, đơn hàng, giỏ hàng, quản trị với admin).
 - Tìm kiếm sản phẩm realtime ngay trên header.
 
+## Bản mở rộng line-by-line
+- Xem phụ lục chi tiết: [Phụ lục line-by-line toàn bộ chức năng](phu-luc-line-by-line-toan-bo-chuc-nang.md)
+
 ## 2) File liên quan
 - `fontend/components/components.js`
 - `fontend/assets/js/api.js`
@@ -182,3 +185,8 @@ User gõ search
 1. `components.js` đang chứa cả `AppHeader` và `AppFooter`; khi project lớn nên tách module.
 2. Cơ chế logout hiện dùng `localStorage.clear()` nên có thể xóa luôn các key không liên quan auth.
 3. Search realtime phụ thuộc field backend (`sanpham_id`, `tensanpham`, `giaban`, `giakhuyenmai`, `hinhanh`), khi đổi response cần cập nhật `fillkq()`.
+
+## 10) Ghi chú thực tế theo code hiện tại
+1. Header tự redirect admin đã đăng nhập từ trang user về `/pages/admin/index.html` ngay trong `connectedCallback()`.
+2. Search chỉ kích hoạt khi query có từ 2 ký tự trở lên và debounce 300ms.
+3. Cơ chế chống race-condition search đang dựa vào biến `currentSearchQuery` để bỏ qua response cũ.

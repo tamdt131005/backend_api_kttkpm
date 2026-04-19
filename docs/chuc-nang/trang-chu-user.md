@@ -5,6 +5,9 @@
 - Mỗi sản phẩm hiển thị tên, giá, giảm giá, tình trạng tồn kho, ảnh.
 - Khi click sản phẩm, điều hướng sang trang chi tiết sản phẩm.
 
+## Bản mở rộng line-by-line
+- Xem phụ lục chi tiết: [Phụ lục line-by-line toàn bộ chức năng](phu-luc-line-by-line-toan-bo-chuc-nang.md)
+
 ## 2) File liên quan
 
 ## Backend
@@ -363,3 +366,8 @@ Frontend nhận data:
 - `LIMIT 8` hiện hard-code trong DAO.
 - Nếu thêm phân trang/infinite scroll, cần sửa cả backend API và `fill()` ở frontend.
 - Nên bổ sung xử lý lỗi trong `fill()` (try/catch + UI fallback) để tránh trang trống khi API lỗi.
+
+## 11) Ghi chú thực tế theo code hiện tại
+1. Hàm `fill()` hiện chưa có `try/catch`; nếu API lỗi 5xx hoặc network thì trang có thể không hiển thị fallback rõ ràng.
+2. API tìm kiếm (`/products/search`) giới hạn `limit` tối đa 20 ở service, nhưng header hiện đang luôn gọi `limit=6`.
+3. Query trang chủ đang trả 8 sản phẩm mới nhất theo `createdAt DESC`, nên thứ tự và số lượng hiển thị phụ thuộc hoàn toàn DAO.
