@@ -13,6 +13,14 @@ Mục tiêu của bộ tài liệu này là tách riêng từng nghiệp vụ đ
 - [Trạng thái đơn hàng user](trang-thai-don-hang-user.md)
 - [Thanh toán user (mua ngay, từ giỏ, COD, MoMo)](thanh-toan-user.md)
 
+## Tài liệu admin
+- [Trang quản trị admin](admin-trang-quan-tri.md)
+- [Quản lý đơn hàng admin](admin-quan-ly-don-hang.md)
+- [Quản lý sản phẩm admin](admin-quan-ly-san-pham.md)
+- [Quản lý danh mục admin](admin-quan-ly-danh-muc.md)
+- [Quản lý nhập hàng admin](admin-quan-ly-nhap-hang.md)
+- [Theo dõi tồn kho admin](admin-theo-doi-ton-kho.md)
+
 ## Phụ lục phân tích sâu
 - [Phụ lục line-by-line toàn bộ chức năng](phu-luc-line-by-line-toan-bo-chuc-nang.md)
 
