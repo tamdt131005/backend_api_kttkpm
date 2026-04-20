@@ -156,7 +156,7 @@ class OrderService {
             tinh: diaChi.tinh
         });
 
-        const phiVanChuyen = 0;
+        const phiVanChuyen = 30000;
         const tongThanhToan = tamTinh + phiVanChuyen;
         const maDonHang = `DH${Date.now()}`;
 
