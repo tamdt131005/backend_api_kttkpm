@@ -25,7 +25,7 @@
     --radius-lg: 16px;
 }
 
-/* ===== Container trang chủ ===== */
+/*  trang chủ  */
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -33,14 +33,14 @@
     font-family: 'Inter', Arial, sans-serif;
 }
 
-/* ===== Lưới sản phẩm ===== */
+/* chia lam 4 cot */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
-/* ===== Card sản phẩm ===== */
+
 .product-card {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -58,7 +58,7 @@
     box-shadow: var(--shadow-xl);
 }
 
-/* Link overlay toàn card */
+
 .product-link {
     position: absolute;
     inset: 0;
@@ -67,7 +67,6 @@
     background: transparent;
 }
 
-/* ===== Badge giảm giá ===== */
 .product-badge {
     position: absolute;
     top: 12px;
@@ -82,7 +81,6 @@
     box-shadow: var(--shadow-md);
 }
 
-/* ===== Ảnh sản phẩm ===== */
 .product-image {
     width: 100%;
     height: 240px;
@@ -104,7 +102,6 @@
     transform: scale(1.08);
 }
 
-/* ===== Thông tin sản phẩm ===== */
 .product-info {
     padding: 20px;
     flex: 1;
@@ -134,8 +131,6 @@
     line-height: 1.5;
     min-height: 3em;
 }
-
-/* ===== Sao đánh giá ===== */
 .product-rating {
     display: flex;
     align-items: center;
@@ -162,7 +157,6 @@
     color: var(--gray-500);
 }
 
-/* ===== Giá ===== */
 .product-price {
     display: flex;
     align-items: baseline;
@@ -183,7 +177,6 @@
     text-decoration: line-through;
 }
 
-/* ===== Nút thêm giỏ hàng ===== */
 .product-actions {
     display: flex;
     padding: 0 20px 20px;
@@ -221,7 +214,6 @@
     opacity: 0.7;
 }
 
-/* ===== Empty state / Lỗi ===== */
 .empty-state {
     text-align: center;
     padding: 80px 40px;
@@ -249,7 +241,6 @@
     color: var(--gray-500);
 }
 
-/* ===== Animation ===== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -262,7 +253,6 @@
     }
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 1024px) {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);

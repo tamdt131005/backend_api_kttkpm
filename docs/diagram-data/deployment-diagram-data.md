@@ -45,10 +45,10 @@ flowchart TB
     DEP_CLIENT[Browser Client]
 
     subgraph LOCAL_DEV[Local Machine]
-        DEP_FE[Frontend Static Host :8000]
-        DEP_BE[Backend API Host :3000]
+        DEP_FE[Frontend ]
+        DEP_BE[Backend API ]
         DEP_UPLOAD[(Upload Storage)]
-        DEP_DB[(MySQL :3306)]
+        DEP_DB[(MySQL)]
     end
 
     DEP_MOMO[MoMo Sandbox]
@@ -68,17 +68,16 @@ flowchart TB
 ```plantuml
 @startuml
 node "Browser Client" as client
-node "Frontend Static Host\nlocalhost:8000" as fe
-node "Backend API Host\nlocalhost:3000" as be
-database "MySQL\n127.0.0.1:3306\nbtapweb_v2" as db
-node "Cloudflared Tunnel" as tunnel
+node "Frontend Static Host" as fe
+node "Backend API Host" as be
+database "MySQL" as db
 node "MoMo Sandbox" as momo
 artifact "Upload Storage\nsrc/upload/img" as upload
 
 client --> fe : HTTP
 client --> be : HTTP/JSON
 fe --> be : fetch API
-be --> db : SQL/TCP 3306
+be --> db : SQL/TCP 
 be --> upload : read/write file
 be --> momo : HTTPS request
 momo --> tunnel : HTTPS callback

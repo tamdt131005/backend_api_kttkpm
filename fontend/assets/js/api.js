@@ -1,6 +1,4 @@
 const BASE_URL = 'http://localhost:3000/api';
-
-// Lấy header mặc định cho mọi request
 function getHeaders() {
     const headers = { 'Content-Type': 'application/json' };
     const token = localStorage.getItem('token');

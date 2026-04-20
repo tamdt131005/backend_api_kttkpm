@@ -1,7 +1,6 @@
 import cartService from "../services/cart.service.js";
 
 class CartController {
-    // GET /api/cart?user_id=...
     async getCart(req, res) {
         try {
             const userId = req.query.user_id;
@@ -20,7 +19,7 @@ class CartController {
         }
     }
 
-    // POST /api/cart { user_id, sanpham_id, bienthe_id, soluong }
+    //user_id, sanpham_id, bienthe_id, soluong
     async addToCart(req, res) {
         try {
             const { user_id, sanpham_id, bienthe_id, soluong } = req.body;
@@ -40,7 +39,7 @@ class CartController {
         }
     }
 
-    // PUT /api/cart/:id { user_id, soluong }
+    //user_id, soluong 
     async updateCartItem(req, res) {
         try {
             const cartId = req.params.id;
@@ -60,7 +59,7 @@ class CartController {
         }
     }
 
-    // DELETE /api/cart/:id?user_id=...
+    // id?user_id=...
     async removeCartItem(req, res) {
         try {
             const cartId = req.params.id;

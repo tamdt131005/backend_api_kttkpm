@@ -45,7 +45,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 15px 40px;
-    /* Thêm một chút padding để nó không bị sát rìa màn hình */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
@@ -61,7 +60,6 @@ body {
     color: var(--primary-red);
 }
 
-/* Login Form Container */
 .login-form {
     flex: 1;
     display: flex;

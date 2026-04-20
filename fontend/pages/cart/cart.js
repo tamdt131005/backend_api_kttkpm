@@ -13,7 +13,7 @@ function hideLoading() {
     document.getElementById('loadingOverlay')?.classList.remove('active');
 }
 
-// Render 1 item trong giỏ hàng
+//  1 item trong giỏ hàng
 function renderCartItem(item) {
     const giaban = Number(item.giaban) || 0;
     const giakm = Number(item.giakhuyenmai) || 0;
@@ -21,11 +21,11 @@ function renderCartItem(item) {
     const giaHienThi = coGiam ? giakm : giaban;
     const soluongKho = Number(item.soluong_kho) || 999;
 
-    // Ảnh sản phẩm
+    // Ảnh 
     const hinhanh = item.hinhanh_bienthe || item.hinhanh || '';
     const imgSrc = imageUtil.product(hinhanh);
 
-    // Thông tin biến thể
+    //  biến thể
     let variantHtml = '';
     if (item.kichthuoc || item.mausac) {
         variantHtml = '<div class="cart-item-variant">';
@@ -40,7 +40,7 @@ function renderCartItem(item) {
         priceHtml += `<span class="price-original">${formatCurrency(giaban)}</span>`;
     }
 
-    // Cảnh báo tồn kho
+    // tồn kho
     let stockWarning = '';
     if (item.soluong > soluongKho) {
         stockWarning = `<div class="stock-warning"><i class="fas fa-exclamation-triangle"></i> Chỉ còn ${soluongKho} sản phẩm</div>`;
@@ -94,7 +94,6 @@ function renderCart(data) {
     const itemsHtml = items.map(renderCartItem).join('');
     document.getElementById('cart-items').innerHTML = itemsHtml;
 
-    // Cập nhật tóm tắt
     const phiVanChuyen = 30000;
     const tongCong = Number(tongtien) + phiVanChuyen;
 
@@ -102,8 +101,6 @@ function renderCart(data) {
     document.getElementById('subtotal').textContent = formatCurrency(tongtien);
     document.getElementById('total').textContent = formatCurrency(tongCong);
 }
-
-// Tải giỏ hàng từ API
 async function loadCart() {
     const userId = getUserId();
     if (!userId) {
@@ -126,7 +123,6 @@ async function loadCart() {
     }
 }
 
-// Cập nhật số lượng
 async function updateQuantity(cartId, newQty) {
     if (newQty <= 0) return;
 
@@ -148,7 +144,7 @@ async function updateQuantity(cartId, newQty) {
     hideLoading();
 }
 
-// Xóa sản phẩm khỏi giỏ
+
 async function removeItem(cartId) {
     if (!confirm('Bạn có chắc muốn xóa sản phẩm này?')) return;
 

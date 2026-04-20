@@ -2,7 +2,7 @@ import { json } from "express";
 import orderService from "../services/order.service.js";
 
 class OrderController {
-    // POST /api/orders { user_id, diachi_id, ghichu, phuongthuc_thanhtoan }
+    //user_id, diachi_id, ghichu, phuongthuc_thanhtoan
     async createOrder(req, res) {
         try {
             const {
@@ -36,7 +36,7 @@ class OrderController {
         }
     }
 
-    // GET /api/orders?user_id=...
+    // orders?user_id=...
     async getOrders(req, res) {
         try {
             const nguoiDungId = req.query.user_id;
@@ -50,7 +50,7 @@ class OrderController {
         }
     }
 
-    // GET /api/orders/:id?user_id=...
+    //orders/:id?user_id=...
     async getOrderById(req, res) {
         try {
             const donHangId = req.params.id;
@@ -66,7 +66,7 @@ class OrderController {
         }
     }
 
-    // POST /api/orders/momo/ipn
+    //orders/momo/ipn
     async momoIpn(req, res) {
         try {
             const { orderId, resultCode } = req.body

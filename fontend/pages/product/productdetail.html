@@ -14,8 +14,6 @@
     <app-header></app-header>
 
     <div class="container" id="page-container">
-
-        <!-- Breadcrumb -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <ol>
                 <li><a href="/index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
@@ -32,24 +30,19 @@
             <p>Đang tải sản phẩm...</p>
         </div>
 
-        <!-- Error state -->
         <div class="product-error" id="error-state" style="display: none;">
             <i class="fas fa-exclamation-circle"></i>
             <p id="error-message">Không tìm thấy sản phẩm.</p>
             <a href="/index.html" class="btn-primary"><i class="fas fa-arrow-left"></i> Về trang chủ</a>
         </div>
 
-        <!-- Product detail -->
         <div class="product" id="product-detail" style="display: none;">
-            <!-- Ảnh sản phẩm -->
             <div class="img-product">
                 <div class="main-image-wrapper" id="main-image-wrapper">
                     <span class="discount-badge" id="discount-badge" style="display:none;"></span>
                     <img id="main-image" src="" alt="Ảnh sản phẩm">
                 </div>
             </div>
-
-            <!-- Thông tin sản phẩm -->
             <div class="info-product">
                 <h1 id="product-name"></h1>
 
@@ -66,26 +59,19 @@
                     <span class="price-original" id="price-original" style="display:none;"></span>
                     <span class="price-discount" id="price-discount" style="display:none;"></span>
                 </div>
-
-                <!-- Biến thể màu sắc -->
                 <div class="variant-group" id="group-mausac" style="display:none;">
                     <label>Màu sắc</label>
                     <div class="variant-options" id="options-mausac"></div>
                 </div>
-
-                <!-- Biến thể kích thước -->
                 <div class="variant-group" id="group-kichthuoc" style="display:none;">
                     <label>Kích thước</label>
                     <div class="variant-options" id="options-kichthuoc"></div>
                 </div>
-
-                <!-- Tồn kho -->
                 <div class="stock variant-group">
                     <label>Tình trạng</label>
                     <div id="stock-status"></div>
                 </div>
 
-                <!-- Số lượng -->
                 <div class="variant-group quantity">
                     <label>Số lượng</label>
                     <div class="quantity-controls">
@@ -95,7 +81,6 @@
                     </div>
                 </div>
 
-                <!-- Nút hành động -->
                 <div class="product-actions">
                     <button class="btn-add-cart" id="btn-add-cart">
                         <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
@@ -116,8 +101,6 @@
     </div>
 
     <app-footer></app-footer>
-
-    <!-- Thứ tự: image.js → api.js → components.js → productdetail.js -->
     <script src="../../assets/js/image.js"></script>
     <script src="../../assets/js/api.js"></script>
     <script src="../../components/components.js"></script>

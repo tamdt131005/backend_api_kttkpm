@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 2. Xử lý Form Đăng ký
     const registerForm = document.getElementById("registerForm");
     if (registerForm) {
         registerForm.addEventListener("submit", async (e) => {
@@ -66,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             try {
-                // Dùng api.post() cho nhất quán với phần đăng nhập
+                // Dùng api phần đăng nhập
                 const data = await api.post('/auth/signup', { username, password, email });
 
                 if (data.success) {
