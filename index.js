@@ -9,6 +9,7 @@ import addressRouter from "./src/routes/address.route.js";
 import orderRouter from "./src/routes/order.route.js";
 import profileRouter from "./src/routes/profile.route.js";
 import adminRouter from "./src/routes/admin.route.js";
+import infoRouter from "./src/routes/info.route.js";
 
 const app = express();
 const SERVER_PORT = 3000;
@@ -25,6 +26,7 @@ app.use("/api/address", addressRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/profile", profileRouter);
 app.use("/api/admin", adminRouter);
+app.use("/api/info", infoRouter);
 
 app.listen(SERVER_PORT, () => {
     console.log(`Server is running on port ${SERVER_PORT}`);
