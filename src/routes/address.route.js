@@ -1,8 +1,11 @@
 import express from 'express';
 import { validateAddressCreate, validateAddressSetDefault, validateAddressUpdate } from '../validation/address.validate.js';
 import AddressController from '../controller/address.controller.js'
+import { verifyToken } from '../middlewares/auth.middleware.js';
 
 const router = express.Router();
+
+router.use(verifyToken);
 
 router.post('/', validateAddressCreate, AddressController.postAddress)
 // {

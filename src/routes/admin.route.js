@@ -3,8 +3,11 @@ import fs from "fs";
 import multer from "multer";
 import path from "path";
 import adminController from "../controller/admin.controller.js";
+import { verifyToken, verifyAdmin } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
+
+router.use(verifyToken, verifyAdmin);
 
 const productImageUploadDir = path.join(process.cwd(), "src", "upload", "img", "product");
 if (!fs.existsSync(productImageUploadDir)) {

@@ -24,12 +24,19 @@ export const signup = async (req, res) => {
 export const signin = async (req, res) => {
     try {
         const { username, password } = req.body;
-        const user = await authService.signin(username, password);
+        const result = await authService.signin(username, password);
 
         return res.status(200).json({
             success: true,
             message: "Đăng nhập thành công!",
-            user
+            user: {
+                id: result.id,
+                username: result.username,
+                fullname: result.fullname,
+                role: result.role,
+                avatar: result.avatar
+            },
+            token: result.token
         });
 
     } catch (error) {

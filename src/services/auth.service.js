@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import authDao from "../dao/auth.dao.js";
 
 class AuthService {
@@ -31,12 +32,22 @@ class AuthService {
             throw { status: 400, message: "Sai mật khẩu!" };
         }
 
+        const userId = user.id || user.user_id;
+
+        // Tạo JWT Token chứa thông tin định danh của user
+        const token = jwt.sign(
+            { id: userId, username: user.username, role: user.role },
+            process.env.JWT_SECRET || "kttkpm_api_backend_shop_jwt_secret_key_2026_xyz",
+            { expiresIn: process.env.JWT_EXPIRES_IN || "7d" }
+        );
+
         return {
-            id: user.id || user.user_id,
+            id: userId,
             username: user.username,
             fullname: user.fullname,
             role: user.role,
-            avatar: user.avatar
+            avatar: user.avatar,
+            token // Trả về token cho client
         };
     }
 }

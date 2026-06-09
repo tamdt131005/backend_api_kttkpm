@@ -4,8 +4,11 @@ import fs from 'fs';
 import path from 'path';
 import {validateProfile} from '../validation/profile.validate.js';
 import ProfileController from '../controller/profile.controller.js'
+import { verifyToken } from '../middlewares/auth.middleware.js';
 
 const router = express.Router();
+
+router.use(verifyToken);
 
 const uploadDir = path.join(process.cwd(), 'src', 'upload', 'img', 'avatar');
 if (!fs.existsSync(uploadDir)) {
