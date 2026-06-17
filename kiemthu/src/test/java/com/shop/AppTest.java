@@ -13,4 +13,14 @@ public class AppTest {
     Karate testAddress() {
         return Karate.run("classpath:adress.feature");
     }
+
+    @Karate.Test
+    Karate testSignup() {
+        return Karate.run("classpath:signup.feature");
+    }
+
+    @Karate.Test
+    Karate testUpdateProfile() {
+        return Karate.run("classpath:update_profile_api_test.feature");
+    }
 }

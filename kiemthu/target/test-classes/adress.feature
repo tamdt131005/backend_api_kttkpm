@@ -1,26 +1,18 @@
 Feature: Kiểm thử chức năng thêm địa chỉ giao hàng (POST /api/address)
-
   Background:
     * url baseUrl
-    # Đăng ký và đăng nhập tài khoản test ngẫu nhiên để lấy token JWT hợp lệ
     * def randomStr = java.util.UUID.randomUUID().toString().substring(0, 8)
     * def username = 'user_addr_' + randomStr
     * def email = username + '@test.com'
-
-    # Đăng ký tài khoản mới
     Given path '/api/auth/signup'
     And request { username: '#(username)', password: 'Password123@', fullname: 'Test Address User', email: '#(email)' }
     When method POST
     Then status 201
-
-    # Đăng nhập nhận token JWT
     Given path '/api/auth/signin'
     And request { username: '#(username)', password: 'Password123@' }
     When method POST
     Then status 200
     * def token = response.token
-
-  # ===== Nhóm 1: Các test case CÓ gửi token =====
   Scenario Outline: <tc> - <desc>
     Given path '/api/address'
     And header Authorization = 'Bearer ' + token
@@ -40,14 +32,11 @@ Feature: Kiểm thử chức năng thêm địa chỉ giao hàng (POST /api/addr
     Then status <status>
     And match response.success == <success>
     And match response.message == <message>
-
     Examples:
       | tc   | desc                                                  | tennguoinhan  | sodienthoai | diachichitiet  | phuong            | quan        | tinh    | macdinh | status | success | message                       |
       | TC01 | Thêm địa chỉ mới thành công (không đặt mặc định)     | Nguyen Van A  | 0912345678  | 123 Lang       | Lang Ha           | Dong Da     | Ha Noi  | 0       | 201    | true    | "Thêm địa chỉ thành công"    |
       | TC02 | Thêm địa chỉ thành công và thiết lập làm mặc định    | Nguyen Van B  | 0987654321  | 456 Nguyen Trai| Thanh Xuan Trung  | Thanh Xuan  | Ha Noi  | 1       | 201    | true    | "Thêm địa chỉ thành công"    |
       | TC03 | Thêm địa chỉ thất bại do số điện thoại không hợp lệ  | Nguyen Van A  | 12345       | 123 Lang       | Lang Ha           | Dong Da     | Ha Noi  | 0       | 400    | false   | '#notnull'                    |
-
-  # ===== TC04: Không gửi token - phải tách riêng vì không có header Authorization =====
   Scenario: TC04 - Thêm địa chỉ thất bại do không gửi Authorization Token
     Given path '/api/address'
     And request

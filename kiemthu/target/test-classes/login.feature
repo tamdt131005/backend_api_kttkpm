@@ -10,14 +10,17 @@ Feature: Kiểm thử chức năng đăng nhập (POST /api/auth/signin)
     Then status <status>
     And match response.success == <success>
 
+    # Examples:
+    # | tc   | desc                          | username   | password     | status | success |
+    # | TC01 | Username rỗng                 |            | Pass@123     | 400    | false   |
+    # | TC02 | Username quá ngắn (2 ký tự)  | aa         | Pass@123     | 400    | false   |
+    # | TC03 | Password rỗng                 | user123    |              | 400    | false   |
+    # | TC04 | Password quá ngắn (3 ký tự)  | user123    | 123          | 400    | false   |
+    # | TC05 | Username không tồn tại        | usernamev1 | Pass@123     | 404    | false   |
+    # | TC06 | Password sai                  | tamdt131005| Pass@sai     | 400    | false   |
+
     Examples:
-      | tc   | desc                          | username   | password     | status | success |
-      | TC01 | Username rỗng                 |            | Pass@123     | 400    | false   |
-      | TC02 | Username quá ngắn (2 ký tự)  | aa         | Pass@123     | 400    | false   |
-      | TC03 | Password rỗng                 | user123    |              | 400    | false   |
-      | TC04 | Password quá ngắn (3 ký tự)  | user123    | 123          | 400    | false   |
-      | TC05 | Username không tồn tại        | usernamev1 | Pass@123     | 404    | false   |
-      | TC06 | Password sai                  | tamdt131005| Pass@sai     | 400    | false   |
+      | read('login_data.csv') |
 
   Scenario: TC07 - Đăng nhập thành công
     Given path '/api/auth/signin'
