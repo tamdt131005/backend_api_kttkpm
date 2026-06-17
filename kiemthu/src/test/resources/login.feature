@@ -1,58 +1,29 @@
-Feature: Kịch bản kiểm thử API Xác thực và Giỏ hàng với JWT
+Feature: Kiểm thử chức năng đăng nhập (POST /api/auth/signin)
 
   Background:
-    # URL gốc được lấy từ karate-config.js (mặc định là http://localhost:3000)
     * url baseUrl
-    # Tạo chuỗi ngẫu nhiên để đảm bảo không bị trùng lặp username/email khi chạy lại test
-    * def randomStr = java.util.UUID.randomUUID().toString().substring(0, 8)
-    * def username = 'user_' + randomStr
-    * def email = username + '@test.com'
 
-  Scenario: Đăng ký, Đăng nhập thành công và truy cập API bảo mật bằng JWT
-
-    # --- BƯỚC 1: ĐĂNG KÝ TÀI KHOẢN ---
-    Given path '/api/auth/signup'
-    And request
-    """
-    {
-      "username": '#(username)',
-      "password": "Password123@",
-      "fullname": "Nguoi Dung Test JWT",
-      "email": '#(email)'
-    }
-    """
-    When method POST
-    Then status 201
-    And match response.success == true
-    And match response.message == "Đăng ký tài khoản thành công!"
-
-    # --- BƯỚC 2: ĐĂNG NHẬP LẤY TOKEN JWT ---
+  Scenario Outline: <tc> - <desc>
     Given path '/api/auth/signin'
-    And request
-    """
-    {
-      "username": '#(username)',
-      "password": "Password123@"
-    }
-    """
+    And request { username: '<username>', password: '<password>' }
+    When method POST
+    Then status <status>
+    And match response.success == <success>
+
+    Examples:
+      | tc   | desc                          | username   | password     | status | success |
+      | TC01 | Username rỗng                 |            | Pass@123     | 400    | false   |
+      | TC02 | Username quá ngắn (2 ký tự)  | aa         | Pass@123     | 400    | false   |
+      | TC03 | Password rỗng                 | user123    |              | 400    | false   |
+      | TC04 | Password quá ngắn (3 ký tự)  | user123    | 123          | 400    | false   |
+      | TC05 | Username không tồn tại        | usernamev1 | Pass@123     | 404    | false   |
+      | TC06 | Password sai                  | tamdt131005| Pass@sai     | 400    | false   |
+
+  Scenario: TC07 - Đăng nhập thành công
+    Given path '/api/auth/signin'
+    And request { username: 'tamdt131005', password: 'Tam13102005@' }
     When method POST
     Then status 200
     And match response.success == true
-    And match response.token != null
-    And match response.user.username == username
-    # Lưu token lại để sử dụng cho các request sau
-    * def token = response.token
-
-    # --- BƯỚC 3: TRUY CẬP API GIỎ HÀNG BẢO MẬT (Không kèm Token - Mong đợi lỗi 401) ---
-    Given path '/api/cart'
-    When method GET
-    Then status 401
-    And match response.success == false
-
-    # --- BƯỚC 4: TRUY CẬP API GIỎ HÀNG BẢO MẬT (Kèm Token hợp lệ - Mong đợi thành công 200) ---
-    Given path '/api/cart'
-    And header Authorization = 'Bearer ' + token
-    When method GET
-    Then status 200
-    And match response.success == true
-    And match response.message == "Lấy giỏ hàng thành công"
+    And match response.token == '#notnull'
+    And match response.user == { id: '#notnull', username: '#string', fullname: '#string', role: '#string', avatar: '##string' }
