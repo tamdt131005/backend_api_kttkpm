@@ -17,7 +17,8 @@ Feature: Kiểm thử chức năng đăng ký (POST /api/auth/signup)
       | TC02 | Username quá ngắn (2 ký tự)       | aa          | Pass@123 | user@gmail.com   | 400    | false   |
       | TC03 | Password rỗng                     | user123     |          | user@gmail.com   | 400    | false   |
       | TC04 | Password quá ngắn (3 ký tự)       | user123     | 123      | user@gmail.com   | 400    | false   |
-      | TC05 | Email không hợp lệ                | user123     | Pass@123 | abc              | 400    | false   |
+      |TC05 | Email không hợp lệ                | user123     | Pass@123 | abc              | 400    | false   |
+      |TC06 | Email không hợp lệ                | user123456789     | Pass@12345 | abcgb              | 400    | false   |
 
   # --- TC06: Đăng ký với username đã tồn tại ---
   Scenario: TC06 - Đăng ký với username đã tồn tại

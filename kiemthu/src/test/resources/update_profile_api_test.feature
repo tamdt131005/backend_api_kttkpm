@@ -162,3 +162,10 @@ Feature: Kiểm thử API cập nhật thông tin User (PUT /api/profile)
     And request { id: 2, email: 'user1@gmail.com', fullname: null, phone: null, sex: null, ngaysinh: null, avatar: null }
     When method put
     Then status 201
+
+    Scenario: th22: tất cả null trừ id và email
+    Given path '/api/profile'
+    And header Authorization = 'Bearer ' + token
+    And request { id: 2, email: 'user1@gmail.com', fullname: "ninh", phone: null, sex: null, ngaysinh: null, avatar: null }
+    When method put
+    Then status 201
