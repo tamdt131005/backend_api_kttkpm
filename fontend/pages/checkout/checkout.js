@@ -274,7 +274,7 @@ async function loadAddresses() {
     if (!userId) return;
 
     try {
-        const res = await api.get(`/address?user_id=${userId}`);
+        const res = await api.get('/address');
         if (res.success) {
             addresses = Array.isArray(res.data) ? res.data : [];
 

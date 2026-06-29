@@ -2,7 +2,7 @@ import Joi from "joi";
 import { validateRequest } from "../middlewares/validate.middleware.js";
 
 const addressCreateSchema = Joi.object({
-    user_id: Joi.number().integer().required(),
+    user_id: Joi.number().integer().optional(),
     tennguoinhan: Joi.string().min(1).max(100).required().trim().strict(),
     sodienthoai: Joi.string().pattern(/^0[0-9]{9}$/).required().trim().strict(),
     diachichitiet: Joi.string().min(1).max(255).required().trim().strict(),
@@ -13,7 +13,7 @@ const addressCreateSchema = Joi.object({
 });
 
 const addressUpdateSchema = Joi.object({
-    user_id: Joi.number().integer().required(),
+    user_id: Joi.number().integer().optional(),
     tennguoinhan: Joi.string().min(1).max(100).required().trim().strict(),
     sodienthoai: Joi.string().pattern(/^0[0-9]{9}$/).required().trim().strict(),
     diachichitiet: Joi.string().min(1).max(255).required().trim().strict(),
@@ -25,7 +25,7 @@ const addressUpdateSchema = Joi.object({
 
 const addressDefaultSchema = Joi.object({
     id: Joi.number().integer().required(),
-    user_id: Joi.number().integer().required()
+    user_id: Joi.number().integer().optional()
 });
 
 export const validateAddressCreate = validateRequest(addressCreateSchema);

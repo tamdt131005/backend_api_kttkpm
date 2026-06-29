@@ -3,7 +3,8 @@ import AddressService from "../services/address.service.js"
 class AddressController {
     async postAddress(req, res) {
         try {
-            const { user_id, ...addressData } = req.body;
+            const user_id = req.user.id;
+            const { user_id: _, ...addressData } = req.body;
             const address = await AddressService.postAddress(user_id, addressData);
             res.status(201).json({
                 success: true,
@@ -21,7 +22,8 @@ class AddressController {
 
     async conditionMacDinh(req, res) {
         try {
-            const { id, user_id } = req.body;
+            const { id } = req.body;
+            const user_id = req.user.id;
             const address = await AddressService.conditionMacDinh(id, user_id);
             res.status(200).json({
                 success: true,
@@ -39,13 +41,7 @@ class AddressController {
 
     async getAllAddress(req, res) {
         try {
-            const user_id = req.query.user_id || req.body.user_id;
-            if (!user_id) {
-                return res.status(400).json({
-                    success: false,
-                    message: "Thiếu user_id"
-                });
-            }
+            const user_id = req.user.id;
             const address = await AddressService.getAllAddress(user_id);
             res.status(200).json({
                 success: true,
@@ -84,7 +80,8 @@ class AddressController {
     async putAddress(req, res) {
         try {
             const id = req.params.id;
-            const { user_id, ...addressData } = req.body;
+            const user_id = req.user.id;
+            const { user_id: _, ...addressData } = req.body;
             const address = await AddressService.putAddress(id, user_id, addressData);
             res.status(200).json({
                 success: true,

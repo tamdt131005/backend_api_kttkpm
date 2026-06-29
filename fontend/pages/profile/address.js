@@ -110,7 +110,7 @@ async function loadAddresses() {
     if (!userId) return;
 
     try {
-        const res = await api.get(`/address?user_id=${userId}`);
+        const res = await api.get('/address');
         addresses = res.success && Array.isArray(res.data) ? res.data : [];
     } catch (error) {
         addresses = [];
@@ -119,9 +119,8 @@ async function loadAddresses() {
     renderAddresses();
 }
 
-function getAddPayload(userId) {
+function getAddPayload() {
     return {
-        user_id: userId,
         tennguoinhan: document.getElementById('add-tennguoinhan').value.trim(),
         sodienthoai: document.getElementById('add-sodienthoai').value.trim(),
         diachichitiet: document.getElementById('add-diachichitiet').value.trim(),
@@ -132,9 +131,8 @@ function getAddPayload(userId) {
     };
 }
 
-function getEditPayload(userId) {
+function getEditPayload() {
     return {
-        user_id: userId,
         tennguoinhan: document.getElementById('edit-tennguoinhan').value.trim(),
         sodienthoai: document.getElementById('edit-sodienthoai').value.trim(),
         diachichitiet: document.getElementById('edit-diachichitiet').value.trim(),
@@ -150,7 +148,7 @@ async function createAddress(event) {
     const userId = getUserId();
     if (!userId) return;
 
-    const payload = getAddPayload(userId);
+    const payload = getAddPayload();
 
     try {
         const res = await api.post('/address', payload);
@@ -171,7 +169,7 @@ async function updateAddress(event) {
     const userId = getUserId();
     if (!userId || !editingAddressId) return;
 
-    const payload = getEditPayload(userId);
+    const payload = getEditPayload();
 
     try {
         const res = await api.put(`/address/${editingAddressId}`, payload);
@@ -207,7 +205,7 @@ async function setDefaultAddress(addressId) {
     if (!userId) return;
 
     try {
-        const res = await api.patch('/address', { id: Number(addressId), user_id: userId });
+        const res = await api.patch('/address', { id: Number(addressId) });
         if (!res.success) {
             alert(res.message || 'Không thể đặt mặc định');
             return;
