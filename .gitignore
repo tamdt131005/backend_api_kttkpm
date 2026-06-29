@@ -136,10 +136,3 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
-# Maven build outputs
-**/target/
-**/*.class
-.classpath
-.project
-.settings/

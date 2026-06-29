@@ -1,0 +1,6 @@
+testCaseId,description,username,password,expectedStatus,expectedSuccess
+TC1,Đăng nhập thất bại do username không đúng định dạng,ab,Pass@123,400,false
+TC2,Đăng nhập thất bại do password không đúng định dạng,tamdt131005,123,400,false
+TC3,Đăng nhập thất bại do username không tồn tại,khongtontai,Pass@123,404,false
+TC4,Đăng nhập thất bại do sai mật khẩu,tamdt131005,Pass@123,401,false
+TC5,Đăng nhập thành công,tamdt131005,Tam13102005@,200,true
