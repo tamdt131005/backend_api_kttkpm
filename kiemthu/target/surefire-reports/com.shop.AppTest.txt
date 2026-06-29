@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.shop.AppTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.668 s - in com.shop.AppTest
+Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.295 s - in com.shop.AppTest

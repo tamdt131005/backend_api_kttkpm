@@ -26,7 +26,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 });
 </script>
 
-    <title>login</title>
+    <title>login_api_test</title>
   </head>
   <body>
     <div id="root-container">
@@ -38,7 +38,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">7</div>
+      <div id="nav-pass" class="bg-success">5</div>
       <div id="nav-fail" class="bg-danger">0</div>
     </div>
   </div>
@@ -49,31 +49,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-06-29 01:36:57 CH</div>
+    <div>2026-06-29 06:45:58 CH</div>
   </div>
 </div>
 
         <div class="nav-container">
           <div class="nav-item passed">
-            <a href="#[1.1:23]"><span>[1.1:23]</span> <span>TC01 - Username rỗng</span></a>
+            <a href="#[1.1:15]"><span>[1.1:15]</span> <span>TC1 - Đăng nhập thất bại do username không đúng định dạng</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[1.2:23]"><span>[1.2:23]</span> <span>TC02 - Username quá ngắn (2 ký tự)</span></a>
+            <a href="#[1.2:15]"><span>[1.2:15]</span> <span>TC2 - Đăng nhập thất bại do password không đúng định dạng</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[1.3:23]"><span>[1.3:23]</span> <span>TC03 - Password rỗng</span></a>
+            <a href="#[1.3:15]"><span>[1.3:15]</span> <span>TC3 - Đăng nhập thất bại do username không tồn tại</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[1.4:23]"><span>[1.4:23]</span> <span>TC04 - Password quá ngắn (3 ký tự)</span></a>
+            <a href="#[1.4:15]"><span>[1.4:15]</span> <span>TC4 - Đăng nhập thất bại do sai mật khẩu</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[1.5:23]"><span>[1.5:23]</span> <span>TC05 - Username không tồn tại</span></a>
-          </div>
-          <div class="nav-item passed">
-            <a href="#[1.6:23]"><span>[1.6:23]</span> <span>TC06 - Password sai</span></a>
-          </div>
-          <div class="nav-item passed">
-            <a href="#[2:25]"><span>[2:25]</span> <span>TC07 - Đăng nhập thành công</span></a>
+            <a href="#[1.5:15]"><span>[1.5:15]</span> <span>TC5 - Đăng nhập thành công</span></a>
           </div>
         </div>
       </div>
@@ -82,34 +76,34 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
           <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
           <span class="feature-label">Feature:</span>
-          <span class="feature-path">login.feature</span><span class="feature-label">|</span>
-          <span class="feature-name">Kiểm thử chức năng đăng nhập (POST /api/auth/signin)</span>
+          <span class="feature-path">login_api_test.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Kiểm thử chức năng đăng nhập từ bảng quyết định (POST /api/auth/signin)</span>
           <span class="feature-description"></span>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[1.1:23]">
+          <div class="scenario-heading" id="[1.1:15]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[1.1:23]</span>
-                <span class="scenario-name">TC01 - Username rỗng</span>
+                Scenario: <span>[1.1:15]</span>
+                <span class="scenario-name">TC1 - Đăng nhập thất bại do username không đúng định dạng</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>14</span>
+              <span>ms:</span>&nbsp;<span>514</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[1.1:23]bg">
+            <div class="step-container" id="[1.1:15]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[1.1:23]bg"><div>
+          <div data-parent="[1.1:15]bg"><div>
   
 
   
@@ -122,7 +116,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -175,10 +169,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">8</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request { username: &#39;&#39;, password: &#39;Pass@123&#39; }</span>
+        <span>And</span>&nbsp;<span>request { username: &#39;ab&#39;, password: &#39;Pass@123&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">18</div>
   </div>
 
    
@@ -206,7 +200,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">9</div>
+    <div class="time-cell passed">459</div>
   </div>
 
    
@@ -215,27 +209,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.9">13:36:57.630 request:
+  <div class="preformatted" data-parent="1.9">18:45:57.805 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 37
+1 &gt; Content-Length: 39
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;&quot;,&quot;password&quot;:&quot;Pass@123&quot;}
+{&quot;username&quot;:&quot;ab&quot;,&quot;password&quot;:&quot;Pass@123&quot;}
 
-13:36:57.635 response time in milliseconds: 4
+18:45:57.843 response time in milliseconds: 38
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 124
-1 &lt; ETag: W/&quot;7c-cGkGYX7ijHzXceHdqASdLhV8LKU&quot;
-1 &lt; Date: Mon, 29 Jun 2026 06:36:57 GMT
+1 &lt; Content-Length: 139
+1 &lt; ETag: W/&quot;8b-LeySjuHFSDpKuGZWvi4MvSegw6E&quot;
+1 &lt; Date: Mon, 29 Jun 2026 11:45:57 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;username\&quot; is not allowed to be empty&quot;]}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;username\&quot; length must be at least 3 characters long&quot;]}
 
 </div>   
 
@@ -284,7 +278,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">19</div>
   </div>
 
    
@@ -299,31 +293,67 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">16</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.12">18:45:57.884 [print] {
+  &quot;success&quot;: false,
+  &quot;message&quot;: &quot;Dữ liệu đầu vào không hợp lệ&quot;,
+  &quot;errors&quot;: [
+    &quot;\&quot;username\&quot; length must be at least 3 characters long&quot;
+  ]
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[1.2:23]">
+          <div class="scenario-heading" id="[1.2:15]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[1.2:23]</span>
-                <span class="scenario-name">TC02 - Username quá ngắn (2 ký tự)</span>
+                Scenario: <span>[1.2:15]</span>
+                <span class="scenario-name">TC2 - Đăng nhập thất bại do password không đúng định dạng</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>10</span>
+              <span>ms:</span>&nbsp;<span>20</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[1.2:23]bg">
+            <div class="step-container" id="[1.2:15]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[1.2:23]bg"><div>
+          <div data-parent="[1.2:15]bg"><div>
   
 
   
@@ -336,7 +366,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -364,7 +394,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -389,10 +419,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">8</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request { username: &#39;aa&#39;, password: &#39;Pass@123&#39; }</span>
+        <span>And</span>&nbsp;<span>request { username: &#39;tamdt131005&#39;, password: &#39;123&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -420,7 +450,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">9</div>
+    <div class="time-cell passed">13</div>
   </div>
 
    
@@ -429,27 +459,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.9">13:36:57.653 request:
+  <div class="preformatted" data-parent="2.9">18:45:57.930 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 39
+1 &gt; Content-Length: 43
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;aa&quot;,&quot;password&quot;:&quot;Pass@123&quot;}
+{&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;123&quot;}
 
-13:36:57.659 response time in milliseconds: 5
+18:45:57.938 response time in milliseconds: 8
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 139
-1 &lt; ETag: W/&quot;8b-LeySjuHFSDpKuGZWvi4MvSegw6E&quot;
-1 &lt; Date: Mon, 29 Jun 2026 06:36:57 GMT
+1 &lt; ETag: W/&quot;8b-5y0CJVPKOkzWcrld/na66attK/4&quot;
+1 &lt; Date: Mon, 29 Jun 2026 11:45:57 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;username\&quot; length must be at least 3 characters long&quot;]}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;password\&quot; length must be at least 6 characters long&quot;]}
 
 </div>   
 
@@ -498,7 +528,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -513,31 +543,67 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.12">18:45:57.943 [print] {
+  &quot;success&quot;: false,
+  &quot;message&quot;: &quot;Dữ liệu đầu vào không hợp lệ&quot;,
+  &quot;errors&quot;: [
+    &quot;\&quot;password\&quot; length must be at least 6 characters long&quot;
+  ]
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[1.3:23]">
+          <div class="scenario-heading" id="[1.3:15]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[1.3:23]</span>
-                <span class="scenario-name">TC03 - Password rỗng</span>
+                Scenario: <span>[1.3:15]</span>
+                <span class="scenario-name">TC3 - Đăng nhập thất bại do username không tồn tại</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>12</span>
+              <span>ms:</span>&nbsp;<span>22</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[1.3:23]bg">
+            <div class="step-container" id="[1.3:15]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[1.3:23]bg"><div>
+          <div data-parent="[1.3:15]bg"><div>
   
 
   
@@ -603,10 +669,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">8</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request { username: &#39;user123&#39;, password: &#39;&#39; }</span>
+        <span>And</span>&nbsp;<span>request { username: &#39;khongtontai&#39;, password: &#39;Pass@123&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -634,7 +700,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">10</div>
+    <div class="time-cell passed">17</div>
   </div>
 
    
@@ -643,27 +709,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.9">13:36:57.676 request:
+  <div class="preformatted" data-parent="3.9">18:45:57.971 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 36
+1 &gt; Content-Length: 48
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user123&quot;,&quot;password&quot;:&quot;&quot;}
+{&quot;username&quot;:&quot;khongtontai&quot;,&quot;password&quot;:&quot;Pass@123&quot;}
 
-13:36:57.682 response time in milliseconds: 5
-1 &lt; 400
+18:45:57.981 response time in milliseconds: 10
+1 &lt; 404
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 124
-1 &lt; ETag: W/&quot;7c-vMzzDKhtxy2WwKEsVFSTnqJ7XZ4&quot;
-1 &lt; Date: Mon, 29 Jun 2026 06:36:57 GMT
+1 &lt; Content-Length: 62
+1 &lt; ETag: W/&quot;3e-ZcxDzY2sQxCTPyZNDYHXuBGMbbM&quot;
+1 &lt; Date: Mon, 29 Jun 2026 11:45:57 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;password\&quot; is not allowed to be empty&quot;]}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Tài khoản không tồn tại!&quot;}
 
 </div>   
 
@@ -681,7 +747,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">10</div>
       
       <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 400</span>
+        <span>Then</span>&nbsp;<span>status 404</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -712,7 +778,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -727,31 +793,64 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.12">18:45:57.987 [print] {
+  &quot;success&quot;: false,
+  &quot;message&quot;: &quot;Tài khoản không tồn tại!&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[1.4:23]">
+          <div class="scenario-heading" id="[1.4:15]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[1.4:23]</span>
-                <span class="scenario-name">TC04 - Password quá ngắn (3 ký tự)</span>
+                Scenario: <span>[1.4:15]</span>
+                <span class="scenario-name">TC4 - Đăng nhập thất bại do sai mật khẩu</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>9</span>
+              <span>ms:</span>&nbsp;<span>158</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[1.4:23]bg">
+            <div class="step-container" id="[1.4:15]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[1.4:23]bg"><div>
+          <div data-parent="[1.4:15]bg"><div>
   
 
   
@@ -817,10 +916,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">8</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request { username: &#39;user123&#39;, password: &#39;123&#39; }</span>
+        <span>And</span>&nbsp;<span>request { username: &#39;tamdt131005&#39;, password: &#39;Pass@123&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -848,7 +947,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">154</div>
   </div>
 
    
@@ -857,27 +956,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="4.9">13:36:57.693 request:
+  <div class="preformatted" data-parent="4.9">18:45:58.011 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 39
+1 &gt; Content-Length: 48
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user123&quot;,&quot;password&quot;:&quot;123&quot;}
+{&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Pass@123&quot;}
 
-13:36:57.698 response time in milliseconds: 4
-1 &lt; 400
+18:45:58.159 response time in milliseconds: 148
+1 &lt; 401
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 139
-1 &lt; ETag: W/&quot;8b-5y0CJVPKOkzWcrld/na66attK/4&quot;
-1 &lt; Date: Mon, 29 Jun 2026 06:36:57 GMT
+1 &lt; Content-Length: 47
+1 &lt; ETag: W/&quot;2f-aadicy+w/7v/6fixW5dh1HTtwdA&quot;
+1 &lt; Date: Mon, 29 Jun 2026 11:45:58 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;password\&quot; length must be at least 6 characters long&quot;]}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Sai mật khẩu!&quot;}
 
 </div>   
 
@@ -895,7 +994,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">10</div>
       
       <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 400</span>
+        <span>Then</span>&nbsp;<span>status 401</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -926,7 +1025,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -941,31 +1040,64 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.12">18:45:58.159 [print] {
+  &quot;success&quot;: false,
+  &quot;message&quot;: &quot;Sai mật khẩu!&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[1.5:23]">
+          <div class="scenario-heading" id="[1.5:15]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[1.5:23]</span>
-                <span class="scenario-name">TC05 - Username không tồn tại</span>
+                Scenario: <span>[1.5:15]</span>
+                <span class="scenario-name">TC5 - Đăng nhập thành công</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>12</span>
+              <span>ms:</span>&nbsp;<span>148</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[1.5:23]bg">
+            <div class="step-container" id="[1.5:15]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[1.5:23]bg"><div>
+          <div data-parent="[1.5:15]bg"><div>
   
 
   
@@ -978,7 +1110,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1031,10 +1163,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">8</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request { username: &#39;usernamev1&#39;, password: &#39;Pass@123&#39; }</span>
+        <span>And</span>&nbsp;<span>request { username: &#39;tamdt131005&#39;, password: &#39;Tam13102005@&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1062,7 +1194,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">10</div>
+    <div class="time-cell passed">144</div>
   </div>
 
    
@@ -1071,27 +1203,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="5.9">13:36:57.710 request:
+  <div class="preformatted" data-parent="5.9">18:45:58.184 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 47
+1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;usernamev1&quot;,&quot;password&quot;:&quot;Pass@123&quot;}
+{&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-13:36:57.718 response time in milliseconds: 6
-1 &lt; 404
+18:45:58.318 response time in milliseconds: 134
+1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 62
-1 &lt; ETag: W/&quot;3e-ZcxDzY2sQxCTPyZNDYHXuBGMbbM&quot;
-1 &lt; Date: Mon, 29 Jun 2026 06:36:57 GMT
+1 &lt; Content-Length: 373
+1 &lt; ETag: W/&quot;175-NC3o9RhEpq2w+HKPKBbZclq5olU&quot;
+1 &lt; Date: Mon, 29 Jun 2026 11:45:58 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Tài khoản không tồn tại!&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzMzNTU4LCJleHAiOjE3ODMzMzgzNTh9.OULonk06HRFTenKnAJEkkaWmlxH6iLuv0wldhmROZAs&quot;}
 
 </div>   
 
@@ -1109,7 +1241,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">10</div>
       
       <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 404</span>
+        <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -1137,434 +1269,6 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">11</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.success == false</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[1.6:23]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[1.6:23]</span>
-                <span class="scenario-name">TC06 - Password sai</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>84</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[1.6:23]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[1.6:23]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="6.4">
-      <div class="step-ref bg-step">4</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="6.7">
-      <div class="step-ref passed">7</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="6.8">
-      <div class="step-ref passed">8</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request { username: &#39;tamdt131005&#39;, password: &#39;Pass@sai&#39; }</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="6.9">
-      <div class="step-ref passed">9</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method POST</span>
-      </div>
-    </div>
-    <div class="time-cell passed">82</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="6.9">13:36:57.731 request:
-1 &gt; POST http://localhost:3000/api/auth/signin
-1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 48
-1 &gt; Host: localhost:3000
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
-1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Pass@sai&quot;}
-
-13:36:57.814 response time in milliseconds: 82
-1 &lt; 401
-1 &lt; X-Powered-By: Express
-1 &lt; Access-Control-Allow-Origin: *
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 47
-1 &lt; ETag: W/&quot;2f-aadicy+w/7v/6fixW5dh1HTtwdA&quot;
-1 &lt; Date: Mon, 29 Jun 2026 06:36:57 GMT
-1 &lt; Connection: keep-alive
-1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Sai mật khẩu!&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="6.10">
-      <div class="step-ref passed">10</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 401</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="6.11">
-      <div class="step-ref passed">11</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.success == false</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[2:25]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[2:25]</span>
-                <span class="scenario-name">TC07 - Đăng nhập thành công</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>78</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[2:25]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[2:25]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.26">
-      <div class="step-ref passed">26</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.27">
-      <div class="step-ref passed">27</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request { username: &#39;tamdt131005&#39;, password: &#39;Tam13102005@&#39; }</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.28">
-      <div class="step-ref passed">28</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method POST</span>
-      </div>
-    </div>
-    <div class="time-cell passed">75</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.28">13:36:57.825 request:
-1 &gt; POST http://localhost:3000/api/auth/signin
-1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 52
-1 &gt; Host: localhost:3000
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
-1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
-
-13:36:57.897 response time in milliseconds: 71
-1 &lt; 200
-1 &lt; X-Powered-By: Express
-1 &lt; Access-Control-Allow-Origin: *
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-anQ60u3ckcZcPl5/hPapTM9QbpQ&quot;
-1 &lt; Date: Mon, 29 Jun 2026 06:36:57 GMT
-1 &lt; Connection: keep-alive
-1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzE1MDE3LCJleHAiOjE3ODMzMTk4MTd9.6rRUSdgwvid2UD1Zv4L9-2oKxyLHURO5jOYoOVAZmRo&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.29">
-      <div class="step-ref passed">29</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.30">
-      <div class="step-ref passed">30</div>
-      
-      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response.success == true</span>
       </div>
     </div>
@@ -1589,39 +1293,11 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.31">
-      <div class="step-ref passed">31</div>
+    <div class="step-container" id="5.12">
+      <div class="step-ref passed">12</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.token == &#39;#notnull&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.32">
-      <div class="step-ref passed">32</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.user == { id: &#39;#notnull&#39;, username: &#39;#string&#39;, fullname: &#39;#string&#39;, role: &#39;#string&#39;, avatar: &#39;##string&#39; }</span>
+        <span>*</span>&nbsp;<span>print response</span>
       </div>
     </div>
     <div class="time-cell passed">1</div>
@@ -1633,7 +1309,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-     
+  <div class="preformatted" data-parent="5.12">18:45:58.318 [print] {
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Đăng nhập thành công!&quot;,
+  &quot;user&quot;: {
+    &quot;id&quot;: 3,
+    &quot;username&quot;: &quot;tamdt131005&quot;,
+    &quot;fullname&quot;: &quot;tamdt1310051&quot;,
+    &quot;role&quot;: &quot;user&quot;,
+    &quot;avatar&quot;: &quot;avatar_1775022099077.jpg&quot;
+  },
+  &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzMzNTU4LCJleHAiOjE3ODMzMzgzNTh9.OULonk06HRFTenKnAJEkkaWmlxH6iLuv0wldhmROZAs&quot;
+}
+ 
+</div>   
 
   
 

@@ -53,10 +53,10 @@ class profileController {
                 message: "Cập nhật hồ sơ thành công",
             });
         } catch (error) {
-            res.status(500).json({
+            const status = error.status || 500;
+            res.status(status).json({
                 success: false,
-                message: "Lỗi Server",
-                error: error.message
+                message: error.message || "Lỗi Server",
             });
         }
     }

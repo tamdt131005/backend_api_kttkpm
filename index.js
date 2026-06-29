@@ -27,6 +27,7 @@ app.use("/api/orders", orderRouter);
 app.use("/api/profile", profileRouter);
 app.use("/api/admin", adminRouter);
 
+// Kích hoạt restart nodemon
 app.listen(SERVER_PORT, () => {
     console.log(`Server is running on port ${SERVER_PORT}`);
 });
