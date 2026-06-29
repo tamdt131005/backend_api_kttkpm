@@ -13,10 +13,6 @@ public class AppTest {
     Karate testcart() {
         return Karate.run("classpath:cart_api_test.feature");
     }
-    // @Karate.Test
-    // Karate testAddress() {
-    // return Karate.run("classpath:adress.feature");
-    // }
 
     @Karate.Test
     Karate testSignup() {
@@ -28,8 +24,8 @@ public class AppTest {
         return Karate.run("classpath:update_profile_api_test.feature");
     }
 
-    // @Karate.Test
-    // Karate testCart() {
-    // return Karate.run("classpath:cart.feature");
-    // }
+    @Karate.Test
+    Karate testNhaphang() {
+        return Karate.run("classpath:nhaphang.feature");
+    }
 }

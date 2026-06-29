@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"83e5272e-0a64-406c-946d-e4a89e7ec749",karate_version:"1.5.1",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"5709f618-42d9-458b-a6eb-cb569aba9ec6",karate_version:"1.5.1",karate_meta:null});
   }
 });
 </script>
@@ -38,8 +38,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">9</div>
-      <div id="nav-fail" class="bg-danger">0</div>
+      <div id="nav-pass" class="bg-success">0</div>
+      <div id="nav-fail" class="bg-danger">9</div>
     </div>
   </div>
   <div id="nav-env">
@@ -49,11 +49,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
+<<<<<<< HEAD
     <div>2026-06-29 06:46:06 CH</div>
+=======
+    <div>2026-06-29 04:04:45 CH</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 </div>
 
         <div class="nav-container">
+<<<<<<< HEAD
           <div class="nav-item passed">
             <a href="#[1.1:17]"><span>[1.1:17]</span> <span>TC01 - Username rỗng</span></a>
           </div>
@@ -80,6 +85,34 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           </div>
           <div class="nav-item passed">
             <a href="#[4:61]"><span>[4:61]</span> <span>TC09 - Đăng ký thành công với dữ liệu hợp lệ</span></a>
+=======
+          <div class="nav-item failed">
+            <a href="#[1.1:16]"><span>[1.1:16]</span> <span>TC01 - Username rỗng</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[1.2:17]"><span>[1.2:17]</span> <span>TC02 - Username quá ngắn (2 ký tự)</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[1.3:18]"><span>[1.3:18]</span> <span>TC03 - Password rỗng</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[1.4:19]"><span>[1.4:19]</span> <span>TC04 - Password quá ngắn (3 ký tự)</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[1.5:20]"><span>[1.5:20]</span> <span>TC05 - Email không hợp lệ</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[1.6:21]"><span>[1.6:21]</span> <span>TC06 - Email không hợp lệ</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[2:24]"><span>[2:24]</span> <span>TC06 - Đăng ký với username đã tồn tại</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[3:39]"><span>[3:39]</span> <span>TC07 - Đăng ký với email đã tồn tại</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[4:54]"><span>[4:54]</span> <span>TC08 - Đăng ký thành công với dữ liệu hợp lệ</span></a>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
           </div>
         </div>
       </div>
@@ -104,8 +137,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
+<<<<<<< HEAD
             <div class="scenario-time passed">
               <span>ms:</span>&nbsp;<span>12</span>
+=======
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>6</span>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
             </div>
           </div>
           <div class="step-row">
@@ -156,6 +194,37 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
+=======
+    <div class="step-container" id="1.8">
+      <div class="step-ref passed">8</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signup&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
     <div class="step-container" id="1.9">
       <div class="step-ref passed">9</div>
       
@@ -163,6 +232,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/api/auth/signup&#39;</span>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="time-cell passed">1</div>
   </div>
 
@@ -269,6 +339,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Then</span>&nbsp;<span>status 400</span>
       </div>
     </div>
+=======
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
     <div class="time-cell passed">0</div>
   </div>
 
@@ -290,14 +362,95 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="1.13">
       <div class="step-ref passed">13</div>
+=======
+    <div class="step-container" id="1.10">
+      <div class="step-ref failed">10</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell failed">6</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.10">16:04:45.056 request:
+1 &gt; POST http://localhost:3000/api/auth/signup
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 62
+1 &gt; Host: localhost:3000
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;username&quot;:&quot;&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;email&quot;:&quot;user@gmail.com&quot;}
+
+16:04:45.062 org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information, http call failed after 6 milliseconds for url: http://localhost:3000/api/auth/signup
+16:04:45.062 classpath:signup.feature:10
+When method POST
+http call failed after 6 milliseconds for url: http://localhost:3000/api/auth/signup
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+classpath:signup.feature:10
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.11">
+      <div class="step-ref skipped">11</div>
+      
+      <div class="step-cell skipped">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.12">
+      <div class="step-ref skipped">12</div>
+      
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="time-cell passed">1</div>
+=======
+    <div class="time-cell skipped">0</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 
    
@@ -325,8 +478,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
+<<<<<<< HEAD
             <div class="scenario-time passed">
               <span>ms:</span>&nbsp;<span>13</span>
+=======
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>3</span>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
             </div>
           </div>
           <div class="step-row">
@@ -384,6 +542,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/api/auth/signup&#39;</span>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="time-cell passed">0</div>
   </div>
 
@@ -490,6 +649,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Then</span>&nbsp;<span>status 400</span>
       </div>
     </div>
+=======
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
     <div class="time-cell passed">0</div>
   </div>
 
@@ -511,14 +672,91 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="2.13">
       <div class="step-ref passed">13</div>
+=======
+    <div class="step-container" id="2.10">
+      <div class="step-ref failed">10</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell failed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.10">16:04:45.062 request:
+1 &gt; POST http://localhost:3000/api/auth/signup
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 64
+1 &gt; Host: localhost:3000
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;username&quot;:&quot;aa&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;email&quot;:&quot;user@gmail.com&quot;}
+
+16:04:45.068 org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information, http call failed after 6 milliseconds for url: http://localhost:3000/api/auth/signup
+16:04:45.069 classpath:signup.feature:10
+When method POST
+http call failed after 6 milliseconds for url: http://localhost:3000/api/auth/signup
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+classpath:signup.feature:10
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.11">
+      <div class="step-ref skipped">11</div>
+      
+      <div class="step-cell skipped">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.12">
+      <div class="step-ref skipped">12</div>
+      
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -546,8 +784,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
+<<<<<<< HEAD
             <div class="scenario-time passed">
               <span>ms:</span>&nbsp;<span>13</span>
+=======
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>4</span>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
             </div>
           </div>
           <div class="step-row">
@@ -627,13 +870,21 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="3.10">
-      <div class="step-ref passed">10</div>
+      <div class="step-ref failed">10</div>
       
+<<<<<<< HEAD
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request { username: &#39;user123&#39;, password: &#39;&#39;, email: &#39;user@gmail.com&#39; }</span>
       </div>
     </div>
     <div class="time-cell passed">1</div>
+=======
+      <div class="step-cell failed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell failed">4</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 
    
@@ -642,6 +893,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
+<<<<<<< HEAD
      
 
   
@@ -671,15 +923,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="preformatted" data-parent="3.11">18:46:05.538 request:
+=======
+  <div class="preformatted" data-parent="3.10">16:04:45.072 request:
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 61
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;user123&quot;,&quot;password&quot;:&quot;&quot;,&quot;email&quot;:&quot;user@gmail.com&quot;}
 
+<<<<<<< HEAD
 18:46:05.547 response time in milliseconds: 7
 1 &lt; 400
 1 &lt; X-Powered-By: Express
@@ -692,6 +948,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;password\&quot; is not allowed to be empty&quot;]}
 
+=======
+16:04:45.076 org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information, http call failed after 4 milliseconds for url: http://localhost:3000/api/auth/signup
+16:04:45.076 classpath:signup.feature:10
+When method POST
+http call failed after 4 milliseconds for url: http://localhost:3000/api/auth/signup
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+classpath:signup.feature:10
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 </div>   
 
   
@@ -704,14 +968,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="3.12">
       <div class="step-ref passed">12</div>
+=======
+    <div class="step-container" id="3.11">
+      <div class="step-ref skipped">11</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>Then</span>&nbsp;<span>status 400</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -732,14 +1001,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="3.13">
       <div class="step-ref passed">13</div>
+=======
+    <div class="step-container" id="3.12">
+      <div class="step-ref skipped">12</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -767,8 +1041,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
+<<<<<<< HEAD
             <div class="scenario-time passed">
               <span>ms:</span>&nbsp;<span>17</span>
+=======
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>18</span>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
             </div>
           </div>
           <div class="step-row">
@@ -848,13 +1127,21 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="4.10">
-      <div class="step-ref passed">10</div>
+      <div class="step-ref failed">10</div>
       
+<<<<<<< HEAD
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request { username: &#39;user123&#39;, password: &#39;123&#39;, email: &#39;user@gmail.com&#39; }</span>
       </div>
     </div>
     <div class="time-cell passed">1</div>
+=======
+      <div class="step-cell failed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell failed">18</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 
    
@@ -863,6 +1150,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
+<<<<<<< HEAD
      
 
   
@@ -892,15 +1180,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="preformatted" data-parent="4.11">18:46:05.565 request:
+=======
+  <div class="preformatted" data-parent="4.10">16:04:45.080 request:
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 64
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;user123&quot;,&quot;password&quot;:&quot;123&quot;,&quot;email&quot;:&quot;user@gmail.com&quot;}
 
+<<<<<<< HEAD
 18:46:05.575 response time in milliseconds: 8
 1 &lt; 400
 1 &lt; X-Powered-By: Express
@@ -913,6 +1205,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;password\&quot; length must be at least 6 characters long&quot;]}
 
+=======
+16:04:45.097 org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information, http call failed after 18 milliseconds for url: http://localhost:3000/api/auth/signup
+16:04:45.097 classpath:signup.feature:10
+When method POST
+http call failed after 18 milliseconds for url: http://localhost:3000/api/auth/signup
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+classpath:signup.feature:10
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 </div>   
 
   
@@ -925,14 +1225,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="4.12">
       <div class="step-ref passed">12</div>
+=======
+    <div class="step-container" id="4.11">
+      <div class="step-ref skipped">11</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>Then</span>&nbsp;<span>status 400</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -953,14 +1258,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="4.13">
       <div class="step-ref passed">13</div>
+=======
+    <div class="step-container" id="4.12">
+      <div class="step-ref skipped">12</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -988,8 +1298,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
+<<<<<<< HEAD
             <div class="scenario-time passed">
               <span>ms:</span>&nbsp;<span>17</span>
+=======
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>18</span>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
             </div>
           </div>
           <div class="step-row">
@@ -1069,13 +1384,21 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="5.10">
-      <div class="step-ref passed">10</div>
+      <div class="step-ref failed">10</div>
       
+<<<<<<< HEAD
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request { username: &#39;user123&#39;, password: &#39;Pass@123&#39;, email: &#39;abc&#39; }</span>
       </div>
     </div>
     <div class="time-cell passed">1</div>
+=======
+      <div class="step-cell failed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell failed">17</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 
    
@@ -1084,6 +1407,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
+<<<<<<< HEAD
      
 
   
@@ -1113,15 +1437,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="preformatted" data-parent="5.11">18:46:05.592 request:
+=======
+  <div class="preformatted" data-parent="5.10">16:04:45.097 request:
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 58
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;user123&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;email&quot;:&quot;abc&quot;}
 
+<<<<<<< HEAD
 18:46:05.602 response time in milliseconds: 8
 1 &lt; 400
 1 &lt; X-Powered-By: Express
@@ -1134,6 +1462,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;email\&quot; must be a valid email&quot;]}
 
+=======
+16:04:45.117 org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information, http call failed after 20 milliseconds for url: http://localhost:3000/api/auth/signup
+16:04:45.117 classpath:signup.feature:10
+When method POST
+http call failed after 20 milliseconds for url: http://localhost:3000/api/auth/signup
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+classpath:signup.feature:10
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 </div>   
 
   
@@ -1146,14 +1482,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="5.12">
       <div class="step-ref passed">12</div>
+=======
+    <div class="step-container" id="5.11">
+      <div class="step-ref skipped">11</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>Then</span>&nbsp;<span>status 400</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -1174,14 +1515,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="5.13">
       <div class="step-ref passed">13</div>
+=======
+    <div class="step-container" id="5.12">
+      <div class="step-ref skipped">12</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -1209,8 +1555,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
+<<<<<<< HEAD
             <div class="scenario-time passed">
               <span>ms:</span>&nbsp;<span>16</span>
+=======
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>18</span>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
             </div>
           </div>
           <div class="step-row">
@@ -1290,13 +1641,21 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="6.10">
-      <div class="step-ref passed">10</div>
+      <div class="step-ref failed">10</div>
       
+<<<<<<< HEAD
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request { username: &#39;user123456789&#39;, password: &#39;Pass@12345&#39;, email: &#39;abcgb&#39; }</span>
       </div>
     </div>
     <div class="time-cell passed">1</div>
+=======
+      <div class="step-cell failed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell failed">18</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 
    
@@ -1305,6 +1664,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
+<<<<<<< HEAD
      
 
   
@@ -1334,15 +1694,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="preformatted" data-parent="6.11">18:46:05.625 request:
+=======
+  <div class="preformatted" data-parent="6.10">16:04:45.122 request:
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 68
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;user123456789&quot;,&quot;password&quot;:&quot;Pass@12345&quot;,&quot;email&quot;:&quot;abcgb&quot;}
 
+<<<<<<< HEAD
 18:46:05.636 response time in milliseconds: 8
 1 &lt; 400
 1 &lt; X-Powered-By: Express
@@ -1355,6 +1719,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;email\&quot; must be a valid email&quot;]}
 
+=======
+16:04:45.138 org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information, http call failed after 21 milliseconds for url: http://localhost:3000/api/auth/signup
+16:04:45.138 classpath:signup.feature:10
+When method POST
+http call failed after 21 milliseconds for url: http://localhost:3000/api/auth/signup
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+classpath:signup.feature:10
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 </div>   
 
   
@@ -1367,14 +1739,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="6.12">
       <div class="step-ref passed">12</div>
+=======
+    <div class="step-container" id="6.11">
+      <div class="step-ref skipped">11</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>Then</span>&nbsp;<span>status 400</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -1395,14 +1772,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="6.13">
       <div class="step-ref passed">13</div>
+=======
+    <div class="step-container" id="6.12">
+      <div class="step-ref skipped">12</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -1430,8 +1812,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
+<<<<<<< HEAD
             <div class="scenario-time passed">
               <span>ms:</span>&nbsp;<span>22</span>
+=======
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>16</span>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
             </div>
           </div>
           <div class="step-row">
@@ -1542,14 +1929,23 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="0.37">
       <div class="step-ref passed">37</div>
+=======
+    <div class="step-container" id="0.34">
+      <div class="step-ref failed">34</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="time-cell passed">17</div>
+=======
+    <div class="time-cell failed">16</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 
    
@@ -1558,16 +1954,21 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
+<<<<<<< HEAD
   <div class="preformatted" data-parent="0.37">18:46:05.653 request:
+=======
+  <div class="preformatted" data-parent="0.34">16:04:45.142 request:
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 76
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;email&quot;:&quot;newuser@gmail.com&quot;}
 
+<<<<<<< HEAD
 18:46:05.664 response time in milliseconds: 9
 1 &lt; 409
 1 &lt; X-Powered-By: Express
@@ -1580,6 +1981,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Tên đăng nhập đã tồn tại!&quot;}
 
+=======
+16:04:45.158 org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information, http call failed after 16 milliseconds for url: http://localhost:3000/api/auth/signup
+16:04:45.158 classpath:signup.feature:34
+When method POST
+http call failed after 16 milliseconds for url: http://localhost:3000/api/auth/signup
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+classpath:signup.feature:34
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 </div>   
 
   
@@ -1599,11 +2008,98 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   </div>
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="0.39">
       <div class="step-ref passed">39</div>
+=======
+    <div class="step-container" id="0.35">
+      <div class="step-ref skipped">35</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
+      
+      <div class="step-cell skipped">
+        <span>Then</span>&nbsp;<span>status 409</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+<<<<<<< HEAD
+=======
+    <div class="step-container" id="0.36">
+      <div class="step-ref skipped">36</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.success == false</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:39]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:39]</span>
+                <span class="scenario-name">TC07 - Đăng ký với email đã tồn tại</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>2</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:39]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:39]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 409</span>
+        <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -1627,6 +2123,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
     <div class="step-container" id="0.40">
       <div class="step-ref passed">40</div>
       
@@ -1802,14 +2299,23 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="0.54">
       <div class="step-ref passed">54</div>
+=======
+    <div class="step-container" id="0.49">
+      <div class="step-ref failed">49</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="time-cell passed">20</div>
+=======
+    <div class="time-cell failed">2</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 
    
@@ -1818,16 +2324,21 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
+<<<<<<< HEAD
   <div class="preformatted" data-parent="0.54">18:46:05.686 request:
+=======
+  <div class="preformatted" data-parent="0.49">16:04:45.158 request:
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 70
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;usernew&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;email&quot;:&quot;admin@gmail.com&quot;}
 
+<<<<<<< HEAD
 18:46:05.700 response time in milliseconds: 14
 1 &lt; 409
 1 &lt; X-Powered-By: Express
@@ -1840,6 +2351,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Email này đã được sử dụng!&quot;}
 
+=======
+16:04:45.158 org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information, http call failed after 0 milliseconds for url: http://localhost:3000/api/auth/signup
+16:04:45.158 classpath:signup.feature:49
+When method POST
+http call failed after 0 milliseconds for url: http://localhost:3000/api/auth/signup
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+classpath:signup.feature:49
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 </div>   
 
   
@@ -1859,14 +2378,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   </div>
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="0.56">
       <div class="step-ref passed">56</div>
+=======
+    <div class="step-container" id="0.50">
+      <div class="step-ref skipped">50</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>Then</span>&nbsp;<span>status 409</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -1887,6 +2411,124 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
+=======
+    <div class="step-container" id="0.51">
+      <div class="step-ref skipped">51</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.success == false</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:54]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:54]</span>
+                <span class="scenario-name">TC08 - Đăng ký thành công với dữ liệu hợp lệ</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>19</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:54]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:54]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Tạo username/email ngẫu nhiên để tránh trùng lặp khi chạy lại test</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomStr = java.util.UUID.randomUUID().toString().substring(0, 8)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
     <div class="step-container" id="0.57">
       <div class="step-ref passed">57</div>
       
@@ -1894,7 +2536,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2072,7 +2714,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def testEmail = testUsername + &#39;@gmail.com&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2128,7 +2770,11 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="time-cell passed">3</div>
+=======
+    <div class="time-cell passed">0</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 
    
@@ -2154,14 +2800,23 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="0.77">
       <div class="step-ref passed">77</div>
+=======
+    <div class="step-container" id="0.69">
+      <div class="step-ref failed">69</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="time-cell passed">209</div>
+=======
+    <div class="time-cell failed">17</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 
    
@@ -2170,14 +2825,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
+<<<<<<< HEAD
   <div class="preformatted" data-parent="0.77">18:46:05.798 request:
+=======
+  <div class="preformatted" data-parent="0.69">16:04:45.171 request:
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 117
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
+<<<<<<< HEAD
 {&quot;username&quot;:&quot;user_test_149127ea&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;fullname&quot;:&quot;User Test&quot;,&quot;email&quot;:&quot;user_test_149127ea@gmail.com&quot;}
 
 18:46:06.002 response time in milliseconds: 202
@@ -2191,7 +2851,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng ký tài khoản thành công!&quot;}
+=======
+{&quot;username&quot;:&quot;user_test_8b5c0c03&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;fullname&quot;:&quot;User Test&quot;,&quot;email&quot;:&quot;user_test_8b5c0c03@gmail.com&quot;}
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
 
+16:04:45.187 org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information, http call failed after 17 milliseconds for url: http://localhost:3000/api/auth/signup
+16:04:45.187 classpath:signup.feature:69
+When method POST
+http call failed after 17 milliseconds for url: http://localhost:3000/api/auth/signup
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:3000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+classpath:signup.feature:69
 </div>   
 
   
@@ -2211,14 +2880,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   </div>
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="0.79">
       <div class="step-ref passed">79</div>
+=======
+    <div class="step-container" id="0.70">
+      <div class="step-ref skipped">70</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>Then</span>&nbsp;<span>status 201</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -2239,14 +2913,23 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="0.80">
       <div class="step-ref passed">80</div>
+=======
+    <div class="step-container" id="0.71">
+      <div class="step-ref skipped">71</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.success == true</span>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="time-cell passed">1</div>
+=======
+    <div class="time-cell skipped">0</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
   </div>
 
    
@@ -2267,14 +2950,19 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
+<<<<<<< HEAD
     <div class="step-container" id="0.81">
       <div class="step-ref passed">81</div>
+=======
+    <div class="step-container" id="0.72">
+      <div class="step-ref skipped">72</div>
+>>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.message == &quot;Đăng ký tài khoản thành công!&quot;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
