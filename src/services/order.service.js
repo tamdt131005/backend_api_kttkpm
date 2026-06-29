@@ -112,10 +112,18 @@ class OrderService {
         } else {
             const danhSachGioHang = await cartDAO.getCartByUserId(userId);
             if (!Array.isArray(danhSachGioHang) || danhSachGioHang.length === 0) {
-                throw { status: 400, message: "Gio hang trong" };
+                throw { status: 400, message: "Giỏ hàng trống" };
             }
 
             danhSachSanPhamDatHang = danhSachGioHang.map((mucGioHang) => {
+                // Kiểm tra tồn kho
+                if (mucGioHang.bienthe_id && Number(mucGioHang.soluong_kho || 0) < Number(mucGioHang.soluong)) {
+                    throw {
+                        status: 400,
+                        message: `Sản phẩm ${mucGioHang.tensanpham}${mucGioHang.mausac ? ' (' + mucGioHang.mausac + (mucGioHang.kichthuoc ? ' - ' + mucGioHang.kichthuoc : '') + ')' : ''} không đủ tồn kho (Còn lại: ${mucGioHang.soluong_kho})`
+                    };
+                }
+
                 const donGia =
                     mucGioHang.giakhuyenmai !== null && mucGioHang.giakhuyenmai > 0 && mucGioHang.giakhuyenmai < mucGioHang.giaban ?
                     Number(mucGioHang.giakhuyenmai) :

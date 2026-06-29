@@ -23,4 +23,9 @@ public class AppTest {
     Karate testUpdateProfile() {
         return Karate.run("classpath:update_profile_api_test.feature");
     }
+
+    @Karate.Test
+    Karate testCart() {
+        return Karate.run("classpath:cart.feature");
+    }
 }

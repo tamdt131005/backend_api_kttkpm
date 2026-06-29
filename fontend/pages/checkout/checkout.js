@@ -336,7 +336,7 @@ async function init() {
         }
 
         if (!buyNowItem) {
-            const cartRes = await api.get(`/cart?user_id=${userId}`);
+            const cartRes = await api.get('/cart');
             if (!cartRes.success || !Array.isArray(cartRes?.data?.items) || cartRes.data.items.length === 0) {
                 document.getElementById('checkout-loading').style.display = 'none';
                 document.getElementById('checkout-empty').style.display = '';

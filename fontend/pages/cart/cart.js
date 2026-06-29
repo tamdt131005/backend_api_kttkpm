@@ -1,3 +1,4 @@
+let currentCartItems = [];
 
 function formatCurrency(value) {
     return new Intl.NumberFormat('vi-VN').format(Number(value) || 0) + '₫';
@@ -77,6 +78,7 @@ function renderCartItem(item) {
 
 function renderCart(data) {
     const { items, tongtien } = data;
+    currentCartItems = items || [];
     const loadingEl = document.getElementById('cart-loading');
     const emptyEl = document.getElementById('cart-empty');
     const contentEl = document.getElementById('cart-content');
@@ -110,7 +112,7 @@ async function loadCart() {
     }
 
     try {
-        const res = await api.get(`/cart?user_id=${userId}`);
+        const res = await api.get('/cart');
         if (res.success) {
             renderCart(res.data);
         } else {
@@ -131,7 +133,7 @@ async function updateQuantity(cartId, newQty) {
 
     showLoading();
     try {
-        const res = await api.put(`/cart/${cartId}`, { user_id: Number(userId), soluong: newQty });
+        const res = await api.put(`/cart/${cartId}`, { soluong: newQty });
         if (res.success) {
             await loadCart(); // Tải lại giỏ hàng
         } else {
@@ -153,7 +155,7 @@ async function removeItem(cartId) {
 
     showLoading();
     try {
-        const res = await api.delete(`/cart/${cartId}?user_id=${userId}`);
+        const res = await api.delete(`/cart/${cartId}`);
         if (res.success) {
             await loadCart();
         } else {
@@ -165,4 +167,21 @@ async function removeItem(cartId) {
     }
     hideLoading();
 }
-document.addEventListener('DOMContentLoaded', loadCart);
+document.addEventListener('DOMContentLoaded', () => {
+    loadCart();
+
+    const checkoutBtn = document.getElementById('checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', (e) => {
+            const hasOutOfStockItem = currentCartItems.some(item => {
+                const stock = Number(item.soluong_kho) || 0;
+                return item.soluong > stock;
+            });
+
+            if (hasOutOfStockItem) {
+                e.preventDefault();
+                alert('Có sản phẩm trong giỏ hàng vượt quá số lượng tồn kho thực tế. Vui lòng giảm số lượng hoặc xóa sản phẩm trước khi thanh toán.');
+            }
+        });
+    }
+});

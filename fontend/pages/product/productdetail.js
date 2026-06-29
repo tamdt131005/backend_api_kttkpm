@@ -252,7 +252,6 @@ function renderProduct(product) {
 
         try {
             const res = await api.post('/cart', {
-                user_id: Number(userId),
                 sanpham_id: product.id,
                 bienthe_id: variant?.id || null,
                 soluong: qty

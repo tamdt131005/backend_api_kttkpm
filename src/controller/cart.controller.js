@@ -3,10 +3,7 @@ import cartService from "../services/cart.service.js";
 class CartController {
     async getCart(req, res) {
         try {
-            const userId = req.query.user_id;
-            if (!userId) {
-                return res.status(400).json({ success: false, message: "Thiếu user_id" });
-            }
+            const userId = req.user.id;
             const data = await cartService.getCart(userId);
             res.status(200).json({
                 success: true,
@@ -19,14 +16,14 @@ class CartController {
         }
     }
 
-    //user_id, sanpham_id, bienthe_id, soluong
     async addToCart(req, res) {
         try {
-            const { user_id, sanpham_id, bienthe_id, soluong } = req.body;
-            if (!user_id || !sanpham_id) {
-                return res.status(400).json({ success: false, message: "Thiếu user_id hoặc sanpham_id" });
+            const userId = req.user.id;
+            const { sanpham_id, bienthe_id, soluong } = req.body;
+            if (!sanpham_id) {
+                return res.status(400).json({ success: false, message: "Thiếu sanpham_id" });
             }
-            const cartId = await cartService.addToCart(user_id, sanpham_id, bienthe_id, soluong || 1);
+            const cartId = await cartService.addToCart(userId, sanpham_id, bienthe_id, soluong || 1);
             res.status(201).json({
                 success: true,
                 message: "Thêm vào giỏ hàng thành công",
@@ -39,15 +36,12 @@ class CartController {
         }
     }
 
-    //user_id, soluong 
     async updateCartItem(req, res) {
         try {
+            const userId = req.user.id;
             const cartId = req.params.id;
-            const { user_id, soluong } = req.body;
-            if (!user_id) {
-                return res.status(400).json({ success: false, message: "Thiếu user_id" });
-            }
-            await cartService.updateCartItem(cartId, user_id, soluong);
+            const { soluong } = req.body;
+            await cartService.updateCartItem(cartId, userId, soluong);
             res.status(200).json({
                 success: true,
                 message: "Cập nhật giỏ hàng thành công"
@@ -59,14 +53,10 @@ class CartController {
         }
     }
 
-    // id?user_id=...
     async removeCartItem(req, res) {
         try {
+            const userId = req.user.id;
             const cartId = req.params.id;
-            const userId = req.query.user_id;
-            if (!userId) {
-                return res.status(400).json({ success: false, message: "Thiếu user_id" });
-            }
             await cartService.removeCartItem(cartId, userId);
             res.status(200).json({
                 success: true,

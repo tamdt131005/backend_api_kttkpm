@@ -25,12 +25,33 @@ class CartDAO {
         return rows;
     }
 
-    // Kiểm tra sản phẩm đã có trong giỏ chưa 
-    async findCartItem(userId, sanphamId) {
+    // Kiểm tra sản phẩm đã có trong giỏ chưa (xét cả biến thể)
+    async findCartItem(userId, sanphamId, bientheId) {
+        let query = `SELECT * FROM giohang WHERE user_id = ? AND sanpham_id = ?`;
+        const params = [userId, sanphamId];
+        if (bientheId) {
+            query += ` AND bienthe_id = ?`;
+            params.push(bientheId);
+        } else {
+            query += ` AND bienthe_id IS NULL`;
+        }
+        const [rows] = await pool.execute(query, params);
+        return rows[0] || null;
+    }
+
+    // Lấy tồn kho của biến thể
+    async getVariantStock(bientheId) {
         const [rows] = await pool.execute(`
-            SELECT * FROM giohang 
-            WHERE user_id = ? AND sanpham_id = ? 
-        `, [userId, sanphamId]);
+            SELECT soluong FROM bienthesp WHERE id = ?
+        `, [bientheId]);
+        return rows[0]?.soluong ?? 0;
+    }
+
+    // Lấy chi tiết thông tin một dòng giỏ hàng
+    async getCartItemById(cartId) {
+        const [rows] = await pool.execute(`
+            SELECT * FROM giohang WHERE id = ?
+        `, [cartId]);
         return rows[0] || null;
     }
 
