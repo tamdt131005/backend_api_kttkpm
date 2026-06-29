@@ -1,4 +1,0 @@
-# Created at 2026-06-29T18:45:16.099
-Boot Manifest-JAR contains absolute paths in classpath 'D:\backend_api_kttkpm\kiemthu\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-

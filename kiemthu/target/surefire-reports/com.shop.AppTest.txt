@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.shop.AppTest
--------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.295 s - in com.shop.AppTest
-=======
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.134 s - in com.shop.AppTest
->>>>>>> bc711f8b9a8090e2cb36460314113d4c69884384

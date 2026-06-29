@@ -1,7 +1,0 @@
-testCaseId,description,useToken,sanpham_id,bienthe_id,soluong,expectedStatus,expectedSuccess
-TC01,Thêm thất bại do tài khoản chưa đăng nhập,false,1,1,1,401,false
-TC02,Thêm thất bại do dữ liệu gửi lên không hợp lệ,true,"",1,1,400,false
-TC03,Thêm thất bại do sản phẩm không tồn tại,true,999,999,1,400,false
-TC04,Thêm thất bại do sản phẩm đã có sẵn trong giỏ hàng,true,1,1,1,400,false
-TC05,Thêm thất bại do kho hàng không đủ số lượng,true,1,1,100,400,false
-TC06,Thêm mới vào giỏ hàng thành công,true,2,3,2,201,true
