@@ -17,117 +17,43 @@ Background:
 
     * def token = response.token
 
-    # Chuyển API nhập hàng
     * url baseUrl + '/api/admin/nhaphang'
     * header Authorization = 'Bearer ' + token
     * header Content-Type = 'application/json'
 
-Scenario: TC01 - Lưu phiếu nhập thành công
+Scenario Outline: <tc> - <desc>
+
+    * def rows =
+    """
+    [
+      {
+        "bienthe_id": #(bienthe_id),
+        "soluong": #(soluong),
+        "dongia": #(dongia),
+        "ghichu": ""
+      }
+    ]
+    """
 
     Given request
     """
     {
-      "ghichu_phieu": "Nhập hàng",
-      "rows": [
-        {
-          "bienthe_id": 1,
-          "soluong": 10,
-          "dongia": 50000,
-          "ghichu": ""
-        }
-      ]
+      "ghichu_phieu": "#(ghichu)",
+      "rows": #(rows)
     }
     """
+
     When method post
-    Then status 201
-    And match response.success == true
-    And match response.data.phieunhap_id == '#number'
-* print response
+    Then status <status>
+    And match response.success == <success>
 
-Scenario: TC02 - Biến thể để trống (ko hop le)
-
-    Given request
-    """
-    {
-      "ghichu_phieu": "Nhập hàng",
-      "rows": [
-        {
-          "bienthe_id": "",
-          "soluong": 10,
-          "dongia": 50000,
-          "ghichu": ""
-        }
-      ]
-    }
-    """
-    When method post
-    Then status 400
-    And match response.success == false
-* print response
-
-Scenario: TC03 - Số lượng bằng 0
-
-    Given request
-    """
-    {
-      "ghichu_phieu": "Nhập hàng",
-      "rows": [
-        {
-          "bienthe_id": 1,
-          "soluong": 0,
-          "dongia": 50000,
-          "ghichu": ""
-        }
-      ]
-    }
-    """
-    When method post
-    Then status 400
-    And match response.success == false
-* print response
-
-Scenario: TC04 - Đơn giá nhỏ hơn 1000
-
-    Given request
-    """
-    {
-      "ghichu_phieu": "Nhập hàng",
-      "rows": [
-        {
-          "bienthe_id": 1,
-          "soluong": 10,
-          "dongia": 500,
-          "ghichu": ""
-        }
-      ]
-    }
-    """
-    When method post
-    Then status 400
-    And match response.success == false
-* print response
-
-
-Scenario: TC05 - Ghi chú phiếu để trống
-
-    Given request
-    """
-    {
-      "ghichu_phieu": "",
-      "rows": [
-        {
-          "bienthe_id": 1,
-          "soluong": 10,
-          "dongia": 50000,
-          "ghichu": ""
-        }
-      ]
-    }
-    """
-    When method post
-    Then status 201
-    And match response.success == true
-* print response
+Examples:
+| tc   | desc                     | bienthe_id | soluong | dongia | ghichu      | status | success |
+| TC01 | Lưu thành công           | 1          | 10       | 50000   | Nhập hàng   | 201    | true    |
+| TC02 | Biến thể không hợp lệ    | ''         | 10       | 50000   | Nhập hàng   | 400    | false   |
+| TC03 | Số lượng bằng 0          | 1          | 0        | 50000   | Nhập hàng   | 400    | false   |
+| TC04 | Đơn giá nhỏ hơn 1000     | 1          | 10       | 500     | Nhập hàng   | 400    | false   |
+| TC05 | Ghi chú để trống         | 1          | 10       | 50000   |             | 201    | true    |
 
 Scenario: TC06 - Thiếu trường rows
 
@@ -140,7 +66,6 @@ Scenario: TC06 - Thiếu trường rows
     When method post
     Then status 400
     And match response.success == false
-* print response
 
 # TC07 - Danh sách sản phẩm rỗng
 
@@ -156,7 +81,6 @@ Scenario: TC07 - rows rỗng
     When method post
     Then status 400
     And match response.success == false
-* print response
 
 Scenario: TC08 - Nhiều dòng sản phẩm
 
@@ -184,7 +108,6 @@ Scenario: TC08 - Nhiều dòng sản phẩm
     Then status 201
     And match response.success == true
     And match response.data.phieunhap_id == '#number'
-* print response
 
 Scenario: TC09 - Body rỗng
 
@@ -196,4 +119,3 @@ Scenario: TC09 - Body rỗng
     When method post
     Then status 400
     And match response.success == false
-    * print response

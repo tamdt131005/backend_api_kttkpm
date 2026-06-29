@@ -49,37 +49,37 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-06-29 03:29:10 CH</div>
+    <div>2026-06-29 04:05:33 CH</div>
   </div>
 </div>
 
         <div class="nav-container">
           <div class="nav-item passed">
-            <a href="#[1:25]"><span>[1:25]</span> <span>TC01 - Lưu phiếu nhập thành công</span></a>
+            <a href="#[1.1:52]"><span>[1.1:52]</span> <span>TC01 - Lưu thành công</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[2:47]"><span>[2:47]</span> <span>TC02 - Biến thể để trống (ko hop le)</span></a>
+            <a href="#[1.2:53]"><span>[1.2:53]</span> <span>TC02 - Biến thể không hợp lệ</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[3:68]"><span>[3:68]</span> <span>TC03 - Số lượng bằng 0</span></a>
+            <a href="#[1.3:54]"><span>[1.3:54]</span> <span>TC03 - Số lượng bằng 0</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[4:89]"><span>[4:89]</span> <span>TC04 - Đơn giá nhỏ hơn 1000</span></a>
+            <a href="#[1.4:55]"><span>[1.4:55]</span> <span>TC04 - Đơn giá nhỏ hơn 1000</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[5:111]"><span>[5:111]</span> <span>TC05 - Ghi chú phiếu để trống</span></a>
+            <a href="#[1.5:56]"><span>[1.5:56]</span> <span>TC05 - Ghi chú để trống</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[6:132]"><span>[6:132]</span> <span>TC06 - Thiếu trường rows</span></a>
+            <a href="#[2:58]"><span>[2:58]</span> <span>TC06 - Thiếu trường rows</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[7:147]"><span>[7:147]</span> <span>TC07 - rows rỗng</span></a>
+            <a href="#[3:72]"><span>[3:72]</span> <span>TC07 - rows rỗng</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[8:161]"><span>[8:161]</span> <span>TC08 - Nhiều dòng sản phẩm</span></a>
+            <a href="#[4:85]"><span>[4:85]</span> <span>TC08 - Nhiều dòng sản phẩm</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[9:189]"><span>[9:189]</span> <span>TC09 - Body rỗng</span></a>
+            <a href="#[5:112]"><span>[5:112]</span> <span>TC09 - Body rỗng</span></a>
           </div>
         </div>
       </div>
@@ -93,74 +93,39 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <span class="feature-description"></span>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[1:25]">
+          <div class="scenario-heading" id="[1.1:52]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[1:25]</span>
-                <span class="scenario-name">TC01 - Lưu phiếu nhập thành công</span>
+                Scenario: <span>[1.1:52]</span>
+                <span class="scenario-name">TC01 - Lưu thành công</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>615</span>
+              <span>ms:</span>&nbsp;<span>376</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[1:25]bg">
+            <div class="step-container" id="[1.1:52]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[1:25]bg"><div>
+          <div data-parent="[1.1:52]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.4">
+    <div class="step-container" id="1.4">
       <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>url baseUrl</span>
-      </div>
-    </div>
-    <div class="time-cell passed">2</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[1:25]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Đăng nhập</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.7">
-      <div class="step-ref bg-step">7</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">1</div>
@@ -178,25 +143,60 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[1:25]bg"><div>
+          <div data-parent="[1.1:52]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Đăng nhập</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="1.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:52]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.8">
+    <div class="step-container" id="1.8">
       <div class="step-ref bg-step">8</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">65</div>
+    <div class="time-cell passed">29</div>
   </div>
 
    
   
-  <div class="preformatted" data-parent="0.8">{
+  <div class="preformatted" data-parent="1.8">{
   &quot;username&quot;: &quot;admin&quot;,
   &quot;password&quot;: &quot;123456&quot;
 }</div>
@@ -209,20 +209,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[1:25]bg"><div>
+          <div data-parent="[1.1:52]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.15">
+    <div class="step-container" id="1.15">
       <div class="step-ref bg-step">15</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method post</span>
       </div>
     </div>
-    <div class="time-cell passed">455</div>
+    <div class="time-cell passed">291</div>
   </div>
 
    
@@ -231,7 +231,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">15:29:10.004 request:
+  <div class="preformatted" data-parent="1.15">16:05:33.154 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 40
@@ -241,17 +241,17 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
 
-15:29:10.096 response time in milliseconds: 92
+16:05:33.246 response time in milliseconds: 92
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 333
-1 &lt; ETag: W/&quot;14d-6RgI5OvqWPMHIX9DjRbLeTuM/iI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
+1 &lt; ETag: W/&quot;14d-h6W8N33IFHrn39Iaz3ugwfaVCcg&quot;
+1 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo&quot;}
 
 </div>   
 
@@ -259,13 +259,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[1:25]bg"><div>
+          <div data-parent="[1.1:52]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.16">
+    <div class="step-container" id="1.16">
       <div class="step-ref bg-step">16</div>
       
       <div class="step-cell passed">
@@ -287,20 +287,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[1:25]bg"><div>
+          <div data-parent="[1.1:52]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.18">
+    <div class="step-container" id="1.18">
       <div class="step-ref bg-step">18</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def token = response.token</span>
       </div>
     </div>
-    <div class="time-cell passed">14</div>
+    <div class="time-cell passed">13</div>
   </div>
 
    
@@ -315,27 +315,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[1:25]bg"><div>
+          <div data-parent="[1.1:52]bg"><div>
+  
+
   
 
   <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Chuyển API nhập hàng</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.21">
-      <div class="step-ref bg-step">21</div>
+    <div class="step-container" id="1.20">
+      <div class="step-ref bg-step">20</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -350,14 +343,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[1:25]bg"><div>
+          <div data-parent="[1.1:52]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.22">
-      <div class="step-ref bg-step">22</div>
+    <div class="step-container" id="1.21">
+      <div class="step-ref bg-step">21</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
@@ -378,20 +371,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[1:25]bg"><div>
+          <div data-parent="[1.1:52]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.23">
-      <div class="step-ref bg-step">23</div>
+    <div class="step-container" id="1.22">
+      <div class="step-ref bg-step">22</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -412,8 +405,43 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.27">
-      <div class="step-ref passed">27</div>
+    <div class="step-container" id="1.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def rows =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="1.26">[
+  {
+    &quot;bienthe_id&quot;: #(bienthe_id),
+    &quot;soluong&quot;: #(soluong),
+    &quot;dongia&quot;: #(dongia),
+    &quot;ghichu&quot;: &quot;&quot;
+  }
+]</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.38">
+      <div class="step-ref passed">38</div>
       
       <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>request</span>
@@ -424,16 +452,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
    
   
-  <div class="preformatted" data-parent="0.27">{
-  &quot;ghichu_phieu&quot;: &quot;Nhập hàng&quot;,
-  &quot;rows&quot;: [
-    {
-      &quot;bienthe_id&quot;: 1,
-      &quot;soluong&quot;: 10,
-      &quot;dongia&quot;: 50000,
-      &quot;ghichu&quot;: &quot;&quot;
-    }
-  ]
+  <div class="preformatted" data-parent="1.38">{
+  &quot;ghichu_phieu&quot;: &quot;#(ghichu)&quot;,
+  &quot;rows&quot;: #(rows)
 }</div>
 
   
@@ -450,14 +471,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.41">
-      <div class="step-ref passed">41</div>
+    <div class="step-container" id="1.46">
+      <div class="step-ref passed">46</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method post</span>
       </div>
     </div>
-    <div class="time-cell passed">24</div>
+    <div class="time-cell passed">22</div>
   </div>
 
    
@@ -466,28 +487,28 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.41">15:29:10.130 request:
+  <div class="preformatted" data-parent="1.46">16:05:33.274 request:
 2 &gt; POST http://localhost:3000/api/admin/nhaphang
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo
 2 &gt; Content-Type: application/json; charset=UTF-8
-2 &gt; Content-Length: 97
+2 &gt; Content-Length: 103
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
 2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;,&quot;rows&quot;:[{&quot;bienthe_id&quot;:1,&quot;soluong&quot;:10,&quot;dongia&quot;:50000,&quot;ghichu&quot;:&quot;&quot;}]}
+{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;,&quot;rows&quot;:[{&quot;bienthe_id&quot;:&quot;1&quot;,&quot;soluong&quot;:&quot;10&quot;,&quot;dongia&quot;:&quot;50000&quot;,&quot;ghichu&quot;:&quot;&quot;}]}
 
-15:29:10.153 response time in milliseconds: 22
+16:05:33.296 response time in milliseconds: 22
 2 &lt; 201
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 100
-2 &lt; ETag: W/&quot;64-ra1GJlCIhL9x+vu/tdIzixFxDfc&quot;
-2 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
+2 &lt; ETag: W/&quot;64-Euzv575LBHwBYIT11GrOD2iIfYE&quot;
+2 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Them phieu nhap thanh cong&quot;,&quot;data&quot;:{&quot;phieunhap_id&quot;:35,&quot;tongtien&quot;:500000}}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Them phieu nhap thanh cong&quot;,&quot;data&quot;:{&quot;phieunhap_id&quot;:38,&quot;tongtien&quot;:500000}}
 
 </div>   
 
@@ -501,8 +522,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.42">
-      <div class="step-ref passed">42</div>
+    <div class="step-container" id="1.47">
+      <div class="step-ref passed">47</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 201</span>
@@ -529,8 +550,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.43">
-      <div class="step-ref passed">43</div>
+    <div class="step-container" id="1.48">
+      <div class="step-ref passed">48</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response.success == true</span>
@@ -551,20 +572,300 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div><div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.2:53]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.2:53]</span>
+                <span class="scenario-name">TC02 - Biến thể không hợp lệ</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>68</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.2:53]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.2:53]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.44">
-      <div class="step-ref passed">44</div>
+    <div class="step-container" id="2.4">
+      <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.data.phieunhap_id == &#39;#number&#39;</span>
+        <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:53]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Đăng nhập</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="2.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="2.8">{
+  &quot;username&quot;: &quot;admin&quot;,
+  &quot;password&quot;: &quot;123456&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">58</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.15">16:05:33.324 request:
+1 &gt; POST http://localhost:3000/api/auth/signin
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 40
+1 &gt; Host: localhost:3000
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
+
+16:05:33.381 response time in milliseconds: 51
+1 &lt; 200
+1 &lt; X-Powered-By: Express
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 333
+1 &lt; ETag: W/&quot;14d-h6W8N33IFHrn39Iaz3ugwfaVCcg&quot;
+1 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
+1 &lt; Connection: keep-alive
+1 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def token = response.token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:53]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.22">
+      <div class="step-ref bg-step">22</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -585,14 +886,80 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.45">
-      <div class="step-ref passed">45</div>
+    <div class="step-container" id="2.26">
+      <div class="step-ref passed">26</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>print response</span>
+        <span>*</span>&nbsp;<span>def rows =</span>
       </div>
     </div>
-    <div class="time-cell passed">31</div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="2.26">[
+  {
+    &quot;bienthe_id&quot;: #(bienthe_id),
+    &quot;soluong&quot;: #(soluong),
+    &quot;dongia&quot;: #(dongia),
+    &quot;ghichu&quot;: &quot;&quot;
+  }
+]</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="2.38">{
+  &quot;ghichu_phieu&quot;: &quot;#(ghichu)&quot;,
+  &quot;rows&quot;: #(rows)
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -601,16 +968,86 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.45">15:29:10.190 [print] {
-  &quot;success&quot;: true,
-  &quot;message&quot;: &quot;Them phieu nhap thanh cong&quot;,
-  &quot;data&quot;: {
-    &quot;phieunhap_id&quot;: 35,
-    &quot;tongtien&quot;: 500000
-  }
-}
- 
+  <div class="preformatted" data-parent="2.46">16:05:33.386 request:
+2 &gt; POST http://localhost:3000/api/admin/nhaphang
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 104
+2 &gt; Host: localhost:3000
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;,&quot;rows&quot;:[{&quot;bienthe_id&quot;:&quot;&#39;&#39;&quot;,&quot;soluong&quot;:&quot;10&quot;,&quot;dongia&quot;:&quot;50000&quot;,&quot;ghichu&quot;:&quot;&quot;}]}
+
+16:05:33.386 response time in milliseconds: 0
+2 &lt; 400
+2 &lt; X-Powered-By: Express
+2 &lt; Access-Control-Allow-Origin: *
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Content-Length: 51
+2 &lt; ETag: W/&quot;33-Qoe2n6uryMQbJF276y+p/JhyHFI&quot;
+2 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
+2 &lt; Connection: keep-alive
+2 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Bien the khong hop le&quot;}
+
 </div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.success == false</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
 
   
 
@@ -618,29 +1055,1472 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[2:47]">
+          <div class="scenario-heading" id="[1.3:54]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[2:47]</span>
-                <span class="scenario-name">TC02 - Biến thể để trống (ko hop le)</span>
+                Scenario: <span>[1.3:54]</span>
+                <span class="scenario-name">TC03 - Số lượng bằng 0</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>78</span>
+              <span>ms:</span>&nbsp;<span>64</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[2:47]bg">
+            <div class="step-container" id="[1.3:54]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[2:47]bg"><div>
+          <div data-parent="[1.3:54]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:54]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Đăng nhập</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="3.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:54]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="3.8">{
+  &quot;username&quot;: &quot;admin&quot;,
+  &quot;password&quot;: &quot;123456&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:54]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">57</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.15">16:05:33.402 request:
+1 &gt; POST http://localhost:3000/api/auth/signin
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 40
+1 &gt; Host: localhost:3000
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
+
+16:05:33.456 response time in milliseconds: 54
+1 &lt; 200
+1 &lt; X-Powered-By: Express
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 333
+1 &lt; ETag: W/&quot;14d-h6W8N33IFHrn39Iaz3ugwfaVCcg&quot;
+1 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
+1 &lt; Connection: keep-alive
+1 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:54]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:54]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def token = response.token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:54]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:54]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:54]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.22">
+      <div class="step-ref bg-step">22</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def rows =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="3.26">[
+  {
+    &quot;bienthe_id&quot;: #(bienthe_id),
+    &quot;soluong&quot;: #(soluong),
+    &quot;dongia&quot;: #(dongia),
+    &quot;ghichu&quot;: &quot;&quot;
+  }
+]</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="3.38">{
+  &quot;ghichu_phieu&quot;: &quot;#(ghichu)&quot;,
+  &quot;rows&quot;: #(rows)
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.46">16:05:33.456 request:
+2 &gt; POST http://localhost:3000/api/admin/nhaphang
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 102
+2 &gt; Host: localhost:3000
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;,&quot;rows&quot;:[{&quot;bienthe_id&quot;:&quot;1&quot;,&quot;soluong&quot;:&quot;0&quot;,&quot;dongia&quot;:&quot;50000&quot;,&quot;ghichu&quot;:&quot;&quot;}]}
+
+16:05:33.456 response time in milliseconds: 0
+2 &lt; 400
+2 &lt; X-Powered-By: Express
+2 &lt; Access-Control-Allow-Origin: *
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Content-Length: 53
+2 &lt; ETag: W/&quot;35-1IgyrTaYwmP1TtHklgoZkUl/fLw&quot;
+2 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
+2 &lt; Connection: keep-alive
+2 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:false,&quot;message&quot;:&quot;So luong phai lon hon 0&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.success == false</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.4:55]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.4:55]</span>
+                <span class="scenario-name">TC04 - Đơn giá nhỏ hơn 1000</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>65</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.4:55]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.4:55]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:55]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Đăng nhập</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="4.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:55]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="4.8">{
+  &quot;username&quot;: &quot;admin&quot;,
+  &quot;password&quot;: &quot;123456&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:55]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">58</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.15">16:05:33.473 request:
+1 &gt; POST http://localhost:3000/api/auth/signin
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 40
+1 &gt; Host: localhost:3000
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
+
+16:05:33.529 response time in milliseconds: 51
+1 &lt; 200
+1 &lt; X-Powered-By: Express
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 333
+1 &lt; ETag: W/&quot;14d-h6W8N33IFHrn39Iaz3ugwfaVCcg&quot;
+1 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
+1 &lt; Connection: keep-alive
+1 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:55]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:55]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def token = response.token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:55]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:55]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:55]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.22">
+      <div class="step-ref bg-step">22</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def rows =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="4.26">[
+  {
+    &quot;bienthe_id&quot;: #(bienthe_id),
+    &quot;soluong&quot;: #(soluong),
+    &quot;dongia&quot;: #(dongia),
+    &quot;ghichu&quot;: &quot;&quot;
+  }
+]</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="4.38">{
+  &quot;ghichu_phieu&quot;: &quot;#(ghichu)&quot;,
+  &quot;rows&quot;: #(rows)
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.46">16:05:33.529 request:
+2 &gt; POST http://localhost:3000/api/admin/nhaphang
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 101
+2 &gt; Host: localhost:3000
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;,&quot;rows&quot;:[{&quot;bienthe_id&quot;:&quot;1&quot;,&quot;soluong&quot;:&quot;10&quot;,&quot;dongia&quot;:&quot;500&quot;,&quot;ghichu&quot;:&quot;&quot;}]}
+
+16:05:33.534 response time in milliseconds: 5
+2 &lt; 400
+2 &lt; X-Powered-By: Express
+2 &lt; Access-Control-Allow-Origin: *
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Content-Length: 50
+2 &lt; ETag: W/&quot;32-lbQ0mnS+aRVkajPkDnLgUxH2w9M&quot;
+2 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
+2 &lt; Connection: keep-alive
+2 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Don gia phai &gt;= 1000&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.success == false</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.5:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.5:56]</span>
+                <span class="scenario-name">TC05 - Ghi chú để trống</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>92</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.5:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:56]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Đăng nhập</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="5.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="5.8">{
+  &quot;username&quot;: &quot;admin&quot;,
+  &quot;password&quot;: &quot;123456&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">60</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.15">16:05:33.548 request:
+1 &gt; POST http://localhost:3000/api/auth/signin
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 40
+1 &gt; Host: localhost:3000
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
+
+16:05:33.605 response time in milliseconds: 57
+1 &lt; 200
+1 &lt; X-Powered-By: Express
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 333
+1 &lt; ETag: W/&quot;14d-h6W8N33IFHrn39Iaz3ugwfaVCcg&quot;
+1 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
+1 &lt; Connection: keep-alive
+1 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def token = response.token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.22">
+      <div class="step-ref bg-step">22</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def rows =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="5.26">[
+  {
+    &quot;bienthe_id&quot;: #(bienthe_id),
+    &quot;soluong&quot;: #(soluong),
+    &quot;dongia&quot;: #(dongia),
+    &quot;ghichu&quot;: &quot;&quot;
+  }
+]</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">19</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="5.38">{
+  &quot;ghichu_phieu&quot;: &quot;#(ghichu)&quot;,
+  &quot;rows&quot;: #(rows)
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">10</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.46">16:05:33.625 request:
+2 &gt; POST http://localhost:3000/api/admin/nhaphang
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 93
+2 &gt; Host: localhost:3000
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;ghichu_phieu&quot;:null,&quot;rows&quot;:[{&quot;bienthe_id&quot;:&quot;1&quot;,&quot;soluong&quot;:&quot;10&quot;,&quot;dongia&quot;:&quot;50000&quot;,&quot;ghichu&quot;:&quot;&quot;}]}
+
+16:05:33.635 response time in milliseconds: 10
+2 &lt; 201
+2 &lt; X-Powered-By: Express
+2 &lt; Access-Control-Allow-Origin: *
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Content-Length: 100
+2 &lt; ETag: W/&quot;64-4lLsgnvbXxeLGNJDbSqYzwl75xo&quot;
+2 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
+2 &lt; Connection: keep-alive
+2 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Them phieu nhap thanh cong&quot;,&quot;data&quot;:{&quot;phieunhap_id&quot;:39,&quot;tongtien&quot;:500000}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.success == true</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:58]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:58]</span>
+                <span class="scenario-name">TC06 - Thiếu trường rows</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>66</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:58]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:58]bg"><div>
   
 
   
@@ -668,7 +2548,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:47]bg"><div>
+          <div data-parent="[2:58]bg"><div>
   
 
   <div class="step-row">
@@ -703,7 +2583,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:47]bg"><div>
+          <div data-parent="[2:58]bg"><div>
   
 
   
@@ -734,7 +2614,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:47]bg"><div>
+          <div data-parent="[2:58]bg"><div>
   
 
   
@@ -747,7 +2627,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method post</span>
       </div>
     </div>
-    <div class="time-cell passed">67</div>
+    <div class="time-cell passed">59</div>
   </div>
 
    
@@ -756,7 +2636,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">15:29:10.212 request:
+  <div class="preformatted" data-parent="0.15">16:05:33.645 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 40
@@ -766,17 +2646,17 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
 
-15:29:10.278 response time in milliseconds: 62
+16:05:33.695 response time in milliseconds: 50
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 333
-1 &lt; ETag: W/&quot;14d-6RgI5OvqWPMHIX9DjRbLeTuM/iI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
+1 &lt; ETag: W/&quot;14d-h6W8N33IFHrn39Iaz3ugwfaVCcg&quot;
+1 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo&quot;}
 
 </div>   
 
@@ -784,7 +2664,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:47]bg"><div>
+          <div data-parent="[2:58]bg"><div>
   
 
   
@@ -812,7 +2692,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:47]bg"><div>
+          <div data-parent="[2:58]bg"><div>
   
 
   
@@ -840,21 +2720,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:47]bg"><div>
+          <div data-parent="[2:58]bg"><div>
+  
+
   
 
   <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Chuyển API nhập hàng</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.21">
-      <div class="step-ref bg-step">21</div>
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
@@ -875,14 +2748,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:47]bg"><div>
+          <div data-parent="[2:58]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.22">
-      <div class="step-ref bg-step">22</div>
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
@@ -903,14 +2776,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:47]bg"><div>
+          <div data-parent="[2:58]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.23">
-      <div class="step-ref bg-step">23</div>
+    <div class="step-container" id="0.22">
+      <div class="step-ref bg-step">22</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
@@ -937,8 +2810,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.49">
-      <div class="step-ref passed">49</div>
+    <div class="step-container" id="0.60">
+      <div class="step-ref passed">60</div>
       
       <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>request</span>
@@ -949,124 +2822,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
    
   
-  <div class="preformatted" data-parent="0.49">{
-  &quot;ghichu_phieu&quot;: &quot;Nhập hàng&quot;,
-  &quot;rows&quot;: [
-    {
-      &quot;bienthe_id&quot;: &quot;&quot;,
-      &quot;soluong&quot;: 10,
-      &quot;dongia&quot;: 50000,
-      &quot;ghichu&quot;: &quot;&quot;
-    }
-  ]
+  <div class="preformatted" data-parent="0.60">{
+  &quot;ghichu_phieu&quot;: &quot;Nhập hàng&quot;
 }</div>
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.63">
-      <div class="step-ref passed">63</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">6</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.63">15:29:10.278 request:
-2 &gt; POST http://localhost:3000/api/admin/nhaphang
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA
-2 &gt; Content-Type: application/json; charset=UTF-8
-2 &gt; Content-Length: 98
-2 &gt; Host: localhost:3000
-2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
-2 &gt; Accept-Encoding: gzip,deflate
-{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;,&quot;rows&quot;:[{&quot;bienthe_id&quot;:&quot;&quot;,&quot;soluong&quot;:10,&quot;dongia&quot;:50000,&quot;ghichu&quot;:&quot;&quot;}]}
-
-15:29:10.278 response time in milliseconds: 0
-2 &lt; 400
-2 &lt; X-Powered-By: Express
-2 &lt; Access-Control-Allow-Origin: *
-2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 51
-2 &lt; ETag: W/&quot;33-Qoe2n6uryMQbJF276y+p/JhyHFI&quot;
-2 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
-2 &lt; Connection: keep-alive
-2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Bien the khong hop le&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.64">
-      <div class="step-ref passed">64</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 400</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.65">
-      <div class="step-ref passed">65</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.success == false</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
 
   
 
@@ -1086,10 +2844,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">66</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>print response</span>
+        <span>When</span>&nbsp;<span>method post</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -1098,12 +2856,86 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.66">15:29:10.289 [print] {
-  &quot;success&quot;: false,
-  &quot;message&quot;: &quot;Bien the khong hop le&quot;
-}
- 
+  <div class="preformatted" data-parent="0.66">16:05:33.706 request:
+2 &gt; POST http://localhost:3000/api/admin/nhaphang
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 31
+2 &gt; Host: localhost:3000
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;}
+
+16:05:33.706 response time in milliseconds: 0
+2 &lt; 400
+2 &lt; X-Powered-By: Express
+2 &lt; Access-Control-Allow-Origin: *
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Content-Length: 63
+2 &lt; ETag: W/&quot;3f-4nL/z3VTAh5VB4hhYIKtdFhHaBI&quot;
+2 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
+2 &lt; Connection: keep-alive
+2 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Phieu nhap phai co it nhat 1 dong&quot;}
+
 </div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.67">
+      <div class="step-ref passed">67</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.68">
+      <div class="step-ref passed">68</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.success == false</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
 
   
 
@@ -1111,29 +2943,29 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[3:68]">
+          <div class="scenario-heading" id="[3:72]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[3:68]</span>
-                <span class="scenario-name">TC03 - Số lượng bằng 0</span>
+                Scenario: <span>[3:72]</span>
+                <span class="scenario-name">TC07 - rows rỗng</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>73</span>
+              <span>ms:</span>&nbsp;<span>62</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[3:68]bg">
+            <div class="step-container" id="[3:72]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[3:68]bg"><div>
+          <div data-parent="[3:72]bg"><div>
   
 
   
@@ -1161,7 +2993,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:68]bg"><div>
+          <div data-parent="[3:72]bg"><div>
   
 
   <div class="step-row">
@@ -1196,7 +3028,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:68]bg"><div>
+          <div data-parent="[3:72]bg"><div>
   
 
   
@@ -1227,7 +3059,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:68]bg"><div>
+          <div data-parent="[3:72]bg"><div>
   
 
   
@@ -1240,7 +3072,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method post</span>
       </div>
     </div>
-    <div class="time-cell passed">64</div>
+    <div class="time-cell passed">57</div>
   </div>
 
    
@@ -1249,7 +3081,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">15:29:10.297 request:
+  <div class="preformatted" data-parent="0.15">16:05:33.716 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 40
@@ -1259,17 +3091,17 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
 
-15:29:10.344 response time in milliseconds: 47
+16:05:33.765 response time in milliseconds: 49
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 333
-1 &lt; ETag: W/&quot;14d-6RgI5OvqWPMHIX9DjRbLeTuM/iI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
+1 &lt; ETag: W/&quot;14d-h6W8N33IFHrn39Iaz3ugwfaVCcg&quot;
+1 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo&quot;}
 
 </div>   
 
@@ -1277,7 +3109,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:68]bg"><div>
+          <div data-parent="[3:72]bg"><div>
   
 
   
@@ -1305,7 +3137,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:68]bg"><div>
+          <div data-parent="[3:72]bg"><div>
   
 
   
@@ -1333,21 +3165,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:68]bg"><div>
+          <div data-parent="[3:72]bg"><div>
+  
+
   
 
   <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Chuyển API nhập hàng</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.21">
-      <div class="step-ref bg-step">21</div>
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
@@ -1368,14 +3193,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:68]bg"><div>
+          <div data-parent="[3:72]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.22">
-      <div class="step-ref bg-step">22</div>
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
@@ -1396,14 +3221,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[3:68]bg"><div>
+          <div data-parent="[3:72]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.23">
-      <div class="step-ref bg-step">23</div>
+    <div class="step-container" id="0.22">
+      <div class="step-ref bg-step">22</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
@@ -1430,8 +3255,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.70">
-      <div class="step-ref passed">70</div>
+    <div class="step-container" id="0.74">
+      <div class="step-ref passed">74</div>
       
       <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>request</span>
@@ -1442,16 +3267,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
    
   
-  <div class="preformatted" data-parent="0.70">{
+  <div class="preformatted" data-parent="0.74">{
   &quot;ghichu_phieu&quot;: &quot;Nhập hàng&quot;,
-  &quot;rows&quot;: [
-    {
-      &quot;bienthe_id&quot;: 1,
-      &quot;soluong&quot;: 0,
-      &quot;dongia&quot;: 50000,
-      &quot;ghichu&quot;: &quot;&quot;
-    }
-  ]
+  &quot;rows&quot;: []
 }</div>
 
   
@@ -1468,14 +3286,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.84">
-      <div class="step-ref passed">84</div>
+    <div class="step-container" id="0.81">
+      <div class="step-ref passed">81</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method post</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -1484,28 +3302,28 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.84">15:29:10.362 request:
+  <div class="preformatted" data-parent="0.81">16:05:33.765 request:
 2 &gt; POST http://localhost:3000/api/admin/nhaphang
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo
 2 &gt; Content-Type: application/json; charset=UTF-8
-2 &gt; Content-Length: 96
+2 &gt; Content-Length: 41
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
 2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;,&quot;rows&quot;:[{&quot;bienthe_id&quot;:1,&quot;soluong&quot;:0,&quot;dongia&quot;:50000,&quot;ghichu&quot;:&quot;&quot;}]}
+{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;,&quot;rows&quot;:[]}
 
-15:29:10.366 response time in milliseconds: 4
+16:05:33.774 response time in milliseconds: 0
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 53
-2 &lt; ETag: W/&quot;35-1IgyrTaYwmP1TtHklgoZkUl/fLw&quot;
-2 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
+2 &lt; Content-Length: 63
+2 &lt; ETag: W/&quot;3f-4nL/z3VTAh5VB4hhYIKtdFhHaBI&quot;
+2 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;So luong phai lon hon 0&quot;}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Phieu nhap phai co it nhat 1 dong&quot;}
 
 </div>   
 
@@ -1519,8 +3337,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.85">
-      <div class="step-ref passed">85</div>
+    <div class="step-container" id="0.82">
+      <div class="step-ref passed">82</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
@@ -1547,14 +3365,322 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.86">
-      <div class="step-ref passed">86</div>
+    <div class="step-container" id="0.83">
+      <div class="step-ref passed">83</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:85]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:85]</span>
+                <span class="scenario-name">TC08 - Nhiều dòng sản phẩm</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>79</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:85]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:85]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Đăng nhập</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.8">{
+  &quot;username&quot;: &quot;admin&quot;,
+  &quot;password&quot;: &quot;123456&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">60</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">16:05:33.788 request:
+1 &gt; POST http://localhost:3000/api/auth/signin
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 40
+1 &gt; Host: localhost:3000
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
+
+16:05:33.844 response time in milliseconds: 56
+1 &lt; 200
+1 &lt; X-Powered-By: Express
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 333
+1 &lt; ETag: W/&quot;14d-h6W8N33IFHrn39Iaz3ugwfaVCcg&quot;
+1 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
+1 &lt; Connection: keep-alive
+1 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def token = response.token</span>
+      </div>
+    </div>
     <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:85]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.22">
+      <div class="step-ref bg-step">22</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1579,354 +3705,6 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">87</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>print response</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.87">15:29:10.368 [print] {
-  &quot;success&quot;: false,
-  &quot;message&quot;: &quot;So luong phai lon hon 0&quot;
-}
- 
-</div>   
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[4:89]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[4:89]</span>
-                <span class="scenario-name">TC04 - Đơn giá nhỏ hơn 1000</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>76</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[4:89]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[4:89]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[4:89]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Đăng nhập</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.7">
-      <div class="step-ref bg-step">7</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[4:89]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.8">
-      <div class="step-ref bg-step">8</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  <div class="preformatted" data-parent="0.8">{
-  &quot;username&quot;: &quot;admin&quot;,
-  &quot;password&quot;: &quot;123456&quot;
-}</div>
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[4:89]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.15">
-      <div class="step-ref bg-step">15</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">69</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.15">15:29:10.378 request:
-1 &gt; POST http://localhost:3000/api/auth/signin
-1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 40
-1 &gt; Host: localhost:3000
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
-1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
-
-15:29:10.444 response time in milliseconds: 66
-1 &lt; 200
-1 &lt; X-Powered-By: Express
-1 &lt; Access-Control-Allow-Origin: *
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 333
-1 &lt; ETag: W/&quot;14d-6RgI5OvqWPMHIX9DjRbLeTuM/iI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
-1 &lt; Connection: keep-alive
-1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div data-parent="[4:89]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.16">
-      <div class="step-ref bg-step">16</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[4:89]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.18">
-      <div class="step-ref bg-step">18</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def token = response.token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[4:89]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Chuyển API nhập hàng</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.21">
-      <div class="step-ref bg-step">21</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[4:89]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.22">
-      <div class="step-ref bg-step">22</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[4:89]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.23">
-      <div class="step-ref bg-step">23</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.91">
-      <div class="step-ref passed">91</div>
-      
-      <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>request</span>
       </div>
     </div>
@@ -1935,1968 +3713,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
    
   
-  <div class="preformatted" data-parent="0.91">{
-  &quot;ghichu_phieu&quot;: &quot;Nhập hàng&quot;,
-  &quot;rows&quot;: [
-    {
-      &quot;bienthe_id&quot;: 1,
-      &quot;soluong&quot;: 10,
-      &quot;dongia&quot;: 500,
-      &quot;ghichu&quot;: &quot;&quot;
-    }
-  ]
-}</div>
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.105">
-      <div class="step-ref passed">105</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">5</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.105">15:29:10.444 request:
-2 &gt; POST http://localhost:3000/api/admin/nhaphang
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA
-2 &gt; Content-Type: application/json; charset=UTF-8
-2 &gt; Content-Length: 95
-2 &gt; Host: localhost:3000
-2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
-2 &gt; Accept-Encoding: gzip,deflate
-{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;,&quot;rows&quot;:[{&quot;bienthe_id&quot;:1,&quot;soluong&quot;:10,&quot;dongia&quot;:500,&quot;ghichu&quot;:&quot;&quot;}]}
-
-15:29:10.444 response time in milliseconds: 0
-2 &lt; 400
-2 &lt; X-Powered-By: Express
-2 &lt; Access-Control-Allow-Origin: *
-2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 50
-2 &lt; ETag: W/&quot;32-lbQ0mnS+aRVkajPkDnLgUxH2w9M&quot;
-2 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
-2 &lt; Connection: keep-alive
-2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Don gia phai &gt;= 1000&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.106">
-      <div class="step-ref passed">106</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 400</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.107">
-      <div class="step-ref passed">107</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.success == false</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.108">
-      <div class="step-ref passed">108</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>print response</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.108">15:29:10.452 [print] {
-  &quot;success&quot;: false,
-  &quot;message&quot;: &quot;Don gia phai &gt;= 1000&quot;
-}
- 
-</div>   
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[5:111]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[5:111]</span>
-                <span class="scenario-name">TC05 - Ghi chú phiếu để trống</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>83</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[5:111]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[5:111]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:111]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Đăng nhập</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.7">
-      <div class="step-ref bg-step">7</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:111]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.8">
-      <div class="step-ref bg-step">8</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  <div class="preformatted" data-parent="0.8">{
-  &quot;username&quot;: &quot;admin&quot;,
-  &quot;password&quot;: &quot;123456&quot;
-}</div>
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:111]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.15">
-      <div class="step-ref bg-step">15</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">69</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.15">15:29:10.461 request:
-1 &gt; POST http://localhost:3000/api/auth/signin
-1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 40
-1 &gt; Host: localhost:3000
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
-1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
-
-15:29:10.528 response time in milliseconds: 66
-1 &lt; 200
-1 &lt; X-Powered-By: Express
-1 &lt; Access-Control-Allow-Origin: *
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 333
-1 &lt; ETag: W/&quot;14d-6RgI5OvqWPMHIX9DjRbLeTuM/iI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
-1 &lt; Connection: keep-alive
-1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:111]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.16">
-      <div class="step-ref bg-step">16</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:111]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.18">
-      <div class="step-ref bg-step">18</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def token = response.token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:111]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Chuyển API nhập hàng</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.21">
-      <div class="step-ref bg-step">21</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:111]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.22">
-      <div class="step-ref bg-step">22</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[5:111]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.23">
-      <div class="step-ref bg-step">23</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.113">
-      <div class="step-ref passed">113</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>request</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  <div class="preformatted" data-parent="0.113">{
-  &quot;ghichu_phieu&quot;: &quot;&quot;,
-  &quot;rows&quot;: [
-    {
-      &quot;bienthe_id&quot;: 1,
-      &quot;soluong&quot;: 10,
-      &quot;dongia&quot;: 50000,
-      &quot;ghichu&quot;: &quot;&quot;
-    }
-  ]
-}</div>
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.127">
-      <div class="step-ref passed">127</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">11</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.127">15:29:10.531 request:
-2 &gt; POST http://localhost:3000/api/admin/nhaphang
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA
-2 &gt; Content-Type: application/json; charset=UTF-8
-2 &gt; Content-Length: 85
-2 &gt; Host: localhost:3000
-2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
-2 &gt; Accept-Encoding: gzip,deflate
-{&quot;ghichu_phieu&quot;:&quot;&quot;,&quot;rows&quot;:[{&quot;bienthe_id&quot;:1,&quot;soluong&quot;:10,&quot;dongia&quot;:50000,&quot;ghichu&quot;:&quot;&quot;}]}
-
-15:29:10.536 response time in milliseconds: 5
-2 &lt; 201
-2 &lt; X-Powered-By: Express
-2 &lt; Access-Control-Allow-Origin: *
-2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 100
-2 &lt; ETag: W/&quot;64-+7NgFw4T3WVT5OMdlmJKrhJiwCk&quot;
-2 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
-2 &lt; Connection: keep-alive
-2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Them phieu nhap thanh cong&quot;,&quot;data&quot;:{&quot;phieunhap_id&quot;:36,&quot;tongtien&quot;:500000}}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.128">
-      <div class="step-ref passed">128</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 201</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.129">
-      <div class="step-ref passed">129</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.success == true</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.130">
-      <div class="step-ref passed">130</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>print response</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.130">15:29:10.536 [print] {
-  &quot;success&quot;: true,
-  &quot;message&quot;: &quot;Them phieu nhap thanh cong&quot;,
-  &quot;data&quot;: {
-    &quot;phieunhap_id&quot;: 36,
-    &quot;tongtien&quot;: 500000
-  }
-}
- 
-</div>   
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[6:132]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[6:132]</span>
-                <span class="scenario-name">TC06 - Thiếu trường rows</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>69</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[6:132]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[6:132]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[6:132]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Đăng nhập</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.7">
-      <div class="step-ref bg-step">7</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[6:132]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.8">
-      <div class="step-ref bg-step">8</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  <div class="preformatted" data-parent="0.8">{
-  &quot;username&quot;: &quot;admin&quot;,
-  &quot;password&quot;: &quot;123456&quot;
-}</div>
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[6:132]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.15">
-      <div class="step-ref bg-step">15</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">63</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.15">15:29:10.550 request:
-1 &gt; POST http://localhost:3000/api/auth/signin
-1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 40
-1 &gt; Host: localhost:3000
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
-1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
-
-15:29:10.603 response time in milliseconds: 53
-1 &lt; 200
-1 &lt; X-Powered-By: Express
-1 &lt; Access-Control-Allow-Origin: *
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 333
-1 &lt; ETag: W/&quot;14d-6RgI5OvqWPMHIX9DjRbLeTuM/iI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
-1 &lt; Connection: keep-alive
-1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div data-parent="[6:132]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.16">
-      <div class="step-ref bg-step">16</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[6:132]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.18">
-      <div class="step-ref bg-step">18</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def token = response.token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[6:132]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Chuyển API nhập hàng</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.21">
-      <div class="step-ref bg-step">21</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[6:132]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.22">
-      <div class="step-ref bg-step">22</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[6:132]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.23">
-      <div class="step-ref bg-step">23</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.134">
-      <div class="step-ref passed">134</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>request</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  <div class="preformatted" data-parent="0.134">{
-  &quot;ghichu_phieu&quot;: &quot;Nhập hàng&quot;
-}</div>
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.140">
-      <div class="step-ref passed">140</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">4</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.140">15:29:10.603 request:
-2 &gt; POST http://localhost:3000/api/admin/nhaphang
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA
-2 &gt; Content-Type: application/json; charset=UTF-8
-2 &gt; Content-Length: 31
-2 &gt; Host: localhost:3000
-2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
-2 &gt; Accept-Encoding: gzip,deflate
-{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;}
-
-15:29:10.603 response time in milliseconds: 0
-2 &lt; 400
-2 &lt; X-Powered-By: Express
-2 &lt; Access-Control-Allow-Origin: *
-2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 63
-2 &lt; ETag: W/&quot;3f-4nL/z3VTAh5VB4hhYIKtdFhHaBI&quot;
-2 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
-2 &lt; Connection: keep-alive
-2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Phieu nhap phai co it nhat 1 dong&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.141">
-      <div class="step-ref passed">141</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 400</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.142">
-      <div class="step-ref passed">142</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.success == false</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.143">
-      <div class="step-ref passed">143</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>print response</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.143">15:29:10.603 [print] {
-  &quot;success&quot;: false,
-  &quot;message&quot;: &quot;Phieu nhap phai co it nhat 1 dong&quot;
-}
- 
-</div>   
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[7:147]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[7:147]</span>
-                <span class="scenario-name">TC07 - rows rỗng</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>102</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[7:147]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[7:147]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[7:147]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Đăng nhập</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.7">
-      <div class="step-ref bg-step">7</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[7:147]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.8">
-      <div class="step-ref bg-step">8</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  <div class="preformatted" data-parent="0.8">{
-  &quot;username&quot;: &quot;admin&quot;,
-  &quot;password&quot;: &quot;123456&quot;
-}</div>
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[7:147]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.15">
-      <div class="step-ref bg-step">15</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">77</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.15">15:29:10.630 request:
-1 &gt; POST http://localhost:3000/api/auth/signin
-1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 40
-1 &gt; Host: localhost:3000
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
-1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
-
-15:29:10.706 response time in milliseconds: 76
-1 &lt; 200
-1 &lt; X-Powered-By: Express
-1 &lt; Access-Control-Allow-Origin: *
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 333
-1 &lt; ETag: W/&quot;14d-6RgI5OvqWPMHIX9DjRbLeTuM/iI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
-1 &lt; Connection: keep-alive
-1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div data-parent="[7:147]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.16">
-      <div class="step-ref bg-step">16</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[7:147]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.18">
-      <div class="step-ref bg-step">18</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def token = response.token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[7:147]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Chuyển API nhập hàng</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.21">
-      <div class="step-ref bg-step">21</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[7:147]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.22">
-      <div class="step-ref bg-step">22</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[7:147]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.23">
-      <div class="step-ref bg-step">23</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.149">
-      <div class="step-ref passed">149</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>request</span>
-      </div>
-    </div>
-    <div class="time-cell passed">3</div>
-  </div>
-
-   
-  
-  <div class="preformatted" data-parent="0.149">{
-  &quot;ghichu_phieu&quot;: &quot;Nhập hàng&quot;,
-  &quot;rows&quot;: []
-}</div>
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.156">
-      <div class="step-ref passed">156</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">18</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.156">15:29:10.711 request:
-2 &gt; POST http://localhost:3000/api/admin/nhaphang
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA
-2 &gt; Content-Type: application/json; charset=UTF-8
-2 &gt; Content-Length: 41
-2 &gt; Host: localhost:3000
-2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
-2 &gt; Accept-Encoding: gzip,deflate
-{&quot;ghichu_phieu&quot;:&quot;Nhập hàng&quot;,&quot;rows&quot;:[]}
-
-15:29:10.725 response time in milliseconds: 14
-2 &lt; 400
-2 &lt; X-Powered-By: Express
-2 &lt; Access-Control-Allow-Origin: *
-2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 63
-2 &lt; ETag: W/&quot;3f-4nL/z3VTAh5VB4hhYIKtdFhHaBI&quot;
-2 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
-2 &lt; Connection: keep-alive
-2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Phieu nhap phai co it nhat 1 dong&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.157">
-      <div class="step-ref passed">157</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 400</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.158">
-      <div class="step-ref passed">158</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.success == false</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.159">
-      <div class="step-ref passed">159</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>print response</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.159">15:29:10.725 [print] {
-  &quot;success&quot;: false,
-  &quot;message&quot;: &quot;Phieu nhap phai co it nhat 1 dong&quot;
-}
- 
-</div>   
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[8:161]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[8:161]</span>
-                <span class="scenario-name">TC08 - Nhiều dòng sản phẩm</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>109</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[8:161]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[8:161]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[8:161]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Đăng nhập</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.7">
-      <div class="step-ref bg-step">7</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[8:161]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.8">
-      <div class="step-ref bg-step">8</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>request</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  <div class="preformatted" data-parent="0.8">{
-  &quot;username&quot;: &quot;admin&quot;,
-  &quot;password&quot;: &quot;123456&quot;
-}</div>
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[8:161]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.15">
-      <div class="step-ref bg-step">15</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method post</span>
-      </div>
-    </div>
-    <div class="time-cell passed">91</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.15">15:29:10.746 request:
-1 &gt; POST http://localhost:3000/api/auth/signin
-1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 40
-1 &gt; Host: localhost:3000
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
-1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
-
-15:29:10.834 response time in milliseconds: 88
-1 &lt; 200
-1 &lt; X-Powered-By: Express
-1 &lt; Access-Control-Allow-Origin: *
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 333
-1 &lt; ETag: W/&quot;14d-6RgI5OvqWPMHIX9DjRbLeTuM/iI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
-1 &lt; Connection: keep-alive
-1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA&quot;}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div data-parent="[8:161]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.16">
-      <div class="step-ref bg-step">16</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[8:161]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.18">
-      <div class="step-ref bg-step">18</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def token = response.token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[8:161]bg"><div>
-  
-
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Chuyển API nhập hàng</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.21">
-      <div class="step-ref bg-step">21</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[8:161]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.22">
-      <div class="step-ref bg-step">22</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div data-parent="[8:161]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.23">
-      <div class="step-ref bg-step">23</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.163">
-      <div class="step-ref passed">163</div>
-      
-      <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>request</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  <div class="preformatted" data-parent="0.163">{
+  <div class="preformatted" data-parent="0.87">{
   &quot;ghichu_phieu&quot;: &quot;Nhập nhiều sản phẩm&quot;,
   &quot;rows&quot;: [
     {
@@ -3928,14 +3745,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.183">
-      <div class="step-ref passed">183</div>
+    <div class="step-container" id="0.107">
+      <div class="step-ref passed">107</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method post</span>
       </div>
     </div>
-    <div class="time-cell passed">10</div>
+    <div class="time-cell passed">9</div>
   </div>
 
    
@@ -3944,9 +3761,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.183">15:29:10.840 request:
+  <div class="preformatted" data-parent="0.107">16:05:33.844 request:
 2 &gt; POST http://localhost:3000/api/admin/nhaphang
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 167
 2 &gt; Host: localhost:3000
@@ -3955,17 +3772,17 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 {&quot;ghichu_phieu&quot;:&quot;Nhập nhiều sản phẩm&quot;,&quot;rows&quot;:[{&quot;bienthe_id&quot;:1,&quot;soluong&quot;:5,&quot;dongia&quot;:50000,&quot;ghichu&quot;:&quot;&quot;},{&quot;bienthe_id&quot;:2,&quot;soluong&quot;:3,&quot;dongia&quot;:70000,&quot;ghichu&quot;:&quot;&quot;}]}
 
-15:29:10.847 response time in milliseconds: 7
+16:05:33.856 response time in milliseconds: 12
 2 &lt; 201
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 100
-2 &lt; ETag: W/&quot;64-2QHTg6yBAGx63y8tjvqod3rQKzc&quot;
-2 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
+2 &lt; ETag: W/&quot;64-5N/MijhXjmucOrUtQvzJwn6KFME&quot;
+2 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Them phieu nhap thanh cong&quot;,&quot;data&quot;:{&quot;phieunhap_id&quot;:37,&quot;tongtien&quot;:460000}}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Them phieu nhap thanh cong&quot;,&quot;data&quot;:{&quot;phieunhap_id&quot;:40,&quot;tongtien&quot;:460000}}
 
 </div>   
 
@@ -3979,8 +3796,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.184">
-      <div class="step-ref passed">184</div>
+    <div class="step-container" id="0.108">
+      <div class="step-ref passed">108</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 201</span>
@@ -4007,8 +3824,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.185">
-      <div class="step-ref passed">185</div>
+    <div class="step-container" id="0.109">
+      <div class="step-ref passed">109</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response.success == true</span>
@@ -4035,8 +3852,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.186">
-      <div class="step-ref passed">186</div>
+    <div class="step-container" id="0.110">
+      <div class="step-ref passed">110</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response.data.phieunhap_id == &#39;#number&#39;</span>
@@ -4057,68 +3874,31 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.187">
-      <div class="step-ref passed">187</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>print response</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.187">15:29:10.851 [print] {
-  &quot;success&quot;: true,
-  &quot;message&quot;: &quot;Them phieu nhap thanh cong&quot;,
-  &quot;data&quot;: {
-    &quot;phieunhap_id&quot;: 37,
-    &quot;tongtien&quot;: 460000
-  }
-}
- 
-</div>   
-
-  
-
-</div>
-</div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[9:189]">
+          <div class="scenario-heading" id="[5:112]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[9:189]</span>
+                Scenario: <span>[5:112]</span>
                 <span class="scenario-name">TC09 - Body rỗng</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>101</span>
+              <span>ms:</span>&nbsp;<span>64</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[9:189]bg">
+            <div class="step-container" id="[5:112]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[9:189]bg"><div>
+          <div data-parent="[5:112]bg"><div>
   
 
   
@@ -4146,7 +3926,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[9:189]bg"><div>
+          <div data-parent="[5:112]bg"><div>
   
 
   <div class="step-row">
@@ -4181,7 +3961,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[9:189]bg"><div>
+          <div data-parent="[5:112]bg"><div>
   
 
   
@@ -4212,7 +3992,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[9:189]bg"><div>
+          <div data-parent="[5:112]bg"><div>
   
 
   
@@ -4225,7 +4005,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method post</span>
       </div>
     </div>
-    <div class="time-cell passed">90</div>
+    <div class="time-cell passed">58</div>
   </div>
 
    
@@ -4234,7 +4014,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">15:29:10.856 request:
+  <div class="preformatted" data-parent="0.15">16:05:33.867 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 40
@@ -4244,17 +4024,17 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123456&quot;}
 
-15:29:10.943 response time in milliseconds: 87
+16:05:33.919 response time in milliseconds: 52
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 333
-1 &lt; ETag: W/&quot;14d-6RgI5OvqWPMHIX9DjRbLeTuM/iI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
+1 &lt; ETag: W/&quot;14d-h6W8N33IFHrn39Iaz3ugwfaVCcg&quot;
+1 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:1,&quot;username&quot;:&quot;admin&quot;,&quot;fullname&quot;:&quot;Admin&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo&quot;}
 
 </div>   
 
@@ -4262,7 +4042,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[9:189]bg"><div>
+          <div data-parent="[5:112]bg"><div>
   
 
   
@@ -4290,7 +4070,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[9:189]bg"><div>
+          <div data-parent="[5:112]bg"><div>
   
 
   
@@ -4303,7 +4083,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def token = response.token</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4318,21 +4098,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[9:189]bg"><div>
+          <div data-parent="[5:112]bg"><div>
+  
+
   
 
   <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Chuyển API nhập hàng</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
-
-  <div class="step-row">
-    <div class="step-container" id="0.21">
-      <div class="step-ref bg-step">21</div>
+    <div class="step-container" id="0.20">
+      <div class="step-ref bg-step">20</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>url baseUrl + &#39;/api/admin/nhaphang&#39;</span>
@@ -4353,14 +4126,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[9:189]bg"><div>
+          <div data-parent="[5:112]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.22">
-      <div class="step-ref bg-step">22</div>
+    <div class="step-container" id="0.21">
+      <div class="step-ref bg-step">21</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
@@ -4381,14 +4154,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[9:189]bg"><div>
+          <div data-parent="[5:112]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.23">
-      <div class="step-ref bg-step">23</div>
+    <div class="step-container" id="0.22">
+      <div class="step-ref bg-step">22</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
@@ -4415,8 +4188,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.191">
-      <div class="step-ref passed">191</div>
+    <div class="step-container" id="0.114">
+      <div class="step-ref passed">114</div>
       
       <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>request</span>
@@ -4427,7 +4200,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
    
   
-  <div class="preformatted" data-parent="0.191">{
+  <div class="preformatted" data-parent="0.114">{
 }</div>
 
   
@@ -4444,14 +4217,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.196">
-      <div class="step-ref passed">196</div>
+    <div class="step-container" id="0.119">
+      <div class="step-ref passed">119</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method post</span>
       </div>
     </div>
-    <div class="time-cell passed">8</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -4460,9 +4233,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.196">15:29:10.947 request:
+  <div class="preformatted" data-parent="0.119">16:05:33.924 request:
 2 &gt; POST http://localhost:3000/api/admin/nhaphang
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMTc1MCwiZXhwIjoxNzgzMzI2NTUwfQ.bT8GxrC0Bf4CEBvKX94j0YXyH-THVx7xFbpKoOFfbPA
+2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjcyMzkzMywiZXhwIjoxNzgzMzI4NzMzfQ.FXTxLpw-2st0aaqJIz9Zf27lwn63TgjGS-K3J7zrDuo
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 2
 2 &gt; Host: localhost:3000
@@ -4471,14 +4244,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 2 &gt; Accept-Encoding: gzip,deflate
 {}
 
-15:29:10.954 response time in milliseconds: 7
+16:05:33.927 response time in milliseconds: 3
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 63
 2 &lt; ETag: W/&quot;3f-4nL/z3VTAh5VB4hhYIKtdFhHaBI&quot;
-2 &lt; Date: Mon, 29 Jun 2026 08:29:10 GMT
+2 &lt; Date: Mon, 29 Jun 2026 09:05:33 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Phieu nhap phai co it nhat 1 dong&quot;}
@@ -4495,8 +4268,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.197">
-      <div class="step-ref passed">197</div>
+    <div class="step-container" id="0.120">
+      <div class="step-ref passed">120</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
@@ -4523,8 +4296,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.198">
-      <div class="step-ref passed">198</div>
+    <div class="step-container" id="0.121">
+      <div class="step-ref passed">121</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response.success == false</span>
@@ -4540,39 +4313,6 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
      
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.199">
-      <div class="step-ref passed">199</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>print response</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.199">15:29:10.956 [print] {
-  &quot;success&quot;: false,
-  &quot;message&quot;: &quot;Phieu nhap phai co it nhat 1 dong&quot;
-}
- 
-</div>   
 
   
 
