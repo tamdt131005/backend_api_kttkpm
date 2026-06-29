@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"nhaphang[1:29]","start":1782703573763,"end":1782703574270,"title":"nhaphang[1:29] 10:26:13.763-10:26:14.270 TC01 - Lưu phiếu nhập thành công"},{"id":2,"group":1,"content":"nhaphang[2:54]","start":1782703574281,"end":1782703574355,"title":"nhaphang[2:54] 10:26:14.281-10:26:14.355 TC02 - Biến thể để trống"},{"id":3,"group":1,"content":"nhaphang[3:78]","start":1782703574366,"end":1782703574442,"title":"nhaphang[3:78] 10:26:14.366-10:26:14.442 TC03 - Số lượng bằng 0"},{"id":4,"group":1,"content":"nhaphang[4:102]","start":1782703574450,"end":1782703574522,"title":"nhaphang[4:102] 10:26:14.450-10:26:14.522 TC04 - Đơn giá nhỏ hơn 1000"},{"id":5,"group":1,"content":"nhaphang[5:126]","start":1782703574529,"end":1782703574609,"title":"nhaphang[5:126] 10:26:14.529-10:26:14.609 TC05 - Ghi chú phiếu để trống"},{"id":6,"group":1,"content":"nhaphang[6:150]","start":1782703574616,"end":1782703574690,"title":"nhaphang[6:150] 10:26:14.616-10:26:14.690 TC06 - Thiếu trường rows"},{"id":7,"group":1,"content":"nhaphang[7:166]","start":1782703574698,"end":1782703574767,"title":"nhaphang[7:166] 10:26:14.698-10:26:14.767 TC07 - rows rỗng"},{"id":8,"group":1,"content":"nhaphang[8:183]","start":1782703574773,"end":1782703574850,"title":"nhaphang[8:183] 10:26:14.773-10:26:14.850 TC08 - Nhiều dòng sản phẩm"},{"id":9,"group":1,"content":"nhaphang[9:214]","start":1782703574857,"end":1782703574924,"title":"nhaphang[9:214] 10:26:14.857-10:26:14.924 TC09 - Body rỗng"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

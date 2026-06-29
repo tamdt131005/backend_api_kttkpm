@@ -2,6 +2,7 @@ import pool from "../../config/db.js";
 import adminImportDAO from "../../dao/admin/admin.import.dao.js";
 
 class AdminImportService {
+
     async layNhapHang(keyword = "") {
         const data = await adminImportDAO.layDanhSachPhieuNhap(keyword);
         let tongTien = 0;
@@ -50,22 +51,50 @@ class AdminImportService {
     }
 
     async themPhieuNhap(payload) {
+            console.log("========== SERVICE ==========");
+    console.log(JSON.stringify(payload, null, 2));
         const ghichu_phieu = String(payload.ghichu_phieu || "").trim();
         const nha_cung_cap = String(payload.nha_cung_cap || "").trim();
         const nguoitao_id = payload.nguoitao_id ? Number(payload.nguoitao_id) : null;
         const rawRows = this.chuanHoaRowsNhapHang(payload);
 
-        const rows = rawRows
-            .map((row) => ({
-                bienthe_id: Number(row.bienthe_id),
-                soluong: Number(row.soluong),
-                dongia: Number(row.dongia),
-                ghichu: String(row.ghichu || "").trim()
-            }))
-            .filter((row) => row.bienthe_id > 0 && row.soluong > 0 && row.dongia > 0);
+        const rows = rawRows.map((row) => ({
+            bienthe_id: Number(row.bienthe_id),
+            soluong: Number(row.soluong),
+            dongia: Number(row.dongia),
+            ghichu: String(row.ghichu || "").trim()
+        }));
 
         if (!rows.length) {
-            throw { status: 400, message: "Phieu nhap phai co it nhat 1 dong hop le" };
+            throw {
+                status: 400,
+                message: "Phieu nhap phai co it nhat 1 dong"
+            };
+        }
+
+        for (const row of rows) {
+
+            if (!Number.isInteger(row.bienthe_id) || row.bienthe_id <= 0) {
+                throw {
+                    status: 400,
+                    message: "Bien the khong hop le"
+                };
+            }
+
+            if (!Number.isInteger(row.soluong) || row.soluong <= 0) {
+                throw {
+                    status: 400,
+                    message: "So luong phai lon hon 0"
+                };
+            }
+
+            if (isNaN(row.dongia) || row.dongia < 1000) {
+                throw {
+                    status: 400,
+                    message: "Don gia phai >= 1000"
+                };
+            }
+
         }
 
         let tongtien = 0;

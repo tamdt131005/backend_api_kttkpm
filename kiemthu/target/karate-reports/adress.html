@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"83e5272e-0a64-406c-946d-e4a89e7ec749",karate_version:"1.5.1",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"5709f618-42d9-458b-a6eb-cb569aba9ec6",karate_version:"1.5.1",karate_meta:null});
   }
 });
 </script>
@@ -38,8 +38,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">4</div>
-      <div id="nav-fail" class="bg-danger">0</div>
+      <div id="nav-pass" class="bg-success">2</div>
+      <div id="nav-fail" class="bg-danger">3</div>
     </div>
   </div>
   <div id="nav-env">
@@ -49,22 +49,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-06-17 04:38:19 CH</div>
+    <div>2026-06-29 08:52:39 SA</div>
   </div>
 </div>
 
         <div class="nav-container">
-          <div class="nav-item passed">
+          <div class="nav-item failed">
             <a href="#[1.1:37]"><span>[1.1:37]</span> <span>TC01 - Thêm địa chỉ mới thành công (không đặt mặc định)</span></a>
           </div>
-          <div class="nav-item passed">
+          <div class="nav-item failed">
             <a href="#[1.2:38]"><span>[1.2:38]</span> <span>TC02 - Thêm địa chỉ thành công và thiết lập làm mặc định</span></a>
           </div>
           <div class="nav-item passed">
             <a href="#[1.3:39]"><span>[1.3:39]</span> <span>TC03 - Thêm địa chỉ thất bại do số điện thoại không hợp lệ</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[2:40]"><span>[2:40]</span> <span>TC04 - Thêm địa chỉ thất bại do không gửi Authorization Token</span></a>
+            <a href="#[1.4:40]"><span>[1.4:40]</span> <span>TC04 - Thêm địa chỉ thất bại do số điện thoại đã tồn tại</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[2:41]"><span>[2:41]</span> <span>TC04 - Thêm địa chỉ thất bại do không gửi Authorization Token</span></a>
           </div>
         </div>
       </div>
@@ -89,8 +92,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>894</span>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>517</span>
             </div>
           </div>
           <div class="step-row">
@@ -113,7 +116,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -141,7 +144,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def randomStr = java.util.UUID.randomUUID().toString().substring(0, 8)</span>
       </div>
     </div>
-    <div class="time-cell passed">170</div>
+    <div class="time-cell passed">106</div>
   </div>
 
    
@@ -169,7 +172,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def username = &#39;user_addr_&#39; + randomStr</span>
       </div>
     </div>
-    <div class="time-cell passed">9</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -225,7 +228,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/api/auth/signup&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -253,7 +256,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request { username: &#39;#(username)&#39;, password: &#39;Password123@&#39;, fullname: &#39;Test Address User&#39;, email: &#39;#(email)&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">43</div>
+    <div class="time-cell passed">36</div>
   </div>
 
    
@@ -281,7 +284,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">516</div>
+    <div class="time-cell passed">270</div>
   </div>
 
    
@@ -290,24 +293,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.9">16:38:17.988 request:
+  <div class="preformatted" data-parent="1.9">08:52:38.346 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 128
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user_addr_d151e2e1&quot;,&quot;password&quot;:&quot;Password123@&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;email&quot;:&quot;user_addr_d151e2e1@test.com&quot;}
+{&quot;username&quot;:&quot;user_addr_fa65f6d3&quot;,&quot;password&quot;:&quot;Password123@&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;email&quot;:&quot;user_addr_fa65f6d3@test.com&quot;}
 
-16:38:18.156 response time in milliseconds: 164
+08:52:38.439 response time in milliseconds: 89
 1 &lt; 201
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 66
 1 &lt; ETag: W/&quot;42-2dCjMQxNzMW2RPNMC/EUjUFO814&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:18 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:38 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng ký tài khoản thành công!&quot;}
@@ -359,7 +362,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -415,7 +418,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">103</div>
+    <div class="time-cell passed">70</div>
   </div>
 
    
@@ -424,27 +427,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.13">16:38:18.162 request:
+  <div class="preformatted" data-parent="1.13">08:52:38.444 request:
 2 &gt; POST http://localhost:3000/api/auth/signin
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 59
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user_addr_d151e2e1&quot;,&quot;password&quot;:&quot;Password123@&quot;}
+{&quot;username&quot;:&quot;user_addr_fa65f6d3&quot;,&quot;password&quot;:&quot;Password123@&quot;}
 
-16:38:18.261 response time in milliseconds: 98
+08:52:38.512 response time in milliseconds: 68
 2 &lt; 200
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 375
-2 &lt; ETag: W/&quot;177-9HuKPASK+SPI993WxAF416I6DcM&quot;
-2 &lt; Date: Wed, 17 Jun 2026 09:38:18 GMT
+2 &lt; Content-Length: 164
+2 &lt; ETag: W/&quot;a4-Sy73kUi8Ktu8giSAFUFg4EzAuh4&quot;
+2 &lt; Date: Mon, 29 Jun 2026 01:52:38 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:64,&quot;username&quot;:&quot;user_addr_d151e2e1&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjQsInVzZXJuYW1lIjoidXNlcl9hZGRyX2QxNTFlMmUxIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODE2ODkwOTgsImV4cCI6MTc4MjI5Mzg5OH0.lYd-Gwie4OUpqRhMAEMShyG58hqkBTTpv36ZghqeEsU&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:18,&quot;username&quot;:&quot;user_addr_fa65f6d3&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:null}}
 
 </div>   
 
@@ -521,7 +524,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/api/address&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -549,7 +552,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">8</div>
   </div>
 
    
@@ -577,7 +580,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -613,7 +616,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">14</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -622,28 +625,28 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.31">16:38:18.274 request:
+  <div class="preformatted" data-parent="1.31">08:52:38.530 request:
 3 &gt; POST http://localhost:3000/api/address
-3 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjQsInVzZXJuYW1lIjoidXNlcl9hZGRyX2QxNTFlMmUxIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODE2ODkwOTgsImV4cCI6MTc4MjI5Mzg5OH0.lYd-Gwie4OUpqRhMAEMShyG58hqkBTTpv36ZghqeEsU
+3 &gt; Authorization: Bearer null
 3 &gt; Content-Type: application/json; charset=UTF-8
 3 &gt; Content-Length: 149
 3 &gt; Host: localhost:3000
 3 &gt; Connection: Keep-Alive
-3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 3 &gt; Accept-Encoding: gzip,deflate
 {&quot;tennguoinhan&quot;:&quot;Nguyen Van A&quot;,&quot;sodienthoai&quot;:&quot;0912345678&quot;,&quot;diachichitiet&quot;:&quot;123 Lang&quot;,&quot;phuong&quot;:&quot;Lang Ha&quot;,&quot;quan&quot;:&quot;Dong Da&quot;,&quot;tinh&quot;:&quot;Ha Noi&quot;,&quot;macdinh&quot;:0}
 
-16:38:18.284 response time in milliseconds: 9
-3 &lt; 201
+08:52:38.534 response time in milliseconds: 3
+3 &lt; 400
 3 &lt; X-Powered-By: Express
 3 &lt; Access-Control-Allow-Origin: *
 3 &lt; Content-Type: application/json; charset=utf-8
-3 &lt; Content-Length: 60
-3 &lt; ETag: W/&quot;3c-4qn6/NWc5TMl8Xk4fidP9e8hXyg&quot;
-3 &lt; Date: Wed, 17 Jun 2026 09:38:18 GMT
+3 &lt; Content-Length: 108
+3 &lt; ETag: W/&quot;6c-N+spybwHBncF37kC+AhajvPkadA&quot;
+3 &lt; Date: Mon, 29 Jun 2026 01:52:38 GMT
 3 &lt; Connection: keep-alive
 3 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Thêm địa chỉ thành công&quot;}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;user_id\&quot; is required&quot;]}
 
 </div>   
 
@@ -658,13 +661,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="1.32">
-      <div class="step-ref passed">32</div>
+      <div class="step-ref failed">32</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
         <span>Then</span>&nbsp;<span>status 201</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell failed">4</div>
   </div>
 
    
@@ -673,7 +676,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-     
+  <div class="preformatted" data-parent="1.32">08:52:38.539 classpath:adress.feature:32
+Then status 201
+status code was: 400, expected: 201, response time in milliseconds: 3, url: http://localhost:3000/api/address, response: 
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;user_id\&quot; is required&quot;]}
+classpath:adress.feature:32
+</div>   
 
   
 
@@ -686,13 +694,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="1.33">
-      <div class="step-ref passed">33</div>
+      <div class="step-ref skipped">33</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.success == true</span>
       </div>
     </div>
-    <div class="time-cell passed">21</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -714,13 +722,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="1.34">
-      <div class="step-ref passed">34</div>
+      <div class="step-ref skipped">34</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.message == &quot;Thêm địa chỉ thành công&quot;</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -748,8 +756,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>286</span>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>152</span>
             </div>
           </div>
           <div class="step-row">
@@ -772,7 +780,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -800,7 +808,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def randomStr = java.util.UUID.randomUUID().toString().substring(0, 8)</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -828,7 +836,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def username = &#39;user_addr_&#39; + randomStr</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -856,7 +864,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def email = username + &#39;@test.com&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -884,7 +892,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/api/auth/signup&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -912,7 +920,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request { username: &#39;#(username)&#39;, password: &#39;Password123@&#39;, fullname: &#39;Test Address User&#39;, email: &#39;#(email)&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -940,7 +948,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">140</div>
+    <div class="time-cell passed">72</div>
   </div>
 
    
@@ -949,24 +957,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.9">16:38:18.382 request:
+  <div class="preformatted" data-parent="2.9">08:52:38.572 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 128
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user_addr_f943222c&quot;,&quot;password&quot;:&quot;Password123@&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;email&quot;:&quot;user_addr_f943222c@test.com&quot;}
+{&quot;username&quot;:&quot;user_addr_88ebc1d1&quot;,&quot;password&quot;:&quot;Password123@&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;email&quot;:&quot;user_addr_88ebc1d1@test.com&quot;}
 
-16:38:18.518 response time in milliseconds: 135
+08:52:38.642 response time in milliseconds: 69
 1 &lt; 201
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 66
 1 &lt; ETag: W/&quot;42-2dCjMQxNzMW2RPNMC/EUjUFO814&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:18 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:38 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng ký tài khoản thành công!&quot;}
@@ -1074,7 +1082,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">101</div>
+    <div class="time-cell passed">67</div>
   </div>
 
    
@@ -1083,27 +1091,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.13">16:38:18.522 request:
+  <div class="preformatted" data-parent="2.13">08:52:38.644 request:
 2 &gt; POST http://localhost:3000/api/auth/signin
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 59
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user_addr_f943222c&quot;,&quot;password&quot;:&quot;Password123@&quot;}
+{&quot;username&quot;:&quot;user_addr_88ebc1d1&quot;,&quot;password&quot;:&quot;Password123@&quot;}
 
-16:38:18.621 response time in milliseconds: 98
+08:52:38.710 response time in milliseconds: 65
 2 &lt; 200
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 375
-2 &lt; ETag: W/&quot;177-qwZrr4qGtLTxlWDZvt5B8sTxW+M&quot;
-2 &lt; Date: Wed, 17 Jun 2026 09:38:18 GMT
+2 &lt; Content-Length: 164
+2 &lt; ETag: W/&quot;a4-a265MRMbMOy3EzUfo8f8hmF+p+4&quot;
+2 &lt; Date: Mon, 29 Jun 2026 01:52:38 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:65,&quot;username&quot;:&quot;user_addr_f943222c&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjUsInVzZXJuYW1lIjoidXNlcl9hZGRyX2Y5NDMyMjJjIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODE2ODkwOTgsImV4cCI6MTc4MjI5Mzg5OH0.gXXcGGV3Ou8soDMuegWrYRnfwpQL76uZDmcP58EWhRw&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:19,&quot;username&quot;:&quot;user_addr_88ebc1d1&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:null}}
 
 </div>   
 
@@ -1272,7 +1280,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">16</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -1281,28 +1289,28 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.31">16:38:18.624 request:
+  <div class="preformatted" data-parent="2.31">08:52:38.713 request:
 3 &gt; POST http://localhost:3000/api/address
-3 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjUsInVzZXJuYW1lIjoidXNlcl9hZGRyX2Y5NDMyMjJjIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODE2ODkwOTgsImV4cCI6MTc4MjI5Mzg5OH0.gXXcGGV3Ou8soDMuegWrYRnfwpQL76uZDmcP58EWhRw
+3 &gt; Authorization: Bearer null
 3 &gt; Content-Type: application/json; charset=UTF-8
 3 &gt; Content-Length: 168
 3 &gt; Host: localhost:3000
 3 &gt; Connection: Keep-Alive
-3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 3 &gt; Accept-Encoding: gzip,deflate
 {&quot;tennguoinhan&quot;:&quot;Nguyen Van B&quot;,&quot;sodienthoai&quot;:&quot;0987654321&quot;,&quot;diachichitiet&quot;:&quot;456 Nguyen Trai&quot;,&quot;phuong&quot;:&quot;Thanh Xuan Trung&quot;,&quot;quan&quot;:&quot;Thanh Xuan&quot;,&quot;tinh&quot;:&quot;Ha Noi&quot;,&quot;macdinh&quot;:1}
 
-16:38:18.637 response time in milliseconds: 13
-3 &lt; 201
+08:52:38.716 response time in milliseconds: 2
+3 &lt; 400
 3 &lt; X-Powered-By: Express
 3 &lt; Access-Control-Allow-Origin: *
 3 &lt; Content-Type: application/json; charset=utf-8
-3 &lt; Content-Length: 60
-3 &lt; ETag: W/&quot;3c-4qn6/NWc5TMl8Xk4fidP9e8hXyg&quot;
-3 &lt; Date: Wed, 17 Jun 2026 09:38:18 GMT
+3 &lt; Content-Length: 108
+3 &lt; ETag: W/&quot;6c-N+spybwHBncF37kC+AhajvPkadA&quot;
+3 &lt; Date: Mon, 29 Jun 2026 01:52:38 GMT
 3 &lt; Connection: keep-alive
 3 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Thêm địa chỉ thành công&quot;}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;user_id\&quot; is required&quot;]}
 
 </div>   
 
@@ -1317,13 +1325,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="2.32">
-      <div class="step-ref passed">32</div>
+      <div class="step-ref failed">32</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
         <span>Then</span>&nbsp;<span>status 201</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell failed">0</div>
   </div>
 
    
@@ -1332,7 +1340,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-     
+  <div class="preformatted" data-parent="2.32">08:52:38.716 classpath:adress.feature:32
+Then status 201
+status code was: 400, expected: 201, response time in milliseconds: 2, url: http://localhost:3000/api/address, response: 
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;user_id\&quot; is required&quot;]}
+classpath:adress.feature:32
+</div>   
 
   
 
@@ -1345,13 +1358,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="2.33">
-      <div class="step-ref passed">33</div>
+      <div class="step-ref skipped">33</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.success == true</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -1373,13 +1386,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="2.34">
-      <div class="step-ref passed">34</div>
+      <div class="step-ref skipped">34</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.message == &quot;Thêm địa chỉ thành công&quot;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -1408,7 +1421,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>240</span>
+              <span>ms:</span>&nbsp;<span>161</span>
             </div>
           </div>
           <div class="step-row">
@@ -1459,7 +1472,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def randomStr = java.util.UUID.randomUUID().toString().substring(0, 8)</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -1599,7 +1612,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">124</div>
+    <div class="time-cell passed">72</div>
   </div>
 
    
@@ -1608,24 +1621,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.9">16:38:18.667 request:
+  <div class="preformatted" data-parent="3.9">08:52:38.728 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 128
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user_addr_2ac49db6&quot;,&quot;password&quot;:&quot;Password123@&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;email&quot;:&quot;user_addr_2ac49db6@test.com&quot;}
+{&quot;username&quot;:&quot;user_addr_b2c1cd44&quot;,&quot;password&quot;:&quot;Password123@&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;email&quot;:&quot;user_addr_b2c1cd44@test.com&quot;}
 
-16:38:18.787 response time in milliseconds: 119
+08:52:38.800 response time in milliseconds: 72
 1 &lt; 201
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 66
 1 &lt; ETag: W/&quot;42-2dCjMQxNzMW2RPNMC/EUjUFO814&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:18 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:38 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng ký tài khoản thành công!&quot;}
@@ -1733,7 +1746,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">97</div>
+    <div class="time-cell passed">68</div>
   </div>
 
    
@@ -1742,27 +1755,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.13">16:38:18.789 request:
+  <div class="preformatted" data-parent="3.13">08:52:38.802 request:
 2 &gt; POST http://localhost:3000/api/auth/signin
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 59
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user_addr_2ac49db6&quot;,&quot;password&quot;:&quot;Password123@&quot;}
+{&quot;username&quot;:&quot;user_addr_b2c1cd44&quot;,&quot;password&quot;:&quot;Password123@&quot;}
 
-16:38:18.884 response time in milliseconds: 93
+08:52:38.869 response time in milliseconds: 67
 2 &lt; 200
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 375
-2 &lt; ETag: W/&quot;177-oOUrB9Mez59r3c/DulQlw+dOdEE&quot;
-2 &lt; Date: Wed, 17 Jun 2026 09:38:18 GMT
+2 &lt; Content-Length: 164
+2 &lt; ETag: W/&quot;a4-nvwsPaEcJLy1q2t9GcYNgncvKto&quot;
+2 &lt; Date: Mon, 29 Jun 2026 01:52:38 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:66,&quot;username&quot;:&quot;user_addr_2ac49db6&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjYsInVzZXJuYW1lIjoidXNlcl9hZGRyXzJhYzQ5ZGI2Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODE2ODkwOTgsImV4cCI6MTc4MjI5Mzg5OH0.btfcOIMvw7wAEEE3t50hePe6ETZpUX87TNbRG8kPStA&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:20,&quot;username&quot;:&quot;user_addr_b2c1cd44&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:null}}
 
 </div>   
 
@@ -1867,7 +1880,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1931,7 +1944,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">8</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -1940,28 +1953,28 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.31">16:38:18.889 request:
+  <div class="preformatted" data-parent="3.31">08:52:38.871 request:
 3 &gt; POST http://localhost:3000/api/address
-3 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjYsInVzZXJuYW1lIjoidXNlcl9hZGRyXzJhYzQ5ZGI2Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODE2ODkwOTgsImV4cCI6MTc4MjI5Mzg5OH0.btfcOIMvw7wAEEE3t50hePe6ETZpUX87TNbRG8kPStA
+3 &gt; Authorization: Bearer null
 3 &gt; Content-Type: application/json; charset=UTF-8
 3 &gt; Content-Length: 144
 3 &gt; Host: localhost:3000
 3 &gt; Connection: Keep-Alive
-3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 3 &gt; Accept-Encoding: gzip,deflate
 {&quot;tennguoinhan&quot;:&quot;Nguyen Van A&quot;,&quot;sodienthoai&quot;:&quot;12345&quot;,&quot;diachichitiet&quot;:&quot;123 Lang&quot;,&quot;phuong&quot;:&quot;Lang Ha&quot;,&quot;quan&quot;:&quot;Dong Da&quot;,&quot;tinh&quot;:&quot;Ha Noi&quot;,&quot;macdinh&quot;:0}
 
-16:38:18.894 response time in milliseconds: 4
+08:52:38.875 response time in milliseconds: 4
 3 &lt; 400
 3 &lt; X-Powered-By: Express
 3 &lt; Access-Control-Allow-Origin: *
 3 &lt; Content-Type: application/json; charset=utf-8
-3 &lt; Content-Length: 172
-3 &lt; ETag: W/&quot;ac-unO0n7c34HbE7zqpXpDvUMECTxk&quot;
-3 &lt; Date: Wed, 17 Jun 2026 09:38:18 GMT
+3 &lt; Content-Length: 198
+3 &lt; ETag: W/&quot;c6-KXj8Y6AHGXZLrDCUBHBfyTBlNJo&quot;
+3 &lt; Date: Mon, 29 Jun 2026 01:52:38 GMT
 3 &lt; Connection: keep-alive
 3 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;sodienthoai\&quot; with value \&quot;12345\&quot; fails to match the required pattern: /^0[0-9]{9}$/&quot;]}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;user_id\&quot; is required&quot;,&quot;\&quot;sodienthoai\&quot; with value \&quot;12345\&quot; fails to match the required pattern: /^0[0-9]{9}$/&quot;]}
 
 </div>   
 
@@ -2010,7 +2023,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">10</div>
   </div>
 
    
@@ -2055,35 +2068,35 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[2:40]">
+          <div class="scenario-heading" id="[1.4:40]">
             <div class="heading-container">
               <div class="scenario-tags">
                 
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[2:40]</span>
-                <span class="scenario-name">TC04 - Thêm địa chỉ thất bại do không gửi Authorization Token</span>
+                Scenario: <span>[1.4:40]</span>
+                <span class="scenario-name">TC04 - Thêm địa chỉ thất bại do số điện thoại đã tồn tại</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>239</span>
+              <span>ms:</span>&nbsp;<span>146</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[2:40]bg">
+            <div class="step-container" id="[1.4:40]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.3">
+    <div class="step-container" id="4.3">
       <div class="step-ref bg-step">3</div>
       
       <div class="step-cell passed">
@@ -2105,20 +2118,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.4">
+    <div class="step-container" id="4.4">
       <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def randomStr = java.util.UUID.randomUUID().toString().substring(0, 8)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2133,20 +2146,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.5">
+    <div class="step-container" id="4.5">
       <div class="step-ref bg-step">5</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def username = &#39;user_addr_&#39; + randomStr</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2161,20 +2174,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.6">
+    <div class="step-container" id="4.6">
       <div class="step-ref bg-step">6</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def email = username + &#39;@test.com&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2189,13 +2202,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.7">
+    <div class="step-container" id="4.7">
       <div class="step-ref bg-step">7</div>
       
       <div class="step-cell passed">
@@ -2217,20 +2230,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.8">
+    <div class="step-container" id="4.8">
       <div class="step-ref bg-step">8</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request { username: &#39;#(username)&#39;, password: &#39;Password123@&#39;, fullname: &#39;Test Address User&#39;, email: &#39;#(email)&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2245,20 +2258,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.9">
+    <div class="step-container" id="4.9">
       <div class="step-ref bg-step">9</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">127</div>
+    <div class="time-cell passed">73</div>
   </div>
 
    
@@ -2267,24 +2280,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.9">16:38:18.925 request:
+  <div class="preformatted" data-parent="4.9">08:52:38.898 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 128
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user_addr_dda134c3&quot;,&quot;password&quot;:&quot;Password123@&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;email&quot;:&quot;user_addr_dda134c3@test.com&quot;}
+{&quot;username&quot;:&quot;user_addr_bf736900&quot;,&quot;password&quot;:&quot;Password123@&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;email&quot;:&quot;user_addr_bf736900@test.com&quot;}
 
-16:38:19.044 response time in milliseconds: 119
+08:52:38.968 response time in milliseconds: 70
 1 &lt; 201
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 66
 1 &lt; ETag: W/&quot;42-2dCjMQxNzMW2RPNMC/EUjUFO814&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:19 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:38 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng ký tài khoản thành công!&quot;}
@@ -2295,13 +2308,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.10">
+    <div class="step-container" id="4.10">
       <div class="step-ref bg-step">10</div>
       
       <div class="step-cell passed">
@@ -2323,13 +2336,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.11">
+    <div class="step-container" id="4.11">
       <div class="step-ref bg-step">11</div>
       
       <div class="step-cell passed">
@@ -2351,20 +2364,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.12">
+    <div class="step-container" id="4.12">
       <div class="step-ref bg-step">12</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request { username: &#39;#(username)&#39;, password: &#39;Password123@&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2379,20 +2392,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.13">
+    <div class="step-container" id="4.13">
       <div class="step-ref bg-step">13</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">94</div>
+    <div class="time-cell passed">66</div>
   </div>
 
    
@@ -2401,27 +2414,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.13">16:38:19.049 request:
+  <div class="preformatted" data-parent="4.13">08:52:38.968 request:
 2 &gt; POST http://localhost:3000/api/auth/signin
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 59
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user_addr_dda134c3&quot;,&quot;password&quot;:&quot;Password123@&quot;}
+{&quot;username&quot;:&quot;user_addr_bf736900&quot;,&quot;password&quot;:&quot;Password123@&quot;}
 
-16:38:19.140 response time in milliseconds: 91
+08:52:39.033 response time in milliseconds: 65
 2 &lt; 200
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 375
-2 &lt; ETag: W/&quot;177-zbdKgk9dj8yvxxNyO5bfGq9ui2k&quot;
-2 &lt; Date: Wed, 17 Jun 2026 09:38:19 GMT
+2 &lt; Content-Length: 164
+2 &lt; ETag: W/&quot;a4-gI679akPgBEo/5mBEEZFZujh+tY&quot;
+2 &lt; Date: Mon, 29 Jun 2026 01:52:39 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:67,&quot;username&quot;:&quot;user_addr_dda134c3&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:null},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjcsInVzZXJuYW1lIjoidXNlcl9hZGRyX2RkYTEzNGMzIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODE2ODkwOTksImV4cCI6MTc4MjI5Mzg5OX0.yYeV4oSL8Kt3ENDq8XTL3h9xhupLz-VD2DOiSbac7SQ&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:21,&quot;username&quot;:&quot;user_addr_bf736900&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:null}}
 
 </div>   
 
@@ -2429,13 +2442,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.14">
+    <div class="step-container" id="4.14">
       <div class="step-ref bg-step">14</div>
       
       <div class="step-cell passed">
@@ -2457,13 +2470,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
 </div>
 </div>
-          <div data-parent="[2:40]bg"><div>
+          <div data-parent="[1.4:40]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.15">
+    <div class="step-container" id="4.15">
       <div class="step-ref bg-step">15</div>
       
       <div class="step-cell passed">
@@ -2491,11 +2504,642 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.41">
-      <div class="step-ref passed">41</div>
+    <div class="step-container" id="4.17">
+      <div class="step-ref passed">17</div>
       
       <div class="step-cell passed">
         <span>Given</span>&nbsp;<span>path &#39;/api/address&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.18">
+      <div class="step-ref passed">18</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.19">
+      <div class="step-ref passed">19</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="4.19">{
+  &quot;tennguoinhan&quot;: &quot;Nguyen Van A&quot;,
+  &quot;sodienthoai&quot;: &quot;0912345678&quot;,
+  &quot;diachichitiet&quot;: &quot;123 Lang&quot;,
+  &quot;phuong&quot;: &quot;Lang Ha&quot;,
+  &quot;quan&quot;: &quot;Dong Da&quot;,
+  &quot;tinh&quot;: &quot;Ha Noi&quot;,
+  &quot;macdinh&quot;: 0
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.31">08:52:39.033 request:
+3 &gt; POST http://localhost:3000/api/address
+3 &gt; Authorization: Bearer null
+3 &gt; Content-Type: application/json; charset=UTF-8
+3 &gt; Content-Length: 149
+3 &gt; Host: localhost:3000
+3 &gt; Connection: Keep-Alive
+3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+3 &gt; Accept-Encoding: gzip,deflate
+{&quot;tennguoinhan&quot;:&quot;Nguyen Van A&quot;,&quot;sodienthoai&quot;:&quot;0912345678&quot;,&quot;diachichitiet&quot;:&quot;123 Lang&quot;,&quot;phuong&quot;:&quot;Lang Ha&quot;,&quot;quan&quot;:&quot;Dong Da&quot;,&quot;tinh&quot;:&quot;Ha Noi&quot;,&quot;macdinh&quot;:0}
+
+08:52:39.040 response time in milliseconds: 7
+3 &lt; 400
+3 &lt; X-Powered-By: Express
+3 &lt; Access-Control-Allow-Origin: *
+3 &lt; Content-Type: application/json; charset=utf-8
+3 &lt; Content-Length: 108
+3 &lt; ETag: W/&quot;6c-N+spybwHBncF37kC+AhajvPkadA&quot;
+3 &lt; Date: Mon, 29 Jun 2026 01:52:39 GMT
+3 &lt; Connection: keep-alive
+3 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;user_id\&quot; is required&quot;]}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.success == false</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.message == &#39;#notnull&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:41]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:41]</span>
+                <span class="scenario-name">TC04 - Thêm địa chỉ thất bại do không gửi Authorization Token</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>143</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:41]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.3">
+      <div class="step-ref bg-step">3</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomStr = java.util.UUID.randomUUID().toString().substring(0, 8)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def username = &#39;user_addr_&#39; + randomStr</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def email = username + &#39;@test.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signup&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request { username: &#39;#(username)&#39;, password: &#39;Password123@&#39;, fullname: &#39;Test Address User&#39;, email: &#39;#(email)&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref bg-step">9</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">70</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.9">08:52:39.048 request:
+1 &gt; POST http://localhost:3000/api/auth/signup
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 128
+1 &gt; Host: localhost:3000
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;username&quot;:&quot;user_addr_7a768a10&quot;,&quot;password&quot;:&quot;Password123@&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;email&quot;:&quot;user_addr_7a768a10@test.com&quot;}
+
+08:52:39.116 response time in milliseconds: 68
+1 &lt; 201
+1 &lt; X-Powered-By: Express
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 66
+1 &lt; ETag: W/&quot;42-2dCjMQxNzMW2RPNMC/EUjUFO814&quot;
+1 &lt; Date: Mon, 29 Jun 2026 01:52:39 GMT
+1 &lt; Connection: keep-alive
+1 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng ký tài khoản thành công!&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref bg-step">10</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref bg-step">11</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/auth/signin&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref bg-step">12</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request { username: &#39;#(username)&#39;, password: &#39;Password123@&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">66</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.13">08:52:39.118 request:
+2 &gt; POST http://localhost:3000/api/auth/signin
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 59
+2 &gt; Host: localhost:3000
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;username&quot;:&quot;user_addr_7a768a10&quot;,&quot;password&quot;:&quot;Password123@&quot;}
+
+08:52:39.183 response time in milliseconds: 65
+2 &lt; 200
+2 &lt; X-Powered-By: Express
+2 &lt; Access-Control-Allow-Origin: *
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Content-Length: 164
+2 &lt; ETag: W/&quot;a4-QR+n6GX0ULbbnJqNWON7Iq2SnRM&quot;
+2 &lt; Date: Mon, 29 Jun 2026 01:52:39 GMT
+2 &lt; Connection: keep-alive
+2 &lt; Keep-Alive: timeout=5
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:22,&quot;username&quot;:&quot;user_addr_7a768a10&quot;,&quot;fullname&quot;:&quot;Test Address User&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:null}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:41]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def token = response.token</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2523,6 +3167,34 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">42</div>
       
       <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/address&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.43">
+      <div class="step-ref passed">43</div>
+      
+      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
@@ -2531,7 +3203,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
    
   
-  <div class="preformatted" data-parent="0.42">{
+  <div class="preformatted" data-parent="0.43">{
   &quot;tennguoinhan&quot;: &quot;Nguyen Van A&quot;,
   &quot;sodienthoai&quot;: &quot;0912345678&quot;,
   &quot;diachichitiet&quot;: &quot;123 Lang&quot;,
@@ -2555,14 +3227,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.54">
-      <div class="step-ref passed">54</div>
+    <div class="step-container" id="0.55">
+      <div class="step-ref passed">55</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -2571,27 +3243,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.54">16:38:19.146 request:
+  <div class="preformatted" data-parent="0.55">08:52:39.183 request:
 3 &gt; POST http://localhost:3000/api/address
 3 &gt; Content-Type: application/json; charset=UTF-8
 3 &gt; Content-Length: 149
 3 &gt; Host: localhost:3000
 3 &gt; Connection: Keep-Alive
-3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 3 &gt; Accept-Encoding: gzip,deflate
 {&quot;tennguoinhan&quot;:&quot;Nguyen Van A&quot;,&quot;sodienthoai&quot;:&quot;0912345678&quot;,&quot;diachichitiet&quot;:&quot;123 Lang&quot;,&quot;phuong&quot;:&quot;Lang Ha&quot;,&quot;quan&quot;:&quot;Dong Da&quot;,&quot;tinh&quot;:&quot;Ha Noi&quot;,&quot;macdinh&quot;:0}
 
-16:38:19.149 response time in milliseconds: 2
-3 &lt; 401
+08:52:39.187 response time in milliseconds: 4
+3 &lt; 400
 3 &lt; X-Powered-By: Express
 3 &lt; Access-Control-Allow-Origin: *
 3 &lt; Content-Type: application/json; charset=utf-8
-3 &lt; Content-Length: 123
-3 &lt; ETag: W/&quot;7b-M5BTzQXmlLfsd9QPS2WU5ystne0&quot;
-3 &lt; Date: Wed, 17 Jun 2026 09:38:19 GMT
+3 &lt; Content-Length: 108
+3 &lt; ETag: W/&quot;6c-N+spybwHBncF37kC+AhajvPkadA&quot;
+3 &lt; Date: Mon, 29 Jun 2026 01:52:39 GMT
 3 &lt; Connection: keep-alive
 3 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Không tìm thấy token xác thực hoặc định dạng token không đúng (Bearer token)&quot;}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;user_id\&quot; is required&quot;]}
 
 </div>   
 
@@ -2605,14 +3277,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.55">
-      <div class="step-ref passed">55</div>
+    <div class="step-container" id="0.56">
+      <div class="step-ref failed">56</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
         <span>Then</span>&nbsp;<span>status 401</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell failed">0</div>
   </div>
 
    
@@ -2621,7 +3293,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-     
+  <div class="preformatted" data-parent="0.56">08:52:39.187 classpath:adress.feature:56
+Then status 401
+status code was: 400, expected: 401, response time in milliseconds: 4, url: http://localhost:3000/api/address, response: 
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;user_id\&quot; is required&quot;]}
+classpath:adress.feature:56
+</div>   
 
   
 
@@ -2633,14 +3310,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.56">
-      <div class="step-ref passed">56</div>
+    <div class="step-container" id="0.57">
+      <div class="step-ref skipped">57</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    

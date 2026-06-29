@@ -22,11 +22,11 @@
     "joi": "^18.0.2",
     "jsonwebtoken": "^9.0.3",
     "multer": "^1.4.5-lts.2",
-    "mysql2": "^3.18.2",
-    "nodemon": "^3.1.14"
+    "mysql2": "^3.18.2"
   },
   "devDependencies": {
     "@babel/node": "^7.29.0",
-    "@babel/preset-env": "^7.29.0"
+    "@babel/preset-env": "^7.29.0",
+    "nodemon": "^3.1.14"
   }
 }

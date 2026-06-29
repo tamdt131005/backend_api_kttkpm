@@ -94,6 +94,46 @@ function getRowsPayload() {
     });
 }
 
+function validatePayload(payload) {
+
+    if (!payload.rows || payload.rows.length === 0) {
+        alert("Phiếu nhập phải có ít nhất 1 dòng sản phẩm.");
+        return false;
+    }
+
+    for (let i = 0; i < payload.rows.length; i++) {
+
+        const row = payload.rows[i];
+
+        // Kiểm tra tên biến thể
+        if (!row.tenbienthe) {
+            alert(`Dòng ${i + 1}: Chưa chọn biến thể sản phẩm.`);
+            return false;
+        }
+
+        // Kiểm tra đã chọn đúng biến thể trong danh sách
+        if (!row.bienthe_id) {
+            alert(`Dòng ${i + 1}: Biến thể không hợp lệ.`);
+            return false;
+        }
+
+        // Kiểm tra số lượng
+        if (!row.soluong || Number(row.soluong) <= 0) {
+            alert(`Dòng ${i + 1}: Số lượng phải lớn hơn 0.`);
+            return false;
+        }
+
+        // Kiểm tra đơn giá
+        if (!row.dongia || Number(row.dongia) < 1000) {
+            alert(`Dòng ${i + 1}: Đơn giá phải lớn hơn hoặc bằng 1000.`);
+            return false;
+        }
+
+    }
+
+    return true;
+}
+
 async function submitPhiếuNhap(event) {
     event.preventDefault();
     const btn = document.getElementById('btnLuu');
@@ -103,6 +143,11 @@ async function submitPhiếuNhap(event) {
         ghichu_phieu: document.getElementById('ghichu_phieu')?.value?.trim() || '',
         rows: getRowsPayload()
     };
+
+    if (!validatePayload(payload)) {
+        if (btn) btn.disabled = false;
+        return;
+    }
 
     try {
         const res = await adminApi.post('/nhaphang', payload);

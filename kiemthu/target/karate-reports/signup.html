@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"83e5272e-0a64-406c-946d-e4a89e7ec749",karate_version:"1.5.1",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"5709f618-42d9-458b-a6eb-cb569aba9ec6",karate_version:"1.5.1",karate_meta:null});
   }
 });
 </script>
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-06-17 04:38:26 CH</div>
+    <div>2026-06-29 08:52:42 SA</div>
   </div>
 </div>
 
@@ -105,7 +105,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>16</span>
+              <span>ms:</span>&nbsp;<span>4</span>
             </div>
           </div>
           <div class="step-row">
@@ -156,7 +156,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/api/auth/signup&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -184,7 +184,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request { username: &#39;&#39;, password: &#39;Pass@123&#39;, email: &#39;user@gmail.com&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -212,7 +212,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">13</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -221,24 +221,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.10">16:38:25.632 request:
+  <div class="preformatted" data-parent="1.10">08:52:42.436 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 62
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;email&quot;:&quot;user@gmail.com&quot;}
 
-16:38:25.640 response time in milliseconds: 8
+08:52:42.436 response time in milliseconds: 0
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 124
 1 &lt; ETag: W/&quot;7c-cGkGYX7ijHzXceHdqASdLhV8LKU&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:25 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:42 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;username\&quot; is not allowed to be empty&quot;]}
@@ -290,7 +290,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -319,7 +319,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>13</span>
+              <span>ms:</span>&nbsp;<span>4</span>
             </div>
           </div>
           <div class="step-row">
@@ -426,7 +426,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">10</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -435,24 +435,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.10">16:38:25.657 request:
+  <div class="preformatted" data-parent="2.10">08:52:42.444 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 64
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;aa&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;email&quot;:&quot;user@gmail.com&quot;}
 
-16:38:25.664 response time in milliseconds: 6
+08:52:42.445 response time in milliseconds: 1
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 139
 1 &lt; ETag: W/&quot;8b-LeySjuHFSDpKuGZWvi4MvSegw6E&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:25 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:42 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;username\&quot; length must be at least 3 characters long&quot;]}
@@ -504,7 +504,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -533,7 +533,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>15</span>
+              <span>ms:</span>&nbsp;<span>4</span>
             </div>
           </div>
           <div class="step-row">
@@ -640,7 +640,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">13</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -649,24 +649,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.10">16:38:25.681 request:
+  <div class="preformatted" data-parent="3.10">08:52:42.451 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 61
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;user123&quot;,&quot;password&quot;:&quot;&quot;,&quot;email&quot;:&quot;user@gmail.com&quot;}
 
-16:38:25.688 response time in milliseconds: 6
+08:52:42.454 response time in milliseconds: 3
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 124
 1 &lt; ETag: W/&quot;7c-vMzzDKhtxy2WwKEsVFSTnqJ7XZ4&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:25 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:42 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;password\&quot; is not allowed to be empty&quot;]}
@@ -718,7 +718,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -747,7 +747,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>11</span>
+              <span>ms:</span>&nbsp;<span>5</span>
             </div>
           </div>
           <div class="step-row">
@@ -854,7 +854,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">10</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -863,24 +863,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="4.10">16:38:25.705 request:
+  <div class="preformatted" data-parent="4.10">08:52:42.459 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 64
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;user123&quot;,&quot;password&quot;:&quot;123&quot;,&quot;email&quot;:&quot;user@gmail.com&quot;}
 
-16:38:25.712 response time in milliseconds: 6
+08:52:42.462 response time in milliseconds: 2
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 139
 1 &lt; ETag: W/&quot;8b-5y0CJVPKOkzWcrld/na66attK/4&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:25 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:42 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;password\&quot; length must be at least 6 characters long&quot;]}
@@ -961,7 +961,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>15</span>
+              <span>ms:</span>&nbsp;<span>5</span>
             </div>
           </div>
           <div class="step-row">
@@ -1068,7 +1068,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">13</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -1077,24 +1077,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="5.10">16:38:25.726 request:
+  <div class="preformatted" data-parent="5.10">08:52:42.467 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 58
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;user123&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;email&quot;:&quot;abc&quot;}
 
-16:38:25.735 response time in milliseconds: 7
+08:52:42.470 response time in milliseconds: 2
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 116
 1 &lt; ETag: W/&quot;74-KFdXfEQA1ijuNpSB4x2A/b3Hf8I&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:25 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:42 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;email\&quot; must be a valid email&quot;]}
@@ -1146,7 +1146,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1175,7 +1175,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>13</span>
+              <span>ms:</span>&nbsp;<span>5</span>
             </div>
           </div>
           <div class="step-row">
@@ -1282,7 +1282,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">11</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -1291,24 +1291,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="6.10">16:38:25.754 request:
+  <div class="preformatted" data-parent="6.10">08:52:42.475 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 68
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;user123456789&quot;,&quot;password&quot;:&quot;Pass@12345&quot;,&quot;email&quot;:&quot;abcgb&quot;}
 
-16:38:25.760 response time in milliseconds: 5
+08:52:42.478 response time in milliseconds: 3
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 116
 1 &lt; ETag: W/&quot;74-KFdXfEQA1ijuNpSB4x2A/b3Hf8I&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:25 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:42 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;email\&quot; must be a valid email&quot;]}
@@ -1360,7 +1360,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1389,7 +1389,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>17</span>
+              <span>ms:</span>&nbsp;<span>5</span>
             </div>
           </div>
           <div class="step-row">
@@ -1500,7 +1500,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">16</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -1509,24 +1509,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.34">16:38:25.776 request:
+  <div class="preformatted" data-parent="0.34">08:52:42.483 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 76
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;email&quot;:&quot;newuser@gmail.com&quot;}
 
-16:38:25.787 response time in milliseconds: 11
+08:52:42.486 response time in milliseconds: 3
 1 &lt; 409
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 66
 1 &lt; ETag: W/&quot;42-w/LBQDKgVfYsF0p52hWgasVuSLM&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:25 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:42 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Tên đăng nhập đã tồn tại!&quot;}
@@ -1578,7 +1578,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1607,7 +1607,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>20</span>
+              <span>ms:</span>&nbsp;<span>5</span>
             </div>
           </div>
           <div class="step-row">
@@ -1658,7 +1658,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/api/auth/signup&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1686,7 +1686,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1718,7 +1718,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">16</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -1727,24 +1727,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.49">16:38:25.805 request:
+  <div class="preformatted" data-parent="0.49">08:52:42.490 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 70
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;usernew&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;email&quot;:&quot;admin@gmail.com&quot;}
 
-16:38:25.816 response time in milliseconds: 10
+08:52:42.493 response time in milliseconds: 3
 1 &lt; 409
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 67
 1 &lt; ETag: W/&quot;43-pe5GYkAd/+4z06aCHS1QlFSPWhQ&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:25 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:42 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Email này đã được sử dụng!&quot;}
@@ -1796,7 +1796,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1825,7 +1825,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>202</span>
+              <span>ms:</span>&nbsp;<span>74</span>
             </div>
           </div>
           <div class="step-row">
@@ -1883,7 +1883,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def randomStr = java.util.UUID.randomUUID().toString().substring(0, 8)</span>
       </div>
     </div>
-    <div class="time-cell passed">8</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1911,7 +1911,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def testUsername = &#39;user_test_&#39; + randomStr</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1939,7 +1939,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def testEmail = testUsername + &#39;@gmail.com&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1995,7 +1995,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2028,7 +2028,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">181</div>
+    <div class="time-cell passed">70</div>
   </div>
 
    
@@ -2037,24 +2037,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.69">16:38:25.844 request:
+  <div class="preformatted" data-parent="0.69">08:52:42.502 request:
 1 &gt; POST http://localhost:3000/api/auth/signup
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 117
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.12)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;username&quot;:&quot;user_test_9100ab6d&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;fullname&quot;:&quot;User Test&quot;,&quot;email&quot;:&quot;user_test_9100ab6d@gmail.com&quot;}
+{&quot;username&quot;:&quot;user_test_81c791f8&quot;,&quot;password&quot;:&quot;Pass@123&quot;,&quot;fullname&quot;:&quot;User Test&quot;,&quot;email&quot;:&quot;user_test_81c791f8@gmail.com&quot;}
 
-16:38:26.021 response time in milliseconds: 177
+08:52:42.570 response time in milliseconds: 68
 1 &lt; 201
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 66
 1 &lt; ETag: W/&quot;42-2dCjMQxNzMW2RPNMC/EUjUFO814&quot;
-1 &lt; Date: Wed, 17 Jun 2026 09:38:26 GMT
+1 &lt; Date: Mon, 29 Jun 2026 01:52:42 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng ký tài khoản thành công!&quot;}
@@ -2106,7 +2106,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == true</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2134,7 +2134,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.message == &quot;Đăng ký tài khoản thành công!&quot;</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    

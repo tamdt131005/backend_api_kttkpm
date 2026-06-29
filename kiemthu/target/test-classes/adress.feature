@@ -37,6 +37,7 @@ Feature: Kiểm thử chức năng thêm địa chỉ giao hàng (POST /api/addr
       | TC01 | Thêm địa chỉ mới thành công (không đặt mặc định)     | Nguyen Van A  | 0912345678  | 123 Lang       | Lang Ha           | Dong Da     | Ha Noi  | 0       | 201    | true    | "Thêm địa chỉ thành công"    |
       | TC02 | Thêm địa chỉ thành công và thiết lập làm mặc định    | Nguyen Van B  | 0987654321  | 456 Nguyen Trai| Thanh Xuan Trung  | Thanh Xuan  | Ha Noi  | 1       | 201    | true    | "Thêm địa chỉ thành công"    |
       | TC03 | Thêm địa chỉ thất bại do số điện thoại không hợp lệ  | Nguyen Van A  | 12345       | 123 Lang       | Lang Ha           | Dong Da     | Ha Noi  | 0       | 400    | false   | '#notnull'                    |
+      |TC04  | Thêm địa chỉ thất bại do số điện thoại đã tồn tại  | Nguyen Van A  | 0912345678  | 123 Lang       | Lang Ha           | Dong Da     | Ha Noi  | 0       | 400    | false   | '#notnull'                    |
   Scenario: TC04 - Thêm địa chỉ thất bại do không gửi Authorization Token
     Given path '/api/address'
     And request
