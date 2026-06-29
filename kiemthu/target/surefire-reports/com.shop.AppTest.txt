@@ -1,28 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.shop.AppTest
 -------------------------------------------------------------------------------
-Tests run: 44, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 6.01 s <<< FAILURE! - in com.shop.AppTest
-adress.[1.1:37] TC01 - Thêm địa chỉ mới thành công (không đặt mặc định)  Time elapsed: 1.367 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-status code was: 400, expected: 201, response time in milliseconds: 3, url: http://localhost:3000/api/address, response: 
-{"success":false,"message":"Dữ liệu đầu vào không hợp lệ","errors":["\"user_id\" is required"]}
-classpath:adress.feature:32
-
-adress.[1.2:38] TC02 - Thêm địa chỉ thành công và thiết lập làm mặc định  Time elapsed: 0.163 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-status code was: 400, expected: 201, response time in milliseconds: 2, url: http://localhost:3000/api/address, response: 
-{"success":false,"message":"Dữ liệu đầu vào không hợp lệ","errors":["\"user_id\" is required"]}
-classpath:adress.feature:32
-
-adress.[2:41] TC04 - Thêm địa chỉ thất bại do không gửi Authorization Token  Time elapsed: 0.88 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-status code was: 400, expected: 401, response time in milliseconds: 4, url: http://localhost:3000/api/address, response: 
-{"success":false,"message":"Dữ liệu đầu vào không hợp lệ","errors":["\"user_id\" is required"]}
-classpath:adress.feature:56
-
-login.[2:25] TC07 - Đăng nhập thành công  Time elapsed: 0.217 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-match failed: EQUALS
-
-classpath:login.feature:31
-
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.761 s - in com.shop.AppTest

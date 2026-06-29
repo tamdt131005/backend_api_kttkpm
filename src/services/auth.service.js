@@ -29,7 +29,7 @@ class AuthService {
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            throw { status: 400, message: "Sai mật khẩu!" };
+            throw { status: 401, message: "Sai mật khẩu!" };
         }
 
         const userId = user.id || user.user_id;

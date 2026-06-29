@@ -17,7 +17,7 @@ Feature: Kiểm thử chức năng đăng nhập (POST /api/auth/signin)
     # | TC03 | Password rỗng                 | user123    |              | 400    | false   |
     # | TC04 | Password quá ngắn (3 ký tự)  | user123    | 123          | 400    | false   |
     # | TC05 | Username không tồn tại        | usernamev1 | Pass@123     | 404    | false   |
-    # | TC06 | Password sai                  | tamdt131005| Pass@sai     | 400    | false   |
+    # | TC06 | Password sai                  | tamdt131005| Pass@sai     | 401    | false   |
 
     Examples:
       | read('login_data.csv') |
