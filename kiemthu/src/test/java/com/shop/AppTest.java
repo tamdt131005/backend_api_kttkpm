@@ -28,4 +28,8 @@ public class AppTest {
     Karate testCart() {
         return Karate.run("classpath:cart.feature");
     }
+    @Karate.Test
+    Karate testNhaphang() {
+        return Karate.run("classpath:nhaphang.feature");
+    }
 }
