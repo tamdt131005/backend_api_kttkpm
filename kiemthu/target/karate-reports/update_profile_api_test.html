@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"83e5272e-0a64-406c-946d-e4a89e7ec749",karate_version:"1.5.1",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"76c7234f-1562-4a5b-869f-8a76efc2f160",karate_version:"1.5.1",karate_meta:null});
   }
 });
 </script>
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-06-29 08:29:16 CH</div>
+    <div>2026-06-29 08:52:11 PM</div>
   </div>
 </div>
 
@@ -64,7 +64,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
             <a href="#[1.3:40]"><span>[1.3:40]</span> <span>TC03 - Chỉnh sửa thất bại do email null</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[1.4:40]"><span>[1.4:40]</span> <span>TC04 - Chỉnh sửa thất bại do email sai định dạng</span></a>
+            <a href="#[1.4:40]"><span>[1.4:40]</span> <span>TC04 - Chỉnh sửa thất bại do email sai định dạng mail</span></a>
           </div>
           <div class="nav-item passed">
             <a href="#[1.5:40]"><span>[1.5:40]</span> <span>TC05 - Chỉnh sửa thất bại do fullname ít hơn 3 ký tự</span></a>
@@ -88,10 +88,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
             <a href="#[1.11:40]"><span>[1.11:40]</span> <span>TC11 - Chỉnh sửa thất bại do email trùng với email của user khác</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[1.12:40]"><span>[1.12:40]</span> <span>TC12 - Chỉnh sửa thành công nhưng tất cả null trừ email</span></a>
+            <a href="#[1.12:40]"><span>[1.12:40]</span> <span>TC12 - Đăng nhập thành công nhưng tất cả null trừ email</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[1.13:40]"><span>[1.13:40]</span> <span>TC13 - Chỉnh sửa thành công nhưng không có giá trị null</span></a>
+            <a href="#[1.13:40]"><span>[1.13:40]</span> <span>TC13 - Đăng nhập thành công nhưng không có giá trị null</span></a>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>101</span>
+              <span>ms:</span>&nbsp;<span>126</span>
             </div>
           </div>
           <div class="step-row">
@@ -147,7 +147,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -238,7 +238,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">85</div>
+    <div class="time-cell passed">96</div>
   </div>
 
    
@@ -247,27 +247,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.10">20:29:15.955 request:
+  <div class="preformatted" data-parent="1.10">20:52:10.508 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.038 response time in milliseconds: 83
+20:52:10.601 response time in milliseconds: 93
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:10 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -316,7 +316,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def token = response.token</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -351,7 +351,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def n = function(x){ return x == &#39;null&#39; ? null : x }</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -407,7 +407,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -435,7 +435,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">8</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -471,7 +471,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method PUT</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">8</div>
   </div>
 
    
@@ -480,25 +480,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.34">20:29:16.049 request:
+  <div class="preformatted" data-parent="1.34">20:52:10.618 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 107
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;id&quot;:null,&quot;email&quot;:&quot;user2@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
+{&quot;id&quot;:null,&quot;email&quot;:&quot;user1@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
 
-20:29:16.051 response time in milliseconds: 2
+20:52:10.624 response time in milliseconds: 5
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 108
 2 &lt; ETag: W/&quot;6c-ERAcZ7bBr/VSD8X9erJBR+3rM+I&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:10 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;id\&quot; must be a number&quot;]}
@@ -579,7 +579,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>75</span>
+              <span>ms:</span>&nbsp;<span>102</span>
             </div>
           </div>
           <div class="step-row">
@@ -700,7 +700,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">69</div>
+    <div class="time-cell passed">94</div>
   </div>
 
    
@@ -709,27 +709,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.10">20:29:16.063 request:
+  <div class="preformatted" data-parent="2.10">20:52:10.633 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.128 response time in milliseconds: 65
+20:52:10.725 response time in milliseconds: 92
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:10 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -897,7 +897,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -942,25 +942,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.34">20:29:16.128 request:
+  <div class="preformatted" data-parent="2.34">20:52:10.728 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 108
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;id&quot;:&quot;abc&quot;,&quot;email&quot;:&quot;user2@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
+{&quot;id&quot;:&quot;abc&quot;,&quot;email&quot;:&quot;user1@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
 
-20:29:16.128 response time in milliseconds: 0
+20:52:10.732 response time in milliseconds: 4
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 108
 2 &lt; ETag: W/&quot;6c-ERAcZ7bBr/VSD8X9erJBR+3rM+I&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:10 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;id\&quot; must be a number&quot;]}
@@ -1041,7 +1041,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>67</span>
+              <span>ms:</span>&nbsp;<span>102</span>
             </div>
           </div>
           <div class="step-row">
@@ -1162,7 +1162,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">61</div>
+    <div class="time-cell passed">95</div>
   </div>
 
    
@@ -1171,27 +1171,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.10">20:29:16.138 request:
+  <div class="preformatted" data-parent="3.10">20:52:10.740 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.195 response time in milliseconds: 57
+20:52:10.834 response time in milliseconds: 93
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:10 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -1359,7 +1359,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1395,7 +1395,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method PUT</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -1404,25 +1404,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.34">20:29:16.195 request:
+  <div class="preformatted" data-parent="3.34">20:52:10.836 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 93
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
 {&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:null,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
 
-20:29:16.195 response time in milliseconds: 0
+20:52:10.840 response time in milliseconds: 3
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 111
 2 &lt; ETag: W/&quot;6f-lRBSU+V4na8N4dUwdrU23bOO6F0&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:10 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;email\&quot; must be a string&quot;]}
@@ -1498,12 +1498,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[1.4:40]</span>
-                <span class="scenario-name">TC04 - Chỉnh sửa thất bại do email sai định dạng</span>
+                <span class="scenario-name">TC04 - Chỉnh sửa thất bại do email sai định dạng mail</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>72</span>
+              <span>ms:</span>&nbsp;<span>106</span>
             </div>
           </div>
           <div class="step-row">
@@ -1624,7 +1624,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">67</div>
+    <div class="time-cell passed">95</div>
   </div>
 
    
@@ -1633,27 +1633,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="4.10">20:29:16.213 request:
+  <div class="preformatted" data-parent="4.10">20:52:10.846 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.278 response time in milliseconds: 64
+20:52:10.940 response time in milliseconds: 94
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:10 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -1793,7 +1793,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>header Authorization = &#39;Bearer &#39; + token</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1821,7 +1821,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -1857,7 +1857,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method PUT</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -1866,25 +1866,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="4.34">20:29:16.279 request:
+  <div class="preformatted" data-parent="4.34">20:52:10.950 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
-2 &gt; Content-Length: 111
+2 &gt; Content-Length: 105
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user2@gmail.com.null&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
+{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user1gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
 
-20:29:16.279 response time in milliseconds: 0
+20:52:10.954 response time in milliseconds: 4
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 116
 2 &lt; ETag: W/&quot;74-KFdXfEQA1ijuNpSB4x2A/b3Hf8I&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:10 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;email\&quot; must be a valid email&quot;]}
@@ -1936,7 +1936,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1965,7 +1965,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>66</span>
+              <span>ms:</span>&nbsp;<span>110</span>
             </div>
           </div>
           <div class="step-row">
@@ -2086,7 +2086,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">61</div>
+    <div class="time-cell passed">101</div>
   </div>
 
    
@@ -2095,27 +2095,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="5.10">20:29:16.287 request:
+  <div class="preformatted" data-parent="5.10">20:52:10.964 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.347 response time in milliseconds: 60
+20:52:11.063 response time in milliseconds: 99
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -2164,7 +2164,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def token = response.token</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2199,7 +2199,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def n = function(x){ return x == &#39;null&#39; ? null : x }</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2283,7 +2283,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2319,7 +2319,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method PUT</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -2328,25 +2328,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="5.34">20:29:16.349 request:
+  <div class="preformatted" data-parent="5.34">20:52:11.068 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 106
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user2@gmail.com&quot;,&quot;fullname&quot;:&quot;u1&quot;,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
+{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user1@gmail.com&quot;,&quot;fullname&quot;:&quot;u1&quot;,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
 
-20:29:16.352 response time in milliseconds: 1
+20:52:11.072 response time in milliseconds: 4
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 139
 2 &lt; ETag: W/&quot;8b-/uQUohEuBPoSECZHuaYR8MzvXA4&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;fullname\&quot; length must be at least 3 characters long&quot;]}
@@ -2398,7 +2398,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == false</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2427,7 +2427,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>68</span>
+              <span>ms:</span>&nbsp;<span>104</span>
             </div>
           </div>
           <div class="step-row">
@@ -2548,7 +2548,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">62</div>
+    <div class="time-cell passed">98</div>
   </div>
 
    
@@ -2557,27 +2557,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="6.10">20:29:16.356 request:
+  <div class="preformatted" data-parent="6.10">20:52:11.080 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.412 response time in milliseconds: 56
+20:52:11.176 response time in milliseconds: 96
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -2790,25 +2790,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="6.34">20:29:16.412 request:
+  <div class="preformatted" data-parent="6.34">20:52:11.179 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 107
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user2@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:&quot;123&quot;,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
+{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user1@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:&quot;123&quot;,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
 
-20:29:16.424 response time in milliseconds: 11
+20:52:11.182 response time in milliseconds: 3
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 164
 2 &lt; ETag: W/&quot;a4-e+sOBnayxexSuXsRmFSO8i57GTM&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;phone\&quot; with value \&quot;123\&quot; fails to match the required pattern: /^0[0-9]{9}$/&quot;]}
@@ -2889,7 +2889,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>73</span>
+              <span>ms:</span>&nbsp;<span>102</span>
             </div>
           </div>
           <div class="step-row">
@@ -3010,7 +3010,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">67</div>
+    <div class="time-cell passed">95</div>
   </div>
 
    
@@ -3019,27 +3019,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="7.10">20:29:16.433 request:
+  <div class="preformatted" data-parent="7.10">20:52:11.188 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.495 response time in milliseconds: 62
+20:52:11.282 response time in milliseconds: 94
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -3243,7 +3243,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method PUT</span>
       </div>
     </div>
-    <div class="time-cell passed">5</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -3252,25 +3252,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="7.34">20:29:16.495 request:
+  <div class="preformatted" data-parent="7.34">20:52:11.284 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 108
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user2@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:&quot;male&quot;,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
+{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user1@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:&quot;male&quot;,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
 
-20:29:16.495 response time in milliseconds: 0
+20:52:11.289 response time in milliseconds: 5
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 125
 2 &lt; ETag: W/&quot;7d-Pu9SxJeHMUKc0u+iJwo0qlhLYAw&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;sex\&quot; must be one of [Nam, Nữ, null]&quot;]}
@@ -3351,7 +3351,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>81</span>
+              <span>ms:</span>&nbsp;<span>105</span>
             </div>
           </div>
           <div class="step-row">
@@ -3472,7 +3472,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">72</div>
+    <div class="time-cell passed">98</div>
   </div>
 
    
@@ -3481,27 +3481,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="8.10">20:29:16.511 request:
+  <div class="preformatted" data-parent="8.10">20:52:11.297 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.579 response time in milliseconds: 68
+20:52:11.393 response time in milliseconds: 95
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -3705,7 +3705,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method PUT</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -3714,25 +3714,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="8.34">20:29:16.579 request:
+  <div class="preformatted" data-parent="8.34">20:52:11.395 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 114
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user2@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:&quot;2050-12-31&quot;,&quot;avatar&quot;:null}
+{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user1@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:&quot;2050-12-31&quot;,&quot;avatar&quot;:null}
 
-20:29:16.587 response time in milliseconds: 8
+20:52:11.399 response time in milliseconds: 4
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 135
 2 &lt; ETag: W/&quot;87-dTFdlNJpUGJI/FVQ/Jf8eM7ktVk&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;ngaysinh\&quot; must be less than or equal to \&quot;now\&quot;&quot;]}
@@ -3813,7 +3813,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>72</span>
+              <span>ms:</span>&nbsp;<span>101</span>
             </div>
           </div>
           <div class="step-row">
@@ -3934,7 +3934,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">64</div>
+    <div class="time-cell passed">94</div>
   </div>
 
    
@@ -3943,27 +3943,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="9.10">20:29:16.597 request:
+  <div class="preformatted" data-parent="9.10">20:52:11.407 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.659 response time in milliseconds: 62
+20:52:11.499 response time in milliseconds: 92
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -4131,7 +4131,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -4167,7 +4167,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method PUT</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -4176,25 +4176,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="9.34">20:29:16.664 request:
+  <div class="preformatted" data-parent="9.34">20:52:11.502 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 104
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user2@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:&quot;&quot;}
+{&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user1@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:&quot;&quot;}
 
-20:29:16.666 response time in milliseconds: 2
+20:52:11.505 response time in milliseconds: 3
 2 &lt; 400
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 122
 2 &lt; ETag: W/&quot;7a-KbwxG2w8xYgJ+DbsiZ0AoyRGtKI&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:false,&quot;message&quot;:&quot;Dữ liệu đầu vào không hợp lệ&quot;,&quot;errors&quot;:[&quot;\&quot;avatar\&quot; is not allowed to be empty&quot;]}
@@ -4275,7 +4275,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>71</span>
+              <span>ms:</span>&nbsp;<span>108</span>
             </div>
           </div>
           <div class="step-row">
@@ -4396,7 +4396,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">64</div>
+    <div class="time-cell passed">100</div>
   </div>
 
    
@@ -4405,27 +4405,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="10.10">20:29:16.672 request:
+  <div class="preformatted" data-parent="10.10">20:52:11.512 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.731 response time in milliseconds: 59
+20:52:11.611 response time in milliseconds: 98
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -4629,7 +4629,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method PUT</span>
       </div>
     </div>
-    <div class="time-cell passed">5</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -4638,28 +4638,28 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="10.34">20:29:16.731 request:
+  <div class="preformatted" data-parent="10.34">20:52:11.613 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 108
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
-{&quot;id&quot;:&quot;999&quot;,&quot;email&quot;:&quot;user2@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
+{&quot;id&quot;:&quot;999&quot;,&quot;email&quot;:&quot;user1@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
 
-20:29:16.738 response time in milliseconds: 7
-2 &lt; 404
+20:52:11.619 response time in milliseconds: 6
+2 &lt; 500
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 66
-2 &lt; ETag: W/&quot;42-xeE3zeCRbHRecTTaomGMBm2E7Ho&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Content-Length: 89
+2 &lt; ETag: W/&quot;59-+vMnhdvc2iFtu+h8o+PToDXGCg8&quot;
+2 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Cập nhập thông tin thất bại&quot;}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Lỗi Server&quot;,&quot;error&quot;:&quot;Cập nhập thông tin thất bại&quot;}
 
 </div>   
 
@@ -4677,7 +4677,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">35</div>
       
       <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 404</span>
+        <span>Then</span>&nbsp;<span>status 500</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -4737,7 +4737,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>72</span>
+              <span>ms:</span>&nbsp;<span>111</span>
             </div>
           </div>
           <div class="step-row">
@@ -4858,7 +4858,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">63</div>
+    <div class="time-cell passed">101</div>
   </div>
 
    
@@ -4867,27 +4867,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="11.10">20:29:16.748 request:
+  <div class="preformatted" data-parent="11.10">20:52:11.626 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.795 response time in milliseconds: 47
+20:52:11.726 response time in milliseconds: 99
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -5100,28 +5100,28 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="11.34">20:29:16.811 request:
+  <div class="preformatted" data-parent="11.34">20:52:11.728 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 106
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
 {&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;admin@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
 
-20:29:16.812 response time in milliseconds: 1
+20:52:11.735 response time in milliseconds: 6
 2 &lt; 500
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
-2 &lt; Content-Length: 88
-2 &lt; ETag: W/&quot;58-ccLFi2Yk46GFvtgt5otle6C/9xA&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Content-Length: 111
+2 &lt; ETag: W/&quot;6f-KU0WJ+bcO43Y76rgZpjlyoNA6x4&quot;
+2 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:false,&quot;message&quot;:&quot;Duplicate entry &#39;admin@gmail.com&#39; for key &#39;users.uq_email&#39;&quot;}
+{&quot;success&quot;:false,&quot;message&quot;:&quot;Lỗi Server&quot;,&quot;error&quot;:&quot;Duplicate entry &#39;admin@gmail.com&#39; for key &#39;users.uq_email&#39;&quot;}
 
 </div>   
 
@@ -5194,12 +5194,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[1.12:40]</span>
-                <span class="scenario-name">TC12 - Chỉnh sửa thành công nhưng tất cả null trừ email</span>
+                <span class="scenario-name">TC12 - Đăng nhập thành công nhưng tất cả null trừ email</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>69</span>
+              <span>ms:</span>&nbsp;<span>105</span>
             </div>
           </div>
           <div class="step-row">
@@ -5320,7 +5320,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">61</div>
+    <div class="time-cell passed">96</div>
   </div>
 
    
@@ -5329,27 +5329,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="12.10">20:29:16.812 request:
+  <div class="preformatted" data-parent="12.10">20:52:11.742 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.879 response time in milliseconds: 67
+20:52:11.835 response time in milliseconds: 93
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -5562,25 +5562,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="12.34">20:29:16.879 request:
+  <div class="preformatted" data-parent="12.34">20:52:11.838 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 106
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
 {&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user2@gmail.com&quot;,&quot;fullname&quot;:null,&quot;phone&quot;:null,&quot;sex&quot;:null,&quot;ngaysinh&quot;:null,&quot;avatar&quot;:null}
 
-20:29:16.888 response time in milliseconds: 9
+20:52:11.844 response time in milliseconds: 5
 2 &lt; 201
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 63
 2 &lt; ETag: W/&quot;3f-RZbTYzKzLLIeVJeE8LnEr0uF8LE&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:true,&quot;message&quot;:&quot;Cập nhật hồ sơ thành công&quot;}
@@ -5632,7 +5632,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.success == true</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -5656,12 +5656,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[1.13:40]</span>
-                <span class="scenario-name">TC13 - Chỉnh sửa thành công nhưng không có giá trị null</span>
+                <span class="scenario-name">TC13 - Đăng nhập thành công nhưng không có giá trị null</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>68</span>
+              <span>ms:</span>&nbsp;<span>106</span>
             </div>
           </div>
           <div class="step-row">
@@ -5782,7 +5782,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">60</div>
+    <div class="time-cell passed">97</div>
   </div>
 
    
@@ -5791,27 +5791,27 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="13.10">20:29:16.896 request:
+  <div class="preformatted" data-parent="13.10">20:52:11.852 request:
 1 &gt; POST http://localhost:3000/api/auth/signin
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 52
 1 &gt; Host: localhost:3000
 1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;username&quot;:&quot;tamdt131005&quot;,&quot;password&quot;:&quot;Tam13102005@&quot;}
 
-20:29:16.945 response time in milliseconds: 49
+20:52:11.947 response time in milliseconds: 95
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Access-Control-Allow-Origin: *
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 373
-1 &lt; ETag: W/&quot;175-yeF/v/ZVq7DYqNA91eYu15mglvI&quot;
-1 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+1 &lt; Content-Length: 173
+1 &lt; ETag: W/&quot;ad-IndsrV7ljeqk/skla5YeCAZ7Y2Y&quot;
+1 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;},&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0&quot;}
+{&quot;success&quot;:true,&quot;message&quot;:&quot;Đăng nhập thành công!&quot;,&quot;user&quot;:{&quot;id&quot;:3,&quot;username&quot;:&quot;tamdt131005&quot;,&quot;fullname&quot;:&quot;tamdt1310051&quot;,&quot;role&quot;:&quot;user&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}}
 
 </div>   
 
@@ -6015,7 +6015,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method PUT</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">8</div>
   </div>
 
    
@@ -6024,25 +6024,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="13.34">20:29:16.945 request:
+  <div class="preformatted" data-parent="13.34">20:52:11.949 request:
 2 &gt; PUT http://localhost:3000/api/profile
-2 &gt; Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0YW1kdDEzMTAwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgyNzM5NzU2LCJleHAiOjE3ODMzNDQ1NTZ9.ZAB765MyDvT3ZSQjO8WuMXVEyred8JF5yJ8wvgBI_J0
+2 &gt; Authorization: Bearer null
 2 &gt; Content-Type: application/json; charset=UTF-8
 2 &gt; Content-Length: 155
 2 &gt; Host: localhost:3000
 2 &gt; Connection: Keep-Alive
-2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.18)
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.11)
 2 &gt; Accept-Encoding: gzip,deflate
 {&quot;id&quot;:&quot;2&quot;,&quot;email&quot;:&quot;user2@gmail.com&quot;,&quot;fullname&quot;:&quot;Nguyen Van A&quot;,&quot;phone&quot;:&quot;0123456789&quot;,&quot;sex&quot;:&quot;Nam&quot;,&quot;ngaysinh&quot;:&quot;2023-12-15&quot;,&quot;avatar&quot;:&quot;avatar_1775022099077.jpg&quot;}
 
-20:29:16.961 response time in milliseconds: 15
+20:52:11.956 response time in milliseconds: 7
 2 &lt; 201
 2 &lt; X-Powered-By: Express
 2 &lt; Access-Control-Allow-Origin: *
 2 &lt; Content-Type: application/json; charset=utf-8
 2 &lt; Content-Length: 63
 2 &lt; ETag: W/&quot;3f-RZbTYzKzLLIeVJeE8LnEr0uF8LE&quot;
-2 &lt; Date: Mon, 29 Jun 2026 13:29:16 GMT
+2 &lt; Date: Mon, 29 Jun 2026 13:52:11 GMT
 2 &lt; Connection: keep-alive
 2 &lt; Keep-Alive: timeout=5
 {&quot;success&quot;:true,&quot;message&quot;:&quot;Cập nhật hồ sơ thành công&quot;}
